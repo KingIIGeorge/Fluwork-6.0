@@ -2952,7 +2952,7 @@ Print #7, "</div></div>"
 Print #7, "<div class=""nota-legal"">"
 Print #7, "<strong>IMPORTANTE:</strong> El cliente, al realizar cualquier tr&aacute;mite relacionado con el equipo en reparaci&oacute;n, deber&aacute; presentar INDEFECTIBLEMENTE este comprobante. "
 Print #7, "Se informa que si a los 90 d&iacute;as de la fecha de finalizaci&oacute;n de la reparaci&oacute;n no se procede al retiro del equipo dejado en reparaci&oacute;n, se entender&aacute; abandono del mismo, cediendo el cliente la propiedad a Magenta Computaci&oacute;n. En este caso Magenta Computaci&oacute;n adquiere el dominio del bien, quedando facultada para ejercer derecho de retenci&oacute;n (art. 2587 y ss C.C. y C.N.) o disponer libremente del equipo, perdiendo el cliente todo derecho a indemnizaci&oacute;n o reclamo alguno. "
-Print #7, "Se cobrar&aacute; un valor en concepto de presupuesto y diagn&oacute;stico del equipo, s&oacute;lo en caso en que el cliente opte por retirar el equipo sin efectuar la reparaci&oacute;n del mismo."
+Print #7, "Se podr&aacute; cobrar un valor en concepto de presupuesto y diagn&oacute;stico del equipo, s&oacute;lo en caso en que el cliente opte por retirar el equipo sin efectuar la reparaci&oacute;n del mismo."
 Print #7, "</div>"
 
 ' FIRMA DE RECEPCION

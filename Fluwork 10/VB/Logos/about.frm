@@ -25,7 +25,7 @@ Begin VB.Form Form2
    End
    Begin VB.Label Label5 
       BackColor       =   &H00808080&
-      Caption         =   "Editado por Jorgito 17-5-26"
+      Caption         =   "Editado por Jorgito 18-5-26"
       ForeColor       =   &H00FFFFFF&
       Height          =   255
       Left            =   1080
@@ -80,7 +80,7 @@ Begin VB.Form Form2
    End
    Begin VB.Label Label1 
       BackColor       =   &H00808080&
-      Caption         =   "Fluwork 10 D2"
+      Caption         =   "Fluwork 10 D3"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   12

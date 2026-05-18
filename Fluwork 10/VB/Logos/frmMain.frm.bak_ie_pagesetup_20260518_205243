@@ -5154,22 +5154,11 @@ Private Function RutaIE() As String
     End If
 End Function
 
-Private Sub ConfigurarImpresionIE()
-    On Error Resume Next
-    Dim sh As Object
-    Set sh = CreateObject("WScript.Shell")
-    sh.RegWrite "HKCU\Software\Microsoft\Internet Explorer\PageSetup\header", "", "REG_SZ"
-    sh.RegWrite "HKCU\Software\Microsoft\Internet Explorer\PageSetup\footer", "", "REG_SZ"
-    sh.RegWrite "HKCU\Software\Microsoft\Internet Explorer\PageSetup\Print_Background", "yes", "REG_SZ"
-    Set sh = Nothing
-End Sub
-
 Private Sub AbrirHtmlEnIE(ByVal sArchivo As String)
     Dim sUrl As String
     Dim sExe As String
     Dim ret As Long
 
-    ConfigurarImpresionIE
     sUrl = "file:///" & Replace$(sArchivo, "\", "/") & "?ts=" & Format$(Now, "yyyymmddhhnnss")
     sExe = RutaIE()
 

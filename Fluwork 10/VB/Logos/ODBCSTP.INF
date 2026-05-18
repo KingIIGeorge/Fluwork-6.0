@@ -1,0 +1,139 @@
+;*** BEGIN **********************************************************
+;**                                                                **
+;** Automatically generated on: Tue Feb 18 14:05:27 1997           **
+;**                                                                **
+;** Diamond Version: (32) 1.00.0520 (12/16/94)                     **
+;**                                                                **
+;*** BEGIN **********************************************************
+[Source Media Descriptions]
+; <disk number>, <disk label>, <file>, <path>
+ "1","Instalación de Microsoft ODBC Disco1","ODBC-1.cab","."
+ "2","Instalación de Microsoft ODBC Disco2","ODBC-2.cab","."
+ "3","Instalación de Microsoft ODBC Disco3","ODBC-3.cab","."
+[Default File Settings]
+"STF_BACKUP" = ""
+"STF_COPY" = "YES"
+"STF_DATE" = ""
+"STF_DECOMPRESS" = "CABINET"
+"STF_OVERWRITE" = "OLDER"
+"STF_READONLY" = ""
+"STF_ROOT" = "YES"
+"STF_SETTIME" = "YES"
+"STF_TIME" = "0"
+"STF_VITAL" = ""
+;************* INF File list *****************
+
+
+
+[Setup]
+ 1,odbcstp.inf,,,,1997-01-25,,,,,,,,,,7531,,,,,
+ 1,setup.ini,,,,1997-01-10,,,NEVER,,,,,,,149,,,,,
+ 1,setup.lst,,,,1997-02-11,,,,,,,,,,3468,,,,,
+ 1,setup.tdf,,,,1996-11-26,,,NEVER,,,,,,,84,,,,,
+ 1,acmsetup.hlp,,,,1996-12-09,,,,,,,,,,14490,SYSTEM,,,,
+ 1,acmsetup.exe,,,,1996-11-15,,3082,,,,Setup.exe,!ROOT,,,361984,SYSTEM,,,3.0.0.1029,
+ 1,mssetup.dll,,,,1996-11-15,,3082,,,,,,,,258048,SYSTEM,,,3.0.0.1029,
+ 1,odbcstp.dll,,,,1997-01-08,,1033,,,,,,,,82944,SYSTEM,,,5.0.37.7,
+ 1,setup.ttf,,,,1996-11-26,,,,,,,,,,65412,,,,2.0.0.0,
+"odbckey_inf" = 1,odbckey.inf,,,,1996-12-06,,,,,,,,,,3213,SYSTEM,,,,
+"odbcstf.dll" = 1,odbcstf.dll,,,,1997-01-14,,,,,,,,,,22016,SYSTEM,,,3.0.23.1,
+"odbccp32_dll" = 1,odbccp32.dll,,,,1996-12-05,,0,OLDER,,,,,,,93968,SYSTEM,,,3.0.23.1,
+"odbccp32_cpl" = 1,odbccp32.cpl,,,,1996-11-23,,1034,OLDER,,,,,,,8464,SYSTEM,,,3.0.23.1,
+"odbcint_dll" = 1,odbcint.dll,,,,1996-11-23,,1034,OLDER,,,,,,,69632,SYSTEM,,,3.0.23.1,
+"msvcrt40" = 1,msvcrt40.dll,,,,1996-07-31,,1033,,,,,,,,326656,SYSTEM,,,4.10.0.6038,
+
+[DA Jet]
+"msjet35_dll" = 1,OS\System\msjet35.dll,,,,1996-12-21,,1033,,,,,,,SHARED,1039360,SYSTEM,,,3.50.3602.4,
+"msjter35_dll" = 1,OS\System\msjter35.dll,,,,1996-12-05,,1033,,,,,,,SHARED,24336,SYSTEM,,,3.50.3602.0,
+"msjint35_dll" = 1,OS\System\msjint35.dll,,,,1997-01-13,,1034,,,,,,,SHARED,40208,SYSTEM,,,3.50.3602.5,
+"msrepl35_dll" = 1,OS\System\msrepl35.dll,,,,1996-12-05,,1033,,,,,,,SHARED,403216,SYSTEM,,,3.50.3602.0,
+"msrd2x35_dll" = 1,OS\System\msrd2x35.dll,,,,1996-12-05,,1033,,,,,,,SHARED,251664,SYSTEM,,,3.50.3602.0,
+"vbar332_dll" = 2,OS\System\vbar332.dll,,,,1997-01-11,,1033,,,,,,,SHARED,368912,SYSTEM,,,3.0.0.6908,
+"msvcrt40_dll" = 2,OS\System\msvcrt40.dll,,,,1996-07-31,,1033,,,,,,,,326656,SYSTEM,,,4.10.0.6038,
+"msvcrt_dll" = 2,OS\System\msvcrt.dll,,,,1997-01-06,,1033,,,,,,,,267536,SYSTEM,,,4.20.0.6201,
+
+[Isam Excel]
+"xlisam" = 2,OS\System\msexcl35.dll,,,,1997-01-04,,1033,,,,,,,,254976,,,,3.50.3602.5,
+
+[Isam Text]
+"txisam" = 2,OS\System\mstext35.dll,,,,1996-12-05,,1033,,,,,,,,166912,,,,3.50.3602.0,
+
+[Isam Xbase]
+"xbsisam" = 2,OS\System\msxbse35.dll,,,,1996-12-05,,1033,,,,,,,,290816,,,,3.50.3602.0,
+
+[Isam Paradox]
+"pdxisam" = 2,OS\System\mspdox35.dll,,,,1996-12-05,,1033,,,,,,,,253952,,,,3.50.3602.0,
+
+[Isam Lotus]
+"ltisam" = 2,OS\System\msltus35.dll,,,,1997-01-04,,1033,,,,,,,,169984,,,,3.50.3602.5,
+
+[Odbc Manager]
+"odbccp32_dll" = 2,OS\System\odbccp32.dll,,,,1996-12-05,,0,OLDER,,,,,,,93968,SYSTEM,,,3.0.23.1,
+"odbc32_dll" = 2,OS\System\odbc32.dll,,,,1996-12-05,,0,OLDER,,,,,,,246544,SYSTEM,,,3.0.23.1,
+"odbcad32_exe" = 2,OS\System\odbcad32.exe,,,,1996-12-05,,0,OLDER,,,,,,,10240,SYSTEM,,,3.0.23.1,
+"odbccp32_cpl" = 2,OS\System\odbccp32.cpl,,,,1996-11-23,,1034,OLDER,,,,,,,8464,SYSTEM,,,3.0.23.1,
+"odbccr32_dll" = 2,OS\System\odbccr32.dll,,,,1996-12-05,,0,OLDER,,,,,,,179200,SYSTEM,,,3.0.23.1,
+"odbcint_dll" = 2,OS\System\odbcint.dll,,,,1996-11-23,,1034,OLDER,,,,,,,69632,SYSTEM,,,3.0.23.1,
+"adme_dll" = 2,OS\system\adme.dll,,,,1997-01-12,,1033,,,,,,,,57856,SYSTEM,,,1997.1.8.205,
+"dtccm_dll" = 2,OS\system\dtccm.dll,,,,1997-01-12,,1033,,,,,,,,194048,SYSTEM,,,1997.1.8.205,
+"dtctrace_dll" = 2,OS\system\dtctrace.dll,,,,1997-01-12,,1033,,,,,,,,7168,SYSTEM,,,1.0.0.2,
+"dtcutil_dll" = 2,OS\system\dtcutil.dll,,,,1997-01-12,,1033,,,,,,,,48128,SYSTEM,,,1997.1.8.205,
+"msdtcprx_dll" = 2,OS\system\msdtcprx.dll,,,,1997-01-12,,1033,,,,,,,,171008,SYSTEM,,,1997.1.8.205,
+"xolehlp_dll" = 2,OS\system\xolehlp.dll,,,,1997-01-12,,1033,,,,,,,,22016,SYSTEM,,,1997.1.8.205,
+"odbctrac_dll" = 2,OS\System\odbctrac.dll,,,,1996-12-05,,0,OLDER,,,,,,,142336,SYSTEM,,,3.0.23.1,
+
+[ODBC Thunking]
+"odbc16gt_dll" = 2,OS\System\odbc16gt.dll,,,,1996-12-05,,0,,,,,,,SHARED,26224,SYSTEM,,,3.0.23.1,
+"odbc32gt_dll" = 2,OS\System\odbc32gt.dll,,,,1996-12-05,,0,,,,,,,SHARED,8192,SYSTEM,,,3.0.23.1,
+"ds16gt_dll" = 2,OS\System\ds16gt.dll,,,,1996-12-05,,0,,,,,,,SHARED,4656,SYSTEM,,,3.0.23.1,
+"ds32gt_dll" = 2,OS\System\ds32gt.dll,,,,1996-12-05,,0,,,,,,,SHARED,5632,SYSTEM,,,3.0.23.1,
+
+[DA Brazos]
+"odbcji32_dll" = 2,OS\System\odbcji32.dll,,,,1997-01-10,,1034,,,,,,,,42854,SYSTEM,,,3.50.3602.0,
+"odbcjt32_dll" = 2,OS\System\odbcjt32.dll,,,,1996-12-05,,1033,,,,,,,,241664,SYSTEM,,,3.50.3602.0,
+"odbctl32_dll" = 3,OS\System\odbctl32.dll,,,,1996-12-05,,1033,,,,,,,,77824,SYSTEM,,,3.50.3602.0,
+
+[DA Brazos Help]
+"odbcjet_cnt" = 3,odbcjet.cnt,,,,1996-11-05,,,,,,,,,,7902,,,,,
+"odbcjet_hlp" = 3,odbcjet.hlp,,,,1996-11-14,,,,,,,,,,173468,,,,,
+"odbcjtnw_cnt" = 3,odbcjtnw.cnt,,,,1996-11-06,,,,,,,,,,3842,,,,,
+"odbcjtnw_hlp" = 3,odbcjtnw.hlp,,,,1996-11-14,,,,,,,,,,67261,,,,,
+"odbcjet_ftg"= 1,odbcjet.ftg,,,,,,,,,,,,,,,,,,,
+"odbcjet_fts"= 1,odbcjet.fts,,,,,,,,,,,,,,,,,,,
+"odbcjet_gid"= 1,odbcjet.gid,,,,,,,,,,,,,,,,,,,
+"odbcjtnw_ftg"= 1,odbcjtnw.ftg,,,,,,,,,,,,,,,,,,,
+"odbcjtnw_fts"= 1,odbcjtnw.fts,,,,,,,,,,,,,,,,,,,
+"odbcjtnw_gid"= 1,odbcjtnw.gid,,,,,,,,,,,,,,,,,,,
+
+[Isam Oracle]
+"msorcl10_dll" = 3,OS\System\msorcl10.dll,,,,1997-02-04,,3082,OLDER,,,,,,,152336,SYSTEM,,,2.0.0.6325,
+
+[DA Brazos ISAM dBase Installer]
+"oddbse32_dll" = 3,oddbse32.dll,,,,1996-12-05,,1033,,,,,,,,5120,,,,3.50.3602.0,
+
+[DA Brazos ISAM Excel Installer]
+"odexl32_dll" = 3,odexl32.dll,,,,1996-12-05,,1033,,,,,,,,5120,,,,3.50.3602.0,
+
+[DA Brazos ISAM FoxPro Installer]
+"odfox32_dll" = 3,odfox32.dll,,,,1996-12-05,,1033,,,,,,,,5120,,,,3.50.3602.0,
+
+[DA Brazos ISAM Paradox Installer]
+"odpdx32_dll" = 3,odpdx32.dll,,,,1996-12-05,,1033,,,,,,,,5120,,,,3.50.3602.0,
+
+[DA Brazos ISAM Text Installer]
+"odtext32_dll" = 3,odtext32.dll,,,,1996-12-05,,1033,,,,,,,,5120,,,,3.50.3602.0,
+
+[DA SQL Server]
+"sqlsrv32_dll" = 3,sqlsrv32.dll,,,,1997-01-15,,1034,OLDER,,,,,,SHARED,249344,,,,2.65.2.40,
+"dbnmpntw_dll" = 3,dbnmpntw.dll,,,,1997-01-14,,1033,OLDER,,,,,,SHARED,23552,,,,1996.12.17.0,
+"drvssrvr_hlp" = 3,drvssrvr.hlp,,,,1996-01-25,,,OLDER,,,,,,SHARED,104706,,,,,
+"drvssrvr_fts"= 1,drvssrvr.fts,,,,,,,,,,,,,,,,,,,
+"drvssrvr_gid"= 1,drvssrvr.gid,,,,,,,,,,,,,,,,,,,
+
+[Code Page Translator]
+"mscpxl32_dll" = 3,mscpxl32.dll,,,,1996-11-18,,1034,OLDER,,,,,,SHARED,15360,,,,2.65.2.1,
+;*** END ************************************************************
+;**                                                                **
+;** Automatically generated on: Tue Feb 18 14:05:27 1997           **
+;**                                                                **
+;*** END ************************************************************

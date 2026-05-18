@@ -1,0 +1,541 @@
+===============================================================================
+CAMBIOS PARA COMPATIBILIDAD CHROME - Fluwork v10
+===============================================================================
+Fecha: 23/03/2026
+Descripción: Reemplazo del HTML de impresión de fichas para que funcione
+             correctamente en Chrome/Edge, eliminando dependencias de IE.
+
+RESUMEN DE CAMBIOS:
+1. def.bas → Agregar declaración de ShellExecute
+2. frmMain.frm → cmdimprimir_Click (IMPRIMIR INTERNO) - Reemplazar bloque HTML
+3. frmMain.frm → cmdprintpublic_Click (IMPRIMIR PUBLICO) - Reemplazar bloque HTML
+4. frmMain.frm → Command11_Click (IMPRIMIR EXTERNO) - Reemplazar bloque HTML
+5. app.py → Agregar endpoint /imagen/<filename> para servir imágenes
+
+===============================================================================
+CAMBIO 1: def.bas — Agregar declaración de ShellExecute
+===============================================================================
+AGREGAR esta línea después de la línea "Declare Sub Sleep..."  (línea 93):
+
+Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Long, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Long) As Long
+
+
+===============================================================================
+CAMBIO 2: cmdimprimir_Click — IMPRIMIR INTERNO
+===============================================================================
+REEMPLAZAR desde la línea:
+  Open "c:\laficha.html" For Output As #7
+HASTA (inclusive):
+  returnvalue = Shell("start c:\laficha.html")
+  If returnvalue = 0 Then MsgBox "Ha ocurrido un error...
+
+CON ESTE BLOQUE COMPLETO:
+
+Open "c:\laficha.html" For Output As #7
+
+Print #7, "<html><head><title>Ficha de Servicio Tecnico</title>"
+Print #7, "<meta charset=""windows-1252"">"
+Print #7, "<style>"
+Print #7, "body{background:#fff;font-family:Arial,sans-serif;margin:10px;}"
+Print #7, "table{border-collapse:separate;border-spacing:0;width:100%;}"
+Print #7, ".l{border:none;padding:5px 5px 5px 0;font-weight:bold;font-size:13px;vertical-align:top;width:25%;}"
+Print #7, ".d{border:1px solid #000;padding:5px;vertical-align:top;}"
+Print #7, ".n{border:1px solid #000;padding:5px;background:#C0C0C0;}"
+Print #7, ".f{border:1px solid #000;padding:5px;height:50px;}"
+Print #7, ".h{border:none;padding:0;vertical-align:middle;}"
+Print #7, "</style></head><body>"
+
+Print #7, "<table style=""margin-bottom:10px;"">"
+Print #7, "<tr>"
+Print #7, "<td class=""h"" style=""width:25%;text-align:center;""><img src=""http://192.168.1.188:5050/imagen/mag.logo.gif"" width=""190"" height=""159""></td>"
+Print #7, "<td class=""h"" style=""width:25%;vertical-align:top;""><img src=""http://192.168.1.188:5050/imagen/direccion.gif"" width=""200"" height=""69""></td>"
+Print #7, "<td class=""h"" style=""width:25%;text-align:right;""><img src=""http://192.168.1.188:5050/imagen/epson.logo.gif"" width=""128"" height=""40""></td>"
+Print #7, "<td class=""h"" style=""width:25%;text-align:center;""><img src=""http://192.168.1.188:5050/imagen/hp.logo.gif"" width=""111"" height=""115""></td>"
+Print #7, "</tr><tr>"
+Print #7, "<td class=""h"">&nbsp;</td>"
+Print #7, "<td class=""h"" colspan=""3"" style=""text-align:center;""><b><font size=""4"">FICHA DE SERVICIO TECNICO</font></b></td>"
+Print #7, "</tr></table>"
+
+Print #7, "<table>"
+
+Print #7, "<tr><td class=""l"">FECHA RECEPCION:</td>"
+Print #7, "<td class=""d"" style=""text-align:center;width:25%;"">"
+If (Trim(registro.fechaingreso) <> "") Then
+Print #7, registro.fechaingreso
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td><td class=""l"" style=""text-align:center;"">N&deg; CONTROL:</td>"
+Print #7, "<td class=""d"" style=""text-align:right;width:25%;""><b><font size=""5"">"
+If (Trim(registro.ficha) <> "") Then
+Print #7, registro.ficha
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</font></b></td></tr>"
+
+Print #7, "<tr><td class=""l"">NOMBRE Y APELLIDO:</td>"
+Print #7, "<td class=""d"" colspan=""3"">"
+If (Trim(registro.fullname) <> "") Then
+Print #7, registro.fullname
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">DIRECCION:</td>"
+Print #7, "<td class=""d"" colspan=""3"">"
+If (Trim(registro.direccion) <> "") Then
+Print #7, registro.direccion
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">TELEFONO:</td>"
+Print #7, "<td class=""d"">"
+If (Trim(registro.telefono) <> "") Then
+Print #7, registro.telefono
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td><td class=""l"" style=""text-align:center;"">E-MAIL:</td>"
+Print #7, "<td class=""d"">"
+If (Trim(registro.email) <> "") Then
+Print #7, registro.email
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">DESCRIPCION DEL<br>EQUIPO:</td>"
+Print #7, "<td class=""d"" colspan=""3""><b>MODELO: </b>"
+If (Trim(registro.modelo) <> "") Then
+Print #7, registro.modelo
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "<br><b>ADJUNTOS: </b>"
+If (Trim(registro.adjuntos) <> "") Then
+Print #7, registro.adjuntos
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">N&deg; DE SERIE:</td>"
+Print #7, "<td class=""d"">"
+If (Trim(registro.nserie) <> "") Then
+Print #7, registro.nserie
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td><td class=""l"" colspan=""2"" style=""text-align:center;font-size:11px;""><sup>(datos informados por el cliente a confirmar)</sup></td></tr>"
+
+Print #7, "<tr><td class=""l"">DESCRIPCION DEL<br>PROBLEMA:</td>"
+Print #7, "<td class=""d"" colspan=""3"" style=""min-height:80px;"">"
+If (Trim(registro.problema) <> "") Then
+Print #7, enter_a_br(registro.problema)
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">NOTA:</td>"
+Print #7, "<td class=""n"" colspan=""3""><font size=""1""><b>"
+Print #7, "El cliente, al realizar cualquier tr&aacute;mite relacionado con el equipo en reparaci&oacute;n, deber&aacute; presentar INDEFECTIBLEMENTE este comprobante.<br>"
+Print #7, "Se informa que si a los 90 d&iacute;as de la fecha de finalizaci&oacute;n de la reparaci&oacute;n, no se procede al retiro del equipo dejado en reparaci&oacute;n, se entender&aacute; abandono del mismo, cediendo el cliente la propiedad a Magenta Computaci&oacute;n. En este caso Magenta Computaci&oacute;n adquiere el dominio del bien, "
+Print #7, "quedando facultada para ejercer derecho de retenci&oacute;n ( art 2587 y ss C.C.y C.N.) o disponer libremente del equipo. Perdiendo el cliente todo derecho a indemnizaci&oacute;n o reclamo alguno.<br>"
+Print #7, "Se cobrar&aacute; un valor de $3500,- + I.V.A en concepto de presupuesto y diagn&oacute;stico del equipo, s&oacute;lo en caso en que el cliente opte por retirar el equipo sin efectuar la reparaci&oacute;n del mismo."
+Print #7, "</b></font></td></tr>"
+
+Print #7, "<tr><td class=""l"">LLAMAR EL DIA:</td>"
+Print #7, "<td class=""d"" style=""text-align:center;"">"
+If (Trim(registro.llamareldia) <> "") Then
+Print #7, registro.llamareldia
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td><td class=""l"" style=""text-align:center;"">ATENDIDO POR:</td>"
+Print #7, "<td class=""d"" style=""text-align:center;"">"
+If (Trim(registro.atendidopor) <> "") Then
+Print #7, registro.atendidopor
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">FIRMA DEL CLIENTE:</td>"
+Print #7, "<td class=""f"">&nbsp;</td>"
+Print #7, "<td class=""d"" colspan=""2"" style=""text-align:center;""><font size=""1"">Se deja constancia de la aceptacion por parte del cliente que la empresa no se responsabiliza por la informacion contenida en el equipo.</font></td>"
+Print #7, "</tr>"
+
+Print #7, "<tr><td class=""l"">ACLARACION:</td>"
+Print #7, "<td class=""f"">&nbsp;</td>"
+Print #7, "<td class=""l"">&nbsp;</td><td class=""l"">&nbsp;</td></tr>"
+
+Print #7, "<tr><td class=""l"">RETIRADO POR:</td>"
+Print #7, "<td class=""f"" colspan=""3"">&nbsp;</td></tr>"
+
+Print #7, "</table></body></html>"
+
+Close #7
+
+ShellExecute 0, "open", "C:\laficha.html", "", "C:\", 1
+
+
+===============================================================================
+CAMBIO 3: cmdprintpublic_Click — IMPRIMIR PUBLICO
+===============================================================================
+REEMPLAZAR desde la línea:
+  Open "c:\laficha.html" For Output As #7
+HASTA (inclusive):
+  returnvalue = Shell("start c:\laficha.html")
+  If returnvalue = 0 Then MsgBox "Ha ocurrido un error...
+
+CON ESTE BLOQUE COMPLETO:
+(Es igual al INTERNO pero las imágenes usan dbpath como fallback.
+ Como ahora todas van por Flask, el código es idéntico al INTERNO)
+
+Open "c:\laficha.html" For Output As #7
+
+Print #7, "<html><head><title>Ficha de Servicio Tecnico</title>"
+Print #7, "<meta charset=""windows-1252"">"
+Print #7, "<style>"
+Print #7, "body{background:#fff;font-family:Arial,sans-serif;margin:10px;}"
+Print #7, "table{border-collapse:separate;border-spacing:0;width:100%;}"
+Print #7, ".l{border:none;padding:5px 5px 5px 0;font-weight:bold;font-size:13px;vertical-align:top;width:25%;}"
+Print #7, ".d{border:1px solid #000;padding:5px;vertical-align:top;}"
+Print #7, ".n{border:1px solid #000;padding:5px;background:#C0C0C0;}"
+Print #7, ".f{border:1px solid #000;padding:5px;height:50px;}"
+Print #7, ".h{border:none;padding:0;vertical-align:middle;}"
+Print #7, "</style></head><body>"
+
+Print #7, "<table style=""margin-bottom:10px;"">"
+Print #7, "<tr>"
+Print #7, "<td class=""h"" style=""width:25%;text-align:center;""><img src=""http://192.168.1.188:5050/imagen/mag.logo.gif"" width=""190"" height=""159""></td>"
+Print #7, "<td class=""h"" style=""width:25%;vertical-align:top;""><img src=""http://192.168.1.188:5050/imagen/direccion.gif"" width=""200"" height=""69""></td>"
+Print #7, "<td class=""h"" style=""width:25%;text-align:right;""><img src=""http://192.168.1.188:5050/imagen/epson.logo.gif"" width=""128"" height=""40""></td>"
+Print #7, "<td class=""h"" style=""width:25%;text-align:center;""><img src=""http://192.168.1.188:5050/imagen/hp.logo.gif"" width=""111"" height=""115""></td>"
+Print #7, "</tr><tr>"
+Print #7, "<td class=""h"">&nbsp;</td>"
+Print #7, "<td class=""h"" colspan=""3"" style=""text-align:center;""><b><font size=""4"">FICHA DE SERVICIO TECNICO</font></b></td>"
+Print #7, "</tr></table>"
+
+Print #7, "<table>"
+
+Print #7, "<tr><td class=""l"">FECHA RECEPCION:</td>"
+Print #7, "<td class=""d"" style=""text-align:center;width:25%;"">"
+If (Trim(registro.fechaingreso) <> "") Then
+Print #7, registro.fechaingreso
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td><td class=""l"" style=""text-align:center;"">N&deg; CONTROL:</td>"
+Print #7, "<td class=""d"" style=""text-align:right;width:25%;""><b><font size=""5"">"
+If (Trim(registro.ficha) <> "") Then
+Print #7, registro.ficha
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</font></b></td></tr>"
+
+Print #7, "<tr><td class=""l"">NOMBRE Y APELLIDO:</td>"
+Print #7, "<td class=""d"" colspan=""3"">"
+If (Trim(registro.fullname) <> "") Then
+Print #7, registro.fullname
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">DIRECCION:</td>"
+Print #7, "<td class=""d"" colspan=""3"">"
+If (Trim(registro.direccion) <> "") Then
+Print #7, registro.direccion
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">TELEFONO:</td>"
+Print #7, "<td class=""d"">"
+If (Trim(registro.telefono) <> "") Then
+Print #7, registro.telefono
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td><td class=""l"" style=""text-align:center;"">E-MAIL:</td>"
+Print #7, "<td class=""d"">"
+If (Trim(registro.email) <> "") Then
+Print #7, registro.email
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">DESCRIPCION DEL<br>EQUIPO:</td>"
+Print #7, "<td class=""d"" colspan=""3""><b>MODELO: </b>"
+If (Trim(registro.modelo) <> "") Then
+Print #7, registro.modelo
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "<br><b>ADJUNTOS: </b>"
+If (Trim(registro.adjuntos) <> "") Then
+Print #7, registro.adjuntos
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">N&deg; DE SERIE:</td>"
+Print #7, "<td class=""d"">"
+If (Trim(registro.nserie) <> "") Then
+Print #7, registro.nserie
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td><td class=""l"" colspan=""2"" style=""text-align:center;font-size:11px;""><sup>(datos informados por el cliente a confirmar)</sup></td></tr>"
+
+Print #7, "<tr><td class=""l"">DESCRIPCION DEL<br>PROBLEMA:</td>"
+Print #7, "<td class=""d"" colspan=""3"" style=""min-height:80px;"">"
+If (Trim(registro.problema) <> "") Then
+Print #7, enter_a_br(registro.problema)
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">NOTA:</td>"
+Print #7, "<td class=""n"" colspan=""3""><font size=""1""><b>"
+Print #7, "El cliente, al realizar cualquier tr&aacute;mite relacionado con el equipo en reparaci&oacute;n, deber&aacute; presentar INDEFECTIBLEMENTE este comprobante.<br>"
+Print #7, "Se informa que si a los 90 d&iacute;as de la fecha de finalizaci&oacute;n de la reparaci&oacute;n, no se procede al retiro del equipo dejado en reparaci&oacute;n, se entender&aacute; abandono del mismo, cediendo el cliente la propiedad a Magenta Computaci&oacute;n. En este caso Magenta Computaci&oacute;n adquiere el dominio del bien, "
+Print #7, "quedando facultada para ejercer derecho de retenci&oacute;n ( art 2587 y ss C.C.y C.N.) o disponer libremente del equipo. Perdiendo el cliente todo derecho a indemnizaci&oacute;n o reclamo alguno.<br>"
+Print #7, "Se cobrar&aacute; un valor de $3500,- + I.V.A en concepto de presupuesto y diagn&oacute;stico del equipo, s&oacute;lo en caso en que el cliente opte por retirar el equipo sin efectuar la reparaci&oacute;n del mismo."
+Print #7, "</b></font></td></tr>"
+
+Print #7, "<tr><td class=""l"">LLAMAR EL DIA:</td>"
+Print #7, "<td class=""d"" style=""text-align:center;"">"
+If (Trim(registro.llamareldia) <> "") Then
+Print #7, registro.llamareldia
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td><td class=""l"" style=""text-align:center;"">ATENDIDO POR:</td>"
+Print #7, "<td class=""d"" style=""text-align:center;"">"
+If (Trim(registro.atendidopor) <> "") Then
+Print #7, registro.atendidopor
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">FIRMA DEL CLIENTE:</td>"
+Print #7, "<td class=""f"">&nbsp;</td>"
+Print #7, "<td class=""d"" colspan=""2"" style=""text-align:center;""><font size=""1"">Se deja constancia de la aceptacion por parte del cliente que la empresa no se responsabiliza por la informacion contenida en el equipo.</font></td>"
+Print #7, "</tr>"
+
+Print #7, "<tr><td class=""l"">ACLARACION:</td>"
+Print #7, "<td class=""f"">&nbsp;</td>"
+Print #7, "<td class=""l"">&nbsp;</td><td class=""l"">&nbsp;</td></tr>"
+
+Print #7, "<tr><td class=""l"">RETIRADO POR:</td>"
+Print #7, "<td class=""f"" colspan=""3"">&nbsp;</td></tr>"
+
+Print #7, "</table></body></html>"
+
+Close #7
+
+ShellExecute 0, "open", "C:\laficha.html", "", "C:\", 1
+
+
+===============================================================================
+CAMBIO 4: Command11_Click — IMPRIMIR EXTERNO
+===============================================================================
+REEMPLAZAR desde la línea:
+  Open "c:\laficha.html" For Output As #7
+HASTA (inclusive):
+  returnvalue = Shell("start c:\laficha.html")
+  If returnvalue = 0 Then MsgBox "Ha ocurrido un error...
+
+CON ESTE BLOQUE COMPLETO:
+(Diferencias vs INTERNO: muestra nombre del técnico en header,
+ datos de Magenta en vez del cliente, sin NOTA legal,
+ sin LLAMAR EL DIA/ATENDIDO POR/FIRMA DEL CLIENTE/ACLARACION)
+
+Open "c:\laficha.html" For Output As #7
+
+Print #7, "<html><head><title>Ficha de Servicio Tecnico</title>"
+Print #7, "<meta charset=""windows-1252"">"
+Print #7, "<style>"
+Print #7, "body{background:#fff;font-family:Arial,sans-serif;margin:10px;}"
+Print #7, "table{border-collapse:separate;border-spacing:0;width:100%;}"
+Print #7, ".l{border:none;padding:5px 5px 5px 0;font-weight:bold;font-size:13px;vertical-align:top;width:25%;}"
+Print #7, ".d{border:1px solid #000;padding:5px;vertical-align:top;}"
+Print #7, ".f{border:1px solid #000;padding:5px;height:50px;}"
+Print #7, ".h{border:none;padding:0;vertical-align:middle;}"
+Print #7, "</style></head><body>"
+
+Print #7, "<table style=""margin-bottom:10px;"">"
+Print #7, "<tr>"
+Print #7, "<td class=""h"" style=""width:25%;text-align:center;""><img src=""http://192.168.1.188:5050/imagen/mag.logo.gif"" width=""190"" height=""159""></td>"
+Print #7, "<td class=""h"" style=""width:25%;vertical-align:top;""><img src=""http://192.168.1.188:5050/imagen/direccion.gif"" width=""200"" height=""69""></td>"
+Print #7, "<td class=""h"" style=""width:25%;text-align:right;""><img src=""http://192.168.1.188:5050/imagen/epson.logo.gif"" width=""128"" height=""40""></td>"
+Print #7, "<td class=""h"" style=""width:25%;text-align:center;""><img src=""http://192.168.1.188:5050/imagen/hp.logo.gif"" width=""111"" height=""115""></td>"
+Print #7, "</tr><tr>"
+Print #7, "<td class=""h"">&nbsp;</td>"
+Print #7, "<td class=""h"" colspan=""3"" style=""text-align:center;""><b><font size=""4"">FICHA DE SERVICIO TECNICO<br>"
+If Trim(Form1.Combo1.Text) = "Seleccionar" Then
+Print #7, StrConv(Trim(registro.tecnico), vbUpperCase)
+Else
+Print #7, StrConv(Trim(Form1.Combo1.Text), vbUpperCase)
+End If
+Print #7, "</font></b></td>"
+Print #7, "</tr></table>"
+
+Print #7, "<table>"
+
+Print #7, "<tr><td class=""l"">FECHA RECEPCION:</td>"
+Print #7, "<td class=""d"" style=""text-align:center;width:25%;"">"
+If (Trim(registro.fechaingreso) <> "") Then
+Print #7, registro.fechaingreso
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td><td class=""l"" style=""text-align:center;"">N&deg; CONTROL:</td>"
+Print #7, "<td class=""d"" style=""text-align:right;width:25%;""><b><font size=""5"">"
+If (Trim(registro.ficha) <> "") Then
+Print #7, registro.ficha
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</font></b></td></tr>"
+
+Print #7, "<tr><td class=""l"">NOMBRE Y APELLIDO:</td>"
+Print #7, "<td class=""d"" colspan=""3"">"
+If (Trim(registro.fullname) <> "") Then
+Print #7, "Magenta Computacion"
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">DIRECCION:</td>"
+Print #7, "<td class=""d"" colspan=""3"">"
+If (Trim(registro.direccion) <> "") Then
+Print #7, "Av. Maipu 2062- Olivos -Buenos Aires - Argentina"
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">TELEFONO:</td>"
+Print #7, "<td class=""d"">"
+If (Trim(registro.telefono) <> "") Then
+Print #7, "4795-6727"
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td><td class=""l"" style=""text-align:center;"">E-MAIL:</td>"
+Print #7, "<td class=""d"">"
+Print #7, "info@magentacomputacion.com.ar"
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">DESCRIPCION DEL<br>EQUIPO:</td>"
+Print #7, "<td class=""d"" colspan=""3""><b>MODELO: </b>"
+If (Trim(registro.modelo) <> "") Then
+Print #7, registro.modelo
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "<br><b>ADJUNTOS: </b>"
+If (Trim(registro.adjuntos) <> "") Then
+Print #7, registro.adjuntos
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">N&deg; DE SERIE:</td>"
+Print #7, "<td class=""d"">"
+If (Trim(registro.nserie) <> "") Then
+Print #7, registro.nserie
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td><td class=""l"" colspan=""2"" style=""text-align:center;font-size:11px;""><sup>(datos informados por el cliente a confirmar)</sup></td></tr>"
+
+Print #7, "<tr><td class=""l"">DESCRIPCION DEL<br>PROBLEMA:</td>"
+Print #7, "<td class=""d"" colspan=""3"" style=""min-height:80px;"">"
+If (Trim(registro.problema) <> "") Then
+Print #7, enter_a_br(registro.problema)
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr><td class=""l"">RETIRADO POR:</td>"
+Print #7, "<td class=""f"" colspan=""3"">&nbsp;</td></tr>"
+
+Print #7, "<tr><td class=""l"">FIRMA:</td>"
+Print #7, "<td class=""f"">&nbsp;</td>"
+Print #7, "<td class=""l"">&nbsp;</td><td class=""l"">&nbsp;</td></tr>"
+
+Print #7, "</table></body></html>"
+
+Close #7
+
+ShellExecute 0, "open", "C:\laficha.html", "", "C:\", 1
+
+
+===============================================================================
+CAMBIO 5: app.py — Agregar endpoint para servir imágenes
+===============================================================================
+AGREGAR este endpoint en app.py (después de los endpoints existentes):
+
+from flask import send_from_directory
+import os
+
+@app.route('/imagen/<filename>')
+def servir_imagen(filename):
+    # Carpeta donde están las imágenes (misma carpeta de las fichas)
+    imagen_dir = r'\\MAGENTAOLIVOS\magenta'
+    # Fallback a carpeta local si no encuentra en red
+    if not os.path.exists(os.path.join(imagen_dir, filename)):
+        imagen_dir = r'C:\Fluwork'
+    return send_from_directory(imagen_dir, filename)
+
+
+===============================================================================
+NOTAS IMPORTANTES
+===============================================================================
+
+1. ELIMINAR las líneas viejas de Shell + If returnvalue en los 3 botones.
+   Ya no se necesitan porque ShellExecute las reemplaza.
+   Eliminar específicamente estas líneas (en los 3 subs):
+   
+   returnvalue = Shell("c:\program files...iexplore.exe C:\laficha.html", vbMaximizedFocus)
+   If returnvalue = 0 Then
+   returnvalue = Shell("start c:\laficha.html")
+   If returnvalue = 0 Then MsgBox "Ha ocurrido un error..."
+   End If
+
+2. Las imágenes (mag.logo.gif, direccion.gif, epson.logo.gif, hp.logo.gif) 
+   deben estar accesibles desde el servidor Flask. El endpoint /imagen/ 
+   las busca primero en \\MAGENTAOLIVOS\magenta\ y si no las encuentra 
+   ahí, las busca en C:\Fluwork\.
+
+3. Los caracteres especiales (á, é, í, ó, ú, ñ) en el bloque NOTA 
+   usan entidades HTML (&aacute;, &eacute;, etc.) para evitar problemas 
+   de encoding entre cp1252 y UTF-8.
+
+4. Se reemplazó <font color="#FFFFFF">-</font> (truco invisible de IE) 
+   por &nbsp; que es la forma estándar de mantener la celda con altura.
+
+5. Clases CSS usadas:
+   .l = label (etiqueta, sin borde)
+   .d = data (dato, con borde negro)
+   .n = nota (con borde negro y fondo gris)
+   .f = firma (con borde negro y altura de 50px)
+   .h = header (sin borde, para la tabla de logos)

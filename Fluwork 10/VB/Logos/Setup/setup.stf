@@ -1,0 +1,1190 @@
+App Name	VB5.EXE	
+App Version	5.00.3716 (1034)(spa)(pro)	
+Setup Version	1.20.0.2402	
+Frame Bitmap		
+Frame Caption	Microsoft Visual Basic 5.0 - InstalaciÛn de la EdiciÛn Profesional	
+Dialog Caption Base	Microsoft Visual Basic 5.0	
+Usage String	Uso: Instalar\n	
+About Box String	Microsoft Visual Basic 5.0 - EdiciÛn Profesional \n\nCopyright (C) 1997 Microsoft Corporation.	
+Check Modules	"wndclass_desked_gsk,Microsoft Visual Basic,ThunderRTMain,Microsoft VB Runtime"	
+Source Directory	C:\COMPAR~1\VISUAL~1\VB\SETUP\	
+MSAPPS Mode	local	
+MSAPPS Connect	server	
+Inf File Name	vb5setup.inf	
+Help File Name	ACMSETUP.HLP	
+Setup Status	"s:⁄·õì›™ª€µQQ6ª…“ ≈lºdÄ»Á¢∆ÒMq:Œénπ&zIœıÚê˜=cC∞Ωﬁ¡≠nI lŸ¬p<Ωüóπ˚lTz˙≤Â¶~l˚Xp_/ï7Ôv)!¶Ø–‘a%gnº˚BXsy∞Ï$&àÊ”Z QÆØL5MâYÄ<ûÊÍô+√‹cFŒ»ñ´4B(n¥∞\âxÎ%5‡»i≈πÂâ‚¢rûñ≈é&åup¶”É5"	
+Setup Status2	0	
+Maximum Object ID	1242	
+Admin Mode Root Object ID		
+Floppy Mode Root Object ID	13 : 8 9	
+Network Mode Root Object ID		
+Maintenance Mode Root Object ID	16 : 8 9	
+Network Maintenance Mode Root Object ID		
+Batch Mode Root Object ID	17 : 8 9	
+Install Date	2017.08.25.18.19.08	
+Check Modules2		
+Check Modules3		
+Check Modules4		
+
+
+ObjID	Checkbox State	Title	Description	Object Type	Object Data	Bitmap Id	Vital Attribute	Shared Attribute	Configurable Directory	Destination Directory	Check Directory	Installed By	Install Data	Install Directory
+8		DevStudio Check		CustomAction	"vb5stp.dll,GetDevStudioRootDir,%P\DevStudio"							us		C:\Archivos de programa\DevStudio\
+9		Microsoft Visual Basic		AppSearch	"%P\VB<%8\VB>,VB5.EXE,5.00.0.3721,200,yes,yes,10 11 12"					C:\Archivos de programa\DevStudio\VB\		us		C:\Archivos de programa\DevStudio\VB\
+10		VB_Search_Ini_16		SearchIni	"vb.ini,Visual Basic,vb16location,1"									
+11		VB_Search_Registry		SearchReg	"HKEY_CLASSES_ROOT,VisualBasic.Project\shell\open\command,,1"									
+12		Search local drives		SearchIni	"vb.ini,Visual Basic,vb32location,1"									
+13		Floppy Installation		AppMainDlg	18 19 20:22				yes	C:\Archivos de programa\DevStudio\VB\	9	us		
+16		Mantenimiento		CustomDlg	23  24 25 26  37  39 44 45:46 51 50					C:\Archivos de programa\DevStudio\VB\	9	us		C:\Archivos de programa\DevStudio\VB\
+17		Modo de instalaciÛn de proceso por lotes		Group	22 50 23  24 25 26 39 44 45 46 47 51					%9				
+18	yes	&TÌpica	Microsoft Visual Basic 5.0 - EdiciÛn profesional se instalar· sÛlo con las opciones m·s comunes	Group	50 23  24 25 26  40 41 42 48 44 45 46 47 51	"vb5stp.dll, 111"						us		
+19	yes	Completa/&Personalizada	Microsoft Visual Basic 5.0 - EdiciÛn profesional se instalar· sÛlo con las opciones seleccionadas	CustomDlg	23  24 25 26  37 39 44 45:46 47 51 50	"vb5stp.dll, 112"						us		
+20	yes	C&ompacta	Microsoft Visual Basic 5.0 - EdiciÛn profesional se instalar· sÛlo con las opciones mÌnimas	Group	50 23 46 51 620	"vb5stp.dll, 113"						nyi		
+22				CustomAction	"vb5stp.dll,LicenseDlg,""Aux Program;license_txt"""							us		
+23	yes	Microsoft Visual Basic	"Instala Microsoft Visual Basic 5.0 y todos los componentes necesarios, asÌ como el n˙cleo de los controles personalizados ActiveX"	Group	107 124 143 146 157 249 38 254 262 1162 269 284 295 729 444 466 955 941 880 1012		vital			%d		us		C:\Archivos de programa\DevStudio\VB\
+24	yes	Controles personalizados	Instala controles personalizados ActiveX adicionales	Group	879 983							us		C:\Archivos de programa\DevStudio\VB\
+25	yes	Crystal Reports para Visual Basic	Instala Crystal Reports para Visual Basic. Esta herramienta le permite crear informes que se pueden integrar f·cilmente en sus aplicaciones	Group	313				no	%D		us		C:\Archivos de programa\DevStudio\VB\
+26	yes	Acceso a datos	Los controladores le permiten utilizar y conectarse con datos almacenados en otros formatos	OptionDlg	27 28 30 29				no	%M		us		C:\WINDOWS\system32\
+27	yes	Controladores ISAM	"Permite a las aplicaciones tener acceso a los datos almacenados en Microsoft Excel, Text y otros formatos usando los controladores ISAM mediante Jet"	OptionDlg	386 390 394 398 402				no	%M		us		C:\WINDOWS\system32\
+28	yes	Controlador ODBC de Oracle	Instala el controlador ODBC para tener acceso a bases de datos de Oracle	Group	406				no	%M		us		C:\WINDOWS\system32\
+29	yes	Controladores ODBC Desktop de Microsoft	"Permite a sus aplicaciones acceder a datos almacenados en Microsoft Access, Borland Paradox, Borland dBase y otras bases de datos"	OptionDlg	31 32 33 34 35 36:30				no			us		C:\WINDOWS\system32\
+30	yes	Controlador ODBC SQL Server de Microsoft	Permite utilizar datos almacenados en SQL server	Group	418 422							us		C:\WINDOWS\system32\
+31	yes	Controlador ODBC de Microsoft Access	Permite a sus aplicaciones tener acceso a datos almacenados en formato Microsoft Access	Group	471					%m		us		C:\WINDOWS\system32\
+32	yes	Controlador ODBC dBase de Microsoft	Permite a sus aplicaciones acceder a datos almacenados en formato dBASE	Group	473 394					%m		us		C:\WINDOWS\system32\
+33	yes	Controlador ODBC Microsoft Excel	Permite a sus aplicaciones tener acceso a datos almacenados en formato Microsoft Excel	Group	476 386					%m		us		C:\WINDOWS\system32\
+34	yes	Controlador ODBC de Microsoft FoxPro	Permite a sus aplicaciones acceder a datos almacenados en formato Microsoft FoxPro	Group	479 394					%m		us		C:\WINDOWS\system32\
+35	yes	Controlador ODBC Paradox de Microsoft	Permite a las aplicaciones Visual Basic acceder a datos almacenados en formato Borland Paradox	Group	482 398					%m		us		C:\WINDOWS\system32\
+36	yes	Controlador ODBC de texto de Micosoft	Permite a las aplicaciones Visual Basic acceder a datos almacenados en formato texto	Group	485 390					%m		us		C:\WINDOWS\system32\
+37	no	Gr·ficos	"Instala mapas de bits, cursores, iconos y metarchivos que podr· usar en sus aplicaciones"	OptionDlg	488 504 509 523				no	%d\Graphics		us		C:\Archivos de programa\DevStudio\VB\Graphics\
+38		Microsoft Repository V1.0	Base de datos para almacenar o ampliar el modelo de complementos de Visual Basic	Group	526				no	%d		us		C:\Archivos de programa\DevStudio\VB\
+39	yes	Ayuda en pantalla y ejemplos	Instala la Ayuda en pantalla y m·s de 20 aplicaciones de ejemplo	CustomDlg	43 40 41 42							us		C:\Archivos de programa\DevStudio\VB\
+40	yes	Archivos de Ayuda	Instala todos los archivos de ayuda en su unidad de disco duro	Group	560				no			us		C:\Archivos de programa\DevStudio\VB\
+41	yes	Aplicaciones de ejemplo	"Instala m·s de 20 aplicaciones de ejemplo, incluido el cÛdigo origen. Estas aplicaciones son muy ˙tiles para el aprendizaje"	Group	630				no			us		C:\Archivos de programa\DevStudio\VB\
+42	yes	Referencia de Windows API	Instalar el archivo de ayuda de Windows API	Group	1153				no	%d\Winapi		us		C:\Archivos de programa\DevStudio\VB\Winapi\
+43	yes	Libros en pantalla	Permite tener acceso a los Libros en pantalla de Visual Basic disponibles en CD	OptionDlg	48 49				no			us		C:\Archivos de programa\DevStudio\VB\
+44	yes	Herramienta de instalaciÛn	"Instala el Asistente para instalar aplicaciones y el Toolkit, que le permite distribuir las aplicaciones que cree"	Group	783				no	%D		us		C:\Archivos de programa\DevStudio\VB\
+45	yes	Asistentes	Utilidad que le permitir· crear aplicaciones	Group	800 1141				no	%d		us		C:\Archivos de programa\DevStudio\VB\
+46		Hacer siempre	Este grupo es necesario para completar correctamente la instalaciÛn	Group	72		vital					us		C:\Archivos de programa\DevStudio\VB\
+47		Texto informativo	Mostrar texto informativo	Group	1235							us		
+48	yes	Instalar contenido en disco	"Instalar contenido en disco copia los datos de los Libros en pantalla a su unidad de disco duro local. Si no elige esta opciÛn, puede tener acceso a los contenidos desde el CD"	Group	771				no			us		C:\Archivos de programa\DevStudio\VB\
+49	no	Instalar vÌdeos en disco	"Instalar vÌdeos en disco copia los archivos de vÌdeo de los Libros en pantalla en su unidad de disco duro local. Si no elige esta opciÛn, puede tener acceso a los vÌdeos desde el CD"	Group	775				no			nyi		
+50				CustomAction	"vb5stp.dll,UpdateUserGroup,"							us		C:\Archivos de programa\DevStudio\VB\
+51		OLE2 Files		Group	52 54 58 59 60 61 63 64 67					%m		us		C:\WINDOWS\system32\
+52				CustomAction	"vb5stp.dll,DetectAdminPrivileges,"							us		C:\WINDOWS\system32\
+53				CustomAction	"vb5stp.dll,DetectOS,winnt40"							us		C:\Archivos de programa\DevStudio\VB\
+54				Depend	53 ? :55 56 57							nyi		
+55				InstallSysFile	"Ole32,msvcrt20"							nyi		
+56				InstallSysFile	"Ole32,msvcrt40"							nyi		
+57				InstallSysFile	"Ole32,msvcrt"							nyi		
+58				InstallSysFile	"Ole32,mfc40"							nyi		
+59				InstallSysFile	"Sk-Sys32,olepro32"							nyi		
+60				InstallSysFile	"Sk-Sys32,asycfilt"							nyi		
+61				Depend	58 ? 62							us	No	C:\WINDOWS\system32\
+62		MFC40.DLL		SelfReg	"""Ole32"",""mfc40"","""","""","""""					%58		nyi		
+63				InstallSysFile	"Ole32,comcat_dll"							nyi		
+64				Depend	63 ? 65							us	No	C:\WINDOWS\system32\
+65		COMCAT.DLL		SelfReg	"""Ole32"",""comcat_dll"","""","""","""""					%63		nyi		
+66				CustomAction	"vb5stp.dll,DetectOS,winnt3x"							us		C:\WINDOWS\system32\
+67				Depend	66 ? 68 69							us	No	C:\WINDOWS\system32\
+68				InstallSysFile	"Ole32,docobj_dll"							nyi		
+69				Depend	68 ? 70							nyi		
+70		Docobj.dll		SelfReg	"""Ole32"",""docobj_dll"","""","""","""""					%68		nyi		
+72		Requisitos de la instalaciÛn	Este grupo es necesario para que la instalaciÛn se complete satisfactoriamente.	Group	73 75 79 80 81 83 82 84  85 86 87 88 89 90 91 93							us		C:\Archivos de programa\DevStudio\VB\
+73				Group	99 100 102 103 104 105 106							us		C:\Archivos de programa\DevStudio\VB\
+74				CustomAction	"vb5stp.dll,DetectOS,40shell"							us		C:\Archivos de programa\DevStudio\VB\
+75				Depend	74 ? :76							us	Yes	C:\Archivos de programa\DevStudio\VB\
+76				InstallSysFile	"Ctl3d,ctl3d32"					%M		nyi		
+77		CTL3D32_DLL		SelfReg	"""Ctl3d"",""ctl3d32"","""","""","""""					%76				
+78				CustomAction	"vb5stp.dll,DetectOS,win95"							nyi		
+79				CustomAction	"vb5stp.dll,MigAddIn,"							us		C:\Archivos de programa\DevStudio\VB\
+80				CustomAction	"vb5stp.dll,""DeleteRegTree"",""CURRENT,SOFTWARE\Microsoft\VBA\Microsoft Visual Basic"""							us		C:\Archivos de programa\DevStudio\VB\
+81				CustomAction	"vb5stp.dll,""DeleteRegTree"",""CURRENT,Software\Microsoft\Visual Basic\5.0"""							us		C:\Archivos de programa\DevStudio\VB\
+82			Uninstall only	CustomAction	"vb5stp.dll,DeleteRegTree,""LOCAL,Software\Microsoft\Visual Basic\5.0"""							us		C:\Archivos de programa\DevStudio\VB\
+83				CustomAction	"vb5stp.dll,DoOCACleanup,"							us		C:\Archivos de programa\DevStudio\VB\
+84		32 bit VB Pro license follows		AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\5f54e750-ce26-11cf-8e43-00a0c911005a"","""",""mnlnnimimnoiuilnvjkinnkitjwjnimntntm"","""""							us		C:\Archivos de programa\DevStudio\VB\
+85				CopySection	Always					%D		us		C:\Archivos de programa\DevStudio\VB\
+86				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""readme.hlp"",""%s"","""""					%85		us		C:\Archivos de programa\DevStudio\VB\
+87				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""readme.cnt"",""%s"","""""					%85		us		C:\Archivos de programa\DevStudio\VB\
+88				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Readme;readme_ftg"					%85		us		C:\Archivos de programa\DevStudio\VB\
+89				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Readme;readme_fts"					%85		us		C:\Archivos de programa\DevStudio\VB\
+90				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Readme;readme_gid"					%85		us		C:\Archivos de programa\DevStudio\VB\
+91				CustomAction	"vb5stp.dll,RegisterJetKeys,"							us		C:\Archivos de programa\DevStudio\VB\
+93				Group	94 95 96 97							us		C:\Archivos de programa\DevStudio\VB\
+94				CopyFile	"Ctl3d,vb50_vbp"					%W\shellnew		us		C:\WINDOWS\shellnew\
+95				AddRegData	"""HKEY_CLASSES_ROOT"","".vbp"","""",""VisualBasic.Project"","""""							us		C:\Archivos de programa\DevStudio\VB\
+96				AddRegData	"""HKEY_CLASSES_ROOT"","".vbp\VisualBasic.Project"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+97				AddRegData	"""HKEY_CLASSES_ROOT"","".vbp\VisualBasic.Project\ShellNew"",""Filename"",""VB50.VBP"","""""							us		C:\Archivos de programa\DevStudio\VB\
+99				CustomAction	"vb5stp.dll,UpdateOLEAut32DLL,"							us		C:\Archivos de programa\DevStudio\VB\
+100		Crystal Reports Path		CustomAction	"vb5stp.dll,DriveMe,vb\report\"							us		C:\vb\report\
+101		Help Compiler Path		CustomAction	"vb5stp.dll,DriveMe,vb\hc\"									
+102		VB Path		CustomAction	"vb5stp.dll,DriveMe,vb\"							us		C:\vb\
+103		Win Api Path		CustomAction	"vb5stp.dll,DriveMe,vb\winapi\"							us		C:\vb\winapi\
+104		Setup Kit Path		CustomAction	"vb5stp.dll,DriveMe,vb\setupkit\kitfil32\"							us		C:\vb\setupkit\kitfil32\
+105		Books Online Path		CustomAction	"vb5stp.dll,DriveMe,vb\vbonline\"							us		C:\vb\vbonline\
+106		Do this last	Check for the version number of oleaut32.dll	Group	1192		vital					us		C:\Archivos de programa\DevStudio\VB\
+107				Group	108 109 110 111 112 113 114 115 116 117 118 120 121							us		C:\Archivos de programa\DevStudio\VB\
+108				CopySection	Program					%d		us		C:\Archivos de programa\DevStudio\VB\
+109		Vbscc.dll		SelfReg	"""Program"",""vbscc"","""","""","""""					%108		us		C:\Archivos de programa\DevStudio\VB\
+110				CustomAction	"vb5stp.dll,ExecOLS1,""108,visdata.exe,/regserver,/unregserver"""					%108		us		C:\Archivos de programa\DevStudio\VB\
+111				CopyFile	"Program,vb5_exe"					%d		us		C:\Archivos de programa\DevStudio\VB\
+112				AddRegData	"""HKEY_LOCAL_MACHINE"",""Software\Microsoft\Visual Basic\5.0"",""InstallDir"",""%s"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+113				StampCDInfo	"111, 106, 196"							us		C:\Archivos de programa\DevStudio\VB\
+114				AddRegData	"""HKEY_LOCAL_MACHINE"",""Software\Microsoft\DevStudio\5.0\Products\Microsoft Visual Basic"",""ProductDir"",""%s"","""""					%d		us		C:\Archivos de programa\DevStudio\VB\
+115				CustomAction	"vb5stp.dll,RegisterTypeLibrary,Program;vb5_olb"					%108		us		C:\Archivos de programa\DevStudio\VB\
+116				CustomAction	"vb5stp.dll,RegisterTypeLibrary,Program;vb5ext_olb"					%108		us		C:\Archivos de programa\DevStudio\VB\
+117				CustomAction	"vb5stp.dll,MigrateVBini,"							us		C:\Archivos de programa\DevStudio\VB\
+118				Depend	78 ? 119					%d		nyi		
+119				InstallSysFile	"Oleaut,riched32_dll"					%M		nyi		
+120				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Program;nwind_ldb"					%108		us		C:\Archivos de programa\DevStudio\VB\
+121				CopyFile	"Aux Program,license_txt"					%D		us		C:\Archivos de programa\DevStudio\VB\
+124		System Files		Group	125 126 127 134 135 136 137 139 140 141 142							us		C:\Archivos de programa\DevStudio\VB\
+125				InstallSysFile	"Sysfiles,riched20_dll"							nyi		
+126				InstallShared	"Sysfiles,scp32,scp32.dll,,111 "					%m		se		
+127				Depend	74 ? 128:131							us	Yes	C:\Archivos de programa\DevStudio\VB\
+128				Group	129 130							us		C:\Archivos de programa\DevStudio\VB\
+129				InstallShared	"Sysfiles,vba5_dll,vba5.dll,,111 "					%d		us		C:\Archivos de programa\DevStudio\VB\
+130				CustomAction	"vb5stp.dll,RegisterTypeLibrary,Sysfiles;vba5_dll"					%129		us		C:\Archivos de programa\DevStudio\VB\
+131				Group	132 133							nyi		
+132				InstallShared	"Sysfiles,vba5_dll,vba5.dll,,111 "					%d		nyi		
+133				CustomAction	"vb5stp.dll,RegisterTypeLibrary,Sysfiles;vba5_dll"					%132		nyi		
+134				InstallShared	"Sysfiles,vba332me_dll,vba332me.dll,,111 "					%M		us		C:\WINDOWS\system32\
+135				InstallSysFile	"Sysfiles,vbajet32"					%M		nyi		
+136				InstallSysFile	"Sysfiles,msvbvm50"					%m		nyi		
+137				Depend	136 ? 138							us	No	C:\Archivos de programa\DevStudio\VB\
+138		MSVBVM50.DLL		SelfReg	"""Sysfiles"",""msvbvm50"","""","""","""""					%136		nyi		
+139				InstallShared	"Sysfiles,vb5es_dll,vb5es_dll,,136 "					%136		us		C:\WINDOWS\system32\
+140				InstallShared	"Sysfiles,vb5db,vb5db,,111 "					%M		us		C:\WINDOWS\system32\
+141				InstallTTFFile	"""Sysfiles"",""tahoma_ttf"",""Tahoma (TrueType)"""					%d		se		
+142				InstallSysFile	"Sysfiles,hlp95en_dll"							us		C:\WINDOWS\system32\
+143		Compiler files		Group	144					%d		us		C:\Archivos de programa\DevStudio\VB\
+144				CopySection	Compiler Files							us		C:\Archivos de programa\DevStudio\VB\
+146	yes	Microsoft InformaciÛn del sistema	Herramienta de soluciÛn de problemas para recopilar informaciÛn de configuraciÛn	Group	148 149 147 150 151 152 153 154 155					%h\MSinfo		us		C:\Archivos de programa\Archivos comunes\Microsoft Shared\MSinfo\
+147	yes			InstallShared	"MS Info,msinfo32_exe,MSInfo,MSInfo,111 "							se		
+148	yes			CompanionFile	"147 : MS Info,imgwalk_dll"					%147		nyi		
+149	yes			CompanionFile	"147 : MS Info,msinf16h_exe"					%147		nyi		
+150	yes			CompanionFile	"147 : MS Info,msinfo32_hlp"					%147		nyi		
+151	yes			CompanionFile	"147 : MS Info,msinfo32_cnt"					%147		nyi		
+152				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,MS Info;msinfo32_ftg"					%147		us		C:\Archivos de programa\Archivos comunes\Microsoft Shared\MSInfo\
+153				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,MS Info;msinfo32_fts"					%147		us		C:\Archivos de programa\Archivos comunes\Microsoft Shared\MSInfo\
+154				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,MS Info;msinfo32_gid"					%147		us		C:\Archivos de programa\Archivos comunes\Microsoft Shared\MSInfo\
+155				Depend	147 ? 156							us	No	C:\Archivos de programa\Archivos comunes\Microsoft Shared\MSinfo\
+156				AddRegData	"""LOCAL"",""Software\Microsoft\Shared Tools\MSInfo"",""Path"",""%s\msinfo32.exe"","""""							nyi		
+157		RegVerbs		Group	158 159 160 161 162 163 164 165 166 167 168							us		C:\Archivos de programa\DevStudio\VB\
+158		RegVerbs - Form		Group	169 170 171 172 173 174 175 176							us		C:\Archivos de programa\DevStudio\VB\
+159		RegVerbs - Basic Module		Group	177 178 179 180  181 182							us		C:\Archivos de programa\DevStudio\VB\
+160		RegVerbs - Class Module		Group	183 184 185 186 187 188							us		C:\Archivos de programa\DevStudio\VB\
+161		RegVerbs - Project		Group	189 190 191 192 193 194 195 196 197 198							us		C:\Archivos de programa\DevStudio\VB\
+162		RegVerbs - Control		Group	199 200 201 202 203 204 205 206							us		C:\Archivos de programa\DevStudio\VB\
+163		RegVerbs - Document Object Form		Group	207 208 209 210 211 212 213 214							us		C:\Archivos de programa\DevStudio\VB\
+164		RegVerbs - Active Designer		Group	215 216 217 218 219 220 221 222							us		C:\Archivos de programa\DevStudio\VB\
+165		RegVerbs - Property Page		Group	223 224 225 226 227 228 229 230							us		C:\Archivos de programa\DevStudio\VB\
+166		RegVerbs - Wizard Launch		Group	231 232 233 234  235 236							us		C:\Archivos de programa\DevStudio\VB\
+167		RegVerbs - Group project		Group	237 238 239 240 241 242 243 244 245 246							us		C:\Archivos de programa\DevStudio\VB\
+168		RegVerbs - Control Licensing		Group	247 248							us		C:\Archivos de programa\DevStudio\VB\
+169			Form File	AddRegData	""""","".frm"","""",""VisualBasic.Form"","""""							us		C:\Archivos de programa\DevStudio\VB\
+170				AddRegData	""""",""VisualBasic.Form"","""",""Visual Basic Form File"","""""							us		C:\Archivos de programa\DevStudio\VB\
+171				AddRegData	""""",""VisualBasic.Form\DefaultIcon"","""",""%s\vb5.exe,1"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+172				AddRegData	""""",""VisualBasic.Form\shell"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+173				AddRegData	""""",""VisualBasic.Form\shell\open"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+174				AddRegData	""""",""VisualBasic.Form\shell\open\command"","""",""%s\vb5.exe """"%%1"""""","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+175			Form Binary File	AddRegData	""""","".frx"","""",""VisualBasic.FRXFile"","""""							us		C:\Archivos de programa\DevStudio\VB\
+176				AddRegData	""""",""VisualBasic.FRXFile"","""",""Visual Basic Form Binary File"","""""							us		C:\Archivos de programa\DevStudio\VB\
+177				AddRegData	""""","".bas"","""",""VisualBasic.Module"","""""							us		C:\Archivos de programa\DevStudio\VB\
+178				AddRegData	""""",""VisualBasic.Module"","""",""Visual Basic Module"","""""							us		C:\Archivos de programa\DevStudio\VB\
+179				AddRegData	""""",""VisualBasic.Module\DefaultIcon"","""",""%s\vb5.exe,8"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+180				AddRegData	""""",""VisualBasic.Module\shell"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+181				AddRegData	""""",""VisualBasic.Module\shell\open"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+182				AddRegData	""""",""VisualBasic.Module\shell\open\command"","""",""%s\vb5.exe """"%%1"""""","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+183				AddRegData	""""","".cls"","""",""VisualBasic.ClassModule"","""""							us		C:\Archivos de programa\DevStudio\VB\
+184				AddRegData	""""",""VisualBasic.ClassModule"","""",""Visual Basic Class Module"","""""							us		C:\Archivos de programa\DevStudio\VB\
+185				AddRegData	""""",""VisualBasic.ClassModule\DefaultIcon"","""",""%s\vb5.exe,9"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+186				AddRegData	""""",""VisualBasic.ClassModule\shell"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+187				AddRegData	""""",""VisualBasic.ClassModule\shell\open"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+188				AddRegData	""""",""VisualBasic.ClassModule\shell\open\command"","""",""%s\vb5.exe """"%%1"""""","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+189				AddRegData	""""","".vbp"","""",""VisualBasic.Project"","""""							us		C:\Archivos de programa\DevStudio\VB\
+190				AddRegData	""""",""VisualBasic.Project"","""",""Visual Basic Project"","""""							us		C:\Archivos de programa\DevStudio\VB\
+191				AddRegData	""""",""VisualBasic.Project\DefaultIcon"","""",""%s\vb5.exe,16"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+192				AddRegData	""""",""VisualBasic.Project\shell"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+193				AddRegData	""""",""VisualBasic.Project\shell\open"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+194				AddRegData	""""",""VisualBasic.Project\shell\open\command"","""",""%s\vb5.exe """"%%1"""""","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+195				AddRegData	""""",""VisualBasic.Project\shell\Make"","""",""Generar"","""""							us		C:\Archivos de programa\DevStudio\VB\
+196				AddRegData	""""",""VisualBasic.Project\shell\Make\command"","""",""%s\vb5.exe """"%%1"""" /make"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+197				AddRegData	""""",""VisualBasic.Project\shell\Run Project"","""",""Ejecutar"","""""							us		C:\Archivos de programa\DevStudio\VB\
+198				AddRegData	""""",""VisualBasic.Project\shell\Run Project\command"","""",""%s\vb5.exe """"%%1"""" /run"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+199				AddRegData	""""","".ctl"","""",""VisualBasic.UserControl"","""""							us		C:\Archivos de programa\DevStudio\VB\
+200				AddRegData	""""",""VisualBasic.UserControl"","""",""Visual Basic User Control"","""""							us		C:\Archivos de programa\DevStudio\VB\
+201				AddRegData	""""",""VisualBasic.UserControl\DefaultIcon"","""",""%s\vb5.exe,5"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+202				AddRegData	""""",""VisualBasic.UserControl\shell"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+203				AddRegData	""""",""VisualBasic.UserControl\shell\open"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+204				AddRegData	""""",""VisualBasic.UserControl\shell\open\command"","""",""%s\vb5.exe """"%%1"""""","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+205			User Control Binary File	AddRegData	""""","".ctx"","""",""VisualBasic.CTXFile"","""""							us		C:\Archivos de programa\DevStudio\VB\
+206				AddRegData	""""",""VisualBasic.CTXFile"","""",""Visual Basic User Control Binary File"","""""							us		C:\Archivos de programa\DevStudio\VB\
+207			Document Object Form File	AddRegData	""""","".dob"","""",""VisualBasic.UserDocument"","""""							us		C:\Archivos de programa\DevStudio\VB\
+208				AddRegData	""""",""VisualBasic.UserDocument"","""",""Visual Basic User Document"","""""							us		C:\Archivos de programa\DevStudio\VB\
+209				AddRegData	""""",""VisualBasic.UserDocument\DefaultIcon"","""",""%s\vb5.exe,7"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+210				AddRegData	""""",""VisualBasic.UserDocument\shell"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+211				AddRegData	""""",""VisualBasic.UserDocument\shell\open"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+212				AddRegData	""""",""VisualBasic.UserDocument\shell\open\command"","""",""%s\vb5.exe """"%%1"""""","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+213			Document object binary form file	AddRegData	""""","".dox"","""",""VisualBasic.DOXFile"","""""							us		C:\Archivos de programa\DevStudio\VB\
+214				AddRegData	""""",""VisualBasic.DOXFile"","""",""Visual Basic User Document Binary File"","""""							us		C:\Archivos de programa\DevStudio\VB\
+215				AddRegData	""""","".dsr"","""",""VisualBasic.Designer"","""""							us		C:\Archivos de programa\DevStudio\VB\
+216				AddRegData	""""",""VisualBasic.Designer"","""",""Visual Basic Designer Module"","""""							us		C:\Archivos de programa\DevStudio\VB\
+217				AddRegData	""""",""VisualBasic.Designer\DefaultIcon"","""",""%s\vb5.exe,4"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+218				AddRegData	""""",""VisualBasic.Designer\shell"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+219				AddRegData	""""",""VisualBasic.Designer\shell\open"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+220				AddRegData	""""",""VisualBasic.Designer\shell\open\command"","""",""%s\vb5.exe """"%%1"""""","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+221		Active Designer Binary File		AddRegData	""""","".dsx"","""",""VisualBasic.DSCFile"","""""							us		C:\Archivos de programa\DevStudio\VB\
+222				AddRegData	""""",""VisualBasic.DSCFile"","""",""Visual Basic Designer Binary File"","""""							us		C:\Archivos de programa\DevStudio\VB\
+223				AddRegData	""""","".pag"","""",""VisualBasic.PropertyPage"","""""							us		C:\Archivos de programa\DevStudio\VB\
+224				AddRegData	""""",""VisualBasic.PropertyPage"","""",""Visual Basic Property Page"","""""							us		C:\Archivos de programa\DevStudio\VB\
+225				AddRegData	""""",""VisualBasic.PropertyPage\DefaultIcon"","""",""%s\vb5.exe,6"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+226				AddRegData	""""",""VisualBasic.PropertyPage\shell"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+227				AddRegData	""""",""VisualBasic.PropertyPage\shell\open"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+228				AddRegData	""""",""VisualBasic.PropertyPage\shell\open\command"","""",""%s\vb5.exe """"%%1"""""","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+229		Binary Property Page File		AddRegData	""""","".pgx"","""",""VisualBasic.PGXFile"","""""							us		C:\Archivos de programa\DevStudio\VB\
+230				AddRegData	""""",""VisualBasic.PGXFile"","""",""Visual Basic Property Page Binary File"","""""							us		C:\Archivos de programa\DevStudio\VB\
+231				AddRegData	""""","".vbz"","""",""VisualBasic.VBZFile"","""""							us		C:\Archivos de programa\DevStudio\VB\
+232				AddRegData	""""",""VisualBasic.VBZFile"","""",""Visual Basic Wizard"","""""							us		C:\Archivos de programa\DevStudio\VB\
+233				AddRegData	""""",""VisualBasic.VBZFile\DefaultIcon"","""",""%s\vb5.exe,21"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+234				AddRegData	""""",""VisualBasic.VBZFile\shell"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+235				AddRegData	""""",""VisualBasic.VBZFile\shell\open"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+236				AddRegData	""""",""VisualBasic.VBZFile\shell\open\command"","""",""%s\vb5.exe """"%%1"""""","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+237				AddRegData	""""","".vbg"","""",""VisualBasic.ProjectGroup"","""""							us		C:\Archivos de programa\DevStudio\VB\
+238				AddRegData	""""",""VisualBasic.ProjectGroup"","""",""Visual Basic Group Project"","""""							us		C:\Archivos de programa\DevStudio\VB\
+239				AddRegData	""""",""VisualBasic.ProjectGroup\DefaultIcon"","""",""%s\vb5.exe,22"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+240				AddRegData	""""",""VisualBasic.ProjectGroup\shell"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+241				AddRegData	""""",""VisualBasic.ProjectGroup\shell\open"","""","""","""""							us		C:\Archivos de programa\DevStudio\VB\
+242				AddRegData	""""",""VisualBasic.ProjectGroup\shell\open\command"","""",""%s\vb5.exe """"%%1"""""","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+243				AddRegData	""""",""VisualBasic.ProjectGroup\shell\Make"","""",""Generar"","""""							us		C:\Archivos de programa\DevStudio\VB\
+244				AddRegData	""""",""VisualBasic.ProjectGroup\shell\Make\command"","""",""%s\vb5.exe """"%%1"""" /make"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+245				AddRegData	""""",""VisualBasic.ProjectGroup\shell\Run ProjectGroup"","""",""Ejecutar"","""""							us		C:\Archivos de programa\DevStudio\VB\
+246				AddRegData	""""",""VisualBasic.ProjectGroup\shell\Run ProjectGroup\command"","""",""%s\vb5.exe """"%%1"""" /run"","""""					%111		us		C:\Archivos de programa\DevStudio\VB\
+247				AddRegData	""""","".vbl"","""",""VisualBasic.VBLFile"","""""							us		C:\Archivos de programa\DevStudio\VB\
+248				AddRegData	""""",""VisualBasic.VBLFile"","""",""Visual Basic Control License File"","""""							us		C:\Archivos de programa\DevStudio\VB\
+249		Setup files		Group	250  251 252 253					%d\Setup		us		C:\Archivos de programa\DevStudio\VB\Setup\
+250				AddRegData	"""HKEY_LOCAL_MACHINE"",""Software\Microsoft\Windows\CurrentVersion\Uninstall\VB5"",""DisplayName"",""Visual Basic 5.0 EdiciÛn Profesional"","""""							us		C:\Archivos de programa\DevStudio\VB\Setup\
+251				AddRegData	"""HKEY_LOCAL_MACHINE"",""Software\Microsoft\Windows\CurrentVersion\Uninstall\VB5"",""UninstallString"",""%s\setup.exe /z vb5_bb.dll /m"","""""							us		C:\Archivos de programa\DevStudio\VB\Setup\
+252				CopySection	Setup							us		C:\Archivos de programa\DevStudio\VB\Setup\
+253				WriteTableFile	setup.stf							us		C:\Archivos de programa\DevStudio\VB\Setup\
+254		Controlador SQL Server	Instalar el controlador de SQL Server	Group	255 256 257 258 259 260 261				no	%d		us		C:\Archivos de programa\DevStudio\VB\
+255				InstallSysFile	"DA SQL Server,sqlsrv32_dll"					%m		nyi		
+256				InstallSysFile	"DA SQL Server,dbnmpntw_dll"					%m		nyi		
+257				InstallSysFile	"DA SQL Server,drvssrvr_hlp"					%m		us		C:\WINDOWS\system32\
+258				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,DA SQL Server;drvssrvr_fts"					%257		us		C:\WINDOWS\system32\
+259				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,DA SQL Server;drvssrvr_gid"					%257		us		C:\WINDOWS\system32\
+260				CustomAction	"odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA SQLServer"					%D\setup		us		C:\WINDOWS\system32\
+261				InstallSysFile	"Code Page Translator,mscpxl32_dll"							nyi		
+262		Program Manager Icons		Group	263							us		C:\Archivos de programa\DevStudio\VB\
+263				Depend	53 ? 264 265 266:267 268							us	Yes	C:\Archivos de programa\DevStudio\VB\
+264				CustomAction	"vb5stp.dll,GetWindowsPathFromReg,""Programs, True"""							us		C:\Documents and Settings\All Users\Men˙ Inicio\Programas\
+265				InstallShortcut	"%111\%F111,VB5<Visual Basic 5.0>,%111,,,,"					%264\Microsoft Visual Basic 5.0		us		C:\Documents and Settings\All Users\Men˙ Inicio\Programas\Microsoft Visual Basic 5.0\
+266				InstallShortcut	"%85\readme.hlp,Readme<LÈame>,%85,,,,"					%264\Microsoft Visual Basic 5.0		us		C:\Documents and Settings\All Users\Men˙ Inicio\Programas\Microsoft Visual Basic 5.0\
+267				AddProgmanItem	"VB<Microsoft Visual Basic 5.0>,VB5<Visual Basic 5.0>,%s\vb5.exe,%s,,,,,,"					%d		nyi		
+268				AddProgmanItem	"VB<Microsoft Visual Basic 5.0>,Readme<LÈame>,%s\readme.hlp,%s,,,,,,"					%d		nyi		
+269	yes	Data Access Objects		Group	270 271 272 273 274 275 276 282							us		C:\Archivos de programa\DevStudio\VB\
+270				InstallShared	"DA DAO,dao350_dll,DAO350,DAO,111 "					%H\DAO		us		C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\
+271				CompanionFile	"270 : DA DAO,dao2535_tlb"					%270		us		C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\
+272				CompanionFile	"270 : DA DAO - Help,dao35_cnt"					%270		us		C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\
+273				CompanionFile	"270 : DA DAO - Help,dao35_hlp"					%270		us		C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\
+274				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""dao35.cnt"",""%s"","""""					%272		us		C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\
+275				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""dao35.hlp"",""%s"","""""					%273		us		C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\
+276				Depend	270 ? 277 278 279 280 281							us	Yes	C:\Archivos de programa\DevStudio\VB\
+277		Dao350.dll		SelfReg	"""DA DAO"",""dao350_dll"","""","""",""20604"""					%270		us		C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\
+278		32 bit DAO license for Enterprise & Professional		AddRegData	"""CLASSES"",""LICENSES\F4FC596D-DFFE-11CF-9551-00AA00A3DC45"","""",""mbmabptebkjcdlgtjmskjwtsdhjbmkmwtrak"","""""					%270		us		C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\
+279				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,DA DAO - Help;dao35_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+280				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,DA DAO - Help;dao35_fts"							us		C:\Archivos de programa\DevStudio\VB\
+281				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,DA DAO - Help;dao35_gid"							us		C:\Archivos de programa\DevStudio\VB\
+282				Depend	270 ? 283							us	Yes	C:\Archivos de programa\DevStudio\VB\
+283				Group	307							us		C:\Archivos de programa\DevStudio\VB\
+284	yes	Install Jet files		Group	285 286 288 289 290 291 292 293					%M		us		C:\WINDOWS\system32\
+285				InstallSysFile	"DA Jet,msjet35_dll"							us		C:\WINDOWS\system32\
+286				Depend	285 ? 287							us	Yes	C:\WINDOWS\system32\
+287		MSJET35.DLL		SelfReg	"""DA Jet"",""msjet35_dll"",""DllRegisterServer"","""","""""					%285		us		C:\WINDOWS\system32\
+288				CompanionFile	"285 : DA Jet,vbar332_dll"					%285		us		C:\WINDOWS\system32\
+289				InstallSysFile	"DA Jet,msjter35_dll"							us		C:\WINDOWS\system32\
+290				InstallSysFile	"DA Jet,msjint35_dll"							us		C:\WINDOWS\system32\
+291				InstallSysFile	"DA Jet,msrepl35_dll"							us		C:\WINDOWS\system32\
+292				InstallSysFile	"DA Jet,msrd2x35_dll"							us		C:\WINDOWS\system32\
+293				Depend	292 ? 294							us	Yes	C:\WINDOWS\system32\
+294		MSRD2X35.DLL	Self Registration call to msrd2x35.dll	SelfReg	"""DA Jet"",""msrd2x35_dll"",""DllRegisterServer"","""",""4096"""					%292		us		C:\WINDOWS\system32\
+295		Office '97 Core Files	System level files required for all Office apps	Group	296 305							us		C:\Archivos de programa\DevStudio\VB\
+296				Depend	74 ? 297:301							us	Yes	C:\Archivos de programa\DevStudio\VB\
+297				Group	299 298 300							us		C:\Archivos de programa\DevStudio\VB\
+298				InstallShared	"Office DLLs,mso97rt_dll,MSO97RT,,111 "					%H\vba		us		C:\Archivos de programa\Archivos comunes\Microsoft Shared\vba\
+299				InstallShared	"Office DLLs,mrt7esp_dll,Mrt7esp,,111 "					%298		us		C:\Archivos de programa\Archivos comunes\Microsoft Shared\vba\
+300				CustomAction	"vb5stp.dll,RegMso,""1034, 298"""							us		C:\Archivos de programa\DevStudio\VB\
+301				Group	302 303 304							nyi		
+302				InstallShared	"Office DLLs,mso97rt_dll,MSO97RT,,111 "					%H\vba		nyi		
+303				InstallShared	"Office DLLs,mrt7esp_dll,Mrt7esp,,111 "					%298		nyi		
+304				CustomAction	"vb5stp.dll,RegMso,""1034, 302"""							nyi		
+305				InstallSysFile	"Office DLLs,commtb32_dll"					%M		us		C:\WINDOWS\system32\
+307	yes	Controlador y objetos de datos remotos	Instala los objetos de acceso a datos remotos y el controlador de datos remotos para tener acceso a bases de datos ODBC remotas	Group	308 309 310 311							us		C:\Archivos de programa\DevStudio\VB\
+308				InstallShared	"Rdo,msrdo20_dll,msrdo20,msrdo20,111 "					%m		se		
+309				CompanionFile	"308 : Rdo,msrdo20_dep"					%308		nyi		
+310				CompanionFile	"308 : Rdo,rdo20es_dll"					%308		nyi		
+311				CompanionFile	"308 : Rdo,rdocurs_dll"					%308		nyi		
+313		Crystal Reports		Group	314 315 316 332 359 365							us		C:\Archivos de programa\DevStudio\VB\
+314				CopySection	Crystal					%D\report		us		C:\Archivos de programa\DevStudio\VB\report\
+315				InstallShared	"Crystal System,implode_dll,implode.dll,,111 "					%m		us		C:\WINDOWS\system32\
+316		Crystal system files		Group	317 318 319 320      326					%m		us		C:\WINDOWS\system32\
+317				InstallShared	"Crystal System,lead50n_dll,lead50n.dll,,111 "					%M		us		C:\WINDOWS\system32\
+318				InstallShared	"Crystal System,pg32_dll,pg32.dll,,111 "					%M		us		C:\WINDOWS\system32\
+319				InstallShared	"Sk-Sys32,co2c40en_dll,co2c40en.dll,,111 "					%M		us		C:\WINDOWS\system32\
+320				Group	321 322 323 324 325							us		C:\WINDOWS\system32\
+321				InstallShared	"Crystal System,p2bbnd_dll,p2bbnd.dll,,111 "					%315		us		C:\WINDOWS\system32\
+322				InstallShared	"Crystal System,p2bdao_dll,p2bdao.dll,,111 "					%315		us		C:\WINDOWS\system32\
+323				InstallShared	"Crystal System,p2ctdao_dll,p2ctdao.dll,,111 "					%315		us		C:\WINDOWS\system32\
+324				InstallShared	"Crystal System,p2irdao_dll,p2irdao.dll,,111 "					%315		us		C:\WINDOWS\system32\
+325				InstallShared	"Crystal System,p2sodbc_dll,p2sodbc.dll,,111 "					%315		us		C:\WINDOWS\system32\
+326				Group	327 328 329 330 331							us		C:\WINDOWS\system32\
+327				CompanionFile	"321 : Crystal System,p3d4bdes_dll"					%321		us		C:\WINDOWS\system32\
+328				CompanionFile	"322 : Crystal System,p3bdaoes_dll"					%322		us		C:\WINDOWS\system32\
+329				CompanionFile	"323 : Crystal System,p3cdaoes_dll"					%323		us		C:\WINDOWS\system32\
+330				CompanionFile	"324 : Crystal System,p3rdaoes_dll"					%324		us		C:\WINDOWS\system32\
+331				CompanionFile	"325 : Crystal System,p3s4odes_dll"					%325		us		C:\WINDOWS\system32\
+332		Crystal shared files		Group	333 334 335 336 337 338 339 340 341 342 343 344 345 346					%w\Crystal		us		C:\WINDOWS\Crystal\
+333				InstallShared	"Crystal Shared,crxlat32_dll,crxlat32.dll,,111 "							us		C:\WINDOWS\Crystal\
+334				InstallShared	"Crystal Shared,u2ddisk_dll,u2ddisk.dll,,111 "							us		C:\WINDOWS\Crystal\
+335				InstallShared	"Crystal Shared,u2dmapi_dll,u2dmapi.dll,,111 "							us		C:\WINDOWS\Crystal\
+336				InstallShared	"Crystal Shared,u2fcr_dll,u2fcr.dll,,111 "							us		C:\WINDOWS\Crystal\
+337				InstallShared	"Crystal Shared,u2fdif_dll,u2fdif.dll,,111 "							us		C:\WINDOWS\Crystal\
+338				InstallShared	"Crystal Shared,u2frec_dll,u2frec.dll,,111 "							us		C:\WINDOWS\Crystal\
+339				InstallShared	"Crystal Shared,u2frtf_dll,u2frtf.dll,,111 "							us		C:\WINDOWS\Crystal\
+340				InstallShared	"Crystal Shared,u2fsepv_dll,u2fsepv.dll,,111 "							us		C:\WINDOWS\Crystal\
+341				InstallShared	"Crystal Shared,u2ftext_dll,u2ftext.dll,,111 "							us		C:\WINDOWS\Crystal\
+342				InstallShared	"Crystal Shared,u2fwks_dll,u2fwks.dll,,111 "							us		C:\WINDOWS\Crystal\
+343				InstallShared	"Crystal Shared,u2fwordw_dll,u2fwordw.dll,,111 "							us		C:\WINDOWS\Crystal\
+344				InstallShared	"Crystal Shared,u2fxls_dll,u2fxls.dll,,111 "							us		C:\WINDOWS\Crystal\
+345				InstallShared	"Crystal Shared,u2fhtml_dll,u2fhtml.dll,,111 "							us		C:\WINDOWS\Crystal\
+346				Group	347 348 349 350 351 352 353 354 355 356 357 358							us		C:\WINDOWS\Crystal\
+347				CompanionFile	"334 : Crystal Shared,x2d4dk_dll"					%334		us		C:\WINDOWS\Crystal\
+348				CompanionFile	"335 : Crystal Shared,x2d4mp_dll"					%335		us		C:\WINDOWS\Crystal\
+349				CompanionFile	"336 : Crystal Shared,x2f4cr_dll"					%336		us		C:\WINDOWS\Crystal\
+350				CompanionFile	"337 : Crystal Shared,x2f4df_dll"					%337		us		C:\WINDOWS\Crystal\
+351				CompanionFile	"345 : Crystal Shared,x2f4ht_dll"					%345		us		C:\WINDOWS\Crystal\
+352				CompanionFile	"338 : Crystal Shared,x2f4rc_dll"					%338		us		C:\WINDOWS\Crystal\
+353				CompanionFile	"339 : Crystal Shared,x2f4rt_dll"					%339		us		C:\WINDOWS\Crystal\
+354				CompanionFile	"340 : Crystal Shared,x2f4sv_dll"					%340		us		C:\WINDOWS\Crystal\
+355				CompanionFile	"341 : Crystal Shared,x2f4tx_dll"					%341		us		C:\WINDOWS\Crystal\
+356				CompanionFile	"342 : Crystal Shared,x2f4wk_dll"					%342		us		C:\WINDOWS\Crystal\
+357				CompanionFile	"344 : Crystal Shared,x2f4xl_dll"					%344		us		C:\WINDOWS\Crystal\
+358				CompanionFile	"343 : Crystal Shared,x2f4wd_dll"					%343		us		C:\WINDOWS\Crystal\
+359		Crystal ocx files		Group	360 361 362 363 364							us		C:\Archivos de programa\DevStudio\VB\
+360				InstallShared	"Crystal Ocx,crystl32_ocx,crystl32.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+361				CompanionFile	"360 : Crystal Ocx,cc245es_dll"					%360		us		C:\WINDOWS\system32\
+362				CompanionFile	"360 : Crystal Ocx,crystl32_dep"					%360		us		C:\WINDOWS\system32\
+363				InstallShared	"Crystal Ocx,crpe32_dll,crpe32.dll,,111 "					%m		us		C:\WINDOWS\system32\
+364				CompanionFile	"363 : Crystal Ocx,cr2c40es_dll"					%363		us		C:\WINDOWS\system32\
+365		Crystal help files		Group	366 367 368 369 371 372 373 374							us		C:\Archivos de programa\DevStudio\VB\
+366				InstallShared	"Hf-Crw,crw_hlp,crw.hlp,,111 "					%D\Help		us		C:\Archivos de programa\DevStudio\VB\Help\
+367				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""crw.hlp"",""%s"","""""					%366		us		C:\Archivos de programa\DevStudio\VB\Help\
+368				AddIniLine	"""VB.INI"",""VBX Conversions32"",""crystal.vbx"",""{00025600-0000-0000-C000-000000000046}#1.0#0;%s\crystl32.ocx"""					%360		us		C:\WINDOWS\system32\
+369				Depend	360 ? 370							us	Yes	C:\Archivos de programa\DevStudio\VB\
+370		CRYSTL32.OCX		SelfReg	"""Crystal Ocx"",""crystl32_ocx"","""","""","""""					%360		us		C:\WINDOWS\system32\
+371				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Crystal;crw_ftg"					%314		us		C:\Archivos de programa\DevStudio\VB\report\
+372				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Crystal;crw_fts"					%314		us		C:\Archivos de programa\DevStudio\VB\report\
+373				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Crystal;crw_gid"					%314		us		C:\Archivos de programa\DevStudio\VB\report\
+374				Group	375 376 377 378 379 382							us		C:\Archivos de programa\DevStudio\VB\
+375				AddRegData	"""HKEY_CLASSES_ROOT"",""CrystalReports"","""",""Crystal Reports for Visual Basic"",""SZ"""							us		C:\Archivos de programa\DevStudio\VB\
+376				AddRegData	"""HKEY_CLASSES_ROOT"",""CrystalReports\Shell\Icon"","""",""%s\CRW32.EXE,0"",""SZ"""					%314		us		C:\Archivos de programa\DevStudio\VB\report\
+377				AddRegData	"""HKEY_CLASSES_ROOT"",""CrystalReports\Shell\Open\Command"","""",""%s\CRW32.EXE %%1"",""SZ"""					%314		us		C:\Archivos de programa\DevStudio\VB\report\
+378				AddRegData	"""HKEY_CLASSES_ROOT"","".RPT"","""",""CrystalReports"",""SZ"""							us		C:\Archivos de programa\DevStudio\VB\
+379				Depend	53 ? 380:381							us	Yes	C:\Archivos de programa\DevStudio\VB\
+380				InstallShortcut	"%314\crw32.exe,CRYSTL32<Crystal Reports>,%314,,,,"					%264\Microsoft Visual Basic 5.0		us		C:\Documents and Settings\All Users\Men˙ Inicio\Programas\Microsoft Visual Basic 5.0\
+381				AddProgmanItem	"VB<Microsoft Visual Basic 5.0>,CRYSTL32<Crystal Reports>,%314\crw32.exe,%314,,,,,,"					%314		nyi		
+382				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0"",""ReportDesign"",""1"","""""							us		C:\Archivos de programa\DevStudio\VB\
+386	yes	Formato de Microsoft Excel	Instala ISAM para tener acceso a las hojas de c·lculo de Microsoft Excel	Group	387 388				no			us		C:\WINDOWS\system32\
+387				InstallSysFile	"Isam Excel,xlisam"					%M		us		C:\WINDOWS\system32\
+388				Depend	387 ? 389							us	Yes	C:\WINDOWS\system32\
+389		MSEXCL35.DLL	Self Registration call to MSXL3032.dll	SelfReg	"""Isam Excel"",""xlisam"",""DllRegisterServer"",""Param1"",""1"""					%387		us		C:\WINDOWS\system32\
+390	yes	Formato de texto	Instala el ISAM que permite la lectura de bases de datos y archivos de texto	Group	391 392				no			us		C:\WINDOWS\system32\
+391				InstallSysFile	"Isam Text,txisam"					%M		us		C:\WINDOWS\system32\
+392				Depend	391 ? 393							us	Yes	C:\WINDOWS\system32\
+393		MSTEXT35.DLL	Self Registration call to MSTX3032.dll	SelfReg	"""Isam Text"",""txisam"",""DllRegisterServer"",""Param1"",""1"""					%391		us		C:\WINDOWS\system32\
+394	yes	Formato dBASE y Microsoft FoxPro	Instala el ISAM para tener acceso a las bases de datos dBASE y FoxPro	Group	395 396				no			us		C:\WINDOWS\system32\
+395				InstallSysFile	"Isam Xbase,xbsisam"					%M		us		C:\WINDOWS\system32\
+396				Depend	395 ? 397							us	Yes	C:\WINDOWS\system32\
+397		MSXBSE35.DLL	Self Registration call to MSXB3032.dll	SelfReg	"""Isam Xbase"",""xbsisam"",""DllRegisterServer"",""Param1"",""4096"""					%395		us		C:\WINDOWS\system32\
+398	yes	Formato Paradox	Instala el ISAM que permite tener acceso a las base de datos de Paradox	Group	399 400				no			us		C:\WINDOWS\system32\
+399				InstallShared	"Isam Paradox,pdxisam,mspdox35.dll,,111 "					%M		us		C:\WINDOWS\system32\
+400				Depend	399 ? 401							us	Yes	C:\WINDOWS\system32\
+401		MSPDOX35.DLL	Self Registration call to MSPX3032.dll	SelfReg	"""Isam Paradox"",""pdxisam"",""DllRegisterServer"",""Param1"",""4096"""					%399		us		C:\WINDOWS\system32\
+402	yes	Formato Lotus 123	Instala el ISAM que permite leer bases de datos y archivos de Lotus.	Group	403 404				no			us		C:\WINDOWS\system32\
+403				InstallShared	"Isam Lotus,ltisam,msltus35.dll,,111 "					%M		us		C:\WINDOWS\system32\
+404				Depend	403 ? 405							us	Yes	C:\WINDOWS\system32\
+405		MSLTUS35.DLL	Self Registration call to MSLT3032.dll	SelfReg	"""Isam Lotus"",""ltisam"",""DllRegisterServer"",""Param1"","""""					%403		us		C:\WINDOWS\system32\
+406	yes	Controlador Oracle	Instala el controlador ODBC para tener acceso a las bases de datos de Oracle	Group	407 408				no			us		C:\WINDOWS\system32\
+407				InstallSysFile	"Isam Oracle,msorcl10_dll"					%M		us		C:\WINDOWS\system32\
+408				Depend	407 ? 409 410 411 412 413 414 415 416							us	Yes	C:\WINDOWS\system32\
+409		MSORCL10.DLL		SelfReg	"""Isam Oracle"",""msorcl10_dll"","""","""","""""					%407		us		C:\WINDOWS\system32\
+410				InstallShared	"Isam Oracle,msorcl10_hlp,msorcl10.hlp,,407 "					%407		us		C:\WINDOWS\system32\
+411				InstallShared	"Isam Oracle,msorcl10_cnt,msorcl10.cnt,,407 "					%407		us		C:\WINDOWS\system32\
+412				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""msorcl10.hlp"",""%s"","""""					%410		us		C:\WINDOWS\system32\
+413				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""msorcl10.cnt"",""%s"","""""					%411		us		C:\WINDOWS\system32\
+414				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Isam Oracle AUX;msorcl10_ftg"							us		C:\WINDOWS\system32\
+415				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Isam Oracle AUX;msorcl10_fts"							us		C:\WINDOWS\system32\
+416				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Isam Oracle AUX;msorcl10_gid"							us		C:\WINDOWS\system32\
+418		Brazos files		Group	419 420 421					%d		us		C:\WINDOWS\system32\
+419				InstallSysFile	"DA Brazos,odbcji32_dll"							nyi		
+420				InstallSysFile	"DA Brazos,odbcjt32_dll"							nyi		
+421				InstallSysFile	"DA Brazos,odbctl32_dll"							us		C:\WINDOWS\system32\
+422		Installs Brazos help files		Group	423 424 425 426 427 428 429 430 431 432 433 434 435 436 437 438 439 440 441 442 443					%m		us		C:\WINDOWS\system32\
+423				InstallSysFile	"DA Brazos Help,odbcjet_cnt"							us		C:\WINDOWS\system32\
+424				InstallSysFile	"DA Brazos Help,odbcjet_hlp"							us		C:\WINDOWS\system32\
+425				InstallSysFile	"DA Brazos Help,odbcjtnw_cnt"							us		C:\WINDOWS\system32\
+426				InstallSysFile	"DA Brazos Help,odbcjtnw_hlp"							us		C:\WINDOWS\system32\
+427				InstallSysFile	"DA Brazos Help,odbcinst_cnt"							us		C:\WINDOWS\system32\
+428				InstallSysFile	"DA Brazos Help,odbcinst_hlp"							us		C:\WINDOWS\system32\
+429				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""odbcjet.cnt"",""%m"","""""							us		C:\WINDOWS\system32\
+430				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""odbcjet.hlp"",""%m"","""""							us		C:\WINDOWS\system32\
+431				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""odbcjtnw.cnt"",""%m"","""""							us		C:\WINDOWS\system32\
+432				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""odbcjtnw.hlp"",""%m"","""""							us		C:\WINDOWS\system32\
+433				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""odbcinst.cnt"",""%m"","""""							us		C:\WINDOWS\system32\
+434				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""odbcinst.hlp"",""%m"","""""							us		C:\WINDOWS\system32\
+435				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,DA Brazos Help;odbcjet_ftg"					%m		us		C:\WINDOWS\system32\
+436				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,DA Brazos Help;odbcjet_fts"					%m		us		C:\WINDOWS\system32\
+437				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,DA Brazos Help;odbcjet_gid"					%m		us		C:\WINDOWS\system32\
+438				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,DA Brazos Help;odbcjtnw_ftg"					%m		us		C:\WINDOWS\system32\
+439				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,DA Brazos Help;odbcjtnw_fts"					%m		us		C:\WINDOWS\system32\
+440				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,DA Brazos Help;odbcjtnw_gid"					%m		us		C:\WINDOWS\system32\
+441				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,DA Brazos Help;odbcinst_ftg"					%m		us		C:\WINDOWS\system32\
+442				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,DA Brazos Help;odbcinst_fts"					%m		us		C:\WINDOWS\system32\
+443				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,DA Brazos Help;odbcinst_gid"					%m		us		C:\WINDOWS\system32\
+444		Administrador ODBC	Instala el Administrador ODBC y todos los archivos de soporte	Group	445 446 447 448 449 450 451 453 465				no			us		C:\Archivos de programa\DevStudio\VB\
+445				InstallSysFile	"Odbc Manager,odbc32_dll"					%M		nyi		
+446				InstallSysFile	"Odbc Manager,odbcad32_exe"					%M		nyi		
+447				InstallSysFile	"Odbc Manager,odbccp32_cpl"					%m		nyi		
+448				InstallSysFile	"Odbc Manager,odbccp32_dll"					%m		nyi		
+449				InstallSysFile	"Odbc Manager,odbccr32_dll"					%M		nyi		
+450				InstallSysFile	"Odbc Manager,odbcint_dll"					%M		nyi		
+451				CopyFile	"Odbc Manager,odbcint_dll"					%D\setup		us		C:\Archivos de programa\DevStudio\VB\setup\
+453				Group	454 455							us		C:\Archivos de programa\DevStudio\VB\
+454				CustomAction	"vb5stp.dll,GetPathFromReg,""HKEY_LOCAL_MACHINE, SOFTWARE\ODBC\odbc.ini\ODBC File DSN,DefaultDSNDir"""							us		C:\Archivos de programa\Archivos comunes\ODBC\Data Sources\
+455				Depend	454 ? :456							us	Yes	C:\Archivos de programa\DevStudio\VB\
+456				Depend	445 ? 457 458							nyi		
+457				CustomAction	"vb5stp.dll,GetPathFromReg,""HKEY_LOCAL_MACHINE, SOFTWARE\Microsoft\Windows\CurrentVersion,CommonFilesDir"""							nyi		
+458				Depend	457 ? 459 460 461:462 463 464							nyi		
+459				CreateDir	ODBC					%457		nyi		
+460				CreateDir	"DataSrc<Data Sources>"					%457\ODBC		nyi		
+461				AddRegData	"""LOCAL"",""Software\ODBC\odbc.ini\ODBC File DSN"",""DefaultDSNDir"",""%457\ODBC\Data Sources"","""""							nyi		
+462				CreateDir	ODBC					%W		nyi		
+463				CreateDir	"DataSrc<Data Sources>"					%W\ODBC		nyi		
+464				AddRegData	"""LOCAL"",""Software\ODBC\odbc.ini\ODBC File DSN"",""DefaultDSNDir"",""%W\ODBC\Data Sources"","""""							nyi		
+465				InstallSysFile	"Odbc Manager,odbctrac_dll"					%M		nyi		
+466		Installs ODBC thunking files		Group	467 468 469 470				no	%d		nyi		
+467				InstallSysFile	"ODBC Thunking,odbc16gt_dll"							nyi		
+468				InstallSysFile	"ODBC Thunking,odbc32gt_dll"							nyi		
+469				InstallSysFile	"ODBC Thunking,ds16gt_dll"							nyi		
+470				InstallSysFile	"ODBC Thunking,ds32gt_dll"							nyi		
+471		Access Driver		Group	472				yes	%m		us		C:\WINDOWS\system32\
+472				CustomAction	"odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA Access:N"							us		C:\WINDOWS\system32\
+473		Brazos ISAM dBase Installer		Group	474 475					%d		nyi		
+474				InstallSysFile	"DA Brazos ISAM dBase Installer,oddbse32_dll"							nyi		
+475				CustomAction	"odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA dBase:N"							nyi		
+476		Brazos ISAM Excel Installer		Group	477 478					%d		nyi		
+477				InstallSysFile	"DA Brazos ISAM Excel Installer,odexl32_dll"							nyi		
+478				CustomAction	"odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA Excel:N"							nyi		
+479		Brazos ISAM FoxPro Installer		Group	480 481					%d		nyi		
+480				InstallSysFile	"DA Brazos ISAM FoxPro Installer,odfox32_dll"							nyi		
+481				CustomAction	"odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA FoxPro:N"							nyi		
+482		Brazos ISAM Paradox Installer		Group	483 484					%d		nyi		
+483				InstallSysFile	"DA Brazos ISAM Paradox Installer,odpdx32_dll"							nyi		
+484				CustomAction	"odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA Paradox:N"							nyi		
+485		Brazos ISAM Text Installer		Group	486 487					%d		nyi		
+486				InstallSysFile	"DA Brazos ISAM Text Installer,odtext32_dll"							nyi		
+487				CustomAction	"odbcstf.dll,AcmeInstallDriver,odbckey.inf:DA Text:N"							nyi		
+488	no	Clip Art	Instala m·s de 250 metaarchivos y mapas de bits para usarlos en sus aplicaciones.	Group	489 493				yes			nyi		
+489		Clip Art - Metafiles		Group	490 491					%d\Metafile		nyi		
+490				CopySection	M-Arrows					%d\Arrows		nyi		
+491				CopySection	M-Business					%d\Business		nyi		
+493		Clip Art - Bitmaps		Group	494 495 496 497 498 499 500 501 502 503					%d\Bitmaps		nyi		
+494				CopySection	B-Assorted					%d\Assorted		nyi		
+495				CopySection	B-Gauge					%d\Gauge		nyi		
+496				CopySection	B-Outline					%d\Outline		nyi		
+497				CopySection	B-Toolbar					%d\Tlbr_w95		nyi		
+498				CopySection	B-Offctlbr large b&w					%d\Offctlbr\Large\B&W		nyi		
+499				CopySection	B-Offctlbr large color					%d\Offctlbr\Large\Color		nyi		
+500				CopySection	B-Offctlbr small b&w					%d\Offctlbr\Small\B&W		nyi		
+501				CopySection	B-Offctlbr small color					%d\Offctlbr\Small\Color		nyi		
+502				CopySection	B-Outline nomask					%d\Outline\Nomask		nyi		
+503				CopySection	B-Outline redmask					%d\Outline\Redmask		nyi		
+504	no	Cursores	Instala alrededor de 100 cursores para usar en sus aplicaciones.	Group	505 506 507 508				yes	%d\Cursors		nyi		
+505				CopySection	Cursors1							nyi		
+506				CopySection	Cursors2							nyi		
+507				CopySection	Cursors3							nyi		
+508				CopySection	Cursors4							nyi		
+509	no	Biblioteca de iconos	Instala m·s de 450 iconos que puede usar para mejorar sus aplicaciones.	Group	510 511 512 513 514 515 516 517 518 519 520 521 522				yes	%d\Icons		nyi		
+510				CopySection	I-Arrows					%d\Arrows		nyi		
+511				CopySection	I-Comm					%d\Comm		nyi		
+512				CopySection	I-Computer					%d\Computer		nyi		
+513				CopySection	I-Dragdrop					%d\Dragdrop		nyi		
+514				CopySection	I-Elements					%d\Elements		nyi		
+515				CopySection	I-Flags					%d\Flags		nyi		
+516				CopySection	I-Industry					%d\Industry		nyi		
+517				CopySection	I-Mail					%d\Mail		nyi		
+518				CopySection	I-Misc					%d\Misc		nyi		
+519				CopySection	I-Office					%d\Office		nyi		
+520				CopySection	I-Traffic					%d\Traffic		nyi		
+521				CopySection	I-Writing					%d\Writing		nyi		
+522				CopySection	I-Win95					%d\Win95		nyi		
+523	no	Video	"Instala clips de vÌdeo (archivos .AVI) que puede usar en las barras de progreso de sus aplicaciones, como en Windows."	Group	524							nyi		
+524				CopySection	AVI					%d\AVIs		nyi		
+526		Repository		Group	527 528 530 531 532 534 535 536 537  552 554 555 556							us		C:\Archivos de programa\DevStudio\VB\
+527				InstallShared	"Repostry Dll,repodbc_dll,repodbc.dll,,111 "					%m		us		C:\WINDOWS\system32\
+528				Depend	527 ? 529							us	Yes	C:\Archivos de programa\DevStudio\VB\
+529		REPODBC.DLL		SelfReg	"""Repostry Dll"",""repodbc_dll"","""","""","""""					%527		us		C:\WINDOWS\system32\
+530				InstallShared	"Repostry Dll,reprc_dll,reprc.dll,,111 "					%527		us		C:\WINDOWS\system32\
+531				InstallShared	"Repostry Bin,repvb_dll,repvb.dll,,111 "					%d\Repostry\Bin		us		C:\Archivos de programa\DevStudio\VB\Repostry\Bin\
+532				Depend	531 ? 533							us	Yes	C:\Archivos de programa\DevStudio\VB\
+533		REPVB.DLL		SelfReg	"""Repostry Bin"",""repvb_dll"","""","""","""""					%531		us		C:\Archivos de programa\DevStudio\VB\Repostry\Bin\
+534				CompanionFile	"531 : Repostry Bin,repvbrc_dll"					%531		us		C:\Archivos de programa\DevStudio\VB\Repostry\Bin\
+535				InstallShared	"Repostry Bin,repvbtim_dll,repvbtim.dll,,111 "					%d\Repostry\Bin		us		C:\Archivos de programa\DevStudio\VB\Repostry\Bin\
+536				InstallShared	"Repostry Bin,repbrows_exe,repbrows.exe,,111 "					%d\Repostry\Bin		se		
+537				Group	538 539 540 541 542 543 544 545 546 547 548 549 550 551							us		C:\Archivos de programa\DevStudio\VB\
+538				InstallShared	"Repostry Bin,repvb_hlp,repvb.hlp,,111 "					%D\help		us		C:\Archivos de programa\DevStudio\VB\help\
+539				InstallShared	"Repostry Bin,repvb_cnt,repvb.cnt,,111 "					%D\help		us		C:\Archivos de programa\DevStudio\VB\help\
+540				InstallShared	"Repostry Bin,repostry_hlp,repostry.hlp,,111 "					%D\help		us		C:\Archivos de programa\DevStudio\VB\help\
+541				InstallShared	"Repostry Bin,repostry_cnt,repostry.cnt,,111 "					%D\help		us		C:\Archivos de programa\DevStudio\VB\help\
+542				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""repvb.hlp"",""%s"","""""					%538		us		C:\Archivos de programa\DevStudio\VB\help\
+543				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""repvb.cnt"",""%s"","""""					%539		us		C:\Archivos de programa\DevStudio\VB\help\
+544				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""Repostry.hlp"",""%s"","""""					%540		us		C:\Archivos de programa\DevStudio\VB\help\
+545				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""Repostry.cnt"",""%s"","""""					%541		us		C:\Archivos de programa\DevStudio\VB\help\
+546				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Repostry;repvb_ftg"					%538		us		C:\Archivos de programa\DevStudio\VB\help\
+547				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Repostry;repvb_fts"					%538		us		C:\Archivos de programa\DevStudio\VB\help\
+548				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Repostry;repvb_gid"					%538		us		C:\Archivos de programa\DevStudio\VB\help\
+549				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Repostry;repostry_ftg"					%540		us		C:\Archivos de programa\DevStudio\VB\help\
+550				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Repostry;repostry_fts"					%540		us		C:\Archivos de programa\DevStudio\VB\help\
+551				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Repostry;repostry_gid"					%540		us		C:\Archivos de programa\DevStudio\VB\help\
+552				InstallShared	"Repostry,repostry_mdb,repostry.mdb,,136 "					%W\msapps\repostry		us		C:\WINDOWS\msapps\repostry\
+553				CustomAction	"vb5stp.dll,DeleteFiles,""*.ldb,TRUE"""					%W\msapps\repostry				
+554				CopyFile	"Repostry Samples,readme_wri"					%d\Repostry		us		C:\Archivos de programa\DevStudio\VB\Repostry\
+555				CopySection	Repostry Include					%d\Repostry\Include		us		C:\Archivos de programa\DevStudio\VB\Repostry\Include\
+556				Group	955							us		C:\Archivos de programa\DevStudio\VB\
+560		Help files		Group	561 571 594 620							us		C:\Archivos de programa\DevStudio\VB\
+561				Group	562 563 564 565 566 567 568 569 570							us		C:\Archivos de programa\DevStudio\VB\
+562				CopySection	VB Sys Help					%W\help		us		C:\WINDOWS\help\
+563				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""vb5def.hlp"",""%s"","""""					%562		us		C:\WINDOWS\help\
+564				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""veesdf3.hlp"",""%s"","""""					%562		us		C:\WINDOWS\help\
+565				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vb5def_ftg"					%562		us		C:\WINDOWS\help\
+566				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vb5def_fts"					%562		us		C:\WINDOWS\help\
+567				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vb5def_gid"					%562		us		C:\WINDOWS\help\
+568				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;veesdf3_ftg"					%562		us		C:\WINDOWS\help\
+569				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;veesdf3_fts"					%562		us		C:\WINDOWS\help\
+570				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;veesdf3_gid"					%562		us		C:\WINDOWS\help\
+571				Group	572 573 581							us		C:\Archivos de programa\DevStudio\VB\
+572				CopySection	VB Help2					%D\Help		us		C:\Archivos de programa\DevStudio\VB\Help\
+573				Group	574 575 576 577 578 579 580							us		C:\Archivos de programa\DevStudio\VB\
+574				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""dataform.cnt"",""%s"","""""					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+575				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""dataform.hlp"",""%s"","""""					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+576				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""jetdef35.hlp"",""%s"","""""					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+577				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""jeterr35.cnt"",""%s"","""""					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+578				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""jeterr35.hlp"",""%s"","""""					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+579				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""jetsql35.cnt"",""%s"","""""					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+580				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""jetsql35.hlp"",""%s"","""""					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+581				Group	582 583 584 585 586 587 588 589 590 591 592 593							us		C:\Archivos de programa\DevStudio\VB\
+582				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;dataform_ftg"					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+583				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;dataform_fts"					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+584				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;dataform_gid"					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+585				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;jetdef35_ftg"					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+586				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;jetdef35_fts"					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+587				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;jetdef35_gid"					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+588				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;jeterr35_ftg"					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+589				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;jeterr35_fts"					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+590				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;jeterr35_gid"					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+591				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;jetsql35_ftg"					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+592				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;jetsql35_fts"					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+593				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;jetsql35_gid"					%572		us		C:\Archivos de programa\DevStudio\VB\Help\
+594				Group	595 596 606							us		C:\Archivos de programa\DevStudio\VB\
+595				CopySection	VB Help3					%D\Help		us		C:\Archivos de programa\DevStudio\VB\Help\
+596				Group	597 598 599 600 601 602 603 604 605							us		C:\Archivos de programa\DevStudio\VB\
+597				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""bhelp32.cnt"",""%s"","""""					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+598				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""bhelp32.hlp"",""%s"","""""					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+599				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""vb5.cnt"",""%s"","""""					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+600				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""vb5.hlp"",""%s"","""""					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+601				AddIniLine	"""WINHELP.INI"",""FILES"",""VB5.HLP"",""%s"""					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+602				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""vbenlr3.cnt"",""%s"","""""					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+603				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""vbenlr3.hlp"",""%s"","""""					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+604				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""vb5ext.cnt"",""%s"","""""					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+605				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""vb5ext.hlp"",""%s"","""""					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+606				Group	607 608 609 610 611 612 613 614 615 616 617 618							us		C:\Archivos de programa\DevStudio\VB\
+607				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;bhelp32_ftg"					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+608				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;bhelp32_fts"					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+609				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;bhelp32_gid"					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+610				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vb5_ftg"					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+611				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vb5_fts"					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+612				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vb5_gid"					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+613				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vb5ext_ftg"					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+614				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vb5ext_fts"					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+615				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vb5ext_gid"					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+616				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vbenlr3_ftg"					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+617				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vbenlr3_fts"					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+618				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vbenlr3_gid"					%595		us		C:\Archivos de programa\DevStudio\VB\Help\
+620				Group	621 622 623 624 625 626							us		C:\Archivos de programa\DevStudio\VB\
+621				CopySection	VB Help Min					%D\Help		us		C:\Archivos de programa\DevStudio\VB\Help\
+622				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""vb5pss.cnt"",""%s"","""""					%621		us		C:\Archivos de programa\DevStudio\VB\Help\
+623				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""vb5pss.hlp"",""%s"","""""					%621		us		C:\Archivos de programa\DevStudio\VB\Help\
+624				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vb5pss_ftg"					%621		us		C:\Archivos de programa\DevStudio\VB\Help\
+625				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vb5pss_fts"					%621		us		C:\Archivos de programa\DevStudio\VB\Help\
+626				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Help;vb5pss_gid"					%621		us		C:\Archivos de programa\DevStudio\VB\Help\
+630				Group	631 667    686							us		C:\Archivos de programa\DevStudio\VB\
+631				Group	632 633 634 635 636 637 638 639 640 641 642 643 644 645 646 647 648 649 650 651 652 653 658							us		C:\Archivos de programa\DevStudio\VB\
+632				CopySection	S-FileCts					%D\samples\Misc\FileCts		us		C:\Archivos de programa\DevStudio\VB\samples\Misc\FileCts\
+633				CopySection	S-UnBndGrd					%D\samples\Misc\UnBndGrd		us		C:\Archivos de programa\DevStudio\VB\samples\Misc\UnBndGrd\
+634				CopySection	S-ATM					%D\samples\PGuide\ATM		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\ATM\
+635				CopySection	S-Biblio					%D\samples\PGuide\Biblio		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Biblio\
+636				CopySection	S-Blanker					%D\samples\PGuide\Blanker		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Blanker\
+637				CopySection	S-Controls					%D\samples\PGuide\Controls		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Controls\
+638				CopySection	S-Errors					%D\samples\PGuide\Errors		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Errors\
+639				CopySection	S-FirstApp					%D\samples\PGuide\FirstApp		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\FirstApp\
+640				CopySection	S-ListCmbo					%D\samples\PGuide\ListCmbo		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\ListCmbo\
+641				CopySection	S-MDI					%D\samples\PGuide\MDI		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\MDI\
+642				CopySection	S-MsFlexGd					%D\samples\PGuide\MsFlexGd		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\MsFlexGd\
+643				CopySection	S-olecont					%D\samples\PGuide\olecont		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\olecont\
+644				CopySection	S-Optimize					%D\samples\PGuide\Optimize		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Optimize\
+645				CopySection	S-SDI					%D\samples\PGuide\SDI		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\SDI\
+646				CopySection	S-Alarm					%D\samples\pguide\alarm		us		C:\Archivos de programa\DevStudio\VB\samples\pguide\alarm\
+647				CopySection	S-Calc					%D\samples\pguide\calc		us		C:\Archivos de programa\DevStudio\VB\samples\pguide\calc\
+648				CopySection	S-VCR					%D\samples\PGuide\VCR		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\VCR\
+649				CopySection	S-Palmode					%D\samples\Pguide\PalMode		us		C:\Archivos de programa\DevStudio\VB\samples\Pguide\PalMode\
+650				CopySection	S-ProgWob					%D\samples\Pguide\ProgWOB		us		C:\Archivos de programa\DevStudio\VB\samples\Pguide\ProgWOB\
+651				CopySection	S-Mouse					%D\samples\pguide\Mouse		us		C:\Archivos de programa\DevStudio\VB\samples\pguide\Mouse\
+652				CopySection	S-Help					%D\samples		us		C:\Archivos de programa\DevStudio\VB\samples\
+653				Group	654 655 656 657							us		C:\Archivos de programa\DevStudio\VB\
+654				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""samples.hlp"",""%s"","""""					%652		us		C:\Archivos de programa\DevStudio\VB\samples\
+655				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""samples.cnt"",""%s"","""""					%652		us		C:\Archivos de programa\DevStudio\VB\samples\
+656				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""biblio.hlp"",""%s"","""""					%635		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Biblio\
+657				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""biblio.cnt"",""%s"","""""					%635		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Biblio\
+658				Group	659 660 661 662 663 664 665							us		C:\Archivos de programa\DevStudio\VB\
+659				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Samples;samples_ftg"					%652		us		C:\Archivos de programa\DevStudio\VB\samples\
+660				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Samples;samples_fts"					%652		us		C:\Archivos de programa\DevStudio\VB\samples\
+661				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Samples;samples_gid"					%652		us		C:\Archivos de programa\DevStudio\VB\samples\
+662				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Samples;biblio_ftg"					%635		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Biblio\
+663				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Samples;biblio_fts"					%635		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Biblio\
+664				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Samples;biblio_gid"					%635		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Biblio\
+665				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Samples;biblio_ldb"					%108		us		C:\Archivos de programa\DevStudio\VB\
+667				Group	668 669 670 671 672 673 674 675 676 677 678 679 684 685							us		C:\Archivos de programa\DevStudio\VB\
+668				CopySection	S-ActXDoc					%D\samples\CompTool\ActvComp\ActXDoc		us		C:\Archivos de programa\DevStudio\VB\samples\CompTool\ActvComp\ActXDoc\
+669				CopySection	S-TabOrder					%D\samples\CompTool\AddIns\TabOrder		us		C:\Archivos de programa\DevStudio\VB\samples\CompTool\AddIns\TabOrder\
+670				CopySection	S-CallDlls					%D\samples\CompTool\CallDlls		us		C:\Archivos de programa\DevStudio\VB\samples\CompTool\CallDlls\
+671				CopySection	S-DataTree					%D\samples\CompTool\DataTree		us		C:\Archivos de programa\DevStudio\VB\samples\CompTool\DataTree\
+672				CopySection	S-MSComm					%D\samples\CompTool\MSComm		us		C:\Archivos de programa\DevStudio\VB\samples\CompTool\MSComm\
+673				CopySection	S-PicClip					%D\samples\CompTool\PicClip		us		C:\Archivos de programa\DevStudio\VB\samples\CompTool\PicClip\
+674				CopySection	S-VBMail					%D\samples\CompTool\VBMail		us		C:\Archivos de programa\DevStudio\VB\samples\CompTool\VBMail\
+675				CopySection	S-GeoFacts					%D\samples\PGuide\GeoFacts		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\GeoFacts\
+676				CopySection	S-Visdata					%D\samples\Visdata		us		C:\Archivos de programa\DevStudio\VB\samples\Visdata\
+677				CopySection	S-Dialer					%D\samples\comptool\dialer		us		C:\Archivos de programa\DevStudio\VB\samples\comptool\dialer\
+678				CopySection	S-CtlPlus					%D\samples\comptool\actvcomp\ctlplus		us		C:\Archivos de programa\DevStudio\VB\samples\comptool\actvcomp\ctlplus\
+679				Group	680 681 682 683							us		C:\Archivos de programa\DevStudio\VB\
+680				CopySection	S-Booksale					%D\samples\clisvr\booksale		us		C:\Archivos de programa\DevStudio\VB\samples\clisvr\booksale\
+681			Uninstall only	CustomAction	"vb5stp.dll,DeleteFiles,""booksale.ldb,True"""					%680		us		C:\Archivos de programa\DevStudio\VB\samples\clisvr\booksale\
+682				CopySection	S-Booksale_Client					%D\samples\clisvr\booksale\client		us		C:\Archivos de programa\DevStudio\VB\samples\clisvr\booksale\client\
+683				CopySection	S-Booksale_Server					%D\samples\clisvr\booksale\server		us		C:\Archivos de programa\DevStudio\VB\samples\clisvr\booksale\server\
+684				CopySection	S-Coffee					%D\samples\comptool\actvcomp\coffee		us		C:\Archivos de programa\DevStudio\VB\samples\comptool\actvcomp\coffee\
+685				CopySection	S-MCI					%D\samples\comptool\mci		us		C:\Archivos de programa\DevStudio\VB\samples\comptool\mci\
+686				Group	687 688 689 690 691 692 693 694 695 696 697 698 699 700 701 702 703 704 705 706 707 708 709 710 711 712 713 714 715							us		C:\Archivos de programa\DevStudio\VB\
+687				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;actxdoc_vbw"					%668		us		C:\Archivos de programa\DevStudio\VB\samples\CompTool\ActvComp\ActXDoc\
+688				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;taborder_vbw"					%669		us		C:\Archivos de programa\DevStudio\VB\samples\CompTool\AddIns\TabOrder\
+689				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;calldlls_vbw"					%670		us		C:\Archivos de programa\DevStudio\VB\samples\CompTool\CallDlls\
+690				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;datatree_vbw"					%671		us		C:\Archivos de programa\DevStudio\VB\samples\CompTool\DataTree\
+691				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;vbterm_vbw"					%672		us		C:\Archivos de programa\DevStudio\VB\samples\CompTool\MSComm\
+692				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;redtop_vbw"					%673		us		C:\Archivos de programa\DevStudio\VB\samples\CompTool\PicClip\
+693				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;vbmail_vbw"					%674		us		C:\Archivos de programa\DevStudio\VB\samples\CompTool\VBMail\
+694				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;visdata_vbw"					%676		us		C:\Archivos de programa\DevStudio\VB\samples\Visdata\
+695				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;book_cli_vbw"					%682		us		C:\Archivos de programa\DevStudio\VB\samples\clisvr\booksale\client\
+696				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;book_svr_vbw"					%683		us		C:\Archivos de programa\DevStudio\VB\samples\clisvr\booksale\server\
+697				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;dialer_vbw"					%677		us		C:\Archivos de programa\DevStudio\VB\samples\comptool\dialer\
+698				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;geofacts_vbw"					%675		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\GeoFacts\
+699				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;winseek_vbw"					%632		us		C:\Archivos de programa\DevStudio\VB\samples\Misc\FileCts\
+700				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;unbndgrd_vbw"					%633		us		C:\Archivos de programa\DevStudio\VB\samples\Misc\UnBndGrd\
+701				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;atm_vbw"					%634		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\ATM\
+702				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;biblio_vbw"					%635		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Biblio\
+703				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;blanker_vbw"					%636		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Blanker\
+704				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;controls_vbw"					%637		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Controls\
+705				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;errors_vbw"					%638		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Errors\
+706				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;firstapp_vbw"					%639		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\FirstApp\
+707				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;listcmbo_vbw"					%640		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\ListCmbo\
+708				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;mdinote_vbw"					%641		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\MDI\
+709				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;flex_vbw"					%642		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\MsFlexGd\
+710				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;optimize_vbw"					%644		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\Optimize\
+711				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;sdinote_vbw"					%645		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\SDI\
+712				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;vcr_vbw"					%648		us		C:\Archivos de programa\DevStudio\VB\samples\PGuide\VCR\
+713				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;palettes_vbw"					%649		us		C:\Archivos de programa\DevStudio\VB\samples\Pguide\PalMode\
+714				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;alarm_vbw"					%646		us		C:\Archivos de programa\DevStudio\VB\samples\pguide\alarm\
+715				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Samples_vbw;calc_vbw"					%647		us		C:\Archivos de programa\DevStudio\VB\samples\pguide\calc\
+729		Libros en pantalla	Instala en el disco duro el visor de los Libros en pantalla.	Group	730 750 751 763							us		C:\Archivos de programa\DevStudio\VB\
+730				Group	731 732 733 734 735 736 737 738 740 741 744 745 746 747 748 749							us		C:\Archivos de programa\DevStudio\VB\
+731				CreateDir	lists					%D\vbonline		us		C:\Archivos de programa\DevStudio\VB\vbonline\
+732				AddRegData	"""LOCAL"",""SOFTWARE\Microsoft\Visual Basic Books Online 5.0"",""List Path"",""%s\vbonline\lists\"","""""					%D		us		C:\Archivos de programa\DevStudio\VB\
+733				InstallTTFFile	"""Books - Fonts"",""abac_ttf"",""Abadi MT Condensed (True Type)"""					%W\fonts		us	abac.ttf,abac.FOT	C:\WINDOWS\FONTS\
+734				InstallTTFFile	"""Books - Fonts"",""wingdng2_ttf"",""Wingdings 2 (True Type)"""					%W\fonts		us	wingdng2.ttf,wingdng2.FOT	C:\WINDOWS\FONTS\
+735				InstallTTFFile	"""Books - Fonts"",""wingdng3_ttf"",""Wingdings 3 (True Type)"""					%W\fonts		us	wingdng3.ttf,wingdng3.FOT	C:\WINDOWS\FONTS\
+736				CopySection	Books - Files					%D\vbonline		us		C:\Archivos de programa\DevStudio\VB\vbonline\
+737				InstallShared	"Books - Misc,mciwndx_ocx,,,736 "					%M		us		C:\WINDOWS\system32\
+738				Depend	737 ? 739							us	Yes	C:\Archivos de programa\DevStudio\VB\
+739		MCIWNDX.OCX		SelfReg	"""Books - Misc"",""mciwndx_ocx"","""","""","""""					%737		us		C:\WINDOWS\system32\
+740				InstallShared	"Books - Misc,mv141kn_ocx,,,736 "					%M		us		C:\WINDOWS\system32\
+741				Depend	740 ? 742 743							us	Yes	C:\Archivos de programa\DevStudio\VB\
+742		MV141KN.DLL		SelfReg	"""Books - Misc"",""mv141kn_ocx"","""","""","""""					%740		us		C:\WINDOWS\system32\
+743				AddRegData	"""HKEY_CLASSES_ROOT"",""Typelib\{3B547062-F434-11CF-824A-00AA006B1B5F}\1.1"","""",""Mediaview 1.41 Control"","""""							us		C:\Archivos de programa\DevStudio\VB\
+744				InstallShared	"Books - Misc,dmem_dll,dmem.dll,,111 "					%M		us		C:\WINDOWS\system32\
+745				AddRegData	"""HKEY_CURRENT_USER"",""SOFTWARE\Microsoft\Visual Basic\5.0"",""BooksExePath"",""%s\vbonline\vbonline.exe"","""""					%D		us		C:\Archivos de programa\DevStudio\VB\
+746				AddRegData	"""HKEY_LOCAL_MACHINE"",""SOFTWARE\Microsoft\Visual Basic Books Online 5.0"",""Database Name"",""%s\vbonline\vbonline.mdb"","""""					%D		us		C:\Archivos de programa\DevStudio\VB\
+747				AddRegData	"""HKEY_LOCAL_MACHINE"",""Software\Microsoft\Visual Basic\5.0"",""VBonlinePath"",""%s\..\Vbonline"","""""					%S		us		C:\COMPAR~1\VISUAL~1\VB\SETUP\
+748				AddRegData	"""HKEY_LOCAL_MACHINE"",""Software\Microsoft\Visual Basic Books Online 5.0"",""MediaView File Path"",""%s\..\Vbonline\vbonline.m14"","""""					%S		us		C:\COMPAR~1\VISUAL~1\VB\SETUP\
+749				AddRegData	"""LOCAL"",""Software\Microsoft\Visual Basic Books Online 5.0"",""Media Path"",""%s\..\Vbonline\media\"","""""					%S		us		C:\COMPAR~1\VISUAL~1\VB\SETUP\
+750				Group	913 941 955							us		C:\Archivos de programa\DevStudio\VB\
+751				Group	752 753 754 755 756 757 758 759 760 761 762							us		C:\Archivos de programa\DevStudio\VB\
+752		Remove lst files	Uninstall only	CustomAction	"vb5stp.dll,DeleteFiles,""*.*,TRUE"""					%D\vbonline\lists		us		C:\Archivos de programa\DevStudio\VB\vbonline\lists\
+753		Remove ldb file	Uninstall only	CustomAction	"vb5stp.dll,DeleteFiles,""*.*,TRUE"""					%D\vbonline		us		C:\Archivos de programa\DevStudio\VB\vbonline\
+754		Remove BOL keys	Uninstall only	CustomAction	"vb5stp.dll,DeleteRegTree,""LOCAL,SOFTWARE\Microsoft\Visual Basic Books Online 5.0"""							us		C:\Archivos de programa\DevStudio\VB\
+755				CopySection	Books - HELP					%736		us		C:\Archivos de programa\DevStudio\VB\vbonline\
+756				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""vbonline.hlp"",""%s"","""""					%755		us		C:\Archivos de programa\DevStudio\VB\vbonline\
+757				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""vbonline.cnt"",""%s"","""""					%755		us		C:\Archivos de programa\DevStudio\VB\vbonline\
+758				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""vbogloss.cnt"",""%s"","""""					%755		us		C:\Archivos de programa\DevStudio\VB\vbonline\
+759				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux BooksHelp;vbonline_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+760				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux BooksHelp;vbonline_fts"							us		C:\Archivos de programa\DevStudio\VB\
+761				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux BooksHelp;vbonline_gid"							us		C:\Archivos de programa\DevStudio\VB\
+762				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux BooksHelp;vbogloss_gid"							us		C:\Archivos de programa\DevStudio\VB\
+763				Depend	53 ? 764 765 766:767 768 769							us	Yes	C:\Archivos de programa\DevStudio\VB\
+764				InstallShortcut	"%736\vbonline.exe,Libros en pantalla,%736,,,,"					%264\Microsoft Visual Basic 5.0		us		C:\Documents and Settings\All Users\Men˙ Inicio\Programas\Microsoft Visual Basic 5.0\
+765				AddIniLine	"""WINHLP32.INI"",""FILES"",""VBONLINE.HLP"",""%s"""					%755		us		C:\Archivos de programa\DevStudio\VB\vbonline\
+766				AddIniLine	"""WINHLP32.INI"",""Files"",""VBONLINE.EXE"",""%s\vbonline"""					%D		us		C:\Archivos de programa\DevStudio\VB\
+767				AddProgmanItem	"Microsoft Visual Basic 5.0,Libros en pantalla,%s\vbonline.exe,%s,,,,,,"					%736		nyi		
+768				AddIniLine	"""WINHELP.INI"",""FILES"",""VBONLINE.HLP"",""%s"""					%755		nyi		
+769				AddIniLine	"""WINHELP.INI"",""Files"",""VBONLINE.EXE"",""%s\vbonline"""					%D		nyi		
+771	yes			Group	772 773				no			us		C:\Archivos de programa\DevStudio\VB\
+772				CopyFile	"Books - Misc,vbonline_m14"					%D\Vbonline		us		C:\Archivos de programa\DevStudio\VB\Vbonline\
+773				CustomAction	"vb5stp.dll,UpdateBooksOnline,Content"					%D\Vbonline		us		C:\Archivos de programa\DevStudio\VB\Vbonline\
+775	no			Group	776 777				no			nyi		
+776				CopySection	Books - AVI					%D\Vbonline\media		nyi		
+777				CustomAction	"vb5stp.dll,UpdateBooksOnline,Media"					%D\Vbonline\media		nyi		
+783		Setup Toolkit		Group	784 785 786 787 788  789 792 793 794 795 796							us		C:\Archivos de programa\DevStudio\VB\
+784				CopySection	Sk-Kitfiles					%D\setupkit\kitfil32		us		C:\Archivos de programa\DevStudio\VB\setupkit\kitfil32\
+785				CopySection	Sk-Setup1					%D\setupkit\setup1		us		C:\Archivos de programa\DevStudio\VB\setupkit\setup1\
+786				CopySection	Sk-ODBC					%D\ODBC		us		C:\Archivos de programa\DevStudio\VB\ODBC\
+787				CopySection	Hf-Setupwiz					%D\Help		us		C:\Archivos de programa\DevStudio\VB\Help\
+788				CopySection	Sk-Sys32					%784\sys32		us		C:\Archivos de programa\DevStudio\VB\setupkit\kitfil32\sys32\
+789				Depend	53 ? 790:791							us	Yes	C:\Archivos de programa\DevStudio\VB\
+790				InstallShortcut	"%784\setupwiz.exe,SetupWiz<Asistente para instalar aplicaciones>,%784,,,,"					%264\Microsoft Visual Basic 5.0		us		C:\Documents and Settings\All Users\Men˙ Inicio\Programas\Microsoft Visual Basic 5.0\
+791				AddProgmanItem	"VB<Microsoft Visual Basic 5.0>,SetupWiz<Asistente para instalar aplicaciones>,%784\setupwiz.exe,%784,,,,,,"					%784		nyi		
+792				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""setupwiz.hlp"",""%s"","""""					%D\help		us		C:\Archivos de programa\DevStudio\VB\help\
+793				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""setupwiz.cnt"",""%s"","""""					%D\help		us		C:\Archivos de programa\DevStudio\VB\help\
+794				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Setupkit;setupwiz_ftg"					%787		us		C:\Archivos de programa\DevStudio\VB\Help\
+795				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Setupkit;setupwiz_fts"					%787		us		C:\Archivos de programa\DevStudio\VB\Help\
+796				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux Setupkit;setupwiz_gid"					%787		us		C:\Archivos de programa\DevStudio\VB\Help\
+800		Wizards		Group	801 1163  802 803 804 805 806 807 809 1165							us		C:\Archivos de programa\DevStudio\VB\
+801				CopySection	Wizards					%d\Wizards		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+802		AppWizard		SelfReg	"""Wizards"",""appwiz_dll"","""","""","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+803				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar\VB Application Wizard"",""ProgID"",""AppWizard.Wizard"","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+804				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar\VB Application Wizard"",""ShowOnToolbar"",""1"","""""							us		C:\Archivos de programa\DevStudio\VB\
+805				CopyFile	"Wizard VBZ Files,vbappwiz_vbz"					%D\Template\Projects		us		C:\Archivos de programa\DevStudio\VB\Template\Projects\
+806				Group	941 955							us		C:\Archivos de programa\DevStudio\VB\
+807				Group	839 840 841 842 843 844 845 846 847 848 849							us		C:\Archivos de programa\DevStudio\VB\
+809		For Ent & Pro only		Group	810 811 812 813 814 815 816 817 818 819 820 821 822 823 824 825 826 827 828 829 830 832 833 834 835 836 837							us		C:\Archivos de programa\DevStudio\VB\
+810				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar"","""","""","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+811		ClassBuilder		SelfReg	"""Wizards"",""clssbld_dll"","""","""","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+812				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar\VB Class Builder Utility"",""ProgID"",""ClassBuilder.Wizard"","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+813				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar\VB Class Builder Utility"",""ShowOnToolbar"",""1"","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+814		DataFormWizard		SelfReg	"""Wizards"",""dataform_dll"","""","""","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+815				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar\VB Data Form Wizard"",""ProgID"",""DataFormWizard.Wizard"","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+816				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar\VB Data Form Wizard"",""ShowOnToolbar"",""1"","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+817		Axdocwiz.dll		SelfReg	"""Wizards"",""axdocwiz_dll"","""","""","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+818				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar\VB ActiveX Document Migration Wizard"",""ProgID"",""ActiveXDocumentWizard.Wizard"","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+819				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar\VB ActiveX Document Migration Wizard"",""ShowOnToolbar"",""1"","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+820		Wizman.dll		SelfReg	"""Wizards"",""wizman_dll"","""","""","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+821		Aitool.dll		SelfReg	"""Wizards"",""aitool_dll"","""","""","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+822		Ctrlwiz.dll		SelfReg	"""Wizards"",""ctrlwiz_dll"","""","""","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+823				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar\VB ActiveX Control Wizard"",""ProgID"",""ControlWiz.Wizard"","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+824				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar\VB ActiveX Control Wizard"",""ShowOnToolbar"",""1"","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+825				CopyFile	"Wizard Proppage,proppgwz_dll"					%D\wizards		us		C:\Archivos de programa\DevStudio\VB\wizards\
+826		PropertyPageWizard		SelfReg	"""Wizard Proppage"",""proppgwz_dll"","""","""","""""					%825		us		C:\Archivos de programa\DevStudio\VB\wizards\
+827				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar\VB Property Page Wizard"",""ProgID"",""PropertyPageWizard.Wizard"","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+828				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar\VB Property Page Wizard"",""ShowOnToolbar"",""1"","""""					%801		us		C:\Archivos de programa\DevStudio\VB\Wizards\
+829				InstallShared	"Wizard Proppage,tlbinf32_dll,tblinf32,,111 "					%M		us		C:\WINDOWS\system32\
+830				Depend	829 ? 831							us	Yes	C:\Archivos de programa\DevStudio\VB\
+831		TLBINF32.DLL		SelfReg	"""Wizard Proppage"",""tlbinf32_dll"","""","""","""""					%829		us		C:\WINDOWS\system32\
+832		Wizard Templates		CopySection	Wizard Templates					%d\Wizards\Template		us		C:\Archivos de programa\DevStudio\VB\Wizards\Template\
+833				CopyFile	"Wizard VBZ Files,vbclass_vbz"					%D\Template\Classes		us		C:\Archivos de programa\DevStudio\VB\Template\Classes\
+834				CopyFile	"Wizard VBZ Files,vbdata_vbz"					%D\Template\Forms		us		C:\Archivos de programa\DevStudio\VB\Template\Forms\
+835				CopyFile	"Wizard VBZ Files,vbppage_vbz"					%D\Template\Proppage		us		C:\Archivos de programa\DevStudio\VB\Template\Proppage\
+836				CopyFile	"Wizard VBZ Files,axdocwiz_vbz"					%D\Template\UserDocs		us		C:\Archivos de programa\DevStudio\VB\Template\UserDocs\
+837				Group	851 852 853 854 855 856 857 858 859 860 861 862 863 864 865 866 867 868 869 870 871							us		C:\Archivos de programa\DevStudio\VB\
+839				CopySection	Wizards - Help					%D\help		us		C:\Archivos de programa\DevStudio\VB\help\
+840				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""wizdmngr.cnt"",""%s"","""""					%839		us		C:\Archivos de programa\DevStudio\VB\help\
+841				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""wizdmngr.hlp"",""%s"","""""					%839		us		C:\Archivos de programa\DevStudio\VB\help\
+842				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""appwzrd.cnt"",""%s"","""""					%839		us		C:\Archivos de programa\DevStudio\VB\help\
+843				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""appwzrd.hlp"",""%s"","""""					%839		us		C:\Archivos de programa\DevStudio\VB\help\
+844				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizHelp;wizdmngr_ftg"					%839		us		C:\Archivos de programa\DevStudio\VB\help\
+845				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizHelp;wizdmngr_fts"					%839		us		C:\Archivos de programa\DevStudio\VB\help\
+846				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizHelp;wizdmngr_gid"					%839		us		C:\Archivos de programa\DevStudio\VB\help\
+847				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizHelp;appwzrd_ftg"					%839		us		C:\Archivos de programa\DevStudio\VB\help\
+848				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizHelp;appwzrd_fts"					%839		us		C:\Archivos de programa\DevStudio\VB\help\
+849				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizHelp;appwzrd_gid"					%839		us		C:\Archivos de programa\DevStudio\VB\help\
+851				CopySection	Wizards - NSHelp					%D\Help		us		C:\Archivos de programa\DevStudio\VB\Help\
+852				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""clswzrd.cnt"",""%s"","""""					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+853				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""clswzrd.hlp"",""%s"","""""					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+854				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""frmdocwz.cnt"",""%s"","""""					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+855				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""frmdocwz.hlp"",""%s"","""""					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+856				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""ctlcrwzd.cnt"",""%s"","""""					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+857				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""ctlcrwzd.hlp"",""%s"","""""					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+858				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""proppgwz.cnt"",""%s"","""""					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+859				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""proppgwz.hlp"",""%s"","""""					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+860				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizNSHelp;clswzrd_ftg"					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+861				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizNSHelp;clswzrd_fts"					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+862				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizNSHelp;clswzrd_gid"					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+863				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizNSHelp;frmdocwz_ftg"					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+864				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizNSHelp;frmdocwz_fts"					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+865				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizNSHelp;frmdocwz_gid"					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+866				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizNSHelp;ctlcrwzd_ftg"					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+867				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizNSHelp;ctlcrwzd_fts"					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+868				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizNSHelp;ctlcrwzd_gid"					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+869				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizNSHelp;proppgwz_ftg"					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+870				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizNSHelp;proppgwz_fts"					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+871				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux - WizNSHelp;proppgwz_gid"					%851		us		C:\Archivos de programa\DevStudio\VB\Help\
+879		"Custom Controls for Ent, Pro & Std"		Group	880 885 899 913 927 941 955 969 978							us		C:\Archivos de programa\DevStudio\VB\
+880				Group	881 882 884							nyi		
+881				InstallSysFile	"Custctrls - STD,MSStkPrp_Dll"					%m		nyi		
+882				Depend	881 ? 883							nyi		
+883		MSSTKPRP.DLL		SelfReg	"""Custctrls - STD"",""MSStkPrp_Dll"","""","""","""""					%881		nyi		
+884				CompanionFile	"881 : Custctrls - STD,msprpes_dll"					%881		nyi		
+885				Group	886 887							us		C:\Archivos de programa\DevStudio\VB\
+886				InstallShared	"Custctrls - STD,tabctl32_ocx,tabctl32.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+887				Depend	886 ? 888 889 890 891 892 893 894 895 896 897 898							us	Yes	C:\Archivos de programa\DevStudio\VB\
+888		TABCTL32.OCX		SelfReg	"""Custctrls - STD"",""tabctl32_ocx"","""","""","""""					%886		us		C:\WINDOWS\system32\
+889		Sheridan Tab Control license key		AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\190B7910-992A-11cf-8AFA-00AA00C00905"","""",""gclclcejjcmjdcccoikjlcecoioijjcjnhng"","""""							us		C:\Archivos de programa\DevStudio\VB\
+890				CompanionFile	"886 : Custctrls - STD,tabctes_dll"					%886		us		C:\WINDOWS\system32\
+891				CompanionFile	"886 : Custctrls - STD,tabctl32_dep"					%886		us		C:\WINDOWS\system32\
+892				InstallShared	"Custctrls - STD- Help,mstab96_cnt,mstab96.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+893				InstallShared	"Custctrls - STD- Help,mstab96_hlp,mstab96.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+894				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""mstab96.cnt"",""%s"","""""					%892		us		C:\WINDOWS\Help\
+895				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""mstab96.hlp"",""%s"","""""					%893		us		C:\WINDOWS\Help\
+896				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;mstab96_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+897				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;mstab96_fts"							us		C:\Archivos de programa\DevStudio\VB\
+898				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;mstab96_gid"							us		C:\Archivos de programa\DevStudio\VB\
+899				Group	900 901							us		C:\Archivos de programa\DevStudio\VB\
+900				InstallShared	"Custctrls - STD,msflxgrd_ocx,msflxgrd.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+901				Depend	900 ? 902 903 904 905 906 907 908 909 910 911 912							us	Yes	C:\Archivos de programa\DevStudio\VB\
+902		FLEXGRID.OCX		SelfReg	"""Custctrls - STD"",""msflxgrd_ocx"","""","""","""""					%900		us		C:\WINDOWS\system32\
+903		Flex Grid license key		AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\72E67120-5959-11cf-91F6-C2863C385E30"","""",""ibcbbbebqbdbciebmcobmbhifcmciibblgmf"","""""							us		C:\Archivos de programa\DevStudio\VB\
+904				CompanionFile	"900 : Custctrls - STD,flxgdes"					%900		us		C:\WINDOWS\system32\
+905				CompanionFile	"900 : Custctrls - STD,msflxgrd_dep"					%900		us		C:\WINDOWS\system32\
+906				InstallShared	"Custctrls - STD- Help,flexgrid_cnt,flexgrid.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+907				InstallShared	"Custctrls - STD- Help,flexgrid_hlp,flexgrid.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+908				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""msflxgrd.cnt"",""%s"","""""					%906		us		C:\WINDOWS\Help\
+909				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""msflxgrd.hlp"",""%s"","""""					%907		us		C:\WINDOWS\Help\
+910				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;msflxgrd_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+911				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;msflxgrd_fts"							us		C:\Archivos de programa\DevStudio\VB\
+912				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;msflxgrd_gid"							us		C:\Archivos de programa\DevStudio\VB\
+913				Group	914 915							us		C:\Archivos de programa\DevStudio\VB\
+914				InstallShared	"Custctrls - STD,dblist32,dblist32.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+915				Depend	914 ? 916 917 918 919 920 921 922 923 924 925 926							us	Yes	C:\Archivos de programa\DevStudio\VB\
+916		DBLIST32.OCX		SelfReg	"""Custctrls - STD"",""dblist32"","""","""","""""					%914		us		C:\WINDOWS\system32\
+917		DBList license key		AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\096EFC40-6ABF-11cf-850C-08002B30345D"","""",""knsgigmnmngnmnigthmgpninrmumhgkgrlrk"","""""							us		C:\Archivos de programa\DevStudio\VB\
+918				CompanionFile	"914 : Custctrls - STD,dblstes"					%914		us		C:\WINDOWS\system32\
+919				CompanionFile	"914 : Custctrls - STD,dblist32_dep"					%914		us		C:\WINDOWS\system32\
+920				InstallShared	"Custctrls - STD- Help,dblist96_cnt,dblist96.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+921				InstallShared	"Custctrls - STD- Help,dblist96_hlp,dblist96.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+922				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""dblist96.cnt"",""%s"","""""					%920		us		C:\WINDOWS\Help\
+923				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""dblist96.hlp"",""%s"","""""					%921		us		C:\WINDOWS\Help\
+924				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;dblist96_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+925				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;dblist96_fts"							us		C:\Archivos de programa\DevStudio\VB\
+926				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;dblist96_gid"							us		C:\Archivos de programa\DevStudio\VB\
+927				Group	928 929							us		C:\Archivos de programa\DevStudio\VB\
+928				InstallShared	"Custctrls - STD,dbgrid32,dbgrid32.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+929				Depend	928 ? 930 931 932 933 934 935 936 937 938 939 940							us	Yes	C:\Archivos de programa\DevStudio\VB\
+930		DBGRID32.OCX		SelfReg	"""Custctrls - STD"",""dbgrid32"","""","""","""""					%928		us		C:\WINDOWS\system32\
+931		DBGrid license key		AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\556C75F1-EFBC-11CF-B9F3-00A0247033C4"","""",""xybiedobrqsprbijaegcbislrsiucfjdhisl"","""""							us		C:\Archivos de programa\DevStudio\VB\
+932				CompanionFile	"928 : Custctrls - STD,dbgrdes"					%928		us		C:\WINDOWS\system32\
+933				CompanionFile	"928 : Custctrls - STD,dbgrid32_dep"					%928		us		C:\WINDOWS\system32\
+934				InstallShared	"Custctrls - STD- Help,dbgrid96_cnt,dbgrid96.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+935				InstallShared	"Custctrls - STD- Help,dbgrid96_hlp,dbgrid96.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+936				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""dbgrid96.cnt"",""%s"","""""					%934		us		C:\WINDOWS\Help\
+937				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""dbgrid96.hlp"",""%s"","""""					%935		us		C:\WINDOWS\Help\
+938				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;dbgrid96_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+939				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;dbgrid96_fts"							us		C:\Archivos de programa\DevStudio\VB\
+940				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;dbgrid96_gid"							us		C:\Archivos de programa\DevStudio\VB\
+941				Group	942 943							us		C:\Archivos de programa\DevStudio\VB\
+942				InstallShared	"Custctrls - STD,cmdialog32,comdlg32.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+943				Depend	942 ? 944 945 946 947 948 949 950 951 952 953 954							us	Yes	C:\Archivos de programa\DevStudio\VB\
+944		COMDLG32.OCX		SelfReg	"""Custctrls - STD"",""cmdialog32"","""","""","""""					%942		us		C:\WINDOWS\system32\
+945		Common Dialog license key		AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\4D553650-6ABE-11cf-8ADB-00AA00C00905"","""",""gfjmrfkfifkmkfffrlmmgmhmnlulkmfmqkqj"","""""							us		C:\Archivos de programa\DevStudio\VB\
+946				CompanionFile	"942 : Custctrls - STD,cmdlges"					%942		us		C:\WINDOWS\system32\
+947				CompanionFile	"942 : Custctrls - STD,cmdialog32_dep"					%942		us		C:\WINDOWS\system32\
+948				InstallShared	"Custctrls - STD- Help,cmdlg96_cnt,cmdlg96.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+949				InstallShared	"Custctrls - STD- Help,cmdlg96_hlp,cmdlg96.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+950				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""cmdlg96.cnt"",""%s"","""""					%948		us		C:\WINDOWS\Help\
+951				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""cmdlg96.hlp"",""%s"","""""					%949		us		C:\WINDOWS\Help\
+952				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;cmdlg96_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+953				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;cmdlg96_fts"							us		C:\Archivos de programa\DevStudio\VB\
+954				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;cmdlg96_gid"							us		C:\Archivos de programa\DevStudio\VB\
+955				Group	956 957							us		C:\Archivos de programa\DevStudio\VB\
+956				InstallShared	"Custctrls - STD,comctl32_ocx,comctl32.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+957				Depend	956 ? 958 959 960 961 962 963 964 965 966 967 968							us	Yes	C:\Archivos de programa\DevStudio\VB\
+958		COMCTL32.OCX		SelfReg	"""Custctrls - STD"",""comctl32_ocx"","""","""","""""					%956		us		C:\WINDOWS\system32\
+959		COMCTL license key		AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\57CBF9E0-6AA7-11cf-8ADB-00AA00C00905"","""",""aahakhchghkhfhaamghhbhbhkbpgfhahlfle"","""""							us		C:\Archivos de programa\DevStudio\VB\
+960				CompanionFile	"956 : Custctrls - STD,cmctles_dll"					%956		us		C:\WINDOWS\system32\
+961				CompanionFile	"956 : Custctrls - STD,comctl32_dep"					%956		us		C:\WINDOWS\system32\
+962				InstallShared	"Custctrls - STD- Help,comctl1_cnt,comctl1.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+963				InstallShared	"Custctrls - STD- Help,comctl1_hlp,comctl1.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+964				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""comctl1.cnt"",""%s"","""""					%962		us		C:\WINDOWS\Help\
+965				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""comctl1.hlp"",""%s"","""""					%963		us		C:\WINDOWS\Help\
+966				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;comctl1_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+967				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;comctl1_fts"							us		C:\Archivos de programa\DevStudio\VB\
+968				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;comctl1_gid"							us		C:\Archivos de programa\DevStudio\VB\
+969				Group	970 971 972 973 974 975 976							us		C:\Archivos de programa\DevStudio\VB\
+970				CopyFile	"Custctrls - STD- Help,vbcmn96_hlp"					%W\Help		us		C:\WINDOWS\Help\
+971				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""vbcmn96.hlp"",""%s"","""""					%970		us		C:\WINDOWS\Help\
+972				CopyFile	"Custctrls - STD- Help,vbcmn96_cnt"					%W\Help		us		C:\WINDOWS\Help\
+973				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""vbcmn96.cnt"",""%s"","""""					%972		us		C:\WINDOWS\Help\
+974				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;vbcmn96_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+975				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;vbcmn96_fts"							us		C:\Archivos de programa\DevStudio\VB\
+976				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CSHelp;vbcmn96_gid"							us		C:\Archivos de programa\DevStudio\VB\
+978				CopySection	Custctrls - Projects					%D\Template\Projects		us		C:\Archivos de programa\DevStudio\VB\Template\Projects\
+983		Custom Controls for Ent & Pro		Group	984 998 1012 1026 1040 1054 1068 1082 1096 1110 1124							us		C:\Archivos de programa\DevStudio\VB\
+984				Group	985 986							us		C:\Archivos de programa\DevStudio\VB\
+985				InstallShared	"Custctrls - PRO,comct232_ocx,comct232.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+986				Depend	985 ? 987 988 989 990 991 992 993 994 995 996 997							us	Yes	C:\Archivos de programa\DevStudio\VB\
+987		COMCT232.OCX		SelfReg	"""Custctrls - PRO"",""comct232_ocx"","""","""","""""					%985		us		C:\WINDOWS\system32\
+988				AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\9E799BF1-8817-11cf-958F-0020AFC28C3B"","""",""uqpqnqkjujkjjjjqwktjrjkjtkupsjnjtoun"","""""							us		C:\Archivos de programa\DevStudio\VB\
+989				CompanionFile	"985 : Custctrls - PRO,cmct2es_dll"					%985		us		C:\WINDOWS\system32\
+990				CompanionFile	"985 : Custctrls - PRO,comct232_dep"					%985		us		C:\WINDOWS\system32\
+991				InstallShared	"Custctrls - PRO - Help,comctl2_cnt,comctl2.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+992				InstallShared	"Custctrls - PRO - Help,comctl2_hlp,comctl2.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+993				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""comctl2.cnt"",""%s"","""""					%991		us		C:\WINDOWS\Help\
+994				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""comctl2.hlp"",""%s"","""""					%992		us		C:\WINDOWS\Help\
+995				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;comctl2_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+996				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;comctl2_fts"							us		C:\Archivos de programa\DevStudio\VB\
+997				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;comctl2_gid"							us		C:\Archivos de programa\DevStudio\VB\
+998				Group	999 1000							us		C:\Archivos de programa\DevStudio\VB\
+999				InstallShared	"Custctrls - PRO,msinet_ocx,msinet.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+1000				Depend	999 ? 1001 1002 1003 1004 1005 1006 1007 1008 1009 1010 1011							us	Yes	C:\Archivos de programa\DevStudio\VB\
+1001		MSINET.OCX		SelfReg	"""Custctrls - PRO"",""msinet_ocx"","""","""","""""					%999		us		C:\WINDOWS\system32\
+1002				AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\78E1BDD1-9941-11cf-9756-00AA00C00908"","""",""yjrjvqkjlqqjnqkjvprqsjnjvkuknjpjtoun"","""""							us		C:\Archivos de programa\DevStudio\VB\
+1003				CompanionFile	"999 : Custctrls - PRO,inetes_dll"					%999		us		C:\WINDOWS\system32\
+1004				CompanionFile	"999 : Custctrls - PRO,msinet_dep"					%999		us		C:\WINDOWS\system32\
+1005				InstallShared	"Custctrls - PRO - Help,inet_cnt,inet.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1006				InstallShared	"Custctrls - PRO - Help,inet_hlp,inet.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1007				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""inet.cnt"",""%s"","""""					%1005		us		C:\WINDOWS\Help\
+1008				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""inet.hlp"",""%s"","""""					%1006		us		C:\WINDOWS\Help\
+1009				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;inet_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+1010				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;inet_fts"							us		C:\Archivos de programa\DevStudio\VB\
+1011				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;inet_gid"							us		C:\Archivos de programa\DevStudio\VB\
+1012				Group	1013 1014							us		C:\Archivos de programa\DevStudio\VB\
+1013				InstallShared	"Custctrls - PRO,richtx32_ocx,richtx32.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+1014				Depend	1013 ? 1015 1016 1017 1018 1019 1020 1021 1022 1023 1024 1025							us	Yes	C:\Archivos de programa\DevStudio\VB\
+1015		RICHTX32.OCX		SelfReg	"""Custctrls - PRO"",""richtx32_ocx"","""","""","""""					%1013		us		C:\WINDOWS\system32\
+1016		RichText license key		AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\DC4D7920-6AC8-11cf-8ADB-00AA00C00905"","""",""iokouhloohrojhhhtnooiokomiwnmohosmsl"","""""							us		C:\Archivos de programa\DevStudio\VB\
+1017				CompanionFile	"1013 : Custctrls - PRO,rchtxes_dll"					%1013		us		C:\WINDOWS\system32\
+1018				CompanionFile	"1013 : Custctrls - PRO,richtx32_dep"					%1013		us		C:\WINDOWS\system32\
+1019				InstallShared	"Custctrls - PRO - Help,rtfbox96_cnt,rtfbox96.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1020				InstallShared	"Custctrls - PRO - Help,rtfbox96_hlp,rtfbox96.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1021				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""rtfbox96.cnt"",""%s"","""""					%1019		us		C:\WINDOWS\Help\
+1022				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""rtfbox96.hlp"",""%s"","""""					%1020		us		C:\WINDOWS\Help\
+1023				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;rtfbox96_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+1024				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;rtfbox96_fts"							us		C:\Archivos de programa\DevStudio\VB\
+1025				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;rtfbox96_gid"							us		C:\Archivos de programa\DevStudio\VB\
+1026				Group	1027 1028							us		C:\Archivos de programa\DevStudio\VB\
+1027				InstallShared	"Custctrls - PRO,mschart_ocx,mschart.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+1028				Depend	1027 ? 1029 1030 1031 1032 1033 1034 1035 1036 1037 1038 1039							us	Yes	C:\Archivos de programa\DevStudio\VB\
+1029		MSCHART.OCX		SelfReg	"""Custctrls - PRO"",""mschart_ocx"","""","""","""""					%1027		us		C:\WINDOWS\system32\
+1030				AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\7C35CA30-D112-11cf-8E72-00A0C90F26F8"","""",""whmhmhohmhiorhkouimhihihwiwinhlosmsl"","""""							us		C:\Archivos de programa\DevStudio\VB\
+1031				CompanionFile	"1027 : Custctrls - PRO,mschtes_dll"					%1027		us		C:\WINDOWS\system32\
+1032				CompanionFile	"1027 : Custctrls - PRO,mschart_dep"					%1027		us		C:\WINDOWS\system32\
+1033				InstallShared	"Custctrls - PRO - Help,mschrt96_cnt,mschrt96.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1034				InstallShared	"Custctrls - PRO - Help,mschrt96_hlp,mschrt96.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1035				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""mschrt96.cnt"",""%s"","""""					%1033		us		C:\WINDOWS\Help\
+1036				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""mschrt96.hlp"",""%s"","""""					%1034		us		C:\WINDOWS\Help\
+1037				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;mschrt96_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+1038				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;mschrt96_fts"							us		C:\Archivos de programa\DevStudio\VB\
+1039				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;mschrt96_gid"							us		C:\Archivos de programa\DevStudio\VB\
+1040				Group	1041 1042							us		C:\Archivos de programa\DevStudio\VB\
+1041				InstallShared	"Custctrls - PRO,mswinsck_ocx,mswinsck.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+1042				Depend	1041 ? 1043 1044 1045 1046 1047 1048 1049 1050 1051 1052 1053							us	Yes	C:\Archivos de programa\DevStudio\VB\
+1043		MSWINSCK.OCX		SelfReg	"""Custctrls - PRO"",""mswinsck_ocx"","""","""","""""					%1041		us		C:\WINDOWS\system32\
+1044				AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\2c49f800-c2dd-11cf-9ad6-0080c7e7b78d"","""",""mlrljgrlhltlngjlthrligklpkrhllglqlrk"","""""							us		C:\Archivos de programa\DevStudio\VB\
+1045				CompanionFile	"1041 : Custctrls - PRO,winskes_dll"					%1041		us		C:\WINDOWS\system32\
+1046				CompanionFile	"1041 : Custctrls - PRO,mswinsck_dep"					%1041		us		C:\WINDOWS\system32\
+1047				InstallShared	"Custctrls - PRO - Help,mswinsck_cnt,mswinsck.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1048				InstallShared	"Custctrls - PRO - Help,mswinsck_hlp,mswinsck.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1049				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""mswinsck.cnt"",""%s"","""""					%1047		us		C:\WINDOWS\Help\
+1050				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""mswinsck.hlp"",""%s"","""""					%1048		us		C:\WINDOWS\Help\
+1051				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;mswinsck_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+1052				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;mswinsck_fts"							us		C:\Archivos de programa\DevStudio\VB\
+1053				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;mswinsck_gid"							us		C:\Archivos de programa\DevStudio\VB\
+1054				Group	1055  1056							us		C:\Archivos de programa\DevStudio\VB\
+1055				InstallShared	"Custctrls - PRO,msmapi32,msmapi32.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+1056				Depend	1055 ? 1057 1058 1059 1060 1061 1062 1063 1064 1065 1066 1067							us	Yes	C:\Archivos de programa\DevStudio\VB\
+1057		MSMAPI32.OCX		SelfReg	"""Custctrls - PRO"",""msmapi32"","""","""","""""					%1055		us		C:\WINDOWS\system32\
+1058		MSMapi license key		AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\899B3E80-6AC6-11cf-8ADB-00AA00C00905"","""",""wjsjjjlqmjpjrjjjvpqqkqmqukypoqjquoun"","""""							us		C:\Archivos de programa\DevStudio\VB\
+1059				CompanionFile	"1055 : Custctrls - PRO,msmpies"					%1055		us		C:\WINDOWS\system32\
+1060				CompanionFile	"1055 : Custctrls - PRO,msmapi32_dep"					%1055		us		C:\WINDOWS\system32\
+1061				InstallShared	"Custctrls - PRO - Help,mapi96_cnt,mapi96.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1062				InstallShared	"Custctrls - PRO - Help,mapi96_hlp,mapi96.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1063				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""mapi96.cnt"",""%s"","""""					%1061		us		C:\WINDOWS\Help\
+1064				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""mapi96.hlp"",""%s"","""""					%1062		us		C:\WINDOWS\Help\
+1065				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;mapi96_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+1066				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;mapi96_fts"							us		C:\Archivos de programa\DevStudio\VB\
+1067				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;mapi96_gid"							us		C:\Archivos de programa\DevStudio\VB\
+1068				Group	1069 1070							us		C:\Archivos de programa\DevStudio\VB\
+1069				InstallShared	"Custctrls - PRO,mci32,mci32.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+1070				Depend	1069 ? 1071 1072 1073 1074 1075 1076 1077 1078 1079 1080 1081							us	Yes	C:\Archivos de programa\DevStudio\VB\
+1071		MCI32.OCX		SelfReg	"""Custctrls - PRO"",""mci32"","""","""","""""					%1069		us		C:\WINDOWS\system32\
+1072		MCI license key		AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\B1EFCCF0-6AC1-11cf-8ADB-00AA00C00905"","""",""qqkjvqpqmqjjpqjjvpqqkqmqvkypoqjquoun"","""""							us		C:\Archivos de programa\DevStudio\VB\
+1073				CompanionFile	"1069 : Custctrls - PRO,mcies"					%1069		us		C:\WINDOWS\system32\
+1074				CompanionFile	"1069 : Custctrls - PRO,mci32_dep"					%1069		us		C:\WINDOWS\system32\
+1075				InstallShared	"Custctrls - PRO - Help,mmedia96_cnt,mmedia96.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1076				InstallShared	"Custctrls - PRO - Help,mmedia96_hlp,mmedia96.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1077				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""mmedia96.cnt"",""%s"","""""					%1075		us		C:\WINDOWS\Help\
+1078				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""mmedia96.hlp"",""%s"","""""					%1076		us		C:\WINDOWS\Help\
+1079				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;mmedia96_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+1080				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;mmedia96_fts"							us		C:\Archivos de programa\DevStudio\VB\
+1081				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;mmedia96_gid"							us		C:\Archivos de programa\DevStudio\VB\
+1082				Group	1083 1084							us		C:\Archivos de programa\DevStudio\VB\
+1083				InstallShared	"Custctrls - PRO,picclip32,picclip32.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+1084				Depend	1083 ? 1085 1086 1087 1088 1089 1090 1091 1092 1093 1094 1095							us	Yes	C:\Archivos de programa\DevStudio\VB\
+1085		PICCLP32.OCX		SelfReg	"""Custctrls - PRO"",""picclip32"","""","""","""""					%1083		us		C:\WINDOWS\system32\
+1086		PicClip license key		AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\6FB38640-6AC7-11cf-8ADB-00AA00C00905"","""",""gdjkokgdldikhdddpjkkekgknesjikdkoioh"","""""							us		C:\Archivos de programa\DevStudio\VB\
+1087				CompanionFile	"1083 : Custctrls - PRO,pcclpes"					%1083		us		C:\WINDOWS\system32\
+1088				CompanionFile	"1083 : Custctrls - PRO,picclp32_dep"					%1083		us		C:\WINDOWS\system32\
+1089				InstallShared	"Custctrls - PRO - Help,picclp96_cnt,picclp96.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1090				InstallShared	"Custctrls - PRO - Help,picclp96_hlp,picclp96.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1091				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""picclp96.cnt"",""%s"","""""					%1089		us		C:\WINDOWS\Help\
+1092				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""picclp96.hlp"",""%s"","""""					%1090		us		C:\WINDOWS\Help\
+1093				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;picclp96_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+1094				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;picclp96_fts"							us		C:\Archivos de programa\DevStudio\VB\
+1095				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;picclp96_gid"							us		C:\Archivos de programa\DevStudio\VB\
+1096				Group	1097 1098							us		C:\Archivos de programa\DevStudio\VB\
+1097				InstallShared	"Custctrls - PRO,sysinfo_ocx,sysinfo.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+1098				Depend	1097 ? 1099 1100 1101 1102 1103 1104 1105 1106 1107 1108 1109							us	Yes	C:\Archivos de programa\DevStudio\VB\
+1099		SYSINFO.OCX		SelfReg	"""Custctrls - PRO"",""sysinfo_ocx"","""","""","""""					%1097		us		C:\WINDOWS\system32\
+1100		Sysinfo license key		AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\E32E2733-1BC5-11d0-B8C3-00A0C90DCA10"","""",""kmhfimlflmmfpffmsgfmhmimngtghmoflhsg"","""""							us		C:\Archivos de programa\DevStudio\VB\
+1101				CompanionFile	"1097 : Custctrls - PRO,sysines"					%1097		us		C:\WINDOWS\system32\
+1102				CompanionFile	"1097 : Custctrls - PRO,sysinfo_dep"					%1097		us		C:\WINDOWS\system32\
+1103				InstallShared	"Custctrls - PRO - Help,sysinfo_cnt,sysinfo.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1104				InstallShared	"Custctrls - PRO - Help,sysinfo_hlp,sysinfo.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1105				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""sysinfo.cnt"",""%s"","""""					%1103		us		C:\WINDOWS\Help\
+1106				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""sysinfo.hlp"",""%s"","""""					%1104		us		C:\WINDOWS\Help\
+1107				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;sysinfo_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+1108				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;sysinfo_fts"							us		C:\Archivos de programa\DevStudio\VB\
+1109				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;sysinfo_gid"							us		C:\Archivos de programa\DevStudio\VB\
+1110				Group	1111 1112							us		C:\Archivos de programa\DevStudio\VB\
+1111				InstallShared	"Custctrls - PRO,mscomm32,mscomm32.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+1112				Depend	1111 ? 1113 1114 1115 1116 1117 1118 1119 1120 1121 1122 1123							us	Yes	C:\Archivos de programa\DevStudio\VB\
+1113		MSCOMM32.OCX		SelfReg	"""Custctrls - PRO"",""mscomm32"","""","""","""""					%1111		us		C:\WINDOWS\system32\
+1114		MSComm license key		AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\4250E830-6AC2-11cf-8ADB-00AA00C00905"","""",""kjljvjjjoquqmjjjvpqqkqmqykypoqjquoun"","""""							us		C:\Archivos de programa\DevStudio\VB\
+1115				CompanionFile	"1111 : Custctrls - PRO,mscomes"					%1111		us		C:\WINDOWS\system32\
+1116				CompanionFile	"1111 : Custctrls - PRO,mscomm32_dep"					%1111		us		C:\WINDOWS\system32\
+1117				InstallShared	"Custctrls - PRO - Help,comm96_cnt,comm96.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1118				InstallShared	"Custctrls - PRO - Help,comm96_hlp,comm96.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1119				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""comm96.cnt"",""%s"","""""					%1117		us		C:\WINDOWS\Help\
+1120				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""comm96.hlp"",""%s"","""""					%1118		us		C:\WINDOWS\Help\
+1121				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;comm96_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+1122				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;comm96_fts"							us		C:\Archivos de programa\DevStudio\VB\
+1123				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;comm96_gid"							us		C:\Archivos de programa\DevStudio\VB\
+1124				Group	1125 1126							us		C:\Archivos de programa\DevStudio\VB\
+1125				InstallShared	"Custctrls - PRO,msmask32,msmask32.ocx,,111 "					%m		us		C:\WINDOWS\system32\
+1126				Depend	1125 ? 1127 1128 1129 1130 1131 1132 1133 1134 1135 1136 1137							us	Yes	C:\Archivos de programa\DevStudio\VB\
+1127		MSMASK32.OCX		SelfReg	"""Custctrls - PRO"",""msmask32"","""","""","""""					%1125		us		C:\WINDOWS\system32\
+1128		MSMask license key		AddRegData	"""HKEY_CLASSES_ROOT"",""Licenses\BC96F860-9928-11cf-8AFA-00AA00C00905"","""",""mmimfflflmqmlfffrlnmofhfkgrlmmfmqkqj"","""""							us		C:\Archivos de programa\DevStudio\VB\
+1129				CompanionFile	"1125 : Custctrls - PRO,msmskes"					%1125		us		C:\WINDOWS\system32\
+1130				CompanionFile	"1125 : Custctrls - PRO,msmask32_dep"					%1125		us		C:\WINDOWS\system32\
+1131				InstallShared	"Custctrls - PRO - Help,masked96_cnt,masked96.cnt,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1132				InstallShared	"Custctrls - PRO - Help,masked96_hlp,masked96.hlp,,111 "					%W\Help		us		C:\WINDOWS\Help\
+1133				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""masked96.cnt"",""%s"","""""					%1131		us		C:\WINDOWS\Help\
+1134				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\Help"",""masked96.hlp"",""%s"","""""					%1132		us		C:\WINDOWS\Help\
+1135				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;masked96_ftg"							us		C:\Archivos de programa\DevStudio\VB\
+1136				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;masked96_fts"							us		C:\Archivos de programa\DevStudio\VB\
+1137				CustomAction	"vb5stp.dll,RemoveHelpAuxFile,Aux CPHelp;masked96_gid"							us		C:\Archivos de programa\DevStudio\VB\
+1141		Templates		Group	1142 1143 1144 1145 1146 1147 1148							us		C:\Archivos de programa\DevStudio\VB\
+1142				CopySection	Template Forms					%D\Template\Forms		us		C:\Archivos de programa\DevStudio\VB\Template\Forms\
+1143				CopySection	Template Projects					%D\Template\Projects		us		C:\Archivos de programa\DevStudio\VB\Template\Projects\
+1144				CopySection	Template UserCtls					%D\Template\UserCtls		us		C:\Archivos de programa\DevStudio\VB\Template\UserCtls\
+1145				CopySection	Template Classes					%D\template\classes		us		C:\Archivos de programa\DevStudio\VB\template\classes\
+1146				CopySection	Template Modules					%D\template\modules		us		C:\Archivos de programa\DevStudio\VB\template\modules\
+1147				CreateDir	UserDocs					%D\template		us		C:\Archivos de programa\DevStudio\VB\template\
+1148				CreateDir	MDIForms					%D\Template		us		C:\Archivos de programa\DevStudio\VB\Template\
+1153		Win API		Group	1154 1155 1158							us		C:\Archivos de programa\DevStudio\VB\Winapi\
+1154				CopySection	Winapi							us		C:\Archivos de programa\DevStudio\VB\Winapi\
+1155				CustomAction	"vb5stp.dll,ExecOLSd,""1154,apiload.exe,/regserver,/unregserver"""					%1154		us		C:\Archivos de programa\DevStudio\VB\Winapi\
+1156				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar\VB API Declaration Loader"",""ProgID"",""APIDeclarationLoader.Connect"","""""									
+1157				AddRegData	"""HKEY_CURRENT_USER"",""Software\Microsoft\Visual Basic\5.0\AddInToolbar\VB API Declaration Loader"",""ShowOnToolbar"",""1"","""""									
+1158				Depend	53 ? 1159:1160							us	Yes	C:\Archivos de programa\DevStudio\VB\Winapi\
+1159				InstallShortcut	"%1154\apiload.exe,APIView<Visor de texto API>,%1154,,,,"					%264\Microsoft Visual Basic 5.0		us		C:\Documents and Settings\All Users\Men˙ Inicio\Programas\Microsoft Visual Basic 5.0\
+1160				AddProgmanItem	"VB<Microsoft Visual Basic 5.0>,APIView<Visor de texto API>,%1154\apiload.exe,%1154,,,,,,"					%1154		nyi		
+1162		Visual Basic INI modifications		Group	1177							us		C:\Archivos de programa\DevStudio\VB\
+1163				AddIniLine	"""VBAddin.INI"",""Add-Ins32"",""AppWizard.Wizard"",""0"""							us		C:\Archivos de programa\DevStudio\VB\
+1165				Group	1166 1174							us		C:\Archivos de programa\DevStudio\VB\
+1166				Depend	801 ? 1167 1168 1169 1170 1171 1172 1173							us	Yes	C:\Archivos de programa\DevStudio\VB\
+1167				AddIniLine	"""VBAddin.INI"",""Add-Ins32"",""WizMan.Connect"",""0"""							us		C:\Archivos de programa\DevStudio\VB\
+1168				AddIniLine	"""VBAddin.INI"",""Add-Ins32"",""ClassBuilder.Wizard"",""0"""							us		C:\Archivos de programa\DevStudio\VB\
+1169				AddIniLine	"""VBAddin.INI"",""Add-Ins32"",""AddInToolbar.Connect"",""0"""							us		C:\Archivos de programa\DevStudio\VB\
+1170				AddIniLine	"""VBAddin.INI"",""Add-Ins32"",""ControlWiz.Wizard"",""0"""							us		C:\Archivos de programa\DevStudio\VB\
+1171				AddIniLine	"""VBAddin.INI"",""Add-Ins32"",""DataFormWizard.Wizard"",""0"""							us		C:\Archivos de programa\DevStudio\VB\
+1172				AddIniLine	"""VBAddin.INI"",""Add-Ins32"",""ActiveXDocumentWizard.Wizard"",""0"""							us		C:\Archivos de programa\DevStudio\VB\
+1173				AddIniLine	"""VBAddin.INI"",""Add-Ins32"",""PropertyPageWizard.Wizard"",""0"""							us		C:\Archivos de programa\DevStudio\VB\
+1174				Depend	1154 ? 1175							us	Yes	C:\Archivos de programa\DevStudio\VB\
+1175				AddIniLine	"""VBAddin.INI"",""Add-Ins32"",""APIDeclarationLoader.Connect"",""0"""							us		C:\Archivos de programa\DevStudio\VB\
+1177				Group	1178 1179 1180 1181 1182 1183 1184 1185 1186 1187 1188 1189 1190 1191							us		C:\Archivos de programa\DevStudio\VB\
+1178				AddIniLine	"""VB.INI"",""VBX Conversions32"",""msmapi.vbx"",""{20C62CAE-15DA-101B-B9A8-444553540000}#1.1#0;%s\msmapi32.ocx"""					%M		us		C:\WINDOWS\system32\
+1179				AddIniLine	"""VB.INI"",""VBX Conversions32"",""mci.vbx"",""{C1A8AF28-1257-101B-8FB0-0020AF039CA3}#1.0#0;%s\mci32.ocx"""					%M		us		C:\WINDOWS\system32\
+1180				AddIniLine	"""VB.INI"",""VBX Conversions32"",""mscomm.vbx"",""{648A5603-2C6E-101B-82B6-000000000014}#1.0#0;%s\mscomm32.ocx"""					%M		us		C:\WINDOWS\system32\
+1181				AddIniLine	"""VB.INI"",""VBX Conversions32"",""msmasked.vbx"",""{C932BA88-4374-101B-A56C-00AA003668DC}#1.0#0;%s\msmask32.ocx"""					%M		us		C:\WINDOWS\system32\
+1182				AddIniLine	"""VB.INI"",""VBX Conversions32"",""picclip.vbx"",""{27395F88-0C0C-101B-A3C9-08002B2F49FB}#1.0#0;%s\picclp32.ocx"""					%M		us		C:\WINDOWS\system32\
+1183				AddIniLine	"""VB.INI"",""VBX Conversions32"",""cmdialog.vbx"",""{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.0#0;%s\comdlg32.ocx"""					%M		us		C:\WINDOWS\system32\
+1184				AddIniLine	"""VB.INI"",""VBX Conversions32"",""msoutlin.vbx"",""{BE4F3AC8-AEC9-101A-947B-00DD010F7B46}#1.0#0;%s\msoutl32.ocx"""					%M		us		C:\WINDOWS\system32\
+1185				AddIniLine	"""VB.INI"",""VBX Conversions32"",""anibuton.vbx"",""{F72CC888-5ADC-101B-A56C-00AA003668DC}#1.0#0;%s\anibtn32.ocx"""					%M		us		C:\WINDOWS\system32\
+1186				AddIniLine	"""VB.INI"",""VBX Conversions32"",""graph.vbx"",""{0842D103-1E19-101B-9AAF-1A1626551E7C}#1.0#0;%s\graph32.ocx"""					%M		us		C:\WINDOWS\system32\
+1187				AddIniLine	"""VB.INI"",""VBX Conversions32"",""gauge.vbx"",""{7A080CC8-26E2-101B-AEBD-04021C009402}#1.0#0;%s\gauge32.ocx"""					%M		us		C:\WINDOWS\system32\
+1188				AddIniLine	"""VB.INI"",""VBX Conversions32"",""keystat.vbx"",""{B9D22273-0C24-101B-AEBD-04021C009402}#1.0#0;%s\keysta32.ocx"""					%M		us		C:\WINDOWS\system32\
+1189				AddIniLine	"""VB.INI"",""VBX Conversions32"",""spin.vbx"",""{B16553C3-06DB-101B-85B2-0000C009BE81}#1.0#0;%s\spin32.ocx"""					%M		us		C:\WINDOWS\system32\
+1190				AddIniLine	"""VB.INI"",""VBX Conversions32"",""threed.vbx"",""{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0;%s\threed32.ocx"""					%M		us		C:\WINDOWS\system32\
+1191				AddIniLine	"""VB.INI"",""VBX Conversions32"",""grid.vbx"",""{A8B3B723-0B5A-101B-B22E-00AA0037B2FC}#1.0#0;%s\grid32.ocx"""					%M		us		C:\WINDOWS\system32\
+1192		Oleaut32.dll and Axdist.exe	Install the latest versions of these files.	Group	1196 1197 1221 1222 1223 1224 1225 1227							us		C:\Archivos de programa\DevStudio\VB\
+1193				CustomAction	"vb5stp.dll,DetectOS,win95"							us		C:\Archivos de programa\DevStudio\VB\
+1194				DetectOlderFile	"oleaut32.dll, 2.20.4054.1"					%M		nyi		
+1195				CustomAction	"vb5stp.dll,DetectOS,40shell"							us		C:\Archivos de programa\DevStudio\VB\
+1196				InstallSysFile	"Oleaut,regsvr32_exe"					%M		nyi		
+1197				Depend	1195 ? 1198 1201:1198							us	Yes	C:\Archivos de programa\DevStudio\VB\
+1198				Group	1199 1200 1217							us		C:\Archivos de programa\DevStudio\VB\
+1199				InstallSysFile	"IE3,wininet_dll"					%M		nyi		
+1200				InstallSysFile	"IE3,inloader_dll"					%M		us		C:\WINDOWS\system32\
+1201				Group	1202 1203 1204 1205 1206 1207 1209 1211 1213 1215							us		C:\Archivos de programa\DevStudio\VB\
+1202				InstallSysFile	"IE3,urlmon_dll"					%M		nyi		
+1203				InstallSysFile	"IE3,hlink_dll"					%M		nyi		
+1204				InstallSysFile	"IE3,hlinkprx_dll"					%M		us		C:\WINDOWS\system32\
+1205				InstallShared	"IE3,actxprxy_dll,actxprxy.dll,,111 "					%M		se		
+1206				InstallSysFile	"IE3,schannel_dll"					%M		nyi		
+1207				Depend	1202 ? 1208 1231							us	No	C:\Archivos de programa\DevStudio\VB\
+1208		URLMON.DLL		AddRegData	"""LOCAL"",""Software\Microsoft\Windows\CurrentVersion\RunOnce"",""Register Urlmon.dll"",""%s\regsvr32.exe /s %s\urlmon.dll"","""""					%1202		nyi		
+1209				Depend	1203 ? 1210 1231							us	No	C:\Archivos de programa\DevStudio\VB\
+1210		HLINK.DLL		AddRegData	"""LOCAL"",""Software\Microsoft\Windows\CurrentVersion\RunOnce"",""Register Hlink.dll"",""%s\regsvr32.exe /s %s\hlink.dll"","""""					%1203		nyi		
+1211				Depend	1204 ? 1212 1231							us	Yes	C:\Archivos de programa\DevStudio\VB\
+1212		HLINKPRX.DLL		AddRegData	"""LOCAL"",""Software\Microsoft\Windows\CurrentVersion\RunOnce"",""Register Hlinkprx.dll"",""%s\regsvr32.exe /s %s\hlinkprx.dll"","""""					%1204		us		C:\WINDOWS\system32\
+1213				Depend	1205 ? 1214 1231							us	No	C:\Archivos de programa\DevStudio\VB\
+1214		ACTXPRXY.DLL		AddRegData	"""LOCAL"",""Software\Microsoft\Windows\CurrentVersion\RunOnce"",""Register Actxprxy.dll"",""%s\regsvr32.exe /s %s\actxprxy.dll"","""""					%1205		nyi		
+1215				Depend	1206 ? 1216 1231							us	No	C:\Archivos de programa\DevStudio\VB\
+1216		SCHANNEL.DLL		AddRegData	"""LOCAL"",""Software\Microsoft\Windows\CurrentVersion\RunOnce"",""Register Schannel.dll"",""%s\regsvr32.exe /s %s\schannel.dll"","""""					%1206		nyi		
+1217				Group	1218 1219 1220							us		C:\Archivos de programa\DevStudio\VB\
+1218				AddRegData	"""HKEY_LOCAL_MACHINE"",""Software\Microsoft\Internet Explorer\Security\Basic"",""SecurityName"",""Basic Authentication"","""""							us		C:\Archivos de programa\DevStudio\VB\
+1219				AddRegData	"""HKEY_LOCAL_MACHINE"",""Software\Microsoft\Internet Explorer\Security\Basic"",""DLLFile"",""wininet.dll"","""""							us		C:\Archivos de programa\DevStudio\VB\
+1220				AddRegData	"""HKEY_LOCAL_MACHINE"",""Software\Microsoft\Internet Explorer\Security\Basic"",""SchemeList"",""Basic"","""""							us		C:\Archivos de programa\DevStudio\VB\
+1221				AddRegData	"""LOCAL"",""Software\Microsoft\Visual Basic\5.0"",""AutoRun"",""1"","""""							us		C:\Archivos de programa\DevStudio\VB\
+1222				CustomAction	"vb5stp.dll,FixOaReg,"							us		C:\Archivos de programa\DevStudio\VB\
+1223				InstallSysFile	"Oleaut,oleaut32_dll"					%M		nyi		
+1224				CompanionFile	"1223 : Ole32,stdole2_tlb"					%1223		nyi		
+1225				Depend	1224 ? 1226							us	No	C:\Archivos de programa\DevStudio\VB\
+1226				CustomAction	"vb5stp.dll,RegisterTypeLibrary,Ole32;stdole2_tlb"					%1224		nyi		
+1227				Depend	1193 ? 1228:1233							us	No	C:\Archivos de programa\DevStudio\VB\
+1228				Depend	1194 ? 1230 1231:1229							nyi		
+1229				Depend	1223 ? 1232							nyi		
+1230				AddRegData	"""LOCAL"",""Software\Microsoft\Windows\CurrentVersion\RunOnce"",""Register Oleaut32.dll"",""%s\regsvr32.exe /s %s\oleaut32.dll"","""""					%M		nyi		
+1231				CustomAction	"vb5stp.dll,ForceAcmeRestart,"							us		C:\Archivos de programa\DevStudio\VB\
+1232		OLEAUT32.DLL		SelfReg	"""Oleaut"",""oleaut32_dll"","""","""","""""					%1223		nyi		
+1233				CustomAction	"vb5stp.dll,ExecOLSe,""1196,regsvr32.exe /s oleaut32.dll"""							us		C:\Archivos de programa\DevStudio\VB\
+1235		Billboards		Group	1236  1237 1238  1239  1240   1241  1242							us		
+1236				CustomAction	"vb5_bb.dll,AddBillboard,1200"							us		
+1237				CustomAction	"vb5_bb.dll,AddBillboard,1400"							us		
+1238				CustomAction	"vb5_bb.dll,AddBillboard,1500"							us		
+1239				CustomAction	"vb5_bb.dll,AddBillboard,1700"							us		
+1240				CustomAction	"vb5_bb.dll,AddBillboard,1900"							us		
+1241				CustomAction	"vb5_bb.dll,AddBillboard,2200"							us		
+1242				CustomAction	"vb5_bb.dll,AddBillboard,2400"							us		

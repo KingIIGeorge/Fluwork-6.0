@@ -1,0 +1,398 @@
+:Base Repostry.hlp
+1 Explorador del depósito
+2 Resumen del depósito=reconRepositoryOverview
+2 Resumen del Explorador del depósito=reconRepositoryBrowserOverview
+2 Interfaz de usuario del Explorador del depósito=reconRepositoryBrowserUserInterface
+2 Jerarquía del Explorador del depósito=reconRepositoryBrowserHierarchy
+2 Modelos de información de herramientas en el Explorador del depósito=reconToolInformationModelsintheRepositoryBrowser
+2 Interfaces del Explorador del depósito=reconInterfacesintheRepositoryBrowser
+2 Objetos del depósito en el Explorador del depósito=reconRepositoryObjectsintheRepositoryBrowser
+2 Relaciones en el Explorador del depósito=reconRelationshipsintheRepositoryBrowser
+2 Colecciones en el Explorador del depósito=reconCollectionsintheRepositoryBrowser
+2 Propiedades de los objetos en el Explorador del depósito=reconObjectPropertiesintheRepositoryBrowser
+2 Cuadro de diálogo Filtros de Repository=reconRepositoryBrowserFilterDialog
+2 Ver tipos de objetos en el Explorador del depósito=reconViewingObjectTypesintheRepositoryBrowser
+2 La raíz del depósito y el Explorador del depósito=reconRepositoryRootandtheRepositoryBrowser
+2 Actualización a Pro Browser=reconUpgradetoProBrowser
+2 Acerca del Explorador del depósito=reconAboutRepositoryBrowser
+1 Referencia de automatización de Repository
+2 Tener acceso a miembros de objetos de automatización=reconAccessingAutomationObjectMembersX
+2 Objetos del motor de Repository
+3 ObjectCol (Objeto)
+4 ObjectCol (Objeto)=reobjObjectCol
+4 Count (Propiedad, objeto ObjectCol)=reproObjectColCount
+4 Item (Propiedad, objeto ObjectCol)=reproObjectColItem
+4 Refresh (Método, objeto ObjectCol)=remthObjectColRefresh
+3 Relationship (Objeto)
+4 Relationship (Objeto)=reobjRelationship
+4 Delete (Método, objeto Relationship)=remthRelationshipDelete
+4 Destination (Propiedad, objeto Relationship)=reproRelationshipDestination
+4 Interface (Propiedad, objeto Relationship)=reproRelationshipInterface
+4 Lock (Método, objeto Relationship)=remthRelationshipLock
+4 Name (Propiedad, objeto Relationship)=reproRelationshipName
+4 Origin (Propiedad, objeto Relationship)=reproRelationshipOrigin
+4 Properties (Colección, objeto Relationship)=recolRelationshipProperties
+4 Refresh (Método, objeto Relationship)=remthRelationshipRefresh
+4 Repository (Propiedad, objeto Relationship)=reproRelationshipRepository
+4 Source (Propiedad, objeto Relationship)=reproRelationshipSource
+4 Target (Propiedad, objeto Relationship)=reproRelationshipTarget
+4 Type (Propiedad, objeto Relationship)=reproRelationshipType
+3 RelationshipCol (Objeto)
+4 RelationshipCol (Objeto)=reobjRelationshipCol
+4 Add (Método, objeto RelationshipCol)=remthRelationshipColAdd
+4 Count (Propiedad, objeto RelationshipCol)=reproRelationshipColCount
+4 Insert (Método, objeto RelationshipCol)=remthRelationshipColInsert
+4 Item (Propiedad, objeto RelationshipCol)=reproRelationshipColItem
+4 Move (Método, objeto RelationshipCol)=remthRelationshipColMove
+4 Refresh (Método, objeto RelationshipCol)=remthRelationshipColRefresh
+4 Remove (Método, objeto RelationshipCol)=remthRelationshipColRemove
+4 Source (Propiedad, objeto RelationshipCol)=reproRelationshipColSource
+4 Type (Propiedad, objeto RelationshipCol)=reproRelationshipColType
+3 Repository (Objeto)
+4 Repository (Objeto)=reobjRepository
+4 ConnectionString (Propiedad, objeto Repository)=reproRepositoryConnectionString
+4 Create (Método, objeto Repository)=remthRepositoryCreate
+4 CreateObject (Método, objeto Repository)=remthRepositoryCreateObject
+4 FreeConnection (Método, objeto Repository)=remthRepositoryFreeConnection
+4 GetNewConnection (Método, objeto Repository)=remthRepositoryGetNewConnection
+4 InternalIDToObjectID (Método, objeto Repository)=remthRepositoryInternalIDToObjectID
+4 Object (Propiedad, objeto Repository)=reproRepositoryObject
+4 ObjectIDToInternalID (Método, objeto Repository)=remthRepositoryObjectIDToInternalID
+4 Open (Método, objeto Repository)=remthRepositoryOpen
+4 Refresh (Método, objeto Repository)=remthRepositoryRefresh
+4 ReposConnection (Propiedad, objeto Repository)=reproRepositoryReposConnection
+4 RootObject (Propiedad, objeto Repository)=reproRepositoryRootObject
+4 Transaction (Propiedad, objeto Repository)=reproRepositoryTransaction
+4 Conectar con una base de datos del depósito=reconConnectingtoaRepositoryDatabase
+3 RepositoryObject (Objeto)
+4 RepositoryObject (Objeto)=reobjRepositoryObject
+4 Delete (Método, objeto RepositoryObject)=remthRepositoryObjectDelete
+4 Interface (Propiedad, objeto RepositoryObject)=reproRepositoryObjectInterface
+4 InternalID (Propiedad, objeto RepositoryObject)=reproRepositoryObjectInternalID
+4 Lock (Método, objeto RepositoryObject)=remthRepositoryObjectLock
+4 Name (Propiedad, objeto RepositoryObject)=reproRepositoryObjectName
+4 ObjectID (Propiedad, objeto RepositoryObject)=reproRepositoryObjectObjectID
+4 Properties (Colección, objeto RepositoryObject)=recolRepositoryObjectProperties
+4 Refresh (Método, objeto RepositoryObject)=remthRepositoryObjectRefresh
+4 Repository (Propiedad, objeto RepositoryObject)=reproRepositoryObjectRepository
+4 Type (Propiedad, objeto RepositoryObject)=reproRepositoryObjectType
+3 RepositoryTransaction (Objeto)
+4 RepositoryTransaction (Objeto)=reobjRepositoryTransaction
+4 Abort (Método, objeto RepositoryTransaction)=remthRepositoryTransactionAbort
+4 Begin (Método, objeto RepositoryTransaction)=remthRepositoryTransactionBegin
+4 Commit (Método, objeto RepositoryTransaction)=remthRepositoryTransactionCommit
+4 Flush (Método, objeto RepositoryTransaction)=remthRepositoryTransactionFlush
+4 GetOption (Método, objeto RepositoryTransaction)=remthRepositoryTransactionGetOption
+4 SetOption (Método, objeto RepositoryTransaction)=remthRepositoryTransactionSetOption
+4 Status (Propiedad, objeto RepositoryTransaction)=reproRepositoryTransactionStatus
+3 ReposProperties (Objeto)
+4 ReposProperties (Objeto)=reobjReposProperties
+4 Count (Propiedad, objeto ReposProperties)=reproReposPropertiesCount
+4 Item (Propiedad, objeto ReposProperties)=reproReposPropertiesItem
+3 ReposProperty (Objeto)
+4 ReposProperty (Objeto)=reobjReposProperty
+4 Name (Propiedad, objeto ReposProperty)=reproReposPropertyName
+4 Type (Propiedad, objeto ReposProperty)=reproReposPropertyType
+4 Value (Propiedad, objeto ReposProperty)=reproReposPropertyValue
+2 Objetos de modelos de información de tipos
+3 ClassDef (Objeto)
+4 ClassDef (Objeto)=reobjClassDef
+4 AddInterface (Método, objeto ClassDef)=remthClassDefAddInterface
+4 ClassID (Propiedad, objeto ClassDef)=reproClassDefClassID
+4 CreateInterfaceDef (Método, objeto ClassDef)=remthClassDefCreateInterfaceDef
+4 Interfaces (Colección, objeto ClassDef)=recolClassDefInterfaces
+4 ObjectInstances (Método, objeto ClassDef)=remthClassDefObjectInstances
+4 Properties (Colección, objeto ClassDef)=recolClassDefProperties
+4 ReposTypeLibScopes (Colección, objeto ClassDef)=recolClassDefReposTypeLibScopes
+3 CollectionDef (Objeto)
+4 CollectionDef (Objeto)=reobjCollectionDef
+4 CollectionItem (Colección, objeto CollectionDef)=recolCollectionDefCollectionItem
+4 DispatchID (Propiedad, objeto CollectionDef)=reproCollectionDefDispatchID
+4 Flags (Propiedad, objeto CollectionDef)=reproCollectionDefFlags
+4 Interface (Colección, objeto CollectionDef)=recolCollectionDefInterface
+4 IsOrigin (Propiedad, objeto CollectionDef)=reproCollectionDefIsOrigin
+4 MaxCount (Propiedad, objeto CollectionDef)=reproCollectionDefMaxCount
+4 MinCount (Propiedad, objeto CollectionDef)=reproCollectionDefMinCount
+4 Properties (Colección, objeto CollectionDef)=recolCollectionDefProperties
+3 InterfaceDef (Objeto)
+4 InterfaceDef (Objeto)=reobjInterfaceDef
+4 Ancestor (Colección, objeto InterfaceDef)=recolInterfaceDefAncestor
+4 Classes (Colección, objeto InterfaceDef)=recolInterfaceDefClasses
+4 CreateMethodDef (Método, objeto InterfaceDef)=remthInterfaceDefCreateMethodDef
+4 CreatePropertyDef (Método, objeto InterfaceDef)=remthInterfaceDefCreatePropertyDef
+4 CreateRelationshipColDef (Método, objeto InterfaceDef)=remthInterfaceDefCreateRelationshipColDef
+4 Descendants (Colección, objeto InterfaceDef)=recolInterfaceDefDescendants
+4 Flags (Propiedad, objeto InterfaceDef)=reproInterfaceDefFlags
+4 InterfaceID (Propiedad, objeto InterfaceDef)=reproInterfaceDefInterfaceID
+4 Members (Colección, objeto InterfaceDef)=recolInterfaceDefMembers
+4 ObjectInstances (Método, objeto InterfaceDef)=remthInterfaceDefObjectInstances
+4 Properties (Colección, objeto InterfaceDef)=recolInterfaceDefProperties
+4 ReposTypeLibScopes (Colección, objeto InterfaceDef)=recolInterfaceDefReposTypeLibScopes
+4 TableName (Propiedad, objeto InterfaceDef)=reproInterfaceDefTableName
+3 MethodDef (Objeto)
+4 MethodDef (Objeto)=reobjMethodDef
+4 DispatchID (Propiedad, objeto MethodDef)=reproMethodDefDispatchID
+4 Flags (Propiedad, objeto MethodDef)=reproMethodDefFlags
+4 Interface (Colección, objeto MethodDef)=recolMethodDefInterface
+4 Properties (Colección, objeto MethodDef)=recolMethodDefProperties
+3 PropertyDef (Objeto)
+4 PropertyDef (Objeto)=reobjPropertyDef
+4 APIType (Propiedad, objeto PropertyDef)=reproPropertyDefAPIType
+4 ColumnName (Propiedad, objeto PropertyDef)=reproPropertyDefColumnName
+4 DispatchID (Propiedad, objeto PropertyDef)=reproPropertyDefDispatchID
+4 Flags (Propiedad, objeto PropertyDef)=reproPropertyDefFlags
+4 Interface (Colección, objeto PropertyDef)=recolPropertyDefInterface
+4 Properties (Colección, objeto PropertyDef)=recolPropertyDefProperties
+4 SQLScale (Propiedad, objeto PropertyDef)=reproPropertyDefSQLScale
+4 SQLSize (Propiedad, objeto PropertyDef)=reproPropertyDefSQLSize
+4 SQLType (Propiedad, objeto PropertyDef)=reproPropertyDefSQLType
+3 RelationshipDef (Objeto)
+4 RelationshipDef (Objeto)=reobjRelationshipDef
+4 ItemInCollections (Colección, objeto RelationshipDef)=recolRelationshipDefItemInCollections
+4 Properties (Colección, objeto RelationshipDef)=recolRelationshipDefProperties
+4 ReposTypeLibScopes (Colección, objeto RelationshipDef)=recolRelationshipDefReposTypeLibScopes
+3 ReposRoot (Objeto)
+4 ReposRoot (Objeto)=reobjReposRoot
+4 CreateTypeLib (Método, objeto ReposRoot)=remthReposRootCreateTypeLib
+4 Properties (Colección, objeto ReposRoot)=recolReposRootProperties
+4 ReposTypeLibs (Colección, objeto ReposRoot)=recolReposRootReposTypeLibs
+3 ReposTypeLib (Objeto)
+4 ReposTypeLib (Objeto)=reobjReposTypeLib
+4 CreateClassDef (Método, objeto ReposTypeLib)=remthReposTypeLibCreateClassDef
+4 CreateInterfaceDef (Método, objeto ReposTypeLib)=remthReposTypeLibCreateInterfaceDef
+4 CreateRelationshipDef (Método, objeto ReposTypeLib)=remthReposTypeLibCreateRelationshipDef
+4 Properties (Colección, objeto ReposTypeLib)=recolReposTypeLibProperties
+4 ReposTypeInfos (Colección, objeto ReposTypeLib)=recolReposTypeLibReposTypeInfos
+4 ReposTypeLibContexts (Colección, objeto ReposTypeLib)=recolReposTypeLibReposTypeLibContexts
+4 TypeLibID (Propiedad, objeto ReposTypeLib)=reproReposTypeLibTypeLibID
+1 Referencia COM de Repository
+2 Clases del motor de Repository
+3 Clases del motor del depósito=reconRepositoryEngineClasses
+3 ObjectCol (Clase)=reclaObjectCol
+3 Relationship (Clase)=reclaRelationship
+3 RelationshipCol (Clase)=reclaRelationshipCol
+3 Repository (Clase)=reclaRepository
+3 RepositoryObject (Clase)=reclaRepositoryObject
+3 ReposProperties (Clase)=reclaReposProperties
+3 ReposProperty (Clase)=reclaReposProperty
+2 Clases del Modelo de información de tipos
+3 Clases del Modelo de información de tipos=reconTypeInformationModelClasses
+3 ClassDef (Clase)=reclaClassDef
+3 CollectionDef (Clase)=reclaCollectionDef
+3 InterfaceDef (Clase)=reclaInterfaceDef
+3 MethodDef (Clase)=reclaMethodDef
+3 PropertyDef (Clase)=reclaPropertyDef
+3 RelationshipDef (Clase)=reclaRelationshipDef
+3 ReposRoot (Clase)=reclaReposRoot
+3 ReposTypeLib (Clase)=reclaReposTypeLib
+2 Interfaces COM del motor de Repository
+3 IAnnotationalProps (Interfaz)
+4 IAnnotationalProps (Interfaz)=reifcIAnnotationalProps
+3 IEnumRepositoryErrors (Interfaz)
+4 IEnumRepositoryErrors (Interfaz)=reifcIEnumRepositoryErrors
+4 IEnumRepositoryErrors::Clone=remthIEnumRepositoryErrorsClone
+4 IEnumRepositoryErrors::Next=remthIEnumRepositoryErrorsNext
+4 IEnumRepositoryErrors::Reset=remthIEnumRepositoryErrorsReset
+4 IEnumRepositoryErrors::Skip=remthIEnumRepositoryErrorsSkip
+3 INamedObject (Interfaz)
+4 INamedObject (Interfaz)=reifcINamedObject
+4 Name (Propiedad, interfaz INamedObject)=reproINamedObjectName
+3 IObjectCol (Interfaz)
+4 IObjectCol (Interfaz)=reifcIObjectCol
+4 IObjectCol::get_Count=remthIObjectColget_Count
+4 IObjectCol::get_Item=remthIObjectColget_Item
+4 IObjectCol::_NewEnum=remthIObjectCol_NewEnum
+4 IObjectCol::Refresh=remthIObjectColRefresh
+3 IRelationship (Interfaz)
+4 Irelationship (Interfaz)=reifcIRelationship
+4 IRelationship::get_Destination=remthIRelationshipget_Destination
+4 IRelationship::get_Origin=remthIRelationshipget_Origin
+4 IRelationship::get_Source=remthIRelationshipget_Source
+4 IRelationship::get_Target=remthIRelationshipget_Target
+3 IRelationshipCol (Interfaz)
+4 IRelationshipCol (Interfaz)=reifcIRelationshipCol
+4 IRelationshipCol::Add=remthIRelationshipColAdd
+4 IRelationshipCol::get_Count=remthIRelationshipColget_Count
+4 IRelationshipCol::get_Item=remthIRelationshipColget_Item
+4 IRelationshipCol::get_Source=remthIRelationshipColget_Source
+4 IRelationshipCol::get_Type=remthIRelationshipColget_Type
+4 IRelationshipCol::Insert=remthIRelationshipColInsert
+4 IRelationshipCol::Move=remthIRelationshipColMove
+4 IRelationshipCol::_NewEnum=remthIRelationshipCol_NewEnum
+4 IRelationshipCol::Refresh=remthIRelationshipColRefresh
+4 IRelationshipCol::Remove=remthIRelationshipColRemove
+3 IRepository (Interfaz)
+4 IRepository (Interfaz)=reifcIRepository
+4 IRepository::Create=remthIRepositoryCreate
+4 IRepository::CreateObject=remthIRepositoryCreateObject
+4 IRepository::get_Object=remthIRepositoryget_Object
+4 IRepository::get_RootObject=remthIRepositoryget_RootObject
+4 IRepository::get_Transaction=remthIRepositoryget_Transaction
+4 IRepository::InternalIDToObjectID=remthIRepositoryInternalIDToObjectID
+4 IRepository::ObjectIDToInternalID=remthIRepositoryObjectIDToInternalID
+4 IRepository::Open=remthIRepositoryOpen
+4 IRepository::Refresh=remthIRepositoryRefresh
+4 Conectar con una base de datos del depósito=reconConnectingtoaRepositoryDatabase
+3 IRepositoryDispatch (Interfaz)
+4 IRepositoryDispatch (Interfaz)=reifcIRepositoryDispatch
+4 IRepositoryDispatch::get_Properties=remthIRepositoryDispatchget_Properties
+3 IRepositoryErrorQueue (Interfaz)
+4 IRepositoryErrorQueue (Interfaz)=reifcIRepositoryErrorQueue
+4 IRepositoryErrorQueue::Count=remthIRepositoryErrorQueueCount
+4 IRepositoryErrorQueue::Insert=remthIRepositoryErrorQueueInsert
+4 IRepositoryErrorQueue::Item=remthIRepositoryErrorQueueItem
+4 IRepositoryErrorQueue::Remove=remthIRepositoryErrorQueueRemove
+4 IRepositoryErrorQueue::_NewEnum=remthIRepositoryErrorQueue_NewEnum
+3 IRepositoryErrorQueueHandler (Interfaz)
+4 IRepositoryErrorQueueHandler (Interfaz)=reifcIRepositoryErrorQueueHandler
+4 IRepositoryErrorQueueHandler::CreateErrorQueue=remthIRepositoryErrorQueueHandlerCreateErrorQueue
+4 IRepositoryErrorQueueHandler::GetErrorQueue=remthIRepositoryErrorQueueHandlerGetErrorQueue
+4 IRepositoryErrorQueueHandler::SetErrorQueue=remthIRepositoryErrorQueueHandlerSetErrorQueue
+3 IRepositoryItem (Interfaz)
+4 IRepositoryItem (Interfaz)=reifcIRepositoryItem
+4 IRepositoryItem::Delete=remthIRepositoryItemDelete
+4 IRepositoryItem::get_Interface=remthIRepositoryItemget_Interface
+4 IRepositoryItem::get_Name=remthIRepositoryItemget_Name
+4 IRepositoryItem::get_Repository=remthIRepositoryItemget_Repository
+4 IRepositoryItem::get_Type=remthIRepositoryItemget_Type
+4 IRepositoryItem::Lock=remthIRepositoryItemLock
+4 IRepositoryItem::put_Name=remthIRepositoryItemput_Name
+4 IRepositoryItem::Refresh=remthIRepositoryItemRefresh
+3 IRepositoryObject (Interfaz)
+4 IRepositoryObject (Interfaz)=reifcIRepositoryObject
+4 IRepositoryObject::get_InternalID=remthIRepositoryObjectget_InternalID
+4 IRepositoryObject::get_ObjectID=remthIRepositoryObjectget_ObjectID
+3 IRepositoryObjectStorage (Interfaz)
+4 IRepositoryObjectStorage (Interfaz)=reifcIRepositoryObjectStorage
+4 IRepositoryObjectStorage::get_PropertyInterface=remthIRepositoryObjectStorageget_PropertyInterface
+4 IRepositoryObjectStorage::InitNew=remthIRepositoryObjectStorageInitNew
+4 IRepositoryObjectStorage::Load=remthIRepositoryObjectStorageLoad
+3 IRepositoryODBC (Interfaz)
+4 IIRepositoryODBC (Interfaz)=reifcIRepositoryODBC
+4 IRepositoryODBC::FreeConnection=remthIRepositoryODBCFreeConnection
+4 IRepositoryODBC::get_ConnectionString=remthIRepositoryODBCget_ConnectionString
+4 IRepositoryODBC::GetNewConnection=remthIRepositoryODBCGetNewConnection
+4 IRepositoryODBC::get_ReposConnection=remthIRepositoryODBCget_ReposConnection
+3 IRepositoryTransaction (Interfaz)
+4 IRepositoryTransaction (Interfaz)=reifcIRepositoryTransaction
+4 IRepositoryTransaction::Abort=remthIRepositoryTransactionAbort
+4 IRepositoryTransaction::Begin=remthIRepositoryTransactionBegin
+4 IRepositoryTransaction::Commit=remthIRepositoryTransactionCommit
+4 IRepositoryTransaction::Flush=remthIRepositoryTransactionFlush
+4 IRepositoryTransaction::GetOption=remthIRepositoryTransactionGetOption
+4 IRepositoryTransaction::get_Status=remthIRepositoryTransactionget_Status
+4 IRepositoryTransaction::SetOption=remthIRepositoryTransactionSetOption
+3 IReposProperties (Interfaz)
+4 IReposProperties (Interfaz)=reifcIReposProperties
+4 IReposProperties::get_Count=remthIReposPropertiesget_Count
+4 IReposProperties::get_Item=remthIReposPropertiesget_Item
+4 IReposProperties::_NewEnum=remthIReposProperties_NewEnum
+3 IReposProperty (Interfaz)
+4 IReposProperty (Interfaz)=reifcIReposProperty
+4 IReposProperty::get_Type=remthIReposPropertyget_Type
+4 IReposProperty::get_Name=remthIReposPropertyget_Name
+4 IReposProperty::get_Value=remthIReposPropertyget_Value
+4 IReposProperty::put_Value=remthIReposPropertyput_Value
+3 ISummaryInformation (Interfaz)
+4 ISummaryInformation (Interfaz)=reifcISummaryInformation
+4 Comments (Propiedad, interfaz ISummaryInformation)=reproISummaryInformationComments
+4 ShortDescription (Propiedad, interfaz ISummaryInformation)=reproISummaryInformationShortDescription
+3 ITargetObjectCol (Interfaz)
+4 ITargetObjectCol (Interfaz)=reifcITargetObjectCol
+4 ITargetObjectCol::Add=remthITargetObjectColAdd
+4 ITargetObjectCol::get_Source=remthITargetObjectColget_Source
+4 ITargetObjectCol::get_Type=remthITargetObjectColget_Type
+4 ITargetObjectCol::Insert=remthITargetObjectColInsert
+4 ITargetObjectCol::Move=remthITargetObjectColMove
+4 ITargetObjectCol::Remove=remthITargetObjectColRemove
+2 Interfaces COM de modelos de información de tipos
+3 IClassDef (Interfaz)
+4 IClassDef (Interfaz)=reifcIClassDef
+4 IClassDef::AddInterface=remthIClassDefAddInterface
+4 ClassID (Propiedad, interfaz IClassDef)=reproIClassDefClassID
+4 IClassDef::CreateInterfaceDef=remthIClassDefCreateInterfaceDef
+4 IClassDef (Colección de interfaces)=recolIClassDefInterfaces
+4 IClassDef::ObjectInstances=remthIClassDefObjectInstances
+3 ICollectionDef (Interfaz)
+4 ICollectionDef (Interfaz)=reifcICollectionDef
+4 CollectionItem (Colección, interfaz ICollectionDef)=recolICollectionDefCollectionItem
+4 Flags (Propiedad, interfaz ICollectionDef)=reproICollectionDefFlags
+4 IsOrigin (Propiedad, interfaz ICollectionDef)=reproICollectionDefIsOrigin
+4 MaxCount (Propiedad, interfaz ICollectionDef)=reproICollectionDefMaxCount
+4 MinCount (Propiedad, interfaz ICollectionDef)=reproICollectionDefMinCount
+3 IInterfaceDef (Interfaz)
+4 IInterfaceDef (Interfaz)=reifcIInterfaceDef
+4 Ancestor (Colección, interfaz IInterfaceDef)=recolIInterfaceDefAncestor
+4 Classes (Colección, interfaz IInterfaceDef)=recolIInterfaceDefClasses
+4 IInterfaceDef::CreateMethodDef=remthIInterfaceDefCreateMethodDef
+4 IInterfaceDef::CreatePropertyDef=remthIInterfaceDefCreatePropertyDef
+4 IInterfaceDef::CreateRelationshipColDef=remthIInterfaceDefCreateRelationshipColDef
+4 Descendants (Colección, interfaz IInterfaceDef)=recolIInterfaceDefDescendants
+4 Flags (Propiedad, interfaz IInterfaceDef)=reproIInterfaceDefFlags
+4 InterfaceID (Propiedad, interfaz IInterfaceDef)=reproIInterfaceDefInterfaceID
+4 Members (Colección, interfaz IInterfaceDef)=recolIInterfaceDefMembers
+4 IInterfaceDef::ObjectInstances=remthIInterfaceDefObjectInstances
+4 TableName (Propiedad, interfaz IInterfaceDef)=reproIInterfaceDefTableName
+3 IInterfaceMember (Interfaz)
+4 IInterfaceMember (Interfaz)=reifcIInterfaceMember
+4 DispatchID (Propiedad, interfaz IInterfaceMember)=reproIInterfaceMemberDispatchID
+4 Flags (Propiedad, interfaz IInterfaceMember)=reproIInterfaceMemberFlags
+4 Interface (Colección, interfaz IInterfaceMember)=recolIInterfaceMemberInterface
+3 IManageReposTypeLib (Interfaz)
+4 IManageReposTypeLib (Interfaz)=reifcIManageReposTypeLib
+4 IManageReposTypeLib::CreateTypeLib=remthIManageReposTypeLibCreateTypeLib
+4 ReposTypeLibs (Colección, interfaz IManageReposTypeLib)=recolIManageReposTypeLibReposTypeLibs
+3 IPropertyDef (Interfaz)
+4 IPropertyDef (Interfaz)=reifcIPropertyDef
+4 APIType (Propiedad, interfaz IPropertyDef)=reproIPropertyDefAPIType
+4 ColumnName (Propiedad, interfaz IPropertyDef)=reproIPropertyDefColumnName
+4 Flags (Propiedad, interfaz IPropertyDef)=reproIPropertyDefFlags
+4 SQLScale (Propiedad, interfaz IPropertyDef)=reproIPropertyDefSQLScale
+4 SQLSize (Propiedad, interfaz IPropertyDef)=reproIPropertyDefSQLSize
+4 SQLType (Propiedad, interfaz IPropertyDef)=reproIPropertyDefSQLType
+3 IReposRoot (Interfaz)
+4 IReposRoot (Interfaz)=reifcIReposRoot
+3 IReposTypeInfo (Interfaz)
+4 ReposTypeInfo (Interfaz)=reifcIReposTypeInfo
+4 ItemInCollections (Colección, interfaz IReposTypeInfo)=recolIReposTypeInfoItemInCollections
+4 ReposTypeLibScopes (Colección, interfaz IReposTypeInfo)=recolIReposTypeInfoReposTypeLibScopes
+3 IReposTypeLib (Interfaz)
+4 ReposTypeLib (Interfaz)=reifcIReposTypeLib
+4 IReposTypeLib::CreateClassDef=remthIReposTypeLibCreateClassDef
+4 IReposTypeLib::CreateInterfaceDef=remthIReposTypeLibCreateInterfaceDef
+4 IReposTypeLib::CreateRelationshipDef=remthIReposTypeLibCreateRelationshipDef
+4 IReposTypeInfos (Colección, interfaz IReposTypeLib)=recolIReposTypeLibReposTypeInfos
+4 IReposTypeLibContexts (Colección, interfaz IReposTypeLib)=recolIReposTypeLibReposTypeLibContexts
+4 TypeLibID (Propiedad, interfaz IReposTypeLib)=reproIReposTypeLibTypeLibID
+1 Constantes y estructuras de datos de Repository
+2 Constantes y estructuras de datos de Repository=reconRepositoryDataStructuresandConstants
+2 Constantes de Repository=recstRepositoryConstants
+2 Enumeración de CollectionDefFlags=recstCollectionDefFlags
+2 Enumeración de ConnectionFlags=recstConnectionFlags
+2 Enumeración de InterfaceDefFlags=recstInterfaceDefFlags
+2 Enumeración de InterfaceMemberFlags=recstInterfaceMemberFlags
+2 Enumeración de PropertyDefFlags=recstPropertyDefFlags
+2 Enumeración de TransactionFlags=recstTransactionFlags
+2 Tipos de datos de Repository=redatRepositoryDataTypes
+2 Estructura de datos REPOSERROR=redasREPOSERROR
+1 Errores de Repository
+2 Errores de Repository=reconRepositoryErrors
+2 Errores de Repository (orden numérico)=reconRepositoryErrorsNumericalOrder
+2 Errores de Repository (orden alfabético)=reconRepositoryErrorsAlphabeticalOrder
+1 Esquema SQL del depósito
+2 Esquema SQL del depósito=reconRepositorySQLSchema
+2 Tipos de datos SQL del depósito=reconRepositorySQLDataTypes
+2 RTblClassDefs (Tabla SQL)=reconRTblClassDefs
+2 RTblIfaceDefs (Tabla SQL)=reconRTblIfaceDefs
+2 RTblIfaceMem (Tabla SQL)=reconRTblIfaceMem
+2 RTblObjects (Tabla SQL)=reconRTblObjects
+2 RTblPropDefs (Tabla SQL)=reconRTblPropDefs
+2 RTblProps (Tabla SQL)=reconRTblProps
+2 RTblRelshipProps (Tabla SQL)=reconRTblRelshipProps
+2 RTblRelships (Tabla SQL)=reconRTblRelships
+2 RTblRelColDefs (Tabla SQL)=reconRTblRelColDefs
+2 RTblRelColPairs (Tabla SQL)=reconRTblRelColPairs
+2 RTblSites (Tabla SQL)=reconRTblSites
+2 RTblTypeLibs (Tabla SQL)=reconRTblTypeLibs
+1 Glosario de Repository
+2 Glosario de Repository=rerefRepositoryGlossary

@@ -1,0 +1,19 @@
+STRINGTABLE DISCARDABLE
+BEGIN
+        //Form Caption
+        10      "TabOrder"
+
+        //Control Captions and tool tips:
+        100     "Move the current control up in the list."
+        101     "Move the current control down in the list."
+        102     "List controls in top to bottom order."
+        103     "List controls in left to right order."
+        104     "Refresh the list from the form."
+        105     "Apply the changes to the form."
+
+        200     "TabOrder Window"
+END       
+
+APPICON      ICON    tab.ico
+1000         BITMAP  tab.bmp
+

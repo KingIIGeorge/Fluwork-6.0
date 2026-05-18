@@ -1,0 +1,132 @@
+//////////////////////////////////////////////////////////////////////////////
+//
+// Archivo de recursos del ejemplo ATM.
+//
+//
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+1                       CURSOR  MOVEABLE PURE   "SELECT.CUR"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Mapa de bits
+//
+
+16                      BITMAP  MOVEABLE PURE   "USA.BMP"
+48                      BITMAP  MOVEABLE PURE   "FRAN.BMP"
+80                      BITMAP  MOVEABLE PURE   "GERM.BMP"
+112                     BITMAP  MOVEABLE PURE   "ITALY.BMP"
+144                     BITMAP  MOVEABLE PURE   "SPAIN.BMP"
+176                     BITMAP  MOVEABLE PURE   "JAPAN.BMP"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Sonido
+//
+
+16                      ATM_SOUND   MOVEABLE PURE   "USA.WAV"
+48                      ATM_SOUND   MOVEABLE PURE   "FRAN.WAV"
+80                      ATM_SOUND   MOVEABLE PURE   "GERM.WAV"
+112                     ATM_SOUND   MOVEABLE PURE   "ITALY.WAV"
+144                     ATM_SOUND   MOVEABLE PURE   "SPAIN.WAV"
+176                     ATM_SOUND   MOVEABLE PURE   "JAPAN.WAV"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Tabla de cadenas
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    16                      "Welcome"
+    17                      "Please enter your pin number:"
+    18                      "Please choose an account:"
+    19                      "Checking account"
+    20                      "Savings Account"
+    21                      "Please enter an amount:"
+    22                      "OK"
+    23                      "Your transaction is being processed..."
+    24                      "Thank you for using our ATM"
+    25                      "The following amount will be withdraw from your:"
+    26                      "US Dollars"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    48                      "Bienvenue"
+    49                      "Veuillez entrer votre code:"
+    50                      "Veuillez choisir un compte:"
+    51                      "Compte chèque"
+    52                      "Compte épargne"
+    53                      "Veuillez entrer le montant:"
+    54                      "OK"
+    55                      "Votre transaction est en cours de traitement..."
+    56                      "Merci d'avoir utilisé notre guichet automatique de banque"
+    57                      "Le montant suivant va être débité de votre :"
+    58                      "Francs Français"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    80                      "Willkommen"
+    81                      "Bitte geben Sie Ihre Geheimnummer ein:"
+    82                      "Bitte wählen Sie ein Konto aus:"
+    83                      "Girokonto"
+    84                      "Sparbuch"
+    85                      "Bitte geben Sie einen Betrag ein:"
+    86                      "OK"
+    87                      "Ihr Auftrag wird bearbeitet..."
+    88                      "Vielen Dank daß Sie unseren Geldautomaten verwendet haben."
+    89                      "Die folgende Summe wird abgebucht von Ihrem:"
+    90                      "DM"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    112                     "Benvenuti"
+    113                     "Digitare il proprio codice segreto:"
+    114                     "Scegliere il tipo di conto:"
+    115                     "Conto corrente"
+    116                     "Libretto di risparmio"
+    117                     "Digitare la cifra richiesta:"
+    118                     "Attendere"
+    119                     "La vostra operazione è in corso di esecuzione..."
+    120                     "Grazie e arrivederci"
+    121                     "La seguente cifra verrà prelevata dal vostro:"
+    122                     "Lire Italiane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    144                     "Bienvenido"
+    145                     "Por favor, introduzca su número de identificación secreto:"
+    146                     "Por favor, elija una cuenta:"
+    147                     "Cuenta corriente"
+    148                     "Cuenta de ahorros"
+    149                     "Por favor, introduzca un importe:"
+    150                     "Aceptar"
+    151                     "Su transacción se está procesando..."
+    152                     "Le agradecemos que haya usado nuestro cajero automático"
+    153                     "La siguiente cantidad será retirada de su:"
+    154                     "Pesetas"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    176                     "TRADUCIR: Welcome"
+    177                     "TRADUCIR: Please enter your pin number:"
+    178                     "TRADUCIR: Please choose an account"
+    179                     "TRADUCIR: Checking account"
+    180                     "TRADUCIR: Savings Account"
+    181                     "TRADUCIR: Please enter an amount:"
+    182                     "TRADUCIR: OK"
+    183                     "TRADUCIR: Your transaction is being processed..."
+    184                     "TRADUCIR: Thank you for using our ATM"
+    185                     "TRADUCIR: The following amount will be withdraw from your :"
+    186                     "TRADUCIR: US Dollars"
+END

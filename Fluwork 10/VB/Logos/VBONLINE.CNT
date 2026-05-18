@@ -1,0 +1,38 @@
+:Base VBOnline.HLP
+:Title Ayuda de los Libros en pantalla de Visual Basic
+1 Introducción
+2 Requisitos del sistema=sys_req
+1 Información general
+2 Utilizar el área de Exploración=nav_area
+2 Cómo utilizar la Tabla de contenido=Library
+2 Ver el contenido en el área de Temas=topic_area
+2 Presentar la información multimedia y la información adicional=display_multimedia
+2 Elegir un modo de vista=display_modes
+1 Buscar información
+2 Poner el Índice en funcionamiento=Index
+2 Utilizar "Buscar" para refinar la búsqueda=Find
+2 Utilizar operadores booleanos=Boolean
+2 Comprobar el Glosario=Glossary
+2 Repasar temas mediante la ventana Historial=History
+1 Tomar notas, agregar marcadores e imprimir
+2 Crear entradas en el Bloc de notas=notebook_entries
+2 Imprimir anotaciones y entradas del Bloc de notas=Notebook_print
+2 Imprimir temas y otra información=print
+1 Averiguaciones acerca de los botones de la barra de herramientas, menús y ventanas
+2 "¿Qué es esto?". Ayuda acerca de botones de barras de herramientas, menús y ...=whats_this
+2 Utilizar comandos de menú=Menus
+2 Menús emergentes=shortcut
+1 Resolver problemas del equipo - Usuarios de Windows 95
+2 Aumentar el rendimiento del sistema=trouble4_a
+2 Problemas de audio
+3 Problemas de rendimiento de audio=trouble1
+3 Obtuve un mensaje de error acerca del sonido=trouble1_1_1
+3 No se oye nada=trouble1_1_2
+3 Comprobación de la tarjeta de sonido=trouble1_1_2a
+3 El sonido es "sucio"=trouble1_1_4
+3 El sonido se recorta=trouble1_1_5
+3 El sonido "salta"=trouble1_1_5a
+2 Vídeo
+3 Comprobar y modificar la configuración de vídeo=trouble2_a
+3 El controlador de pantalla acepta menos de 256 colores=trouble2_1
+3 Mi máquina se "cuelga"=trouble2_3

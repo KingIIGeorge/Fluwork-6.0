@@ -1,0 +1,219 @@
+:Base RepVb.hlp
+:Title Referencia de complementos de Repository
+:Index Referencia de complementos de Repository=RepVB.hlp
+:Link Repostry.hlp
+1 Objetos de complementos de Repository
+2 RepVB (Objeto)
+3 RepVB (Objeto)=reobjRepVB
+3 ConnectAddInEvents (Método, objeto RepVB)=remthRepVBConnectAddInEvents
+3 ConnectComponentEvents (Método, objeto RepVB)=remthRepVBConnectComponentEvents
+3 ConnectControlEvents (Método, objeto RepVB)=remthRepVBConnectControlEvents
+3 ConnectProjectEvents (Método, objeto RepVB)=remthRepVBConnectProjectEvents
+3 ConnectReferenceEvents (Método, objeto RepVB)=remthRepVBConnectReferenceEvents
+3 ConnectRepository (Método, objeto RepVB)=remthRepVBConnectRepository
+3 DisconnectAddInEvents (Método, objeto RepVB)=remthRepVBDisconnectAddInEvents
+3 DisconnectComponentEvents (Método, objeto RepVB)=remthRepVBDisconnectComponentEvents
+3 DisconnectControlEvents (Método, objeto RepVB)=remthRepVBDisconnectControlEvents
+3 DisconnectProjectEvents (Método, objeto RepVB)=remthRepVBDisconnectProjectEvents
+3 DisconnectReferenceEvents (Método, objeto RepVB)=remthRepVBDisconnectReferenceEvents
+3 GetMDOObject (Método, objeto RepVB)=remthRepVBGetMDOObject
+3 GetRepository (Método, objeto RepVB)=remthRepVBGetRepository
+3 GetVBObject (Método, objeto RepVB)=remthRepVBGetVBObject
+3 IsSynchronizing (Propiedad, objeto RepVB)=reproRepVBIsSynchronizing
+3 SynchronizeRepository (Método, objeto RepVB)=remthRepVBSynchronizeRepository
+3 Sincronizar el depósito=reconSynchronizingtheRepository
+2 MdoAddInEvents (Objeto)
+3 MdoAddInEvents (Objeto)=reobjMdoAddInEvents
+3 RepositoryInvalid (Método, objeto MdoAddInEvents)=remthMdoAddInEventsRepositoryInvalid
+3 Shutdown (Método, objeto MdoAddInEvents)=remthMdoAddInEventsShutdown
+2 MdoComponentEvents (Objeto)
+3 MdoComponentEvents (Objeto)=reobjMdoComponentEvents
+3 ObjectAdded (Método, objeto MdoReferenceEvents)=remthMdoComponentEventsObjectAdded
+3 ObjectChangedFileName (Método, objeto MdoProjectEvents)=remthMdoComponentEventsObjectChangedFileName
+3 ObjectRemoved (Método, objeto MdoReferenceEvents)=remthMdoComponentEventsObjectRemoved
+3 ObjectRenamed (Método, objeto MdoProjectEvents)=remthMdoComponentEventsObjectRenamed
+3 ObjectSynchronized (Método, objeto MdoProjectEvents)=remthMdoComponentEventsObjectSynchronized
+2 MdoControlEvents (Objeto)
+3 MdoControlEvents (Objeto)=reobjMdoControlEvents
+3 ObjectAdded (Método, objeto MdoControlEvents)=remthMdoControlEventsObjectAdded
+3 ObjectRemoved (Método, objeto MdoControlEvents)=remthMdoControlEventsObjectRemoved
+3 ObjectRenamed (Método, MdoControlEvents)=remthMdoControlEventsObjectRenamed
+3 ObjectSynchronized (Método, objeto MdoControlEvents)=remthMdoControlEventsObjectSynchronized
+2 MdoProjectEvents (Objeto)
+3 MdoProjectEvents (Objeto)=reobjMdoProjectEvents
+3 ObjectAdded (Método, objeto MdoProjectEvents)=remthMdoProjectEventsObjectAdded
+3 ObjectChangedFileName (Método, objeto MdoProjectEvents)=remthMdoProjectEventsObjectChangedFileName
+3 ObjectRemoved (Método, objeto MdoProjectEvents)=remthMdoProjectEventsObjectRemoved
+3 ObjectRenamed (Método, objeto MdoProjectEvents)=remthMdoProjectEventsObjectRenamed
+3 ObjectSynchronized (Método, objeto MdoProjectEvents)=remthMdoProjectEventsObjectSynchronized
+2 MdoReferenceEvents (Objeto)
+3 MdoReferenceEvents (Objeto)=reobjMdoReferenceEvents
+3 ObjectAdded (Método, objeto MdoReferenceEvents)=remthMdoReferenceEventsObjectAdded
+3 ObjectRemoved (Método, objeto MdoReferenceEvents)=remthMdoReferenceEventsObjectRemoved
+1 Referencia de Objetos de automatización del modelo MDO
+2 Objetos de automatización del modelo MDO=reconMDOModelAutomationObjects
+2 Tener acceso a miembros de objetos de automatización=reconAccessingAutomationObjectMembers
+2 MdoClassModule (Objeto)
+3 MdoClassModule (Objeto)=reobjMdoClassModule
+3 Description (Propiedad, objeto MdoClassModule)=reproMdoClassModuleDescription
+3 Filename (Propiedad, objeto MdoClassModule)=reproMdoClassModuleFileName
+3 MdoComponentProject (Colección, objeto MdoClassModule)=recolMdoClassModuleMdoComponentProject
+3 Timestamp (Propiedad, objeto MdoClassModule)=reproMdoClassModuleTimeStamp
+2 MdoControl (Objeto)
+3 MdoControl (Objeto)=reobjMdoControl
+3 ClassName (Propiedad, objeto MdoControl)=reproMdoControlClassName
+3 Description (Propiedad, objeto MdoControl)=reproMdoControlDescription
+3 Index (Propiedad, objeto MdoControl)=reproMdoControlIndex
+3 MdoControlContainer (Colección, objeto MdoControl)=recolMdoControlMdoControlContainer
+3 MdoControls (Colección, objeto MdoControl)=recolMdoControlMdoControls
+3 MdoISVControl (Colección, objeto MdoControl)=recolMdoControlMdoISVControl
+3 ProgID (Propiedad, objeto MdoControl)=reproMdoControlProgID
+2 MdoDesigner (Objeto)
+3 MdoDesigner (Objeto)=reobjMdoDesigner
+3 Description (Propiedad, objeto MdoDesigner)=reproMdoDesignerDescription
+3 FileName (Propiedad, objeto MdoDesigner)=reproMdoDesignerFileName
+3 MdoComponentProject (Colección, objeto MdoDesigner)=recolMdoDesignerMdoComponentProject
+3 TimeStamp (Propiedad, objeto MdoDesigner)=reproMdoDesignerTimeStamp
+2 MdoMDIForm (Objeto)
+3 MdoMDIForm (Objeto)=reobjMdoMDIForm
+3 Description (Propiedad, objeto MdoMDIForm)=reproMdoMDIFormDescription
+3 FileName (Propiedad, objeto MdoMDIForm)=reproMdoMDIFormFileName
+3 MdoComponentProject (Colección, objeto MdoMDIForm)=recolMdoMDIFormMdoComponentProject
+3 MdoControls (Colección, objeto MdoMDIForm)=recolMdoMDIFormMdoControls
+3 TimeStamp (Propiedad, objeto MdoMDIForm)=reproMdoMDIFormTimeStamp
+2 MdoMSForm (Objeto)
+3 MdoMSForm (Objeto)=reobjMdoMSForm
+3 Description (Propiedad, objeto MdoMSForm)=reproMdoMSFormDescription
+3 FileName (Propiedad, objeto MdoMSForm)=reproMdoMSFormFileName
+3 MdoComponentProject (Colección, objeto MdoMSForm)=recolMdoMSFormMdoComponentProject
+3 TimeStamp (Propiedad, objeto MdoMSForm)=reproMdoMSFormTimeStamp
+2 MdoProject (Objeto)
+3 MdoProject (Objeto)=reobjMdoProject
+3 Containers (Colección, objeto MdoProject)=recolMdoProjectContainers
+3 Description (Propiedad, objeto MdoProject)=reproMdoProjectDescription
+3 FileName (Propiedad, objeto MdoProject)=reproMdoProjectFileName
+3 MdoComponents (Colección, objeto MdoProject)=recolMdoProjectMdoComponents
+3 MdoReferences (Colección, objeto MdoProject)=recolMdoProjectMdoReferences
+3 TimeStamp (Propiedad, objeto MdoProject)=reproMdoProjectTimeStamp
+2 MdoProjectRef (Objeto)
+3 MdoProjectRef (Objeto)=reobjMdoProjectRef
+3 Description (Propiedad, objeto MdoProjectRef)=reproMdoProjectRefDescription
+3 FileName (Propiedad, objeto MdoProjectRef)=reproMdoProjectRefFileName
+3 MdoReferenceProject (Colección, objeto MdoProjectRef)=recolMdoProjectRefMdoReferenceProject
+3 TimeStamp (Propiedad, objeto MdoProjectRef)=reproMdoProjectRefTimeStamp
+2 MdoPropertyPage (Objeto)
+3 MdoPropertyPage (Objeto)=reobjMdoPropertyPage
+3 Description (Propiedad, objeto MdoPropertyPage)=reproMdoPropertyPageDescription
+3 FileName (Propiedad, objeto MdoPropertyPage)=reproMdoPropertyPageFileName
+3 MdoComponentProject (Colección, objeto MdoPropertyPage)=recolMdoPropertyPageMdoComponentProject
+3 MdoControls (Colección, objeto MdoPropertyPage)=recolMdoPropertyPageMdoControls
+3 TimeStamp (Propiedad, objeto MdoPropertyPage)=reproMdoPropertyPageTimeStamp
+2 MdoRelatedDocument (Objeto)
+3 MdoRelatedDocument (Objeto)=reobjMdoRelatedDocument
+3 Description (Propiedad, objeto MdoRelatedDocument)=reproMdoRelatedDocumentDescription
+3 FileName (Propiedad, objeto MdoRelatedDocument)=reproMdoRelatedDocumentFileName
+3 MdoComponentProject (Colección, objeto MdoRelatedDocument)=recolMdoRelatedDocumentMdoComponentProject
+3 TimeStamp (Propiedad, objeto MdoRelatedDocument)=reproMdoRelatedDocumentTimeStamp
+2 MdoResourceFile (Objeto)
+3 MdoResourceFile (Objeto)=reobjMdoResourceFile
+3 Description (Propiedad, objeto MdoResourceFile)=reproMdoResourceFileDescription
+3 FileName (Propiedad, objeto MdoResourceFile)=reproMdoResourceFileFileName
+3 MdoComponentProject (Colección, objeto MdoResourceFile)=recolMdoResourceFileMdoComponentProject
+3 TimeStamp (Propiedad, objeto MdoResourceFile)=reproMdoResourceFileTimeStamp
+2 MdoStdModule (Objeto)
+3 MdoStdModule (Objeto)=reobjMdoStdModule
+3 Description (Propiedad, objeto MdoStdModule)=reproMdoStdModuleDescription
+3 FileName (Propiedad, objeto MdoStdModule)=reproMdoStdModuleFileName
+3 MdoComponentProject (Colección, MdoStdModule)=recolMdoStdModuleMdoComponentProject
+3 TimeStamp (Propiedad, objeto MdoStdModule)=reproMdoStdModuleTimeStamp
+2 MdoTypeLibRef (Objeto)
+3 MdoTypeLibRef (Objeto)=reobjMdoTypeLibRef
+3 Description (Propiedad, objeto MdoTypeLibRef)=reproMdoTypeLibRefDescription
+3 FileName (Propiedad, objeto MdoTypeLibRef)=reproMdoTypeLibRefFileName
+3 MdoReferenceProject (Colección, MdoTypeLibRef)=recolMdoTypeLibRefMdoReferenceProject
+3 TimeStamp (Propiedad, objeto MdoTypeLibRef)=reproMdoTypeLibRefTimeStamp
+2 MdoUserControl (Objeto)
+3 MdoUserControl (Objeto)=reobjMdoUserControl
+3 Description (Propiedad, objeto MdoUserControl)=reproMdoUserControlDescription
+3 FileName (Propiedad, objeto MdoUserControl)=reproMdoUserControlFileName
+3 MdoComponentProject (Colección, objeto MdoUserControl)=recolMdoUserControlMdoComponentProject
+3 MdoControls (Colección, objeto MdoUserControl)=recolMdoUserControlMdoControls
+3 TimeStamp (Propiedad, objeto MdoUserControl)=reproMdoUserControlTimeStamp
+2 MdoUserDocument (Objeto)
+3 MdoUserDocument (Objeto)=reobjMdoUserDocument
+3 Description (Propiedad, objeto MdoUserDocument)=reproMdoUserDocumentDescription
+3 FileName (Propiedad, objeto MdoUserDocument)=reproMdoUserDocumentFileName
+3 MdoComponentProject (Colección, objeto MdoUserDocument)=recolMdoUserDocumentMdoComponentProject
+3 MdoControls (Colección, objeto MdoUserDocument)=recolMdoUserDocumentMdoControls
+3 TimeStamp (Propiedad, objeto MdoUserDocument)=reproMdoUserDocumentTimeStamp
+2 MdoVBForm (Objeto)
+3 MdoVBForm (Objeto)=reobjMdoVBForm
+3 Description (Propiedad, objeto MdoVBForm)=reproMdoVBFormDescription
+3 FileName (Propiedad, objeto MdoVBForm)=reproMdoVBFormFileName
+3 MdoComponentProject (Colección, objeto MdoVBForm)=recolMdoVBFormMdoComponentProject
+3 MdoControls (Colección, objeto MdoVBForm)=recolMdoVBFormMdoControls
+3 TimeStamp (Propiedad, objeto MdoVBForm)=reproMdoVBFormTimeStamp
+2 ReposRoot (Objeto de Repository)
+3 Modificaciones del objeto ReposRoot=reobjReposRootObjectModifications
+3 Colección Contents de ReposRoot=recolReposRootContents
+1 Referencia COM del Modelo MDO
+2 Clases del modelo MDO
+3 Clases del modelo MDO=reconMdoModelClasses
+3 MdoClassModule (Clase)=reclaMdoClassModule
+3 MdoControl (Clase)=reclaMdoControl
+3 MdoDesigner (Clase)=reclaMdoDesigner
+3 MdoMDIForm (Clase)=reclaMdoMDIForm
+3 MdoMSForm (Clase)=reclaMdoMSForm
+3 MdoProject (Clase)=reclaMdoProject
+3 MdoProjectRef (Clase)=reclaMdoProjectRef
+3 MdoPropertyPage (Clase)=reclaMdoPropertyPage
+3 MdoRelatedDocument (Clase)=reclaMdoRelatedDocument
+3 MdoResourceFile (Clase)=reclaMdoResourceFile
+3 MdoStdModule (Clase)=reclaMdoStdModule
+3 MdoTypeLibRef (Clase)=reclaMdoTypeLibRef
+3 MdoUserControl (Clase)=reclaMdoUserControl
+3 MdoUserDocument (Clase)=reclaMdoUserDocument
+3 MdoVBForm (Clase)=reclaMdoVBForm
+3 Modificaciones de la clase ReposRoot=reconReposRootClassModifications
+2 Interfaces del modelo MDO
+3 IMdoComponent (Interfaz)
+4 IMdoComponent (Interfaz)=reifcIMdoComponent
+4 MdoComponentProject (Colección, interfaz IMdoComponent)=recolIMdoComponentMdoComponentProject
+3 IMdoControl (Interfaz)
+4 IMdoControl (Interfaz)=reifcIMdoControl
+4 ClassName (Propiedad, interfaz IMdoControl)=reproIMdoControlClassName
+4 Description (Propiedad, interfaz IMdoControl)=reproIMdoControlDescription
+4 Index (Propiedad, interfaz IMdoControl)=reproIMdoControlIndex
+4 MdoControlContainer (Colección, interfaz IMdoControl)=recolIMdoControlMdoControlContainer
+4 ProgID (Propiedad, interfaz IMdoControl)=reproIMdoControlProgID
+3 IMdoControlContainer (Interfaz)
+4 IMdoControlContainer (Interfaz)=reifcIMdoControlContainer
+4 MdoControls (Colección, interfaz IMdoControlContainer)=recolIMdoControlContainerMdoControls
+3 IMdoControlUsage (Interfaz)
+4 IMdoControlUsage (Interfaz)=reifcIMdoControlUsage
+4 MdoISVControl (Colección, interfaz IMdoControlUsage)=recolIMdoControlUsageMdoISVControl
+3 IMdoISVControl (Interfaz)
+4 IMdoISVControl (Interfaz)=reifcIMdoISVControl
+4 MdoControlUsage (Colección, interfaz IMdoISVControl)=recolIMdoISVControlMdoControlUsage
+3 IMdoModelItem (Interfaz)
+4 IMdoModelItem (Interfaz)=reifcIMdoModelItem
+4 Description (Propiedad, interfaz IMdoModelItem)=reproIMdoModelItemDescription
+4 FileName (Propiedad, interfaz IMdoModelItem)=reproIMdoModelItemFileName
+4 TimeStamp (Propiedad, interfaz IMdoModelItem)=reproIMdoModelItemTimestamp
+3 IMdoProject (Interfaz)
+4 IMdoProject (Interfaz)=reifcIMdoProject
+4 MdoComponents (Colección, interfaz IMdoProject)=recolIMdoProjectMdoComponents
+4 MdoReferences (Colección, interfaz IMdoProject)=recolIMdoProjectMdoReferences
+3 IMdoReference (Interfaz)
+4 IMdoReference (Interfaz)=reifcIMdoReference
+4 MdoReferenceProject (Colección, interfaz IMdoReference)=recolIMdoReferenceMdoReferenceProject
+3 IMpoProjectItem (Interfaz)
+4 IMpoProjectItem (Interfaz)=reifcIMpoProjectItem
+4 Containers (Colección, interfaz IMpoProjectItem)=recolIMpoProjectItemContainers
+3 IMpoProjectItemContainer (Interfaz)
+4 IMpoProjectItemContainer (Interfaz)=reifcIMpoProjectItemContainer
+4 Contents (Colección, interfaz IMpoProjectItemContainer)=recolIMpoProjectItemContainerContents
+1 Esquema SQL del modelo MDO
+2 Esquema SQL del modelo MDO=reconMdoModelSQLSchema
+2 TblMdoControl (Tabla SQL)=reconTblMdoControl
+2 TblMdoModelItem (Tabla SQL)=reconTblMdoModelItem

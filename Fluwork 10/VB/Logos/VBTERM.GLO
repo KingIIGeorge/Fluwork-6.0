@@ -1,0 +1,10 @@
+Attribute VB_Name = "Module1"
+' Variables públicas
+Public Echo As Boolean        ' indicador de echo Encendido/Apagado.
+Public CancelSend As Integer  ' indicador para parar el envio de un archivo de texto.
+
+Declare Sub SetWindowPos Lib "user32" (ByVal hWnd As Long, ByVal hWndInsertAfter As Long, ByVal X As Long, ByVal Y As Long, ByVal cx As Long, ByVal cy As Long, ByVal wFlags As Long)
+
+
+
+

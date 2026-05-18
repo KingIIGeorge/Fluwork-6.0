@@ -1,0 +1,138 @@
+[Setup Wizard Template]
+TemplateDate=17/12/02 12:29:24 a.m.
+
+[Seleccione proyecto y opciones]
+txtProjFile=C:\Archivos de programa\DevStudio\VB\Estados Laburo OK\EstadosLaburo.vbp
+chkProjRebuild=0
+optBldSetup=Verdadero
+chkIncludeDEP=0
+optInternet=False
+optDEPOnly=False
+
+[Método de distribución]
+optFloppyTarg=False
+optSingleDirTarg=Verdadero
+optMultDirTarg=False
+
+[Un único directorio]
+cboFloppyDrives=0
+cboFloppyDriveSize=0
+txtDirTarget=C:\WINDOWS\TEMP\SWSETUP\
+
+[Paquete de Internet]
+optRemoteSite=Verdadero
+optLocalSite=False
+txtLocalSite=
+
+[Acceso a datos]
+chkUseJet=1
+chkUseODBC=0
+Isam0=Jet 2.x
+Isam1=Excel 5.0
+Isam2=Excel 4.0
+Isam3=Excel 3.0
+Isam4=Excel 8.0
+Isam5=Text
+Isam6=HTML Import
+Isam7=HTML Export
+Isam8=dBase III
+Isam9=dBase IV
+Isam10=dBase 5.0
+Isam11=FoxPro 2.0
+Isam12=FoxPro 2.5
+Isam13=FoxPro 2.6
+Isam14=FoxPro 3.0
+Isam15=FoxPro DBC
+Isam16=Paradox 3.X
+Isam17=Paradox 4.X
+Isam18=Paradox 5.X
+Isam19=Lotus WK1
+Isam20=Lotus WK3
+Isam21=Lotus WK4
+Isam22=
+Jet 2.x=False
+Excel 5.0=False
+Excel 4.0=False
+Excel 3.0=False
+Excel 8.0=False
+Text=False
+HTML Import=False
+HTML Export=False
+dBase III=False
+dBase IV=False
+dBase 5.0=False
+FoxPro 2.0=False
+FoxPro 2.5=False
+FoxPro 2.6=False
+FoxPro 3.0=False
+FoxPro DBC=False
+Paradox 3.X=False
+Paradox 4.X=False
+Paradox 5.X=False
+Lotus WK1=False
+Lotus WK3=False
+Lotus WK4=False
+
+[Componentes ActiveX]
+File1=
+
+[Dependencias]
+File1="C:\WINDOWS\SYSTEM\MSFLXGRD.OCX",Verdadero,32764
+File2="C:\WINDOWS\SYSTEM\DBGRID32.OCX",Verdadero,32764
+File3="C:\WINDOWS\SYSTEM\COMCT232.OCX",Verdadero,32764
+File4="C:\WINDOWS\SYSTEM\COMCTL32.OCX",Verdadero,32764
+File5="C:\WINDOWS\SYSTEM\WEBVW.DLL",Verdadero,32764
+File6="C:\ARCHIVOS DE PROGRAMA\ARCHIVOS COMUNES\MICROSOFT SHARED\MSINFO\IEINFO5.OCX",Verdadero,32764
+File7="C:\ARCHIVOS DE PROGRAMA\ARCHIVOS COMUNES\MICROSOFT SHARED\TRIEDIT\DHTMLED.OCX",Verdadero,32764
+File8="C:\WINDOWS\SYSTEM\MSINET.OCX",Verdadero,32764
+File9="C:\WINDOWS\SYSTEM\SHDOCVW.DLL",Verdadero,32764
+File10="C:\WINDOWS\SYSTEM\COMDLG32.OCX",Verdadero,32764
+File11="C:\ARCHIVOS DE PROGRAMA\ARCHIVOS COMUNES\MICROSOFT SHARED\DAO\DAO350.DLL",Verdadero,32763
+File12=
+
+[Aplicación ActiveX compartida]
+optDeployApplication=Verdadero
+optDeployShared=False
+optRemoteServer1=Verdadero
+optRemoteServer0=False
+
+[Resumen del archivo]
+File1="C:\WINDOWS\SYSTEM\VB5ES.dll",Verdadero,"$(WinSysPath)",,Verdadero
+File2="C:\WINDOWS\SYSTEM\MSVBVM50.dll",Verdadero,"$(WinSysPathSysFile)",$(DLLSelfRegister),False
+File3="C:\Archivos de programa\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\StdOle2.tlb",Verdadero,"$(WinSysPathSysFile)",$(TLBRegister),False
+File4="C:\Archivos de programa\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\OleAut32.dll",Verdadero,"$(WinSysPathSysFile)",$(DLLSelfRegister),False
+File5="C:\Archivos de programa\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\OlePro32.dll",Verdadero,"$(WinSysPathSysFile)",$(DLLSelfRegister),False
+File6="C:\Archivos de programa\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\AsycFilt.dll",Verdadero,"$(WinSysPathSysFile)",,False
+File7="C:\Archivos de programa\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\Ctl3d32.dll",Verdadero,"$(WinSysPathSysFile)",,False
+File8="C:\Archivos de programa\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\ComCat.dll",Verdadero,"$(WinSysPathSysFile)",$(DLLSelfRegister),False
+File9="C:\WINDOWS\SYSTEM\MSFLXGRD.OCX",Verdadero,"$(WinSysPath)",$(DLLSelfRegister),Verdadero
+File10="C:\WINDOWS\SYSTEM\FlxGdES.dll",Verdadero,"$(WinSysPath)",,Verdadero
+File11="C:\WINDOWS\SYSTEM\DBGRID32.OCX",Verdadero,"$(WinSysPath)",$(DLLSelfRegister),Verdadero
+File12="C:\WINDOWS\SYSTEM\DBGrdES.dll",Verdadero,"$(WinSysPath)",,Verdadero
+File13="C:\WINDOWS\SYSTEM\COMCT232.OCX",Verdadero,"$(WinSysPath)",$(DLLSelfRegister),Verdadero
+File14="C:\WINDOWS\SYSTEM\CmCt2ES.dll",Verdadero,"$(WinSysPath)",,Verdadero
+File15="C:\WINDOWS\SYSTEM\COMCTL32.OCX",Verdadero,"$(WinSysPath)",$(DLLSelfRegister),Verdadero
+File16="C:\WINDOWS\SYSTEM\CmCtlES.dll",Verdadero,"$(WinSysPath)",,Verdadero
+File17="C:\WINDOWS\SYSTEM\WEBVW.DLL",Verdadero,"$(WinSysPath)",$(DLLSelfRegister),Verdadero
+File18="C:\ARCHIVOS DE PROGRAMA\ARCHIVOS COMUNES\MICROSOFT SHARED\MSINFO\IEINFO5.OCX",Verdadero,"$(WinSysPath)",,Verdadero
+File19="C:\ARCHIVOS DE PROGRAMA\ARCHIVOS COMUNES\MICROSOFT SHARED\TRIEDIT\DHTMLED.OCX",Verdadero,"$(WinSysPath)",,Verdadero
+File20="C:\WINDOWS\SYSTEM\MSINET.OCX",Verdadero,"$(WinSysPath)",$(DLLSelfRegister),Verdadero
+File21="C:\WINDOWS\SYSTEM\InetES.dll",Verdadero,"$(WinSysPath)",,Verdadero
+File22="C:\Archivos de programa\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\AXDist.exe",Verdadero,"$(WinSysPath)",,Verdadero
+File23="C:\Archivos de programa\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\Wint351.exe",Verdadero,"$(AppPath)",,False
+File24="C:\WINDOWS\SYSTEM\SHDOCVW.DLL",Verdadero,"$(WinSysPath)",$(DLLSelfRegister),Verdadero
+File25="C:\WINDOWS\SYSTEM\COMDLG32.OCX",Verdadero,"$(WinSysPath)",$(DLLSelfRegister),Verdadero
+File26="C:\WINDOWS\SYSTEM\CmDlgES.dll",Verdadero,"$(WinSysPath)",,Verdadero
+File27="C:\ARCHIVOS DE PROGRAMA\ARCHIVOS COMUNES\MICROSOFT SHARED\DAO\DAO350.DLL",Verdadero,"$(MSDAOPath)",$(DLLSelfRegister),Verdadero
+File28="C:\WINDOWS\SYSTEM\MSJtEr35.dll",Verdadero,"$(WinSysPathSysFile)",,False
+File29="C:\WINDOWS\SYSTEM\MSJInt35.dll",Verdadero,"$(WinSysPathSysFile)",,False
+File30="C:\Archivos de programa\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\MSVCRT40.dll",Verdadero,"$(WinSysPathSysFile)",,False
+File31="C:\WINDOWS\SYSTEM\MSJet35.dll",Verdadero,"$(WinSysPathSysFile)",$(DLLSelfRegister),False
+File32="C:\WINDOWS\SYSTEM\VBAJet32.dll",Verdadero,"$(WinSysPathSysFile)",,False
+File33="C:\WINDOWS\SYSTEM\VB5DB.dll",Verdadero,"$(WinSysPath)",,Verdadero
+File34="C:\WINDOWS\SYSTEM\MSRD2x35.dll",Verdadero,"$(WinSysPathSysFile)",$(DLLSelfRegister),False
+File35="C:\WINDOWS\SYSTEM\MsRepl35.dll",Verdadero,"$(WinSysPathSysFile)",,False
+File36="C:\WINDOWS\SYSTEM\ODBCJt32.dll",Verdadero,"$(WinSysPathSysFile)",,False
+File37="C:\WINDOWS\SYSTEM\ODBCJI32.dll",Verdadero,"$(WinSysPathSysFile)",,False
+File38="C:\WINDOWS\SYSTEM\ODBCTL32.dll",Verdadero,"$(WinSysPathSysFile)",,False
+File39="C:\WINDOWS\Escritorio\FluWork.exe",Verdadero,"$(AppPath)",,False

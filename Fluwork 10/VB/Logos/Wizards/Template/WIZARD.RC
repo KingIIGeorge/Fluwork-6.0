@@ -1,0 +1,52 @@
+STRINGTABLE DISCARDABLE
+BEGIN
+        //Título del Asistente
+        10         "Plantilla de Asistente"
+        15         "Plantilla de Asistente..."
+
+        //Títulos de los botones para el control del desplazamiento:
+        100        "Ayuda"
+        101        "Cancelar"
+        102        "< &Atrás"
+        103        "Sigui&ente >"
+        104        "&Terminar"
+
+        //Información de introducción:
+        1000       "Introducción"
+        1001       "El Asistente ??? le ayudará ..."
+        1002       "&No mostrar esta pantalla en el futuro."
+
+        //Otros títulos de controles de los pasos:
+        2000       "Paso 1"
+        2001       "Instrucciones para este paso."
+        2002       "Paso 2"
+        2003       "Instrucciones para este paso."
+        2004       "Paso 3"
+        2005       "Instrucciones para este paso."
+        2006       "Paso 4"
+        2007       "Instrucciones para este paso."
+
+
+        //Paso final:
+        3000       "Terminado"
+        3001       "El Asistente ??? ha terminado de obtener información.\r\n\r\n_"
+        3002       "Para generar su ???, haga clic en Terminar"
+        3003       "Guardar valores actuales como predeterminados"
+
+        //Diálogo de confirmación
+        10000       "??? creado"                               
+        10001       "??? se ha creado."
+        10002       "Saltar esta pantalla en el futuro."           
+        10003       "Aceptar"                                              
+
+        //Misc strings:
+        20000       "(Ninguno)"
+
+        //Error messages:
+        30000       "Datos incompletos."
+        30001       "Debe ... antes de continuar."
+
+END
+
+
+5000    BITMAP     wizmenu.bmp

@@ -1,0 +1,114 @@
+[Messages]
+	ComplianceTitle=No está permitido que instale estos controladores.
+	ComplianceFail=Debe tener alguno de los siguientes productos Microsoft para poder instalar los controladores.
+	ConfDsnFailed=Ha fallado la configuración del controlador %s de ODBC.
+	BadKeyLine=Falta o es incorrecta la palabra clave '%s' en %s para el controlador %s de ODBC.
+	InstallDriverFail=Ha fallado el SQLInstallDriver para el controlador %s de ODBC.
+	Title=Ha ocurrido un error al configurar los controladores de ODBC.
+	OutOfMem=Se ha quedado sin memoria al configurar el controlador de ODBC.
+	MissingDriver=Falta la palabra clave 'Driver=' o 'Setup=' para el controlador %s de ODBC en %s
+	BadDetectOsKey=Indicador %s desconocido para AcmeDetectOS en odbcstf.dll.
+	InstallTranslatorFail=Ha fallado el SQLInstallTranslator de ODBC al configurar el traductor %s.
+	RemoveTranslatorFail=Ha fallado el SQLRemoveTranslator de ODBC al eliminar el traductor %s.
+	InstallDmFailed=Ha fallado el SQLInstallDriverManager de ODBC.
+	RemoveDmFailed=Ha fallado el SQLRemoveDriverManager de ODBC.
+	ConfigDriverFailed=Ha fallado el SQLConfigDriver de ODBC para el controlador %s.
+	RemoveDriverFail=Ha fallado el SQLRemoveDriver de ODBC para el controlador %s.
+
+[DA Text]
+	Driver=odbcjt32.dll
+	Setup=odtext32.dll
+	Name=Microsoft Text Driver (*.txt; *.csv)
+	APILevel=1
+	ConnectFunctions=YYN
+	DriverODBCVer=02.50
+	FileUsage=1
+	FileExtns=*.,*.asc,*.csv,*.tab,*.txt,*.csv
+	SQLLevel=0
+	ConfigDSN=DSN=Text Files|DriverID=27||
+
+[DA Excel]
+	Driver=odbcjt32.dll
+	Setup=odexl32.dll
+	Name=Microsoft Excel Driver (*.xls)
+	APILevel=1
+	ConnectFunctions=YYN
+	DriverODBCVer=02.50
+	FileUsage=1
+	FileExtns=*.xls
+	SQLLevel=0
+	ConfigDSN=DSN=Excel Files|DriverId=22||
+
+[DA dBase]
+	Driver=odbcjt32.dll
+	Setup=oddbse32.dll
+	Name=Microsoft dBase Driver (*.dbf)
+	APILevel=1
+	ConnectFunctions=YYN
+	DriverODBCVer=02.50
+	FileUsage=1
+	FileExtns=*.dbf,*.ndx,*.mdx
+	SQLLevel=0
+	ConfigDSN=DSN=dBASE Files|DriverId=533||		
+
+[DA Paradox]
+	Driver=odbcjt32.dll
+	Setup=odpdx32.dll
+	Name=Microsoft Paradox Driver (*.db )
+	APILevel=1
+	ConnectFunctions=YYN
+	DriverODBCVer=02.50
+	FileUsage=1
+	FileExtns=*.db
+	SQLLevel=0
+	ConfigDSN=DSN=Paradox Files|DriverId=538||
+
+[DA Access]
+	Driver=odbcjt32.dll
+	Setup=odbcjt32.dll
+	Name=Microsoft Access Driver (*.mdb)
+	APILevel=1
+	ConnectFunctions=YYN
+	DriverODBCVer=02.50
+	FileUsage=2
+	FileExtns=*.mdb
+	SQLLevel=0
+	ConfigDSN=DSN=MS Access 97 Database|UID=Admin||
+
+[DA FoxPro]
+	Driver=odbcjt32.dll
+	Setup=odfox32.dll
+	Name=Microsoft FoxPro Driver (*.dbf)
+	APILevel=1
+	ConnectFunctions=YYN
+	DriverODBCVer=02.50
+	FileUsage=1
+	FileExtns=*.dbf,*.cdx,*.idx,*.ftp
+	SQLLevel=0
+	ConfigDSN=DSN=FoxPro Files|DriverId=536||
+
+[DA SQLServer]
+	Name=SQL Server
+	Driver=sqlsrv32.dll
+	Setup=sqlsrv32.dll
+	SQLLevel=1
+	FileUsage=0
+	DriverODBCVer=02.50
+	ConnectFunctions=YYY
+	APILevel=2
+
+[DA Oracle]
+	Name=Visigenic 32-bit Oracle Driver
+	Driver=vsorac32.dll
+	Setup=orstub32.dll
+	SQLLevel=1
+	FileUsage=0
+	DriverODBCVer=02.50
+	ConnectFunctions=YYY
+	APILevel=1
+
+[DA Translators]
+	Name=MS Code Page Translator
+	Translator=MSCPXL32.DLL
+	Setup=MSCPXL32.DLL	
+	

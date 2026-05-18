@@ -1,0 +1,198 @@
+:Base readme.hlp>langref
+:Title Léame de Visual Basic 5
+:Index Léame=README.HLP
+:Link vb5.hlp
+1 Léame de Visual Basic 5.0
+2 Actualizaciones a Referencia del lenguaje
+3 Objetos
+4 Actualizaciones de objetos generales
+5 Asignar un conjunto de resultados a RDC no actualiza los controles enlazados...=rmmscAssigningResultsetToRemoteDataControlDoesNotUpdateControlsReadMe@readme.hlp>langref
+5 El control Image enlazado no muestra una imagen si RDC utiliza cursores por ...=rmmscBoundImageControlDoesntDisplayPictureIfRDCUsesBatchCursorsReadme@readme.hlp>langref
+5 Imposible asignar el conjunto de resultados al control RemoteData (Léame)=rmmscCantAssignResultsetToRemoteDataControl@readme.hlp>langref
+5 Cambios a LinkedWindows (Colección) (Léame)=vbcolChangesToLinkedWindowsCollectionReadme@readme.hlp>langref
+5 Control (Clase) (Léame)=rmobjControlClassReadMe@readme.hlp>langref
+5 Controls (Colección) (Léame)=vbcolControlsCollection@readme.hlp>langref
+5 Internet Transfer Control: establezca la propiedad URL antes que Password y ...=rmmscInternetTransferControlSetURLBeforePasswordUserName@readme.hlp>langref
+5 Error en el ejemplo del control MSComm (Léame)=rmmscMSCommControlExampleError@readme.hlp>langref
+5 Establecer estilos de cuadro combinado en tiempo de ejecución (Léame)=rmconSettingComboBoxStylesAtRunTime@readme.hlp>langref
+5 El objeto UserControl no es compatible con DDE (Léame)=rmmscUserControlObjectDoesntSupportDDEDirectlyReadMe@readme.hlp>langref
+5 VB5 no actualiza la referencia a RDO después de convertir RDC (Léame)=rmmscVB5DoesntUpdateRDOReferenceAfterConvertingMSRDCControlReadMe@readme.hlp>langref
+5 VBNewProjects (Colección) (Léame)=vbcolVBNewProjectsCollection@readme.hlp>langref
+4 Actualizaciones a controles ActiveX
+5 Controles ActiveX que desaparecen en páginas HTML (Léame)=rmmscActiveXControlsThatDisappearOnHTMLPages@readme.hlp>langref
+5 La constante cdlHelpContents del control CommonDialog puede estar obsoleta (...=rmconCommonDialogControlConstantCdlHelpContentsMayBeObsoleteReadMe@readme.hlp>langref
+5 Eliminar una propiedad con el Asistente para interfaz de control no actualiz...=rmmscDeletingPropertyWithControlInterfaceWizardDoesntUpdatePropertyPage@readme.hlp>langref
+5 No comparta una página de propiedades entre distintos proyectos si hay un Us...=rmmscDontSharePropertyPageBetweenProjectsIfUserControlIsOnIt@readme.hlp>langref
+5 IStudio/ActiveX ScriptPad no puede cambiar de fuente mediante la propiedad F...=rmmscIStudioActiveXScriptPadHasProblemSavingFonts@readme.hlp>langref
+5 Hacer referencia a un UserControl privado antes de cargar el formulario pued...=rmmscReferencingPrivateUserControlPriorToFormLoadCausesTypeMismatchErrorReadme@readme.hlp>langref
+5 Solicitar clave de la licencia sólo se aplica a proyectos de controles Activ...=rmdlgRequireLicenseKeyDisabledOnGeneralTabReadMe@readme.hlp>langref
+5 Actualice controles ActiveX automáticamente desde el cuadro de diálogo Propi...=vbdlgUpgradingActiveXControlsAmplification@readme.hlp>langref
+5 Un UserControl que contenga un User Forms Textbox quizá no funcione en un Us...=rmmscUserControlContainingUserFormsTextboxMayNotWorkOnUserFormReadMe@readme.hlp>langref
+3 Propiedades
+4 AmbientProperties.Font duplica la fuente de ambiente del contenedor (Léame)=rmmscAmbientPropertiesFontClonesContainersAmbientFontReadMe@readme.hlp>langref
+4 Cambiar la propiedad UserControl no afecta a las aplicaciones compiladas (Lé...=rmmscChangingControlToInvisibleAtRuntimeWontWorkInExistingHostsReadMe@readme.hlp>langref
+4 ClassName (Propiedad) (Léame)=vbproClassNameProperty@readme.hlp>langref
+4 El componente que utiliza App.PrevInstance puede causar problemas (Léame)=rmmscAPEComponentThatUsesAppPrevInstanceCanCauseProblemsReadMe@readme.hlp>langref
+4 ContainedVBControls (Propiedad) (Léame)=vbproContainedVBControlsProperty@readme.hlp>langref
+4 DesignerID (Propiedad) (Léame)=rmproDesignerIDProperty@readme.hlp>langref
+4 No cambie la fuente en múltiples controles con la ventana Propiedades flotan...=rmmscDontChangeFontOnMultipleControlsWithFloatingPropertiesWindowReadMe@readme.hlp>langref
+4 El valor predeterminado de la propiedad Instancing varía dependiendo del tip...=rmmscInstancingPropertyDefaultIsMultiUseForActiveXExeDLLProjects@readme.hlp>langref
+4 LeftCol (Propiedad) (Léame)=vbproLeftColPropertyActiveXControls@readme.hlp>langref
+4 LinkedWindows (Propiedad) (Léame)=rmproLinkedWindowsProperty@readme.hlp>langref
+4 MaskColor (Propiedad, objeto UserControl) (Léame)=rmproNoHelpTopicForMaskColorPropertyOfUserControl@readme.hlp>langref
+4 MaskPicture (Propiedad, objeto UserControl) (Léame)=rmproNoHelpTopicForMaskPicturePropertyOfUserControl@readme.hlp>langref
+4 La propiedad MaskPicture requiere un mapa de bits en blanco y negro en Windo...=rmmscMaskColorPropertyRequiresBlackWhiteBitmapInWindows95ReadMe@readme.hlp>langref
+4 Temas de propiedades que faltan (RDO) (Léame)=rmconMissingPropertyTopicsRDO@readme.hlp>langref
+4 Palette (Propiedad): información adicional (Léame)=rmmscPalettePropertyAdditionalInformationReadMe@readme.hlp>langref
+4 Parent (Propiedad, objeto UserControl) (Léame)=rmproNoHelpTopicForUserControlParent@readme.hlp>langref
+4 ParentControlsType (Propiedad) (Léame)=rmproNoHelpTopicForParentControlsTypePropertyOfParentControls@readme.hlp>langref
+4 Propiedades llamadas incorrectamente métodos (Léame)=rmstmPropertiesIncorrectlyCalledMethods@readme.hlp>langref
+4 Properties (Propiedad) (Léame)=rmproPropertiesPropertyReadme@readme.hlp>langref
+4 rdoColumns (Propiedad) (Léame)=vbproRdoColumnsProperty@readme.hlp>langref
+4 rdoConnections (Propiedad) (Léame)=vbproRdoConnectionsProperty@readme.hlp>langref
+4 rdoEnvironments (Propiedad) (Léame)=vbproRdoEnvironmentsProperty@readme.hlp>langref
+4 rdoErrors (Propiedad) (Léame)=vbproRdoErrorsProperty@readme.hlp>langref
+4 rdoParameters (Propiedad) (Léame)=vbproRdoParametersProperty@readme.hlp>langref
+4 rdoQueries (Propiedad) (Léame)=vbproRdoQueriesProperty@readme.hlp>langref
+4 rdoResultSets (Propiedad) (Léame)=vbproRdoResultsSetsProperty@readme.hlp>langref
+4 rdoTables (Propiedad) (Léame)=vbproRdoTablesProperty@readme.hlp>langref
+4 References (Propiedad) (Léame)=rmproReferencesProperty@readme.hlp>langref
+4 Nombres reservados de propiedades y métodos (Léame)=rmhowReservedPropertyMethodNames@readme.hlp>langref
+4 La propiedad ShowTips es de sólo lectura (Léame)=rmmscShowTipsPropertyIsReadOnlyReadMe@readme.hlp>langref
+4 La propiedad SourceColumn es de lectura y escritura en tiempo de ejecución (...=rmmscSourceColumnPropertyIsReadWriteAtRunTime@readme.hlp>langref
+4 La propiedad StandardSize para páginas de propiedades no funciona como se es...=rmmscStandardSizePropertyForPropertyPagesDoesntWorkAsExpectedReadme@readme.hlp>langref
+4 La propiedad Status (RDO) se aplica tanto a filas como a columnas (Léame)=rmconStatusPropertyAppliesToBothRowsColumnsRDOReadme@readme.hlp>langref
+4 VBComponents (Propiedad) (Léame)=vbproVBComponentsProperty@readme.hlp>langref
+4 VBControls (Propiedad) (Léame)=vbproVBControlsProperty@readme.hlp>langref
+3 Funciones
+4 Clarificación de la función DateAdd (Léame)=rmstmClarificationForDateAddFunction@readme.hlp>langref
+4 La Ayuda para DateSerial ofrece información incorrecta sobre el argumento Ye...=rmmscHelpForDateSerialGivesIncorrectInformationOnYearArgumentReadMe@readme.hlp>langref
+3 Métodos
+4 Un objeto puede terminar con un método Friend en el árbol de llamadas (Léame)=rmmscAnObjectMayTerminateWithFriendMethodInCallTreeReadMe@readme.hlp>langref
+4 Copy (Método) (Extensibilidad) (Léame)=vbmthCopyMethodExtensibility@readme.hlp>langref
+4 CreateToolWindow (Método) (Léame)=rmmthCreateToolWindowMethod@readme.hlp>langref
+4 Cut (Método) (Extensibilidad) (Léame)=vbmthCutMethodExtensibility@readme.hlp>langref
+4 FileName (Método) (Léame)=rmmthFileNameMethod@readme.hlp>langref
+4 El ejemplo del método GetChunk, StateChanged necesita DoEvents (Léame)=rmmscGetChunkMethodStateChangedExampleNeedsDoEvents@readme.hlp>langref
+4 El método GetSelectedText se ha reemplazado por el método GetSelection (Léame)=vbmthGetSelectedTextDoesntExist@readme.hlp>langref
+4 El método Hide falla cuando se repite en formularios modales (Léame)=rmmscHideMethodFailsWhenRepeatedInModalForms@readme.hlp>langref
+4 InsertFile (Método) (Léame)=rmmthInsertFileMethod@readme.hlp>langref
+4 Información sobre herramientas de ListView causa problemas de orden Z cuando...=rmmscListViewToolTipsCauseZOrderProblemsWhenUsedInAddins@readme.hlp>langref
+4 Método llamado incorrectamente propiedad (Léame)=rmstmMethodIncorrectlyCalledProperty@readme.hlp>langref
+4 Método PaintPicture: el argumento código_op sólo se aplica a mapas de bits (...=rmmscPaintPictureMethodOpcodeArgumentOnlyAppliesToBitmapsReadme@readme.hlp>langref
+4 Constantes de UpdateCriteria enumeradas erróneamente en la lista de "métodos...=rmmscUpdateCriteriaListedInOpenResultsetLockTypemethodsListreadme@readme.hlp>langref
+3 Eventos
+4 El ejemplo del evento Click (control SSTab) tiene un error de sintaxis (Léame)=rmmscClickEventSSTabControlExampleHasSyntaxError@readme.hlp>langref
+4 Connect (Evento, control Winsock)=rmevtConnectEventWinsock@readme.hlp>langref
+4 MSChart: valores para los eventos de actualización (Léame)=rmmscMSChartValuesForUpdatedEvents@readme.hlp>langref
+4 El objeto PropertyPage no acepta eventos Activate y Deactivate (Léame)=rmmscPropertyPagesActivateDeActivateEventsCantOccurReadMe@readme.hlp>langref
+4 El tema de Ayuda del evento Validate (datos remotos) dice que se puede cambi...=rmmscRDCValidateEventHelpTopicSaysThatActionsCanBeChanged@readme.hlp>langref
+3 Instrucciones
+4 Descripción de las interfaces que pueden utilizarse con Implements (Léame)=rmmscDescriptionOfInterfacesThatCanBeUsedWithImplements@readme.hlp>langref
+4 La instrucción Unload Me en el evento ItemCheck del control ListBox produce ...=rmconUnloadMeStatementInListBoxControlItemCheckEventCausesGPFReadMe@readme.hlp>langref
+4 Usar la palabra clave WithEvents (Léame)=rmhowUsingWithEventsKeyword@readme.hlp>langref
+3 Constantes
+4 Constantes de AddIn (Léame)=vbcstAddInsConstants@readme.hlp>langref
+4 Constantes de error (ComCtl32) (Léame)=vbcstErrorConstantsComctl232ocx@readme.hlp>langref
+4 Constantes de OLEDrop (ComCtl32) (Léame)=vbcstOLEDropConstantscomctl232ocx@readme.hlp>langref
+4 Constantes de OLEDropEffect (ComCtl32) (Léame)=vbcstOLEDropEffectConstantscomctl232ocx@readme.hlp>langref
+3 Mensajes de error
+4 Mensajes de error generales
+5 Una llamada a una propiedad o método no puede incluir una referencia a un ob...=rmmscAPropertyOrMethodCallIncludedReferenceToPrivateObjectEitherAsArgumentOrAsReturnValue@readme.hlp>langref
+5 Mensajes de error adicionales de VBA (lenguaje) (Léame)=rmstmAdditionalVBALanguageErrorMessages@readme.hlp>langref
+5 No se encontró la aplicación. Buscando un objeto con CLSID: |1. (Léame)=rmmscApplicationNotFoundLookingForObjectWithCLSID1@readme.hlp>langref
+5 La aplicación se inició pero no registró un generador de clases. Buscando un...=rmmscApplicationWasLaunchedButItDidntRegisterClassFactory@readme.hlp>langref
+5 Clase no registrada. Buscando un objeto con CLSID: |1. (Léame)=rmmscClassNotRegisteredLookingForObjectWithCLSID@readme.hlp>langref
+5 No se encontró la clase. (Léame)=rmmscClassNotFound@readme.hlp>langref
+5 Imposible determinar el objeto de clase. Buscando un objeto con CLSID: |1. (...=rmmscClassObjectCannotBeDeterminedLookingForObjectCLSID@readme.hlp>langref
+5 Algunos elementos no pueden ser públicos en este tipo de proyecto (Léame)=rmmsgCurrentPublicinstancingPropertyValuesAreNotValid@readme.hlp>langref
+5 No encontrada la DLL de la clase. Buscando un objeto con CLSID: |1. (Léame)=rmmscDLLForClassNotFoundLookingForObjectWithCLSID@readme.hlp>langref
+5 Error en la DLL. Buscando un objeto con CLSID: |1. (Léame)=rmmscErrorInDLLLookingForObjectWithCLSID@readme.hlp>langref
+5 Error: Imposible cargar 'elemento' (Léame)=rmmsgErrorItemCouldNotBeLoaded@readme.hlp>langref
+5 Interfaz no registrada. Buscando un objeto con CLSID: |1. (Léame)=rmmscInterfaceNotRegisteredLookingForObjectWithCLSID@readme.hlp>langref
+5 Cadena de clase no válida. Buscando un objeto con ProgID. (Léame)=rmmscInvalidClassStringLookingForObjectWithProgID@readme.hlp>langref
+5 Objeto no registrado. Buscando un objeto con CLSID: |1. (Léame)=rmmscObjectIsNotRegisteredLookingForObjectWithCLSID@readme.hlp>langref
+5 El VBIDE no puede proporcionar múltiples instancias de una clase SingleUse (...=rmmsgVBIDECantProvideMultipleInstances@readme.hlp>langref
+5 Error inesperado. (Léame)=rmmscUnexpectedError@readme.hlp>langref
+5 Usar los comandos Bloque con comentarios y Bloque sin comentarios=rmcmdUsingCommentUncommentCommands@readme.hlp>langref
+5 La versión 'elemento3' de 'elemento1' no está registrada. El control se... (...=rmmsgVersion20OfitemIsNotRegisteredTheControlWillBeUpgraded@readme.hlp>langref
+5 SO o versión de SO incorrecto para la aplicación. Buscando un objeto con CLS...=rmmscWrongOSOrOSVersionForApplicationLookingForObjectWithCLSID@readme.hlp>langref
+4 Mensajes de error de DBGrid
+5 Imposible eliminar múltiples filas (control DBGrid) (Léame)=vbmsgCannotDeleteMultipleRowsDBGridControl@readme.hlp>langref
+5 El texto del título es demasiado largo (control DBGrid) (Léame)=vbmsgCaptionTextIsTooLongDBGridControl@readme.hlp>langref
+5 No se encontró la columna (control DBGrid) (Léame)=vbmsgColumnNotFoundDBGridControl@readme.hlp>langref
+5 El control no se inicializó adecuadamente (control DBGrid) (Léame)=vbmsgControlNotProperlyInitializedDBGridControl@readme.hlp>langref
+5 Error de acceso a datos (control DBGrid) (Léame)=vbmsgDataAccessErrorDBGridControl@readme.hlp>langref
+5 El marcador no es válido (control DBGrid) (Léame)=vbmsgInvalidBookmarkDBGridControl@readme.hlp>langref
+5 Índice de columna no válido (control DBGrid) (Léame)=vbmsgInvalidColumnIndexDBGridControl@readme.hlp>langref
+5 Número de fila incorrecto (control DBGrid) (Léame)=vbmsgInvalidRowNumberDBGridControl@readme.hlp>langref
+5 Selección no válida de índices de marcadores de filas (control DBGrid) (Léame)=vbmsgInvalidSelectedRowBookmarkIndexDBGridControl@readme.hlp>langref
+5 Valor no válido para la propiedad @0 (control DBGrid) (Léame)=vbmsgInvalidSettingFor0PropertyDBGridControl@readme.hlp>langref
+5 No hay ningún registro actual (control DBGrid) (Léame)=vbmsgNoCurrentRecordDBGridControl@readme.hlp>langref
+5 Null (control DBGrid) (Léame)=vbmsgNullDBGridControl@readme.hlp>langref
+5 La operación no es válida con el evento @0 (control DBGrid) (Léame)=vbmsgOperationIsInvalidWithinEventDBGridControl@readme.hlp>langref
+5 La propiedad no está disponible en este contexto (control DBGrid) (Léame)=vbmsgPropertyIsNotAvailableInThisContextDBGridControl@readme.hlp>langref
+5 Argumentos de Scroll fuera del intervalo (control DBGrid) (Léame)=vbmsgScrollArgumentsOutOfRangeDBGridControl@readme.hlp>langref
+2 Otras actualizaciones a la documentación
+3 Actualizaciones de Visual Basic generales
+4 Explorador de rendimiento de aplicaciones limitado a 32 perfiles (Léame)=rmmscAPEManagerLimitedTo32ProfilesReadme@readme.hlp>langref
+4 Evitar superponer cursores dinámicos (Léame)=rmmscAvoidingOverlappingOfDynamicCurorsReadMe@readme.hlp>langref
+4 Aplicación BookSaleClient: el botón de Modelo de ventas no está presionado (...=rmmscBookSaleClientSampleSalesModelButton@readme.hlp>langref
+4 Error en el tema Prueba de procedimientos con la ventana Inmediato (Léame)=rmmscBugWithTestingProceduresWithImmediateWindowTopic@readme.hlp>langref
+4 Cambiar el modelo de mayúsculas de los nombres de formularios o módulos pued...=rmmscChangingCaseOfFormOrModuleNamesCausesLoadErrorReadme
+4 Forzar los tipos Byte y String (Léame)=rmconCoercionOfByteStringTypes@readme.hlp>langref
+4 Administrador de componentes no incluido en VB5 (Léame)=vbmscComponentManagerNotIncludedInVisualBasicVersion50@readme.hlp>langref
+4 Corrección en Crear un complemento básico (Léame)=rmmscCorrectionInCreatingBasicAddIn@readme.hlp>langref
+4 No cambie el miembro predeterminado a Friend o Private (Léame)=rmmscDontChangeDefaultMemberToFriendOrPrivateReadMe@readme.hlp>langref
+4 Las aplicaciones de ejemplo de la Edición empresarial están en Entpris, no e...=rmmscSampleApplicationsEnterpriseSamplesInEntpris@readme.hlp>langref
+4 Error en "Inserción de un nuevo objeto UserConnection"=rmconErrorInInsertingUserConnectionObject@readme.hlp>langref
+4 Errores en procedimientos de devolución de llamada (Léame)=rmhowErrorsInCallbackProcedures@readme.hlp>langref
+4 Los argumentos de eventos que utilizan tipos de datos OLE no se reconocen en...=rmmscColorPropertiesOfTypeOLECOLORAppearAsLongInAccessReadMe@readme.hlp>langref
+4 GPF al alternar carpetas si están presentes un objeto y diseñadores de UserD...=rmmscGPFWhenTogglingFoldersIfUserDocDesignersArePresent@readme.hlp>langref
+4 Objetos de tipo fijo permitidos como parámetros opcionales (Léame)=rmstmHardtypedObjectsPermittedAsOptionalParametersInVisualBasic5@readme.hlp>langref
+4 El botón Ayuda no aparece en la página de propiedades (Léame)=rmmscHelpButtonDoesntShowUpOnPropertyPageReadme@readme.hlp>langref
+4 Modificar manualmente el atributo VB_PredeclaredId causa problemas (Léame)=rmmscManuallyEditingVB_PredeclaredIdAttributeCausesProblemsReadMe@readme.hlp>langref
+4 Documentación que falta: Información sobre valores y marcadores de posición ...=rmmscMissingValueTips@readme.hlp>langref
+4 El cuadro de diálogo modal o el cuadro de mensajes bloquea eventos al depura...=rmmscModalDialogOrMessageBoxBlocksEventsWhenDebugging@readme.hlp>langref
+4 No se actualizó o eliminó ninguna fila (Léame)=vbmsgNoRowsUpdatedOrDeleted@readme.hlp>langref
+4 Programa de configuración del motor de Paradox no incluido con Visual Basic ...=vbmscErrorsInCrystalReportsDocumentation@readme.hlp>langref
+4 "Se ha denegado el permiso" o "Error no esperado" al compilar OCX o DLL (Léame)=rmmscPermissionDeniedWithBinaryCompatibilityReadMe
+4 Imprimir Libros en pantalla (Léame)=rmmscVB5BugPrintingBooksOnline@readme.hlp>langref
+4 Los proyectos compilados a código nativo todavía requieren MSVBVM50.DLL (Léame)=rmmscProjectsCompiledToNativeCodeStillRequireMSVBVM50DLL@readme.hlp>langref
+4 El Asistente para instalar busca "User" o "Kernel" (Léame)=rmmscSetupWizardLookingForUserOrKernel@readme.hlp>langref
+4 Para utilizar objetos GlobalMultiUse internamente, declare una variable glob...=rmmscToUseGlobalMultiUseObjectsInternallyDeclareGlobalVariableReadMe@readme.hlp>langref
+4 Utilizar colores relativos de la paleta (Léame)=rmmscUsingRelativePaletteColors@readme.hlp>langref
+4 Características bidireccionales de Visual Basic 5.0 (Léame)=rmmscVisualBasic50BidirectionalFeatures@readme.hlp>langref
+3 Actualizaciones a  código y aplicaciones de ejemplo
+4 Cambios al código de ejemplo del método AddToAddInToolbar (Léame)=vbmscChangesToSampleCodeInAddToAddInToolbarMethod@readme.hlp>langref
+4 Cambios al código de ejemplo de Consideraciones de diseño para complementos ...=vbmscChangesToSampleCodeInDesignConsiderationsForAddIns@readme.hlp>langref
+4 Cambios al código de ejemplo de Manipular código con complementos (Léame)=vbmscChangesToSampleCodeInManipulatingCodeWithAddIns@readme.hlp>langref
+4 Cambios al código de ejemplo de Manipular el IDE con complementos (Léame)=rmmscChangesToSampleCodeInManipulatingIDEWithAddIns@readme.hlp>langref
+4 Error de compilación en el código de ejemplo de Form Unload (Léame)=rmmscCompileErrorInSampleApp@readme.hlp>langref
+4 Código de ejemplo de combinaciones equivalentes en la 'Guía de Objetos de ac...=rmmscEquiJoinsExampleCodeInGuideToDataAccessObjects@readme.hlp>langref
+4 Errata: Ejemplo de código de compilación condicional (Léame)=rmmscErrataConditionalCompilationCodeExample@readme.hlp>langref
+4 Ejecutar ejemplos del modelo de complementos de VBA (Léame)=rmhowExecutingVBAAddinModelExamples@readme.hlp>langref
+4 Programación con objetos: error en código de ejemplo (Léame)=rmmscProgramminigWithObjectErrorInCodeSampleReadMe@readme.hlp>langref
+3 Actualizaciones de instalación
+4 Access 95 no se ejecutará después de desinstalar VB4 (Léame)=rmmscAccess95WontRunAfterUninstallingVB4@readme.hlp>langref
+4 La edición de controles instala algunos archivos como de sólo lectura (Léame)=rmmscControlCreationEditionInstallSomeFilesAsReadonlyReadme@readme.hlp>langref
+4 El componente Exe se bloquea al crear un objeto del segundo Exe durante el i...=rmmscActiveXExeComponentHangsIfInstalledOnWindows95ReadMe@readme.hlp>langref
+4 Si está utilizando Visual Basic 5.0 con Windows NT 4.0... (Léame)=rmmscIfYoureUsingVisualBasic50WithWindowsNT40ReadMe@readme.hlp>langref
+4 Quite MV141KN.OCX del sistema antes de la instalación (Léame)=rmmscRemoveMV141KNOCXFromYourSystemBeforeInstallingReadMe@readme.hlp>langref
+4 La instalación falla en NT 4.0 con Búsqueda rápida instalada (Léame)=rmmscSetupFailsOnNT40WithFastFindInstalledReadme@readme.hlp>langref
+4 Al actualizar a la Edición empresarial de VB se elimina Autmgr32.exe (Léame)=rmconRemovingVB40EntAfterInstallingVB50EntDeletesAutmgr32exeReadMe@readme.hlp>langref
+3 Actualizaciones de Jet, ISAM, DAO y ODBC
+4 Imposible pasar un nombre de objeto QueryDef a un método OpenRecordset media...=rmmscCantPassQueryDefObjectNameToOpenRecordsetMethodUsingODBCDirectReadMe@readme.hlp>langref
+4 Imposible leer la propiedad BatchCollisionCount mediante la colección Proper...=rmmscCantReadBatchCollisionCountPropertyThroughRecordsetPropertiesCollectionReadMe@readme.hlp>langref
+4 dbFailOnError ya no deshace una transacción (Léame)=rmmscDbFailOnErrorNoLongerRollsBackTransactionReadMe@readme.hlp>langref
+4 ODBCDirect: GetRows Error 40035 (Léame)=rmmscODBCDirectGetRowsError40035ReadMe@readme.hlp>langref
+4 RegisterDatabase trunca el servidor a 31 caracteres (Léame)=rmmscRegisterDatabaseTruncatesServerTo31CharactersReadMe@readme.hlp>langref
+4 Usar DAO versión 3.5 en aplicaciones antiguas de host de Automatización OLE ...=rmmscUsingDAOVersion35InOlderOLEAutomationHostApplicationsReadMe@readme.hlp>langref
+3 Actualizaciones de Repository
+4 Si utilizó Microsoft Repository desde la beta de Visual Basic (Léame)=rmmscIfYouUsedMicrosoftRepositoryFromVisualBasicBetaReadMe@readme.hlp>langref
+4 Instalación de Microsoft Repository (Léame)=rmmscMicrosoftRepositoryInstallationReadme@readme.hlp>langref
+4 Archivos obsoletos de la beta de Visual Basic (Léame)=rmmscObsoleteFilesFromVisualBasicBetaReadme@readme.hlp>langref
+4 Cambios a la API de Repository (Léame)=rmmscRepositoryAPIChangesReadme@readme.hlp>langref
+4 Explorador de Repository (Léame)=rmmscRepositoryBrowserReadme@readme.hlp>langref
+4 Restricciones de la base de datos de Repository (Léame)=rmmscRepositoryDatabaseRestrictionsReadme@readme.hlp>langref
+4 Restricciones de subprocesos múltiples de Repository (Léame)=rmmscRepositoryMultithreadingRestrictionsReadMe@readme.hlp>langref

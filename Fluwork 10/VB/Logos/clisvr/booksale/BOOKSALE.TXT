@@ -1,0 +1,32 @@
+Aplicación de ejemplo Venta de libros
+
+Este proyecto demuestra el uso de un componente ActiveX para encapsular la lógica de la política
+y las reglas del negocio, y para proporcionar servicios como "caja negra" a un componente externo
+de interfaz de usuario. El proyecto cliente se dedica a proporcionar una interfaz de usuario clara
+e intuitiva para que los usuarios seleccionen opciones de los controles y vean los resultados del
+proceso. El proyecto cliente se preocupa de qué hacen los usuarios y cómo usan los resultados de la
+aplicación, pero no sabe nada acerca de las reglas del negocios y las operaciones de la aplicación.
+El proyecto servidor es un componente ActiveX dedicado a encapsular las normas y las reglas de acceso
+a datos dentro de servicios "autorizados" que los componentes del cliente usan para buscar la
+información que necesitan. El componente servidor no sabe cómo están seleccionadas las opciones del
+usuario o cómo se presentan los resultados al usuario. Este vacío en el conocimiento específico del
+usuario ayuda a mantener la funcionalidad general del componente servidor... y debe incrementar la
+facilidad de reutilización (en un proyecto real) para otras aplicaciones. El servidor también usa
+módulos de clase para estructurar la lógica del negocio y las reglas de acceso a datos de forma que
+se facilite el desarrollo, la depuración, la facilidad de lectura, la facilidad de mantenimiento y la
+facilidad de reutilización del código de origen. 
+
+El componente ActiveX se puede ejecutar en la misma máquina que el componente cliente (lo que puede
+ayudar significativamente en las fases de desarrollo y depuración de un proyecto) o se puede ejecutar
+en una máquina remota para beneficiarse de la eficacia del cálculo distribuido y las características
+de acceso de múltiples usuarios a un servidor compartido en la red. No es necesario volver a compilar
+o cambiar el componente para permitir esta independencia de la ubicación.
+
+Nota: el componente servidor ActiveX de este proyecto utiliza un formulario visible por necesidades
+de demostración y estado. No hay ninguna necesidad funcional de que el componente tenga una interfaz
+de usuario; sin embargo, la información de estado que se presenta a través de la interfaz puede ayudar
+en la depuración y en las necesidades de monitorizar la ejecución. (Tenga en cuenta que las necesidades
+de monitorizar el estado se pueden cubrir si proporciona un método de estado en el servidor que pueda
+consultar una aplicación monitor.)
+
+

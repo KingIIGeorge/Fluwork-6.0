@@ -1,0 +1,207 @@
+Open "c:\laficha.html" For Output As #7
+
+Print #7, "<html><head><title></title></head><body bgcolor=""#FFFFFF"">"
+
+'BLOQUE IMAGENES
+
+Print #7, "<table border=""0"" cellpadding=""0"" cellspacing=""1"" width=""100%""><tr><td width=""25%"" rowspan=""3""><center><IMG border=""0"" SRC=""file:"
+Print #7, Trim(dbpath) + "\mag.logo.gif"
+Print #7, """ width=""190"" height=""159""></center></td><td width=""25%"" valign=""top"" align=""left"" height=""2""><img border=""0"" src=""file:"
+Print #7, Trim(dbpath) + "\direccion.gif"
+Print #7, """ width=""200"" height=""69""></td><td width=""25%"" valign=""middle"" align=""center""><p align=""right""><img border=""0"" src=""file:"
+Print #7, Trim(dbpath) + "\epson.logo.gif"
+Print #7, """ width=""128"" height=""40""></td><td width=""25%"" valign=""middle"" align=""center""><img border=""0"" src=""file:"
+Print #7, Trim(dbpath) + "\hp.logo.gif"
+
+Print #7, """ width=""111"" height=""115"">"
+Print #7, "</td></tr><tr><td width=""75%"" valign=""top"" align=""left"" height=""1"" colspan=""3""><p align=""center""><b><font size=""4"">FICHA DE SERVICIO TECNICO</font></b></p>"
+Print #7, "</td></tr><tr><td width=""75%"" valign=""top"" align=""left"" colspan=""3"">&nbsp;</td></tr></table>"
+
+'FIN BLOQUE IMAGENES
+
+Print #7, "<table border=""2"" width=""100%"" cellpadding=""0"" cellspacing=""5"" bordercolor=""#000000"" bordercolordark=""#000000"" bordercolorlight=""#000000""><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">FECHA RECEPCION:</font></b></td>"
+Print #7, "<td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+
+If (Trim(registro.fechaingreso) <> "") Then
+Print #7, registro.fechaingreso
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+Print #7, "</td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2""></font></b><p align=""center""><font size=""2""><b>N° CONTROL:</b></font></td>"
+Print #7, "<td width=""25%"" align=""right"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000""><b><font size=""5"">"
+
+Print #7, registro.ficha
+
+Print #7, "</font></b></td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">NOMBRE Y APELLIDO:</font></b></td><td width=""75%"" colspan=""3"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+
+Print #7, registro.fullname
+
+Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">DIRECCION:</font></b></td>"
+Print #7, "<td width=""75%"" colspan=""3"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+
+If (Trim(registro.direccion) <> "") Then
+Print #7, registro.direccion
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+
+Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">TELEFONO:</font></b></td><td width=""25%"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+
+If (Trim(registro.telefono) <> "") Then
+Print #7, registro.telefono
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+
+Print #7, "</td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><p align=""center""><b><font size=""2"">E-MAIL:</font></b></td><td width=""30%"">"
+
+If (Trim(registro.email) <> "") Then
+Print #7, registro.email
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+
+Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">DESCRIPCION DEL</font></b></td>"
+Print #7, "<td width=""75%"" colspan=""3"" rowspan=""3"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000""><b>MODELO: </b>"
+
+If (Trim(registro.modelo) <> "") Then
+Print #7, registro.modelo
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+
+Print #7, "<br><b>ADJUNTOS:</b>"
+
+If (Trim(registro.adjuntos) <> "") Then
+Print #7, registro.adjuntos
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+
+Print #7, "<BR></td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">EQUIPO:</font></b></td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td></tr><tr>"
+Print #7, "<td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">N</font></b><font size=""2""><b>° DE </b></font><b><font size=""2"">SERIE :</font></b></td><td width=""25%"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+
+If (Trim(registro.nserie) <> "") Then
+Print #7, registro.nserie
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+
+Print #7, "</td><td width=""55%"" colspan=""2"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"" valign=""top"">"
+Print #7, "<p align=""center""><b><font size=""2""><sup>(datos informados por el cliente a confirmar)</sup></font></b>"
+Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">DESCRIPCION DEL</font></b></td><td width=""75%"" colspan=""3"" rowspan=""5"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+
+If (Trim(registro.problema) <> "") Then
+Print #7, enter_a_br(registro.problema)
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+
+Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">PROBLEMA:</font></b></td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td>"
+Print #7, "</tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td></tr>"
+Print #7, "<tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">LLAMAR"
+Print #7, "EL DIA:</font></b></td><td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+          
+If (Trim(registro.llamareldia) <> "") Then
+Print #7, registro.llamareldia
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+          
+Print #7, "</td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><p align=""center""><b><font size=""2"">ATENDIDO POR:</font></b></p></td><td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+
+If (Trim(registro.atendidopor) <> "") Then
+Print #7, registro.atendidopor
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+
+Print #7, "</td></tr>"
+Print #7, "<td width=""25%"" align=""center"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;"
+Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">TAREAS REALIZADAS:</font></b></td><td width=""75%"" colspan=""3"" rowspan=""5"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+
+If (Trim(registro.solucion) <> "") Then
+Print #7, pipe_a_br(registro.solucion)
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+
+Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td></tr>"
+Print #7, "<tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td></tr>"
+Print #7, "<tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">UBICACION:</font></b></td><td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+          
+If (Trim(registro.estado) <> "") Then
+Print #7, registro.estado
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+          
+Print #7, "</td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">  <p align=""center""><b><font size=""2"">CONTROLO:</font></b></p></td><td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+
+If (Trim(registro.controladopor) <> "") Then
+Print #7, registro.controladopor
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+
+Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">PRESUPUESTO:</font></b></td><td width=""25%"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000""><p align=""center"">"
+
+If (Trim(registro.presupuesto) <> "") Then
+Print #7, registro.presupuesto
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+
+Print #7, "</p></td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td><td width=""25%"" align=""center"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">AVISADO EL DIA POR:</font></b></td>"
+Print #7, "<td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+          
+If (Trim(registro.avisadoeldia) <> "") Then
+Print #7, registro.avisadoeldia
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+         
+
+Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">CONFIRMACION:</font></b></td><td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+          
+If (Trim(registro.confirmacion) <> "") Then
+Print #7, registro.confirmacion
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+          
+Print #7, "</td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><p align=""center""><b><font size=""2"">RETIRO EL DIA:</font></b></p></td><td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+
+If (Trim(registro.fechaegreso) <> "") Then
+Print #7, registro.fechaegreso
+Else
+Print #7, "<font color=""#FFFFFF"">-</font>"
+End If
+
+Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">RETIRADO POR: </font></b></td>"
+Print #7, "<td width=""75%"" colspan=""3"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+Print #7, "<font size=""7""><font color=""#FFFFFF"">.</font>"
+
+Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">FIRMA:</font></b></td><td width=""25%"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+Print #7, "<font size=""7""><font color=""#FFFFFF"">.</font>"
+
+
+Print #7, "</td></tr></table></body></html>"
+
+Close #7

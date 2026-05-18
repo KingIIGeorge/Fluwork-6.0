@@ -1,0 +1,154 @@
+'FIN BLOQUE IMAGENES
+'==== REEMPLAZAR DESDE AQUI (después del bloque imagenes) HASTA Close #7 ====
+
+Print #7, "<table border=""2"" width=""100%"" cellpadding=""3"" cellspacing=""0"" style=""border-collapse:collapse;"">"
+
+Print #7, "<tr>"
+Print #7, "<td width=""25%"" style=""border-color:#FFFFFF;""><b><font size=""2"">FECHA RECEPCION:</font></b></td>"
+Print #7, "<td width=""25%"" align=""center"" style=""border-color:#000000;"">"
+If (Trim(registro.fechaingreso) <> "") Then
+Print #7, registro.fechaingreso
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td>"
+Print #7, "<td width=""25%"" align=""center"" style=""border-color:#FFFFFF;""><b><font size=""2"">N&deg; CONTROL:</font></b></td>"
+Print #7, "<td width=""25%"" align=""right"" style=""border-color:#000000;""><b><font size=""5"">"
+If (Trim(registro.ficha) <> "") Then
+Print #7, registro.ficha
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</font></b></td>"
+Print #7, "</tr>"
+
+Print #7, "<tr>"
+Print #7, "<td style=""border-color:#FFFFFF;""><b><font size=""2"">NOMBRE Y APELLIDO:</font></b></td>"
+Print #7, "<td colspan=""3"" style=""border-color:#000000;"">"
+If (Trim(registro.fullname) <> "") Then
+Print #7, registro.fullname
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr>"
+Print #7, "<td style=""border-color:#FFFFFF;""><b><font size=""2"">DIRECCION:</font></b></td>"
+Print #7, "<td colspan=""3"" style=""border-color:#000000;"">"
+If (Trim(registro.direccion) <> "") Then
+Print #7, registro.direccion
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr>"
+Print #7, "<td style=""border-color:#FFFFFF;""><b><font size=""2"">TELEFONO:</font></b></td>"
+Print #7, "<td style=""border-color:#000000;"">"
+If (Trim(registro.telefono) <> "") Then
+Print #7, registro.telefono
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td>"
+Print #7, "<td align=""center"" style=""border-color:#FFFFFF;""><b><font size=""2"">E-MAIL:</font></b></td>"
+Print #7, "<td style=""border-color:#000000;"">"
+If (Trim(registro.email) <> "") Then
+Print #7, registro.email
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr>"
+Print #7, "<td style=""border-color:#FFFFFF;""><b><font size=""2"">DESCRIPCION DEL EQUIPO:</font></b></td>"
+Print #7, "<td colspan=""3"" style=""border-color:#000000;""><b>MODELO: </b>"
+If (Trim(registro.modelo) <> "") Then
+Print #7, registro.modelo
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "<br><b>ADJUNTOS:</b> "
+If (Trim(registro.adjuntos) <> "") Then
+Print #7, registro.adjuntos
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr>"
+Print #7, "<td style=""border-color:#FFFFFF;""><b><font size=""2"">N&deg; DE SERIE:</font></b></td>"
+Print #7, "<td style=""border-color:#000000;"">"
+If (Trim(registro.nserie) <> "") Then
+Print #7, registro.nserie
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td>"
+Print #7, "<td colspan=""2"" align=""center"" style=""border-color:#FFFFFF;""><b><font size=""2""><sup>(datos informados por el cliente a confirmar)</sup></font></b></td>"
+Print #7, "</tr>"
+
+Print #7, "<tr>"
+Print #7, "<td style=""border-color:#FFFFFF;""><b><font size=""2"">DESCRIPCION DEL PROBLEMA:</font></b></td>"
+Print #7, "<td colspan=""3"" style=""border-color:#000000;"" height=""80"">"
+If (Trim(registro.problema) <> "") Then
+Print #7, enter_a_br(registro.problema)
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr>"
+Print #7, "<td style=""border-color:#FFFFFF;""><b><font size=""2"">NOTA:</font></b></td>"
+Print #7, "<td colspan=""3"" bgcolor=""#C0C0C0"" style=""border-color:#000000;""><font size=""1""><b>"
+Print #7, "El cliente, al realizar cualquier tr&aacute;mite relacionado con el equipo en reparaci&oacute;n, deber&aacute; presentar INDEFECTIBLEMENTE este comprobante.<BR>"
+Print #7, "Se informa que si a los 90 d&iacute;as de la fecha de finalizaci&oacute;n de la reparaci&oacute;n, no se procede al retiro del equipo dejado en reparaci&oacute;n, se entender&aacute; abandono del mismo, cediendo el cliente la propiedad a Magenta Computaci&oacute;n. En este caso Magenta Computaci&oacute;n adquiere el dominio del bien, quedando facultada para ejercer derecho de retenci&oacute;n (art 2587 y ss C.C.y C.N.) o disponer libremente del equipo. Perdiendo el cliente todo derecho a indemnizaci&oacute;n o reclamo alguno."
+Print #7, "<BR>Se cobrar&aacute; un valor de $3500,- + I.V.A en concepto de presupuesto y diagn&oacute;stico del equipo, s&oacute;lo en caso en que el cliente opte por retirar el equipo sin efectuar la reparaci&oacute;n del mismo."
+Print #7, "</b></font></td></tr>"
+
+Print #7, "<tr>"
+Print #7, "<td style=""border-color:#FFFFFF;""><b><font size=""2"">LLAMAR EL DIA:</font></b></td>"
+Print #7, "<td align=""center"" style=""border-color:#000000;"">"
+If (Trim(registro.llamareldia) <> "") Then
+Print #7, registro.llamareldia
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td>"
+Print #7, "<td align=""center"" style=""border-color:#FFFFFF;""><b><font size=""2"">ATENDIDO POR:</font></b></td>"
+Print #7, "<td align=""center"" style=""border-color:#000000;"">"
+If (Trim(registro.atendidopor) <> "") Then
+Print #7, registro.atendidopor
+Else
+Print #7, "&nbsp;"
+End If
+Print #7, "</td></tr>"
+
+Print #7, "<tr>"
+Print #7, "<td style=""border-color:#FFFFFF;""><b><font size=""2"">FIRMA DEL CLIENTE:</font></b></td>"
+Print #7, "<td style=""border-color:#000000;"" height=""50"">&nbsp;</td>"
+Print #7, "<td colspan=""2"" style=""border-color:#000000;""><font size=""1"">Se deja constancia de la aceptacion por parte del cliente que la empresa no se responsabiliza por la informacion contenida en el equipo.</font></td>"
+Print #7, "</tr>"
+
+Print #7, "<tr>"
+Print #7, "<td style=""border-color:#FFFFFF;""><b><font size=""2"">ACLARACION:</font></b></td>"
+Print #7, "<td style=""border-color:#000000;"" height=""30"">&nbsp;</td>"
+Print #7, "<td style=""border-color:#FFFFFF;"">&nbsp;</td>"
+Print #7, "<td style=""border-color:#FFFFFF;"">&nbsp;</td>"
+Print #7, "</tr>"
+
+Print #7, "<tr>"
+Print #7, "<td style=""border-color:#FFFFFF;""><b><font size=""2"">FIRMA:</font></b></td>"
+Print #7, "<td style=""border-color:#000000;"" height=""50"">&nbsp;</td>"
+Print #7, "<td colspan=""2"" style=""border-color:#FFFFFF;"">&nbsp;</td>"
+Print #7, "</tr>"
+
+Print #7, "<tr>"
+Print #7, "<td style=""border-color:#FFFFFF;""><b><font size=""2"">RETIRADO POR:</font></b></td>"
+Print #7, "<td colspan=""3"" style=""border-color:#000000;"" height=""50"">&nbsp;</td>"
+Print #7, "</tr>"
+
+Print #7, "</table></body></html>"
+
+Close #7
+'==== FIN DEL BLOQUE A REEMPLAZAR ====

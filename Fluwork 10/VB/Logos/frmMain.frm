@@ -2392,225 +2392,263 @@ If Err.Number <> 0 Then
     Exit Sub
 End If
 
-Print #7, "<html><head><title></title></head><body bgcolor=""#FFFFFF"">"
+Print #7, "<!DOCTYPE html>"
+Print #7, "<html><head>"
+Print #7, "<meta charset=""windows-1252"">"
+Print #7, "<title>Ficha de Servicio Tecnico</title>"
+Print #7, "<style>"
+Print #7, "*{margin:0;padding:0;box-sizing:border-box;}"
+Print #7, "body{font-family:Arial,Helvetica,sans-serif;font-size:11pt;color:#222;padding:12px 25px;max-width:210mm;margin:0 auto;}"
+Print #7, ".header-table{width:100%;border-collapse:collapse;margin-bottom:6px;}"
+Print #7, ".logo-mag{width:150px;vertical-align:middle;text-align:left;}"
+Print #7, ".dir-bloque{vertical-align:middle;text-align:left;padding-left:10px;}"
+Print #7, ".dir-img{width:240px;border:0;display:block;}"
+Print #7, ".whatsapp{margin-top:3px;margin-left:25px;font-size:10pt;font-weight:bold;text-align:left;white-space:nowrap;}"
+Print #7, ".whatsapp img{vertical-align:middle;border:0;margin-right:4px;}"
+Print #7, ".marcas{width:280px;vertical-align:middle;text-align:right;}"
+Print #7, ".marcas table{border-collapse:collapse;width:280px;}"
+Print #7, ".marcas td{width:140px;height:62px;text-align:center;vertical-align:middle;padding:0;}"
+Print #7, ".marcas img{border:0;}"
+Print #7, ".titulo-ficha{text-align:center;font-size:15pt;font-weight:bold;letter-spacing:1px;border-bottom:3px solid #333;padding-bottom:6px;margin-bottom:8px;}"
+Print #7, ".control-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}"
+Print #7, ".control-bar .fecha-info{font-size:10pt;line-height:1.8;}"
+Print #7, ".control-bar .fecha-info span{font-weight:bold;}"
+Print #7, ".llamar-dia{display:inline-block;background:#fff0a6;border:2px solid #000;padding:2px 9px 3px 7px;margin-top:2px;line-height:1.4;}"
+Print #7, ".nro-control-box{border:3px solid #333;padding:4px 20px;text-align:center;}"
+Print #7, ".nro-control-box .lbl{font-size:9pt;font-weight:bold;}"
+Print #7, ".nro-control-box .num{font-size:24pt;font-weight:bold;}"
+Print #7, ".section{border:1px solid #999;margin-bottom:6px;page-break-inside:avoid;}"
+Print #7, ".section-title{background:#333;color:white;font-weight:bold;font-size:9pt;padding:3px 8px;text-transform:uppercase;letter-spacing:0.5px;}"
+Print #7, ".data-row{display:flex;border-bottom:1px solid #e0e0e0;padding:3px 0;}"
+Print #7, ".data-row:last-child{border-bottom:none;}"
+Print #7, ".dl{font-weight:bold;font-size:10pt;width:140px;flex-shrink:0;padding:2px 8px;}"
+Print #7, ".dv{font-size:10pt;flex:1;padding:2px 8px;}"
+Print #7, ".section-body{padding:6px 8px;min-height:60px;font-size:10pt;line-height:1.4;}"
+Print #7, ".section-body.tall{min-height:85px;}"
+Print #7, ".nota-legal{background:#f0f0f0;border:1px solid #999;padding:5px 10px;font-size:7.5pt;line-height:1.3;margin-bottom:6px;page-break-inside:avoid;}"
+Print #7, ".nota-legal strong{font-size:8pt;}"
+Print #7, ".firma-section{border:1px solid #999;margin-bottom:6px;page-break-inside:avoid;}"
+Print #7, ".firma-title{color:white;font-weight:bold;font-size:9pt;padding:3px 8px;text-transform:uppercase;}"
+Print #7, ".firma-title.recepcion{background:#333;}"
+Print #7, ".firma-title.entrega{background:#333;}"
+Print #7, ".firma-body{padding:6px 8px;}"
+Print #7, ".firma-line{border-bottom:1px solid #333;height:45px;margin-bottom:3px;}"
+Print #7, ".firma-label{font-size:8pt;font-weight:bold;color:#555;text-align:center;}"
+Print #7, ".qr-footer{border:1px solid #999;margin-top:6px;padding:7px 10px;page-break-inside:avoid;font-size:9pt;background:#fff;}"
+Print #7, ".qr-footer table{width:100%;border-collapse:collapse;}"
+Print #7, ".qr-footer td{vertical-align:middle;}"
+Print #7, ".qr-box{width:100%;border-collapse:collapse;}"
+Print #7, ".qr-text{width:58%;padding:0 6px;text-align:center;}"
+Print #7, ".qr-img{text-align:left;width:42%;}"
+Print #7, ".qr-img img{width:98px;height:98px;border:0;}"
+Print #7, ".qr-title{font-weight:bold;font-size:10.5pt;text-transform:uppercase;letter-spacing:0.7px;}"
+Print #7, ".qr-action{font-weight:bold;font-size:8.5pt;text-transform:uppercase;line-height:1.15;margin-top:4px;}"
+Print #7, ".qr-pill{display:inline-block;color:#fff;font-weight:bold;font-size:9pt;padding:4px 10px;margin-top:6px;border-radius:15px;}"
+Print #7, ".qr-pill-wa{background:#16a34a;}"
+Print #7, ".qr-pill-ig{background:#ff3040;}"
+Print #7, "@page{margin:0;}"
+Print #7, "@media print{html,body{margin:0;}body{padding:8mm 10mm !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;color-adjust:exact !important;}.llamar-dia{background:#fff0a6 !important;border:2px solid #000 !important;}}"
+Print #7, "</style></head><body>"
 
-'BLOQUE IMAGENES (usa dbpath, no C:/Fluwork)
+' ENCABEZADO CON IMAGENES
+Print #7, "<table class=""header-table"" border=""0"" cellpadding=""0"" cellspacing=""0""><tr>"
 
-Print #7, "<table border=""0"" cellpadding=""0"" cellspacing=""1"" width=""100%""><tr><td width=""25%"" rowspan=""3""><center><IMG border=""0"" SRC=""file:"
-Print #7, Trim(dbpath) + "\mag.logo.gif"
-Print #7, """ width=""190"" height=""159""></center></td><td width=""25%"" valign=""top"" align=""left"" height=""2""><img border=""0"" src=""file:"
-Print #7, Trim(dbpath) + "\direccion.gif"
-Print #7, """ width=""200"" height=""69""></td><td width=""25%"" valign=""middle"" align=""center""><p align=""right""><img border=""0"" src=""file:"
-Print #7, Trim(dbpath) + "\epson.logo.gif"
-Print #7, """ width=""128"" height=""40""></td><td width=""25%"" valign=""middle"" align=""center""><img border=""0"" src=""file:"
-Print #7, Trim(dbpath) + "\hp.logo.gif"
-Print #7, """ width=""111"" height=""115"">"
-Print #7, "</td></tr><tr><td width=""75%"" valign=""top"" align=""left"" height=""1"" colspan=""3""><p align=""center""><b><font size=""4"">FICHA DE SERVICIO TECNICO</font></b></p>"
-Print #7, "</td></tr><tr><td width=""75%"" valign=""top"" align=""left"" colspan=""3"">&nbsp;</td></tr></table>"
+' Logo Magenta (izquierda)
+Print #7, "<td class=""logo-mag""><img src=""file:"
+Print #7, Trim(dbpath) & "\mag.logo.gif"
+Print #7, """ width=""130""></td>"
 
-'FIN BLOQUE IMAGENES
+' Direccion + WhatsApp (centro)
+Print #7, "<td class=""dir-bloque"">"
+Print #7, "<img class=""dir-img"" src=""file:"
+Print #7, Trim(dbpath) & "\direccion.gif"
+Print #7, """>"
+Print #7, "<div class=""whatsapp"">"
+Print #7, "<img src=""file:"
+Print #7, Trim(dbpath) & "\whatsapp_print.png"
+Print #7, """ width=""14"" height=""14"">WhatsApp: 11 6256-0384"
+Print #7, "</div></td>"
 
-Print #7, "<table border=""2"" width=""100%"" cellpadding=""0"" cellspacing=""5"" bordercolor=""#000000"" bordercolordark=""#000000"" bordercolorlight=""#000000""><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">FECHA RECEPCION:</font></b></td>"
-Print #7, "<td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+' Marcas (derecha, tabla 2 columnas compatible con IE)
+Print #7, "<td class=""marcas"">"
+Print #7, "<table border=""0"" cellpadding=""0"" cellspacing=""0"">"
 
-If (Trim(registro.fechaingreso) <> "") Then
-Print #7, registro.fechaingreso
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
+Print #7, "<tr>"
+Print #7, "<td><img src=""file:"
+Print #7, Trim(dbpath) & "\hp_print.png"
+Print #7, """ height=""50""></td>"
+Print #7, "<td><img src=""file:"
+Print #7, Trim(dbpath) & "\epson_print.png"
+Print #7, """ height=""50""></td>"
+Print #7, "</tr>"
 
-Print #7, "</td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2""></font></b>"
-Print #7, "<p align=""center""><font size=""2""><b>N&deg; CONTROL:</b></font></td><td width=""25%"" align=""right"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000""><b><font size=""5"">"
+Print #7, "<tr>"
+Print #7, "<td><img src=""file:"
+Print #7, Trim(dbpath) & "\brother_print.png"
+Print #7, """ height=""50""></td>"
+Print #7, "<td><img src=""file:"
+Print #7, Trim(dbpath) & "\pantum_print.png"
+Print #7, """ height=""56""></td>"
+Print #7, "</tr>"
 
-If (Trim(registro.ficha) <> "") Then
-Print #7, registro.ficha
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
+Print #7, "</table>"
+Print #7, "</td>"   ' Cierra marcas
+Print #7, "</tr></table>"   ' Cierra header-table
 
-Print #7, "</font></b></td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">NOMBRE Y APELLIDO:</font></b></td>"
-Print #7, "<td width=""75%"" colspan=""3"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+' TITULO
+Print #7, "<div class=""titulo-ficha"">FICHA DE SERVICIO T&Eacute;CNICO</div>"
 
-If (Trim(registro.fullname) <> "") Then
-Print #7, registro.fullname
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
+' CONTROL BAR - fechas + N Control
+Print #7, "<div class=""control-bar"">"
+Print #7, "<div class=""fecha-info"">"
+Print #7, "<span>Fecha recepci&oacute;n:</span> "
+If (Trim(registro.fechaingreso) <> "") Then Print #7, registro.fechaingreso Else Print #7, "-"
+Print #7, "<br><span class=""llamar-dia"">Llamar el d&iacute;a: "
+If (Trim(registro.llamareldia) <> "") Then Print #7, registro.llamareldia Else Print #7, "-"
+Print #7, "</span>"
+Print #7, "<br><span>Atendido por:</span> "
+If (Trim(registro.atendidopor) <> "") Then Print #7, registro.atendidopor Else Print #7, "-"
+Print #7, "</div>"
+Print #7, "<div class=""nro-control-box"">"
+Print #7, "<div class=""lbl"">N&deg; CONTROL</div>"
+Print #7, "<div class=""num"">"
+If (Trim(registro.ficha) <> "") Then Print #7, registro.ficha Else Print #7, "-"
+Print #7, "</div></div></div>"
 
-Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">DIRECCION:</font></b></td>"
-Print #7, "<td width=""75%"" colspan=""3"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
-
-If (Trim(registro.direccion) <> "") Then
-Print #7, registro.direccion
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
-
-Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">TELEFONO:</font></b></td><td width=""25%"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
-
-If (Trim(registro.telefono) <> "") Then
-Print #7, registro.telefono
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
-
-Print #7, "</td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><p align=""center""><b><font size=""2"">E-MAIL:</font></b></td><td width=""30%"">"
-
-If (Trim(registro.email) <> "") Then
-Print #7, registro.email
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
-
-Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">DESCRIPCION DEL</font></b></td><td width=""75%"" colspan=""3"" rowspan=""3"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000""><b>MODELO: </b>"
-
-If (Trim(registro.modelo) <> "") Then
-Print #7, registro.modelo
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
-
-Print #7, "<br><b>ADJUNTOS:</b>"
-
-If (Trim(registro.adjuntos) <> "") Then
-Print #7, registro.adjuntos
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
-
-Print #7, "<BR></td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">EQUIPO:</font></b></td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td></tr>"
-Print #7, "<tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">N&deg; "
-Print #7, "DE </b></font><b><font size=""2"">SERIE :</font></b></td><td width=""25%"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
-
-If (Trim(registro.nserie) <> "") Then
-Print #7, registro.nserie
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
-
-Print #7, "</td><td width=""55%"" colspan=""2"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"" valign=""top"">"
-Print #7, "<p align=""center""><b><font size=""2""><sup>(datos informados por el cliente a confirmar)</sup></font></b></td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">DESCRIPCION DEL</font></b></td>"
-Print #7, "<td width=""75%"" colspan=""3"" rowspan=""5"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
-
-If (Trim(registro.problema) <> "") Then
-Print #7, enter_a_br(registro.problema)
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
-
-Print #7, "</td></tr><tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">PROBLEMA:</font></b></td></tr><tr>"
-Print #7, "<td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td></tr><tr>"
-Print #7, "<td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td></tr><tr>"
-Print #7, "<td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td></tr>"
-
-' === LLAMAR EL DIA + ATENDIDO POR ===
-Print #7, "<tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">LLAMAR EL DIA:</font></b></td>"
-Print #7, "<td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
-
-If (Trim(registro.llamareldia) <> "") Then
-Print #7, registro.llamareldia
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
-
-Print #7, "</td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><p align=""center""><b><font size=""2"">ATENDIDO POR:</font></b></p></td><td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
-
-If (Trim(registro.atendidopor) <> "") Then
-Print #7, registro.atendidopor
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
-
+' DATOS DEL CLIENTE
+Print #7, "<div class=""section"">"
+Print #7, "<div class=""section-title"">Datos del Cliente</div>"
+Print #7, "<div style=""padding:2px 8px;"">"
+Print #7, "<table border=""0"" cellpadding=""0"" cellspacing=""0"" width=""100%"" style=""font-size:10pt;border-collapse:collapse;"">"
+Print #7, "<tr style=""border-bottom:1px solid #e0e0e0;"">"
+Print #7, "<td style=""font-weight:bold;width:90px;padding:4px 8px;"">Cliente:</td>"
+Print #7, "<td colspan=""5"" style=""padding:4px 8px;"">"
+If (Trim(registro.fullname) <> "") Then Print #7, registro.fullname Else Print #7, "&nbsp;"
 Print #7, "</td></tr>"
-
-' === TAREAS REALIZADAS (texto corrido) ===
-Print #7, "<tr><td width=""25%"" valign=""top"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">TAREAS REALIZADAS:</font></b></td>"
-Print #7, "<td width=""75%"" colspan=""3"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
-
-If (Trim(registro.solucion) <> "") Then
-Print #7, FormatearTrabajos(registro.solucion)
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
-
+Print #7, "<tr style=""border-bottom:1px solid #e0e0e0;"">"
+Print #7, "<td style=""font-weight:bold;width:90px;padding:4px 8px;"">Direcci&oacute;n:</td>"
+Print #7, "<td colspan=""5"" style=""padding:4px 8px;"">"
+If (Trim(registro.direccion) <> "") Then Print #7, registro.direccion Else Print #7, "&nbsp;"
 Print #7, "</td></tr>"
+Print #7, "<tr>"
+Print #7, "<td style=""font-weight:bold;width:90px;padding:4px 8px;"">Tel.:</td>"
+Print #7, "<td style=""width:120px;padding:4px 8px;"">"
+If (Trim(registro.telefono) <> "") Then Print #7, registro.telefono Else Print #7, "&nbsp;"
+Print #7, "</td>"
+Print #7, "<td style=""font-weight:bold;width:85px;padding:4px 8px;"">Telef. alt.:</td>"
+Print #7, "<td style=""width:175px;padding:4px 8px;"">"
+If (Trim(registro.avisadopor) <> "") Then Print #7, registro.avisadopor Else Print #7, "&nbsp;"
+Print #7, "</td>"
+Print #7, "<td style=""font-weight:bold;width:55px;padding:4px 8px;"">E-mail:</td>"
+Print #7, "<td style=""padding:4px 8px;"">"
+If (Trim(registro.email) <> "") Then Print #7, registro.email Else Print #7, "&nbsp;"
+Print #7, "</td></tr></table></div></div>"
 
-' === UBICACION + CONTROLO ===
-Print #7, "<tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">UBICACION:</font></b></td>"
-Print #7, "<td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+' DATOS DEL EQUIPO
+Print #7, "<div class=""section"">"
+Print #7, "<div class=""section-title"">Datos del Equipo</div>"
+Print #7, "<div style=""padding:2px 8px;"">"
+Print #7, "<div class=""data-row"">"
+Print #7, "<div class=""dl"">Modelo:</div>"
+Print #7, "<div class=""dv"">"
+If (Trim(registro.modelo) <> "") Then Print #7, registro.modelo Else Print #7, "&nbsp;"
+Print #7, "</div></div>"
+Print #7, "<div class=""data-row"">"
+Print #7, "<div class=""dl"">N&deg; de Serie:</div>"
+Print #7, "<div class=""dv"">"
+If (Trim(registro.nserie) <> "") Then Print #7, registro.nserie Else Print #7, "&nbsp;"
+Print #7, "</div></div>"
+Print #7, "<div class=""data-row"">"
+Print #7, "<div class=""dl"">Adjuntos:</div>"
+Print #7, "<div class=""dv"">"
+If (Trim(registro.adjuntos) <> "") Then Print #7, registro.adjuntos Else Print #7, "&nbsp;"
+Print #7, "</div></div></div></div>"
 
-If (Trim(registro.estado) <> "") Then
-Print #7, registro.estado
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
+' DESCRIPCION DEL PROBLEMA
+Print #7, "<div class=""section"">"
+Print #7, "<div class=""section-title"">Descripci&oacute;n del Problema</div>"
+Print #7, "<div class=""section-body tall"">"
+If (Trim(registro.problema) <> "") Then Print #7, enter_a_br(registro.problema) Else Print #7, "&nbsp;"
+Print #7, "</div></div>"
 
-Print #7, "</td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><p align=""center""><b><font size=""2"">CONTROLO:</font></b></p></td><td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+' NOTA LEGAL
+Print #7, "<div class=""nota-legal"">"
+Print #7, "<strong>IMPORTANTE:</strong> El cliente, al realizar cualquier tr&aacute;mite relacionado con el equipo en reparaci&oacute;n, deber&aacute; presentar INDEFECTIBLEMENTE este comprobante. "
+Print #7, "Se informa que si a los 90 d&iacute;as de la fecha de finalizaci&oacute;n de la reparaci&oacute;n no se procede al retiro del equipo dejado en reparaci&oacute;n, se entender&aacute; abandono del mismo, cediendo el cliente la propiedad a Magenta Computaci&oacute;n. En este caso Magenta Computaci&oacute;n adquiere el dominio del bien, quedando facultada para ejercer derecho de retenci&oacute;n (art. 2587 y ss C.C. y C.N.) o disponer libremente del equipo, perdiendo el cliente todo derecho a indemnizaci&oacute;n o reclamo alguno. "
+Print #7, "Se cobrar&aacute; un valor en concepto de presupuesto y diagn&oacute;stico del equipo, s&oacute;lo en caso en que el cliente opte por retirar el equipo sin efectuar la reparaci&oacute;n del mismo."
+Print #7, "</div>"
 
-If (Trim(registro.controladopor) <> "") Then
-Print #7, registro.controladopor
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
+' FIRMA DE RECEPCION
+Print #7, "<div class=""firma-section"">"
+Print #7, "<div class=""firma-title recepcion"">Recepci&oacute;n del Equipo</div>"
+Print #7, "<div class=""firma-body"">"
+Print #7, "<div style=""display:flex;gap:15px;align-items:flex-start;"">"
+Print #7, "<div style=""flex:1;font-size:8pt;line-height:1.3;padding-top:2px;padding-right:10px;"">"
+Print #7, "Doy conformidad a los datos consignados en esta ficha. Confirmo que el tel&eacute;fono y e-mail indicados son correctos para recibir comunicaciones. Acepto que la empresa no se responsabiliza por la informaci&oacute;n contenida en el equipo."
+Print #7, "</div>"
+Print #7, "<div style=""flex:0 0 180px;text-align:center;"">"
+Print #7, "<div class=""firma-line""></div>"
+Print #7, "<div class=""firma-label"">Firma del Cliente</div>"
+Print #7, "</div>"
+Print #7, "<div style=""flex:0 0 180px;text-align:center;"">"
+Print #7, "<div class=""firma-line""></div>"
+Print #7, "<div class=""firma-label"">Aclaraci&oacute;n</div>"
+Print #7, "</div></div></div></div>"
 
-Print #7, "</td></tr>"
+' FIRMA DE ENTREGA
+Print #7, "<div class=""firma-section"">"
+Print #7, "<div class=""firma-title entrega"">Entrega del Equipo</div>"
+Print #7, "<div class=""firma-body"">"
+Print #7, "<table border=""0"" cellpadding=""0"" cellspacing=""0"" width=""100%"" style=""border-collapse:collapse;"">"
+Print #7, "<tr>"
+Print #7, "<td style=""width:28%;padding-right:14px;text-align:center;vertical-align:bottom;"">"
+Print #7, "<div class=""firma-line"" style=""height:50px;""></div>"
+Print #7, "<div class=""firma-label"">Firma</div>"
+Print #7, "</td>"
+Print #7, "<td style=""width:28%;padding-right:14px;text-align:center;vertical-align:bottom;"">"
+Print #7, "<div class=""firma-line"" style=""height:50px;""></div>"
+Print #7, "<div class=""firma-label"">Aclaraci&oacute;n</div>"
+Print #7, "</td>"
+Print #7, "<td style=""width:22%;padding-right:14px;text-align:center;vertical-align:bottom;"">"
+Print #7, "<div class=""firma-line"" style=""height:50px;""></div>"
+Print #7, "<div class=""firma-label"">DNI</div>"
+Print #7, "</td>"
+Print #7, "<td style=""width:22%;text-align:center;vertical-align:bottom;"">"
+Print #7, "<div class=""firma-line"" style=""height:50px;""></div>"
+Print #7, "<div class=""firma-label"">Fecha</div>"
+Print #7, "</td>"
+Print #7, "</tr></table></div></div>"
 
-' === PRESUPUESTO ===
-Print #7, "<tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">PRESUPUESTO:</font></b></td>"
-Print #7, "<td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
+' PIE CON QR
+Print #7, "<div class=""qr-footer"">"
+Print #7, "<table border=""0"" cellpadding=""0"" cellspacing=""0""><tr>"
+Print #7, "<td style=""width:50%;padding-right:22px;"">"
+Print #7, "<table class=""qr-box"" border=""0"" cellpadding=""0"" cellspacing=""0""><tr>"
+Print #7, "<td class=""qr-text"">"
+Print #7, "<div class=""qr-title"" style=""color:#16a34a;"">Agendanos en WhatsApp</div>"
+Print #7, "<div class=""qr-action"">Escane&aacute; el c&oacute;digo QR<br>y escribinos directo</div>"
+Print #7, "<span class=""qr-pill qr-pill-wa"">11 6256-0384</span>"
+Print #7, "</td><td class=""qr-img"">"
+Print #7, "<img src=""file:"
+Print #7, Trim(dbpath) & "\whatsapp_qr_print.png"
+Print #7, """ width=""98"" height=""98"">"
+Print #7, "</td></tr></table>"
+Print #7, "</td>"
+Print #7, "<td style=""width:50%;padding-left:22px;"">"
+Print #7, "<table class=""qr-box"" border=""0"" cellpadding=""0"" cellspacing=""0""><tr>"
+Print #7, "<td class=""qr-text"">"
+Print #7, "<div class=""qr-title"" style=""color:#e11d48;"">Seguinos en Instagram</div>"
+Print #7, "<div class=""qr-action"">Escane&aacute; el c&oacute;digo QR<br>y comenz&aacute; a seguirnos</div>"
+Print #7, "<span class=""qr-pill qr-pill-ig"">@MAGENTA_COMPUTACION</span>"
+Print #7, "</td><td class=""qr-img"">"
+Print #7, "<img src=""file:"
+Print #7, Trim(dbpath) & "\instagram_qr_print.png"
+Print #7, """ width=""98"" height=""98"">"
+Print #7, "</td></tr></table>"
+Print #7, "</td>"
+Print #7, "</tr></table></div>"
 
-If (Trim(registro.presupuesto) <> "") Then
-Print #7, registro.presupuesto
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
-
-Print #7, "</td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td></tr>"
-
-' === AVISADO EL DIA POR ===
-Print #7, "<tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">AVISADO EL DIA POR:</font></b></td>"
-Print #7, "<td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
-
-If (Trim(registro.avisadoeldia) <> "") Then
-Print #7, registro.avisadoeldia
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
-
-Print #7, "</td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF"">&nbsp;</td></tr>"
-
-' === CONFIRMACION
-Print #7, "<tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">CONFIRMACION:</font></b></td>"
-Print #7, "<td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
-
-If (Trim(registro.confirmacion) <> "") Then
-Print #7, registro.confirmacion
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
-
-Print #7, "</td><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><p align=""center""><b><font size=""2"">RETIRO EL DIA:</font></b></p></td><td width=""25%"" align=""center"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
-
-If (Trim(registro.fechaegreso) <> "") Then
-Print #7, registro.fechaegreso
-Else
-Print #7, "<font color=""#FFFFFF"">-</font>"
-End If
-
-Print #7, "</td></tr>"
-' === RETIRADO POR ===
-Print #7, "<tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">RETIRADO POR:</font></b></td>"
-Print #7, "<td width=""75%"" colspan=""3"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
-Print #7, "<font size=""7""><font color=""#FFFFFF"">.</font>"
-Print #7, "</td></tr>"
-
-' === FIRMA ===
-Print #7, "<tr><td width=""25%"" bordercolor=""#FFFFFF"" bordercolorlight=""#FFFFFF"" bordercolordark=""#FFFFFF""><b><font size=""2"">FIRMA:</font></b></td>"
-Print #7, "<td width=""75%"" colspan=""3"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
-Print #7, "<font size=""7""><font color=""#FFFFFF"">.</font>"
-Print #7, "</td></tr>"
-
-Print #7, "</table></body></html>"
+Print #7, "</body></html>"
 
 Close #7
 

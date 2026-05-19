@@ -2826,8 +2826,7 @@ Print #7, ".firma-title.entrega{background:#888;}"
 Print #7, ".firma-body{padding:6px 8px;}"
 Print #7, ".firma-line{border-bottom:1px solid #333;height:45px;margin-bottom:3px;}"
 Print #7, ".firma-label{font-size:8pt;font-weight:bold;color:#555;text-align:center;}"
-Print #7, "@page{margin:0;}"
-Print #7, "@media print{html,body{margin:0;}body{padding:8mm 10mm !important;}*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;color-adjust:exact !important;}.llamar-dia{background:#fff0a6 !important;border:2px solid #000 !important;}}"
+Print #7, "@media print{body{padding:8px 12px;}}"
 Print #7, "</style></head><body>"
 
 ' ENCABEZADO CON IMAGENES

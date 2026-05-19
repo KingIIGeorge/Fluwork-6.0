@@ -106,7 +106,7 @@ Begin VB.Form frmSplash
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
          BackColor       =   &H00808080&
-         Caption         =   "FluWork 10 D2"
+         Caption         =   "FluWork 10 D3"
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   32.25
@@ -133,10 +133,6 @@ Attribute VB_Exposed = False
 
 
 
-
-Private Sub Frame1_DragDrop(Source As Control, X As Single, Y As Single)
-
-End Sub
 
 Private Sub Timer1_Timer()
 Unload Me

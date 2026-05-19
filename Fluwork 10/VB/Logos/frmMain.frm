@@ -2571,30 +2571,12 @@ Print #7, "<div class=""section-body tall"">"
 If (Trim(registro.problema) <> "") Then Print #7, enter_a_br(registro.problema) Else Print #7, "&nbsp;"
 Print #7, "</div></div>"
 
-' NOTA LEGAL
-Print #7, "<div class=""nota-legal"">"
-Print #7, "<strong>IMPORTANTE:</strong> El cliente, al realizar cualquier tr&aacute;mite relacionado con el equipo en reparaci&oacute;n, deber&aacute; presentar INDEFECTIBLEMENTE este comprobante. "
-Print #7, "Se informa que si a los 90 d&iacute;as de la fecha de finalizaci&oacute;n de la reparaci&oacute;n no se procede al retiro del equipo dejado en reparaci&oacute;n, se entender&aacute; abandono del mismo, cediendo el cliente la propiedad a Magenta Computaci&oacute;n. En este caso Magenta Computaci&oacute;n adquiere el dominio del bien, quedando facultada para ejercer derecho de retenci&oacute;n (art. 2587 y ss C.C. y C.N.) o disponer libremente del equipo, perdiendo el cliente todo derecho a indemnizaci&oacute;n o reclamo alguno. "
-Print #7, "Se cobrar&aacute; un valor en concepto de presupuesto y diagn&oacute;stico del equipo, s&oacute;lo en caso en que el cliente opte por retirar el equipo sin efectuar la reparaci&oacute;n del mismo."
-Print #7, "</div>"
-
-' FIRMA DE RECEPCION
-Print #7, "<div class=""firma-section"">"
-Print #7, "<div class=""firma-title recepcion"">Recepci&oacute;n del Equipo</div>"
-Print #7, "<div class=""firma-body"">"
-Print #7, "<div style=""display:flex;gap:15px;align-items:flex-start;"">"
-Print #7, "<div style=""flex:1;font-size:8pt;line-height:1.3;padding-top:2px;padding-right:10px;"">"
-Print #7, "Doy conformidad a los datos consignados en esta ficha. Confirmo que el tel&eacute;fono y e-mail indicados son correctos para recibir comunicaciones. Acepto que la empresa no se responsabiliza por la informaci&oacute;n contenida en el equipo."
-Print #7, "</div>"
-Print #7, "<div style=""flex:0 0 180px;text-align:center;"">"
-Print #7, "<div class=""firma-line""></div>"
-Print #7, "<div class=""firma-label"">Firma del Cliente</div>"
-Print #7, "</div>"
-Print #7, "<div style=""flex:0 0 180px;text-align:center;"">"
-Print #7, "<div class=""firma-line""></div>"
-Print #7, "<div class=""firma-label"">Aclaraci&oacute;n</div>"
-Print #7, "</div></div></div></div>"
-
+' TAREAS REALIZADAS
+Print #7, "<div class=""section"">"
+Print #7, "<div class=""section-title"">Trabajos Realizados</div>"
+Print #7, "<div class=""section-body tall"">"
+If (Trim(registro.solucion) <> "") Then Print #7, FormatearTrabajos(registro.solucion) Else Print #7, "&nbsp;"
+Print #7, "</div></div>"
 ' FIRMA DE ENTREGA
 Print #7, "<div class=""firma-section"">"
 Print #7, "<div class=""firma-title entrega"">Entrega del Equipo</div>"

@@ -2300,14 +2300,18 @@ registro.ficha = tficha.Text
 End If
 End Sub
 
+Private Sub RestaurarBusquedaDespuesDeEdicion()
+mnubusqueda.Enabled = True
+mnuexportar.Enabled = True
+Form1.utilizardatos.Enabled = False
+End Sub
+
 Private Sub cmdgrabar_Click()
 
 
 Call AsegurarFichaRegistro()
 
-mnubusqueda.Enabled = True
-mnuexportar.Enabled = True
-Form1.utilizardatos.Enabled = False
+Call RestaurarBusquedaDespuesDeEdicion()
 
 msgestado.Panels(2).Text = registro.ficha
 tficha.Text = registro.ficha
@@ -2348,9 +2352,7 @@ showres = False
 Call AsegurarFichaRegistro()
 
 tficha.Text = Trim(registro.ficha)
-mnubusqueda.Enabled = True
-mnuexportar.Enabled = True
-Form1.utilizardatos.Enabled = False
+Call RestaurarBusquedaDespuesDeEdicion()
 
 msgestado.Panels(2).Text = Trim(registro.ficha)
 Call CargarRegistroDesdeFormularioTrim()
@@ -2720,9 +2722,7 @@ showres = False
 
 Call AsegurarFichaRegistro()
 
-mnubusqueda.Enabled = True
-mnuexportar.Enabled = True
-Form1.utilizardatos.Enabled = False
+Call RestaurarBusquedaDespuesDeEdicion()
 
 tficha.Text = registro.ficha
 msgestado.Panels(2).Text = registro.ficha
@@ -3220,9 +3220,7 @@ showres = False
 Call AsegurarFichaRegistro()
 
 
-mnubusqueda.Enabled = True
-mnuexportar.Enabled = True
-Form1.utilizardatos.Enabled = False
+Call RestaurarBusquedaDespuesDeEdicion()
 
 tficha.Text = registro.ficha
 msgestado.Panels(2).Text = registro.ficha

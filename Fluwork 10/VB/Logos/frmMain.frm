@@ -2178,9 +2178,7 @@ End Sub
 Private Sub cmdcancel_Click()
 
 If MsgBox(" Confirma que quiere cancelar?", vbYesNo, "Confirmacion") = vbNo Then Exit Sub
-mnubusqueda.Enabled = True
-mnuexportar.Enabled = True
-Form1.utilizardatos.Enabled = False
+Call RestaurarBusquedaDespuesDeEdicion()
 Frame1.Visible = False
 tconfirmacion.Enabled = False
 tdireccion.Enabled = False

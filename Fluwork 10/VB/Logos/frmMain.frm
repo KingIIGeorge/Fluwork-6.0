@@ -2621,23 +2621,7 @@ Close #7
 
 AbrirHtmlEnIE "C:\laficha.html"
 
-Command12.Visible = False
-Command12.Enabled = False
-cmdgrabar.Visible = False
-cmdgrabar.Enabled = False
-cmdimprimir.Enabled = False
-cmdimprimir.Visible = False
-cmdcancel.Enabled = False
-cmdcancel.Visible = False
-cmdprintpublic.Enabled = False
-cmdprintpublic.Visible = False
-Command11.Enabled = False
-Command11.Visible = False
-Frame1.Visible = False
-frame2.Visible = True
-cmdnuevo.Visible = True
-cmdnuevo.Enabled = True
-tmpficha = 0
+Call VolverAPantallaBusquedaDespuesDeGuardar()
 
 End Sub
 Private Sub cmdnuevo_Click()
@@ -3010,23 +2994,7 @@ Close #7
 
 AbrirHtmlEnIE "C:\laficha.html"
 
-Command12.Visible = False
-Command12.Enabled = False
-cmdgrabar.Visible = False
-cmdgrabar.Enabled = False
-cmdimprimir.Enabled = False
-cmdimprimir.Visible = False
-cmdcancel.Enabled = False
-cmdcancel.Visible = False
-cmdprintpublic.Enabled = False
-cmdprintpublic.Visible = False
-Command11.Enabled = False
-Command11.Visible = False
-Frame1.Visible = False
-frame2.Visible = True
-cmdnuevo.Visible = True
-cmdnuevo.Enabled = True
-tmpficha = 0
+Call VolverAPantallaBusquedaDespuesDeGuardar()
 
 End Sub
 
@@ -3367,23 +3335,7 @@ Close #7
 
 AbrirHtmlEnIE "C:\laficha.html"
 
-Command12.Visible = False
-Command12.Enabled = False
-cmdgrabar.Visible = False
-cmdgrabar.Enabled = False
-cmdimprimir.Enabled = False
-cmdimprimir.Visible = False
-cmdcancel.Enabled = False
-cmdcancel.Visible = False
-cmdprintpublic.Enabled = False
-cmdprintpublic.Visible = False
-Command11.Enabled = False
-Command11.Visible = False
-Frame1.Visible = False
-frame2.Visible = True
-cmdnuevo.Visible = True
-cmdnuevo.Enabled = True
-tmpficha = 0
+Call VolverAPantallaBusquedaDespuesDeGuardar()
 
 End Sub
 

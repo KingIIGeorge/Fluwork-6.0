@@ -2292,14 +2292,19 @@ registro.avisadoeldia = Trim(Tavisadoeldia.Text)
 registro.avisadopor = Trim(Tavisadopor.Text)
 End Sub
 
-Private Sub cmdgrabar_Click()
-
-
+Private Sub AsegurarFichaRegistro()
 If tficha.Text = "" Then
 registro.ficha = getlastfichanumber() + 1
 Else
 registro.ficha = tficha.Text
 End If
+End Sub
+
+Private Sub cmdgrabar_Click()
+
+
+Call AsegurarFichaRegistro()
+
 mnubusqueda.Enabled = True
 mnuexportar.Enabled = True
 Form1.utilizardatos.Enabled = False
@@ -2340,11 +2345,8 @@ On Error Resume Next
 Dim returnvalue, i
 showres = False
 
-If tficha.Text = "" Then
-registro.ficha = getlastfichanumber() + 1
-Else
-registro.ficha = tficha.Text
-End If
+Call AsegurarFichaRegistro()
+
 tficha.Text = Trim(registro.ficha)
 mnubusqueda.Enabled = True
 mnuexportar.Enabled = True
@@ -2716,11 +2718,8 @@ On Error Resume Next
 Dim returnvalue, i
 showres = False
 
-If tficha.Text = "" Then
-registro.ficha = getlastfichanumber() + 1
-Else
-registro.ficha = tficha.Text
-End If
+Call AsegurarFichaRegistro()
+
 mnubusqueda.Enabled = True
 mnuexportar.Enabled = True
 Form1.utilizardatos.Enabled = False
@@ -3218,11 +3217,8 @@ On Error Resume Next
 Dim returnvalue, i
 showres = False
 
-If tficha.Text = "" Then
-registro.ficha = getlastfichanumber() + 1
-Else
-registro.ficha = tficha.Text
-End If
+Call AsegurarFichaRegistro()
+
 
 mnubusqueda.Enabled = True
 mnuexportar.Enabled = True

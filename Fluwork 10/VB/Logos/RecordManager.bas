@@ -41,3 +41,33 @@ Public Function ReadFicha(ByVal ficha As Long, ByRef outRegistro As Tregistro) A
 
     ReadFicha = True
 End Function
+
+Public Sub BuildIndexFromRegistro(ByRef source As Tregistro, ByRef target As Tindexregistro)
+    target.ficha = source.ficha
+    target.fullname = StrConv(source.fullname, 1)
+    target.telefono = source.telefono
+    target.modelo = source.modelo
+    target.fecha = source.fechaingreso
+    target.estado = source.estado
+    target.tecnico = source.tecnico
+    target.confirmacion = source.confirmacion
+End Sub
+
+Public Function WriteFichaAndIndex(ByRef item As Tregistro) As Boolean
+    Dim fileNumber As Integer
+    Dim itemIndex As Tindexregistro
+
+    fileNumber = FreeFile
+    Open AppConfig.DataFilePath(Trim$(item.ficha)) For Random As #fileNumber Len = Len(item)
+    Put #fileNumber, , item
+    Close #fileNumber
+
+    BuildIndexFromRegistro item, itemIndex
+
+    fileNumber = FreeFile
+    Open AppConfig.DataFilePath("index.dat") For Random As #fileNumber Len = Len(itemIndex)
+    Put #fileNumber, Val(item.ficha) - BASE, itemIndex
+    Close #fileNumber
+
+    WriteFichaAndIndex = True
+End Function

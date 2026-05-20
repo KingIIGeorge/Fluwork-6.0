@@ -2280,25 +2280,8 @@ registro.controladopor = Tcontroladopor.Text
 registro.avisadoeldia = Tavisadoeldia.Text
 registro.avisadopor = Tavisadopor.Text
 
-Dim archivo As String
-archivo = Trim(dbpath + "\" + Trim(tficha.Text))
+Call RecordManager.WriteFichaAndIndex(registro)
 
-Open archivo For Random As #1 Len = Len(registro)
-Put #1, , registro
-Close #1
-
-regindex.ficha = registro.ficha
-regindex.fullname = StrConv(registro.fullname, 1)
-regindex.telefono = registro.telefono
-regindex.modelo = registro.modelo
-regindex.fecha = registro.fechaingreso
-regindex.estado = registro.estado
-regindex.tecnico = registro.tecnico
-regindex.confirmacion = registro.confirmacion
-
-Open Trim(dbpath + "\index.dat") For Random As #1 Len = Len(regindex)
-Put #1, Val(registro.ficha) - BASE, regindex
-Close #1
 
 Command12.Visible = False
 Command12.Enabled = False
@@ -2361,25 +2344,8 @@ registro.controladopor = Trim(Tcontroladopor.Text)
 registro.avisadoeldia = Trim(Tavisadoeldia.Text)
 registro.avisadopor = Trim(Tavisadopor.Text)
 
-Dim archivo As String
-archivo = Trim(dbpath + "\" + Trim(tficha.Text))
+Call RecordManager.WriteFichaAndIndex(registro)
 
-Open archivo For Random As #1 Len = Len(registro)
-Put #1, , registro
-Close #1
-
-regindex.ficha = registro.ficha
-regindex.fullname = StrConv(registro.fullname, 1)
-regindex.telefono = registro.telefono
-regindex.modelo = registro.modelo
-regindex.fecha = registro.fechaingreso
-regindex.estado = registro.estado
-regindex.tecnico = registro.tecnico
-regindex.confirmacion = registro.confirmacion
-
-Open Trim(dbpath + "\index.dat") For Random As #1 Len = Len(regindex)
-Put #1, Val(registro.ficha) - BASE, regindex
-Close #1
 
 Close #7
 
@@ -2773,25 +2739,8 @@ registro.controladopor = Tcontroladopor.Text
 registro.avisadoeldia = Tavisadoeldia.Text
 registro.avisadopor = Tavisadopor.Text
 
-Dim archivo As String
-archivo = Trim(dbpath + "\" + Trim(tficha.Text))
+Call RecordManager.WriteFichaAndIndex(registro)
 
-Open archivo For Random As #1 Len = Len(registro)
-Put #1, , registro
-Close #1
-
-regindex.ficha = registro.ficha
-regindex.fullname = StrConv(registro.fullname, 1)
-regindex.telefono = registro.telefono
-regindex.modelo = registro.modelo
-regindex.fecha = registro.fechaingreso
-regindex.estado = registro.estado
-regindex.tecnico = registro.tecnico
-regindex.confirmacion = registro.confirmacion
-
-Open Trim(dbpath + "\index.dat") For Random As #1 Len = Len(regindex)
-Put #1, Val(registro.ficha) - BASE, regindex
-Close #1
 
 Close #7
 
@@ -3312,25 +3261,8 @@ registro.controladopor = Tcontroladopor.Text
 registro.avisadoeldia = Tavisadoeldia.Text
 registro.avisadopor = Tavisadopor.Text
 
-Dim archivo As String
-archivo = Trim(dbpath + "\" + Trim(tficha.Text))
+Call RecordManager.WriteFichaAndIndex(registro)
 
-Open archivo For Random As #1 Len = Len(registro)
-Put #1, , registro
-Close #1
-
-regindex.ficha = registro.ficha
-regindex.fullname = StrConv(registro.fullname, 1)
-regindex.telefono = registro.telefono
-regindex.modelo = registro.modelo
-regindex.fecha = registro.fechaingreso
-regindex.estado = registro.estado
-regindex.tecnico = registro.tecnico
-regindex.confirmacion = registro.confirmacion
-
-Open Trim(dbpath + "\index.dat") For Random As #1 Len = Len(regindex)
-Put #1, Val(registro.ficha) - BASE, regindex
-Close #1
 
 Close #7
 

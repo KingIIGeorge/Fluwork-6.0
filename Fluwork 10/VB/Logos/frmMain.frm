@@ -2306,21 +2306,7 @@ mnuexportar.Enabled = True
 Form1.utilizardatos.Enabled = False
 End Sub
 
-Private Sub cmdgrabar_Click()
-
-
-Call AsegurarFichaRegistro()
-
-Call RestaurarBusquedaDespuesDeEdicion()
-
-msgestado.Panels(2).Text = registro.ficha
-tficha.Text = registro.ficha
-Call CargarRegistroDesdeFormulario()
-
-
-Call RecordManager.WriteFichaAndIndex(registro)
-
-
+Private Sub VolverAPantallaBusquedaDespuesDeGuardar()
 Command12.Visible = False
 Command12.Enabled = False
 cmdgrabar.Visible = False
@@ -2338,6 +2324,25 @@ frame2.Visible = True
 cmdnuevo.Visible = True
 cmdnuevo.Enabled = True
 tmpficha = 0
+End Sub
+
+Private Sub cmdgrabar_Click()
+
+
+Call AsegurarFichaRegistro()
+
+Call RestaurarBusquedaDespuesDeEdicion()
+
+msgestado.Panels(2).Text = registro.ficha
+tficha.Text = registro.ficha
+Call CargarRegistroDesdeFormulario()
+
+
+Call RecordManager.WriteFichaAndIndex(registro)
+
+
+Call VolverAPantallaBusquedaDespuesDeGuardar()
+
 If showres = True Then
 Form3.Show
 End If

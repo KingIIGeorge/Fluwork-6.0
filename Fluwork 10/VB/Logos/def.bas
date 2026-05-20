@@ -154,19 +154,7 @@ End If
 End Function
 
 Function getlastfichanumber()
-Dim archivo As String
-Dim tam As Long
-Dim reg2 As Tindexregistro
-archivo = Trim(dbpath + "\index.dat")
-Open archivo For Random Access Read As #138 Len = Len(reg2)
-tam = LOF(138)
-If tam > 0 Then
-Get #138, tam / Len(reg2), reg2
-getlastfichanumber = Val(Trim(reg2.ficha))
-Else
-getlastfichanumber = BASE
-End If
-Close #138
+getlastfichanumber = RecordManager.LastFichaNumber()
 End Function
 
 Function MostrarFicha(ficha As Long)
@@ -200,11 +188,8 @@ Form1.Tcontroladopor.Text = ""
 Form1.Tavisadoeldia.Text = ""
 Form1.Tavisadopor.Text = ""
 
-Dim archivo As String
-archivo = Trim(dbpath + "\" + Trim(str(ficha)))
-Open archivo For Binary Access Read As #4 Len = Len(registro)
-Get #4, , registro
-Close #4
+Dim statusColor As Long
+Call RecordManager.ReadFicha(ficha, registro)
 
 If showres = True Then
 Form1.Command12.BackColor = QBColor(14)
@@ -290,56 +275,13 @@ Form1.Tllamareldia.Text = Trim(registro.llamareldia)
 Form1.Tcontroladopor.Text = Trim(registro.controladopor)
 Form1.Tavisadoeldia.Text = Trim(registro.avisadoeldia)
 Form1.Tavisadopor.Text = Trim(registro.avisadopor)
-If Trim(Form1.lbllista.Caption) = Trim("POR VER") Then
-Form1.lbllista.ForeColor = QBColor(11)
-End If
-If Trim(Form1.lbllista.Caption) = Trim("REPARANDO") Then
-Form1.lbllista.ForeColor = QBColor(12)
-End If
-If Trim(Form1.lbllista.Caption) = Trim("LISTA") Then
-Form1.lbllista.ForeColor = QBColor(10)
-End If
-If Trim(Form1.lbllista.Caption) = Trim("ENTREGADA") Then
-Form1.lbllista.ForeColor = QBColor(8)
-End If
-If Trim(Form1.lbllista.Caption) = Trim("STD/BY") Then
-Form1.lbllista.ForeColor = QBColor(13)
-End If
-If Trim(Form1.lbllista.Caption) = Trim("CHEQUEO") Then
-Form1.lbllista.ForeColor = QBColor(14)
-End If
-If Trim(Form1.lbllista.Caption) = Trim("REP.EXT.") Then
-Form1.lbllista.ForeColor = QBColor(12)
-End If
-If Trim(Form1.lbllista.Caption) = Trim("PV EXT.") Then
-Form1.lbllista.ForeColor = QBColor(11)
-End If
-If Trim(Form1.lbllista.Caption) = Trim("LISTA NR") Then
-Form1.lbllista.ForeColor = QBColor(10)
-End If
-If Trim(Form1.lbllista.Caption) = Trim("LISTA BRGS") Then
-Form1.lbllista.ForeColor = QBColor(10)
-End If
-If Trim(Form1.lbllista.Caption) = Trim("PRESUP") Then
-Form1.lbllista.ForeColor = QBColor(15)
-End If
-If Trim(Form1.lbllista.Caption) = Trim("ENTREGAR") Then
-Form1.lbllista.ForeColor = QBColor(9)
-End If
-If Trim(Form1.lbllista.Caption) = Trim("ANULADA") Then
-Form1.lbllista.ForeColor = QBColor(2)
-End If
-If Trim(Form1.lbllista.Caption) = Trim("DEPOSITO") Then
-Form1.lbllista.ForeColor = QBColor(8)
-End If
-If Trim(Form1.lbllista.Caption) = Trim("DIAGNOSTIC") Then
-Form1.lbllista.ForeColor = QBColor(14)
-End If
+statusColor = StatusCatalog.ColorForStatus(Form1.lbllista.Caption)
+If statusColor <> -1 Then Form1.lbllista.ForeColor = statusColor
 
 Exit Function
 
 ControlError:   ' Rutina de control de errores.
-    Select Case Err.Number  ' Evalúa el número de error.
+    Select Case Err.Number  ' Evalua el numero de error.
         Case 55:
                  MsgBox "El archivo ya esta abierto"
                  Close #1
@@ -351,4 +293,3 @@ ControlError:   ' Rutina de control de errores.
     End Select
     
 End Function
-

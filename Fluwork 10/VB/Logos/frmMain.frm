@@ -3098,7 +3098,7 @@ End Sub
 Private Sub Command1_Click()
 
 Dim cantdefichas As Long
-onlyone = True
+AppState.SetSingleResultMode True
 
 Combo1.ListIndex = 0
 bficha.BackColor = QBColor(15)
@@ -3117,8 +3117,7 @@ End If
 
 
 If (Trim(bficha.Text) > Val(str(BASE))) And (Trim(bficha.Text) <= Val(str(getlastfichanumber))) Then
-    tmpficha = Val(str(bficha.Text))
-    touchedreally = True
+    AppState.SelectFicha Val(str(bficha.Text))
     Form1.bficha.Text = ""
     MostrarFicha (tmpficha)
     Else
@@ -4496,29 +4495,23 @@ On Error Resume Next
 
 BASE = 0
 
-Open pconfig For Input As #1
-Line Input #1, dbpath
+dbpath = AppConfig.ReadDatabasePath()
 If dbpath = "" Then
 MsgBox "Por favor, edite el archivo " & pconfig & " y en la primer linea ponga la ubicacion de la base de datos accesable desde todos lados. Por Ejemplo, \\SERVER\recurso\directorio . NO PONER UNA \ al FINAL.", vbCritical, "Error Importante"
 End
-Else
-Close #1
 End If
 
 frmSplash.Show vbModal
 Form1.utilizardatos.Enabled = False
 showres = False
 
-pepe = ""
-Open dbpath + "\base.dat" For Input As #20
-Line Input #20, pepe
+pepe = AppConfig.ReadBaseValue(dbpath)
 If pepe = "" Then
 MsgBox "Por favor, verifique la conexcion con el servidor. ", vbCritical, "ERROR IMPORTANTE"
 End
 End If
 
 BASE = Val(pepe)
-Close #20
 
 Open dbpath + "\datos.dat" For Random As #24 Len = Len(persona)
 Get #24, , persona
@@ -4604,21 +4597,7 @@ cmdcancel.Visible = False
 cmdprintpublic.Visible = False
 Command11.Visible = False
 
-estados(1).txt = "POR VER"
-estados(2).txt = "REPARANDO"
-estados(3).txt = "LISTA"
-estados(4).txt = "STD/BY"
-estados(5).txt = "ENTREGADA"
-estados(6).txt = "CHEQUEO"
-estados(7).txt = "REP.EXT."
-estados(8).txt = "PV EXT."
-estados(9).txt = "LISTA NR"
-estados(10).txt = "LISTA BRGS"
-estados(11).txt = "ENTREGAR"
-estados(12).txt = "PRESUP"
-estados(13).txt = "ANULADA"
-estados(14).txt = "DEPOSITO"
-estados(15).txt = "DIAGNOSTIC"
+StatusCatalog.LoadDefaultStatuses
 ' === APERTURA DESDE BUSCADOR WEB ===
     If Dir("C:\Fluwork\abrir_ficha.txt") <> "" Then
         tmrAbrirFicha.Interval = 500
@@ -4644,9 +4623,7 @@ estados(15).txt = "DIAGNOSTIC"
     
     fichaCmd = Trim$(fichaCmd)
     If fichaCmd <> "" And Val(fichaCmd) > BASE Then
-        tmpficha = Val(fichaCmd)
-        touchedreally = True
-        onlyone = True
+        AppState.SelectSingleFicha Val(fichaCmd)
         MostrarFicha tmpficha
     End If
 End Sub
@@ -4844,13 +4821,13 @@ End Sub
 
 Private Sub Option2_Click(Index As Integer)
 If Index = "1" Then
-conpre = "C"
+AppState.SetConfirmationFilter "C"
 End If
 If Index = "2" Then
-conpre = "N"
+AppState.SetConfirmationFilter "N"
 End If
 If Index = "3" Then
-conpre = " "
+AppState.SetConfirmationFilter " "
 End If
 End Sub
 

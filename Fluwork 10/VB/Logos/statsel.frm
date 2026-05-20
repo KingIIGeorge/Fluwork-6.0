@@ -428,69 +428,14 @@ Option Explicit
 
 Private Sub Command1_Click()
 Dim i As Byte
+Dim statusColor As Long
 
-For i = 0 To 14
+For i = 0 To StatusCatalog.STATUS_COUNT - 1
 If Option1(i).Value = True Then
-registro.estado = estados(i + 1).txt
-If (i + 1) = 1 Then
-registro.fechaegreso = " "
-registro.precio = " "
-Form1.lbllista.ForeColor = QBColor(11)
-ElseIf (i + 1) = 2 Then
-registro.fechaegreso = " "
-registro.precio = " "
-Form1.lbllista.ForeColor = QBColor(12)
-ElseIf (i + 1) = 3 Then
-registro.fechaegreso = Trim(str(Date))
-registro.precio = " "
-Form1.lbllista.ForeColor = QBColor(10)
-ElseIf (i + 1) = 4 Then
-registro.fechaegreso = " "
-registro.precio = " "
-Form1.lbllista.ForeColor = QBColor(13)
-ElseIf (i + 1) = 5 Then
-registro.precio = Trim(str(Date))
-Form1.lbllista.ForeColor = QBColor(8)
-ElseIf (i + 1) = 6 Then
-registro.fechaegreso = " "
-registro.precio = " "
-Form1.lbllista.ForeColor = QBColor(14)
-ElseIf (i + 1) = 7 Then
-registro.fechaegreso = " "
-registro.precio = " "
-Form1.lbllista.ForeColor = QBColor(12)
-ElseIf (i + 1) = 8 Then
-registro.fechaegreso = " "
-registro.precio = " "
-Form1.lbllista.ForeColor = QBColor(11)
-ElseIf (i + 1) = 9 Then
-registro.fechaegreso = Trim(str(Date))
-registro.precio = " "
-Form1.lbllista.ForeColor = QBColor(10)
-ElseIf (i + 1) = 10 Then
-registro.fechaegreso = Trim(str(Date))
-registro.precio = " "
-Form1.lbllista.ForeColor = QBColor(10)
-ElseIf (i + 1) = 11 Then
-registro.precio = " "
-Form1.lbllista.ForeColor = QBColor(9)
-ElseIf (i + 1) = 12 Then
-registro.fechaegreso = " "
-registro.precio = " "
-Form1.lbllista.ForeColor = QBColor(15)
-ElseIf (i + 1) = 13 Then
-registro.fechaegreso = ""
-registro.precio = ""
-Form1.lbllista.ForeColor = QBColor(2)
-ElseIf (i + 1) = 14 Then
-Form1.lbllista.ForeColor = QBColor(8)
-ElseIf (i + 1) = 15 Then
-registro.fechaegreso = ""
-registro.precio = ""
-Form1.lbllista.ForeColor = QBColor(14)
-End If
+StatusCatalog.ApplyStatusSelection i + 1
+statusColor = StatusCatalog.ColorForStatus(registro.estado)
+If statusColor <> -1 Then Form1.lbllista.ForeColor = statusColor
 End If
 Next i
 Unload Me
 End Sub
-

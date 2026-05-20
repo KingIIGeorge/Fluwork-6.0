@@ -105,13 +105,12 @@ Option Explicit
 
 Private Sub Form_Load()
 mnuficha.Checked = True
-touchedreally = False
+AppState.SetFichaTouched False
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 If UnloadMode = 0 Then
-tmpficha = 0
-showres = False
+AppState.ClearSearchResults
 Form1.mnubusqueda.Enabled = True
 Form1.mnuexportar.Enabled = True
 Form1.utilizardatos.Enabled = False
@@ -305,9 +304,7 @@ End Sub
 Private Sub MSFlexGrid1_Click()
 
 On Error Resume Next
-touchedreally = True
-tmpficha = Val(str(MSFlexGrid1.Text))
+AppState.SelectFicha Val(str(MSFlexGrid1.Text))
 Me.Hide
 MostrarFicha (tmpficha)
 End Sub
-

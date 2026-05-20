@@ -2244,20 +2244,7 @@ Form3.Show
 End If
 End Sub
 
-Private Sub cmdgrabar_Click()
-
-
-If tficha.Text = "" Then
-registro.ficha = getlastfichanumber() + 1
-Else
-registro.ficha = tficha.Text
-End If
-mnubusqueda.Enabled = True
-mnuexportar.Enabled = True
-Form1.utilizardatos.Enabled = False
-
-msgestado.Panels(2).Text = registro.ficha
-tficha.Text = registro.ficha
+Private Sub CargarRegistroDesdeFormulario()
 registro.fullname = tfullname.Text
 registro.precio = tprecio.Text
 registro.presupuesto = tpresupuesto.Text
@@ -2279,6 +2266,24 @@ registro.llamareldia = Tllamareldia.Text
 registro.controladopor = Tcontroladopor.Text
 registro.avisadoeldia = Tavisadoeldia.Text
 registro.avisadopor = Tavisadopor.Text
+End Sub
+
+Private Sub cmdgrabar_Click()
+
+
+If tficha.Text = "" Then
+registro.ficha = getlastfichanumber() + 1
+Else
+registro.ficha = tficha.Text
+End If
+mnubusqueda.Enabled = True
+mnuexportar.Enabled = True
+Form1.utilizardatos.Enabled = False
+
+msgestado.Panels(2).Text = registro.ficha
+tficha.Text = registro.ficha
+Call CargarRegistroDesdeFormulario()
+
 
 Call RecordManager.WriteFichaAndIndex(registro)
 
@@ -2717,27 +2722,8 @@ Form1.utilizardatos.Enabled = False
 
 tficha.Text = registro.ficha
 msgestado.Panels(2).Text = registro.ficha
-registro.fullname = tfullname.Text
-registro.precio = tprecio.Text
-registro.presupuesto = tpresupuesto.Text
-registro.problema = tproblema.Text
-registro.solucion = tsolucion.Text
-registro.telefono = ttelefono.Text
-registro.adjuntos = tadjuntos.Text
-registro.fechaingreso = tfechaingreso.Text
-registro.fechaegreso = tfechaegreso.Text
-registro.tecnico = ttecnico.Text
-registro.atendidopor = tatendidopor.Text
-registro.estado = lbllista.Caption
-registro.modelo = tmodelo.Text
-registro.nserie = tnserie.Text
-registro.confirmacion = tconfirmacion.Text
-registro.direccion = tdireccion.Text
-registro.email = temail.Text
-registro.llamareldia = Tllamareldia.Text
-registro.controladopor = Tcontroladopor.Text
-registro.avisadoeldia = Tavisadoeldia.Text
-registro.avisadopor = Tavisadopor.Text
+Call CargarRegistroDesdeFormulario()
+
 
 Call RecordManager.WriteFichaAndIndex(registro)
 
@@ -3239,27 +3225,8 @@ Form1.utilizardatos.Enabled = False
 
 tficha.Text = registro.ficha
 msgestado.Panels(2).Text = registro.ficha
-registro.fullname = tfullname.Text
-registro.precio = tprecio.Text
-registro.presupuesto = tpresupuesto.Text
-registro.problema = tproblema.Text
-registro.solucion = tsolucion.Text
-registro.telefono = ttelefono.Text
-registro.adjuntos = tadjuntos.Text
-registro.fechaingreso = tfechaingreso.Text
-registro.fechaegreso = tfechaegreso.Text
-registro.tecnico = ttecnico.Text
-registro.atendidopor = tatendidopor.Text
-registro.estado = lbllista.Caption
-registro.modelo = tmodelo.Text
-registro.nserie = tnserie.Text
-registro.confirmacion = tconfirmacion.Text
-registro.direccion = tdireccion.Text
-registro.email = temail.Text
-registro.llamareldia = Tllamareldia.Text
-registro.controladopor = Tcontroladopor.Text
-registro.avisadoeldia = Tavisadoeldia.Text
-registro.avisadopor = Tavisadopor.Text
+Call CargarRegistroDesdeFormulario()
+
 
 Call RecordManager.WriteFichaAndIndex(registro)
 

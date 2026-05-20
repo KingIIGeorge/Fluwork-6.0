@@ -2213,26 +2213,8 @@ Command11.Visible = False
 cmdcancel.Enabled = False
 cmdcancel.Visible = False
 frame2.Visible = True
-tficha.Text = ""
-tfullname.Text = ""
-tprecio.Text = ""
-tpresupuesto.Text = ""
-tproblema.Text = ""
-tsolucion.Text = ""
-ttelefono.Text = ""
+Call LimpiarCamposComunesFicha()
 tfechaingreso.Text = ""
-tfechaegreso.Text = ""
-ttecnico.Text = ""
-tatendidopor.Text = ""
-tnserie.Text = ""
-tmodelo.Text = ""
-tconfirmacion.Text = ""
-tdireccion.Text = ""
-temail.Text = ""
-Tllamareldia.Text = ""
-Tcontroladopor.Text = ""
-Tavisadoeldia.Text = ""
-Tavisadopor.Text = ""
 Label27.Visible = True
 tconfirmacion.Visible = True
 cmdnuevo.Visible = True
@@ -2304,6 +2286,28 @@ Private Sub RestaurarBusquedaDespuesDeEdicion()
 mnubusqueda.Enabled = True
 mnuexportar.Enabled = True
 Form1.utilizardatos.Enabled = False
+End Sub
+
+Private Sub LimpiarCamposComunesFicha()
+tficha.Text = ""
+tfullname.Text = ""
+tprecio.Text = ""
+tpresupuesto.Text = ""
+tproblema.Text = ""
+tsolucion.Text = ""
+ttelefono.Text = ""
+tfechaegreso.Text = ""
+ttecnico.Text = ""
+tatendidopor.Text = ""
+tnserie.Text = ""
+tmodelo.Text = ""
+tconfirmacion.Text = ""
+tdireccion.Text = ""
+temail.Text = ""
+Tllamareldia.Text = ""
+Tcontroladopor.Text = ""
+Tavisadoeldia.Text = ""
+Tavisadopor.Text = ""
 End Sub
 
 Private Sub VolverAPantallaBusquedaDespuesDeGuardar()
@@ -2674,20 +2678,9 @@ cmdprintpublic.Visible = True
 Command11.Enabled = True
 Command11.Visible = True
 
-tficha.Text = ""
-tfullname.Text = ""
-tprecio.Text = ""
-tpresupuesto.Text = ""
-tproblema.Text = ""
-tsolucion.Text = ""
+Call LimpiarCamposComunesFicha()
 tadjuntos.Text = ""
-ttelefono.Text = ""
 tfechaingreso.Text = Trim(str(Date))
-tfechaegreso.Text = ""
-ttecnico.Text = ""
-tnserie.Text = ""
-tmodelo.Text = ""
-tatendidopor.Text = ""
 tfullname.SetFocus
 lbllista.Caption = "POR VER"
 lbllista.ForeColor = QBColor(11)

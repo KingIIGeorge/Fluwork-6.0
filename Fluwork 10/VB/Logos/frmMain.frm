@@ -2268,6 +2268,30 @@ registro.avisadoeldia = Tavisadoeldia.Text
 registro.avisadopor = Tavisadopor.Text
 End Sub
 
+Private Sub CargarRegistroDesdeFormularioTrim()
+registro.fullname = Trim(tfullname.Text)
+registro.precio = Trim(tprecio.Text)
+registro.presupuesto = Trim(tpresupuesto.Text)
+registro.problema = Trim(tproblema.Text)
+registro.solucion = Trim(tsolucion.Text)
+registro.telefono = Trim(ttelefono.Text)
+registro.adjuntos = Trim(tadjuntos.Text)
+registro.fechaingreso = Trim(tfechaingreso.Text)
+registro.fechaegreso = Trim(tfechaegreso.Text)
+registro.tecnico = Trim(ttecnico.Text)
+registro.atendidopor = Trim(tatendidopor.Text)
+registro.estado = Trim(lbllista.Caption)
+registro.modelo = Trim(tmodelo.Text)
+registro.nserie = Trim(tnserie.Text)
+registro.confirmacion = Trim(tconfirmacion.Text)
+registro.direccion = Trim(tdireccion.Text)
+registro.email = Trim(temail.Text)
+registro.llamareldia = Trim(Tllamareldia.Text)
+registro.controladopor = Trim(Tcontroladopor.Text)
+registro.avisadoeldia = Trim(Tavisadoeldia.Text)
+registro.avisadopor = Trim(Tavisadopor.Text)
+End Sub
+
 Private Sub cmdgrabar_Click()
 
 
@@ -2327,27 +2351,8 @@ mnuexportar.Enabled = True
 Form1.utilizardatos.Enabled = False
 
 msgestado.Panels(2).Text = Trim(registro.ficha)
-registro.fullname = Trim(tfullname.Text)
-registro.precio = Trim(tprecio.Text)
-registro.presupuesto = Trim(tpresupuesto.Text)
-registro.problema = Trim(tproblema.Text)
-registro.solucion = Trim(tsolucion.Text)
-registro.telefono = Trim(ttelefono.Text)
-registro.adjuntos = Trim(tadjuntos.Text)
-registro.fechaingreso = Trim(tfechaingreso.Text)
-registro.fechaegreso = Trim(tfechaegreso.Text)
-registro.tecnico = Trim(ttecnico.Text)
-registro.atendidopor = Trim(tatendidopor.Text)
-registro.estado = Trim(lbllista.Caption)
-registro.modelo = Trim(tmodelo.Text)
-registro.nserie = Trim(tnserie.Text)
-registro.confirmacion = Trim(tconfirmacion.Text)
-registro.direccion = Trim(tdireccion.Text)
-registro.email = Trim(temail.Text)
-registro.llamareldia = Trim(Tllamareldia.Text)
-registro.controladopor = Trim(Tcontroladopor.Text)
-registro.avisadoeldia = Trim(Tavisadoeldia.Text)
-registro.avisadopor = Trim(Tavisadopor.Text)
+Call CargarRegistroDesdeFormularioTrim()
+
 
 Call RecordManager.WriteFichaAndIndex(registro)
 

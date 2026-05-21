@@ -3033,7 +3033,7 @@ Dim cantres As Long
 Dim cantdefichas As Long
 Dim rsindex As Tindexregistro
 Dim b As Integer
-onlyone = False
+Call AppState.SetSingleResultMode(False)
 
 
 Combo1.ListIndex = 0
@@ -3058,7 +3058,7 @@ If i > 0 Then
 Get #1, i, rsindex
 
 If InStr(1, Trim(rsindex.estado), Trim(Command5.Tag)) And InStr(1, Trim(rsindex.tecnico), Trim(Combo2.Text)) > 0 Then
-tmpficha = Val(str(rsindex.ficha))
+Call AppState.SetCurrentFicha(Val(str(rsindex.ficha)))
 Form3.Label1.Caption = cantres + 1
 If Trim(rsindex.estado) <> Trim("ANULADA") Then
 If (cantres < Trim(Form1.tce2.Text)) Then
@@ -3156,8 +3156,7 @@ If cantres > 1 Then
     Form3.MSFlexGrid1.RemoveItem cantres + 1
     Form3.Show vbModal
 ElseIf cantres = 1 Then
-    touchedreally = True
-    onlyone = True
+    Call AppState.SelectSingleFicha(tmpficha)
     MostrarFicha (tmpficha)
 Else
 MsgBox "No hay resultados", vbExclamation, "Busqueda"
@@ -3340,7 +3339,7 @@ Dim cantres As Long
 Dim rsindex As Tindexregistro
 Dim cantdefichas As Long
 Dim b As Integer
-onlyone = False
+Call AppState.SetSingleResultMode(False)
 
 Combo1.ListIndex = 0
 Text1.BackColor = QBColor(15)
@@ -3369,7 +3368,7 @@ For i = cantdefichas To 1 Step -1
 If i > 0 Then
 Get #1, i, rsindex
 If InStr(1, rsindex.fullname, StrConv(Text1.Text, vbUpperCase)) > 0 Then
-tmpficha = Val(str(rsindex.ficha))
+Call AppState.SetCurrentFicha(Val(str(rsindex.ficha)))
 Form3.Label1.Caption = cantres + 1
 If Trim(rsindex.estado) <> Trim("ANULADA") Then
 If (cantres < MAX_CANT_RESULTS) Then
@@ -3466,8 +3465,7 @@ If cantres > 1 Then
     Form3.MSFlexGrid1.RemoveItem cantres + 1
     Form3.Show vbModal
 ElseIf cantres = 1 Then
-    touchedreally = True
-    onlyone = True
+    Call AppState.SelectSingleFicha(tmpficha)
     MostrarFicha (tmpficha)
     Else
     MsgBox "No hay resultados", vbExclamation, "Busqueda"
@@ -3485,7 +3483,7 @@ Dim cantres As Long
 Dim cantdefichas As Long
 Dim rsindex As Tindexregistro
 Dim b As Integer
-onlyone = False
+Call AppState.SetSingleResultMode(False)
 
 Combo1.ListIndex = 0
 Text2.BackColor = QBColor(15)
@@ -3516,7 +3514,7 @@ If i > 0 Then
 
 Get #1, i, rsindex
 If InStr(1, rsindex.telefono, Text2.Text) > 0 Then
-tmpficha = Val(str(rsindex.ficha))
+Call AppState.SetCurrentFicha(Val(str(rsindex.ficha)))
 Form3.Label1.Caption = cantres + 1
 If Trim(rsindex.estado) <> Trim("ANULADA") Then
 If (cantres < MAX_CANT_RESULTS) Then
@@ -3612,8 +3610,7 @@ If cantres > 1 Then
     Form3.MSFlexGrid1.RemoveItem cantres + 1
     Form3.Show vbModal
 ElseIf cantres = 1 Then
-    touchedreally = True
-    onlyone = True
+    Call AppState.SelectSingleFicha(tmpficha)
     MostrarFicha (tmpficha)
 Else
 MsgBox "No hay resultados", vbExclamation, "Busqueda"
@@ -3637,7 +3634,7 @@ Dim cantres As Long
 Dim cantdefichas As Long
 Dim rsindex As Tindexregistro
 Dim b As Integer
-onlyone = False
+Call AppState.SetSingleResultMode(False)
 
 
 Combo1.ListIndex = 0
@@ -3660,7 +3657,7 @@ If i > 0 Then
 
 Get #1, i, rsindex
 If Trim(rsindex.estado) = Trim(Command5.Tag) Then
-tmpficha = Val(str(rsindex.ficha))
+Call AppState.SetCurrentFicha(Val(str(rsindex.ficha)))
 Form3.Label1.Caption = cantres + 1
 If (cantres < Trim(Form1.tce)) Then
     cantres = cantres + 1
@@ -3753,8 +3750,7 @@ If cantres > 1 Then
     Form3.MSFlexGrid1.RemoveItem cantres + 1
     Form3.Show vbModal
 ElseIf cantres = 1 Then
-    touchedreally = True
-    onlyone = True
+    Call AppState.SelectSingleFicha(tmpficha)
     MostrarFicha (tmpficha)
 Else
 MsgBox "No hay resultados", vbExclamation, "Busqueda"
@@ -3772,7 +3768,7 @@ Dim cantres As Long
 Dim cantdefichas As Long
 Dim rsindex As Tindexregistro
 Dim b As Integer
-onlyone = False
+Call AppState.SetSingleResultMode(False)
 
 Combo1.ListIndex = 0
 mnubusqueda.Enabled = False
@@ -3795,7 +3791,7 @@ If i > 0 Then
 Get #1, i, rsindex
 
 If InStr(1, Trim(rsindex.tecnico), Trim(Combo2.Text)) > 0 Then
-tmpficha = Val(str(rsindex.ficha))
+Call AppState.SetCurrentFicha(Val(str(rsindex.ficha)))
 Form3.Label1.Caption = cantres + 1
 If Trim(rsindex.estado) <> Trim("ANULADA") Then
 If (cantres < Trim(Form1.tce1.Text)) Then
@@ -3891,8 +3887,7 @@ If cantres > 1 Then
     Form3.MSFlexGrid1.RemoveItem cantres + 1
     Form3.Show vbModal
 ElseIf cantres = 1 Then
-    touchedreally = True
-    onlyone = True
+    Call AppState.SelectSingleFicha(tmpficha)
     MostrarFicha (tmpficha)
 Else
 MsgBox "No hay resultados", vbExclamation, "Busqueda"
@@ -3910,7 +3905,7 @@ Dim cantres As Long
 Dim cantdefichas As Long
 Dim rsindex As Tindexregistro
 Dim b As Integer
-onlyone = False
+Call AppState.SetSingleResultMode(False)
 
 
 Combo1.ListIndex = 0
@@ -3934,7 +3929,7 @@ If i > 0 Then
 Get #1, i, rsindex
 
 If InStr(1, Trim(rsindex.tecnico), Trim(Combo2.Text)) And InStr(1, Left(rsindex.confirmacion, 1), Trim(conpre)) > 0 Then
-tmpficha = Val(str(rsindex.ficha))
+Call AppState.SetCurrentFicha(Val(str(rsindex.ficha)))
 Form3.Label1.Caption = cantres + 1
 If Trim(rsindex.estado) <> Trim("ANULADA") Then
 If (cantres < Trim(Form1.tce2.Text)) Then
@@ -4031,8 +4026,7 @@ If cantres > 1 Then
     Form3.MSFlexGrid1.RemoveItem cantres + 1
     Form3.Show vbModal
 ElseIf cantres = 1 Then
-    onlyone = True
-    touchedreally = True
+    Call AppState.SelectSingleFicha(tmpficha)
     MostrarFicha (tmpficha)
 Else
 MsgBox "No hay resultados", vbExclamation, "Busqueda"
@@ -4050,7 +4044,7 @@ Dim cantres As Long
 Dim cantdefichas As Long
 Dim rsindex As Tindexregistro
 Dim b As Integer
-onlyone = False
+Call AppState.SetSingleResultMode(False)
 
 Combo1.ListIndex = 0
 Text2.BackColor = QBColor(15)
@@ -4080,7 +4074,7 @@ For i = cantdefichas To 1 Step -1
 If i > 0 Then
 Get #1, i, rsindex
 If InStr(1, rsindex.modelo, StrConv(Text3.Text, vbUpperCase)) > 0 Then
-tmpficha = Val(str(rsindex.ficha))
+Call AppState.SetCurrentFicha(Val(str(rsindex.ficha)))
 Form3.Label1.Caption = cantres + 1
 If Trim(rsindex.estado) <> Trim("ANULADA") Then
 If (cantres < MAX_CANT_RESULTS) Then
@@ -4178,8 +4172,7 @@ If cantres > 1 Then
     Form3.MSFlexGrid1.RemoveItem cantres + 1
     Form3.Show vbModal
 ElseIf cantres = 1 Then
-    touchedreally = True
-    onlyone = True
+    Call AppState.SelectSingleFicha(tmpficha)
     MostrarFicha (tmpficha)
 Else
 MsgBox "No hay resultados", vbExclamation, "Busqueda"
@@ -4195,7 +4188,7 @@ Dim cantres As Long
 Dim cantdefichas As Long
 Dim rsindex As Tindexregistro
 Dim b As Integer
-onlyone = False
+Call AppState.SetSingleResultMode(False)
 
 Combo1.ListIndex = 0
 mnubusqueda.Enabled = False
@@ -4217,7 +4210,7 @@ For i = cantdefichas To 1 Step -1
 If i > 0 Then
 Get #1, i, rsindex
 If InStr(1, Left(rsindex.confirmacion, 1), conpre) > 0 Then
-tmpficha = Val(str(rsindex.ficha))
+Call AppState.SetCurrentFicha(Val(str(rsindex.ficha)))
 Form3.Label1.Caption = cantres + 1
 If Trim(rsindex.estado) <> Trim("ANULADA") Then
 If (cantres < Trim(Form1.Text4.Text)) Then
@@ -4315,8 +4308,7 @@ If cantres > 1 Then
     Form3.MSFlexGrid1.RemoveItem cantres + 1
     Form3.Show vbModal
 ElseIf cantres = 1 Then
-    touchedreally = True
-    onlyone = True
+    Call AppState.SelectSingleFicha(tmpficha)
     MostrarFicha (tmpficha)
 Else
 MsgBox "No hay resultados", vbExclamation, "Busqueda"

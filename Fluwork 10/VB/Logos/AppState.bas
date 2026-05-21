@@ -9,6 +9,10 @@ Public Sub SetFichaTouched(ByVal value As Boolean)
     touchedreally = value
 End Sub
 
+Public Sub SetCurrentFicha(ByVal ficha As Long)
+    tmpficha = ficha
+End Sub
+
 Public Sub SelectFicha(ByVal ficha As Long)
     tmpficha = ficha
     touchedreally = True

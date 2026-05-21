@@ -5,6 +5,7 @@ Module=def; def.bas
 Module=AppConfig; AppConfig.bas
 Module=AppState; AppState.bas
 Module=RecordManager; RecordManager.bas
+Module=RecordFormView; RecordFormView.bas
 Module=StatusCatalog; StatusCatalog.bas
 Form=statsel.frm
 Form=about.frm

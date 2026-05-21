@@ -93,66 +93,16 @@ Global persona As tpersona
 Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
 
 Function enter_a_br(que As String) As String
-Dim resultado As String
-Dim i As Long
-Dim pos As Long
-resultado = ""
-pos = 0
-
-For i = 1 To Len(que)
-If Mid(que, i, 1) = vbCr Or i = Len(que) Then
-If pos = 0 Then
-resultado = Mid(que, 1, i - 1) & "<br>"
-ElseIf i = Len(que) Then
-resultado = resultado & Mid(que, pos + 1, i - pos) & "<br>"
-Else
-resultado = resultado & Mid(que, pos + 1, i - pos - 1) & "<br>"
-End If
-pos = i + 1
-End If
-Next i
-enter_a_br = resultado
+enter_a_br = TextFormat.EnterToBr(que)
 End Function
 
-
 Function pipe_a_br(que As String) As String
-Dim resultado As String
-Dim i As Long
-Dim pos As Long
-Dim npipe As Byte
-
-npipe = 0
-resultado = ""
-pos = 0
-
-For i = 1 To Len(que)
-If Mid(que, i, 1) = "|" Or i = Len(que) Then
-npipe = npipe + 1
-    If pos = 0 Then
-    resultado = Mid(que, 1, i - 1) & "   "
-    ElseIf i = Len(que) Then
-    resultado = resultado & Mid(que, pos, i - pos + 1) & "<BR>"
-    Else
-    If npipe Mod 2 = 0 Then
-    resultado = resultado & Mid(que, pos, i - pos) & "<BR>"
-    Else
-    resultado = resultado & Mid(que, pos, i - pos) & "   "
-    End If
-    End If
-    pos = i + 1
-End If
-Next i
-pipe_a_br = resultado
+pipe_a_br = TextFormat.PipeToBr(que)
 End Function
 
 Function AddBackslash(ByVal str As String) As String
-    If (Right(str, 1) = "\") Then
-        AddBackslash = str
-    Else
-        AddBackslash = str & "\"
-End If
+AddBackslash = PathUtils.EnsureTrailingBackslash(str)
 End Function
-
 Function getlastfichanumber()
 getlastfichanumber = RecordManager.LastFichaNumber()
 End Function

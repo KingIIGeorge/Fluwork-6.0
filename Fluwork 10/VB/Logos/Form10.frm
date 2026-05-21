@@ -111,7 +111,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub Command1_Click()
-nombrecompleto = AddBackslash(directorio) & Trim(Text1.Text)
+nombrecompleto = PathUtils.EnsureTrailingBackslash(directorio) & Trim(Text1.Text)
 Unload Me
 Sleep 1000
 End Sub

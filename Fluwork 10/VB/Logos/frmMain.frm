@@ -2598,7 +2598,7 @@ Print #7, "</div></div></div></div>"
 Print #7, "<div class=""section"">"
 Print #7, "<div class=""section-title"">Descripci&oacute;n del Problema</div>"
 Print #7, "<div class=""section-body tall"">"
-If (Trim(registro.problema) <> "") Then Print #7, enter_a_br(registro.problema) Else Print #7, "&nbsp;"
+If (Trim(registro.problema) <> "") Then Print #7, TextFormat.EnterToBr(registro.problema) Else Print #7, "&nbsp;"
 Print #7, "</div></div>"
 
 ' TAREAS REALIZADAS
@@ -2892,7 +2892,7 @@ Print #7, "</div></div></div></div>"
 Print #7, "<div class=""section"">"
 Print #7, "<div class=""section-title"">Descripci&oacute;n del Problema</div>"
 Print #7, "<div class=""section-body tall"">"
-If (Trim(registro.problema) <> "") Then Print #7, enter_a_br(registro.problema) Else Print #7, "&nbsp;"
+If (Trim(registro.problema) <> "") Then Print #7, TextFormat.EnterToBr(registro.problema) Else Print #7, "&nbsp;"
 Print #7, "</div></div>"
 
 ' NOTA LEGAL
@@ -3296,7 +3296,7 @@ Print #7, "<p align=""center""><b><font size=""2""><sup>(datos informados por el
 Print #7, "<td width=""75%"" colspan=""3"" rowspan=""5"" bordercolor=""#000000"" bordercolorlight=""#000000"" bordercolordark=""#000000"">"
 
 If (Trim(registro.problema) <> "") Then
-Print #7, enter_a_br(registro.problema)
+Print #7, TextFormat.EnterToBr(registro.problema)
 Else
 Print #7, "<font color=""#FFFFFF"">-</font>"
 End If

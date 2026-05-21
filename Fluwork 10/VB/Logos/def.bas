@@ -157,14 +157,14 @@ Function getlastfichanumber()
 getlastfichanumber = RecordManager.LastFichaNumber()
 End Function
 
-Function MostrarFicha(ficha As Long)
-
+Private Sub PrepararContenedorFicha()
 Form1.utilizardatos.Enabled = True
 Form1.frame2.Visible = False
 Form1.Frame1.Width = 11660
 Form1.Frame1.Height = 6990
+End Sub
 
-If Not touchedreally Then Exit Function
+Private Sub LimpiarFormularioFicha()
 Form1.tficha.Text = ""
 Form1.tfullname.Text = ""
 Form1.tprecio.Text = ""
@@ -187,10 +187,9 @@ Form1.Tllamareldia.Text = ""
 Form1.Tcontroladopor.Text = ""
 Form1.Tavisadoeldia.Text = ""
 Form1.Tavisadopor.Text = ""
+End Sub
 
-Dim statusColor As Long
-Call RecordManager.ReadFicha(ficha, registro)
-
+Private Sub PrepararPantallaFichaExistente()
 If showres = True Then
 Form1.Command12.BackColor = QBColor(14)
 Else
@@ -216,7 +215,6 @@ Form1.tmodelo.Enabled = True
 Form1.tmodelo.Visible = True
 Form1.tnserie.Enabled = True
 Form1.tnserie.Visible = True
-
 Form1.cmdgrabar.Visible = True
 Form1.cmdgrabar.Enabled = True
 Form1.cmdcancel.Enabled = True
@@ -242,11 +240,23 @@ Form1.Tllamareldia.Enabled = True
 Form1.Tcontroladopor.Enabled = True
 Form1.Tavisadoeldia.Enabled = True
 Form1.Tavisadopor.Enabled = True
+End Sub
+
+Private Sub ActualizarConfirmacionFormulario()
+If Mid$(Form1.tconfirmacion.Text, 1, 2) = "N-" Then
+Form1.Label16.Caption = "NO CONFIRMADO"
+ElseIf Mid$(Form1.tconfirmacion.Text, 1, 2) = "C-" Then
+Form1.Label16.Caption = "CONFIRMADO"
+Else
+Form1.Label16.Caption = "NO DISPONIBLE"
+End If
+End Sub
+
+Private Sub CargarRegistroEnFormulario()
+Dim statusColor As Long
 
 Form1.lbllista.Caption = registro.estado
-
 Form1.tficha.SetFocus
-
 Form1.tficha.Text = Trim(registro.ficha)
 Form1.tfullname.Text = Trim(registro.fullname)
 Form1.tprecio.Text = Trim(registro.precio)
@@ -262,13 +272,7 @@ Form1.tatendidopor.Text = Trim(registro.atendidopor)
 Form1.tnserie.Text = Trim(registro.nserie)
 Form1.tmodelo.Text = Trim(registro.modelo)
 Form1.tconfirmacion.Text = Trim(registro.confirmacion)
-If Mid$(Form1.tconfirmacion.Text, 1, 2) = "N-" Then
-Form1.Label16.Caption = "NO CONFIRMADO"
-ElseIf Mid$(Form1.tconfirmacion.Text, 1, 2) = "C-" Then
-Form1.Label16.Caption = "CONFIRMADO"
-Else
-Form1.Label16.Caption = "NO DISPONIBLE"
-End If
+Call ActualizarConfirmacionFormulario()
 Form1.tdireccion.Text = Trim(registro.direccion)
 Form1.temail.Text = Trim(registro.email)
 Form1.Tllamareldia.Text = Trim(registro.llamareldia)
@@ -277,6 +281,17 @@ Form1.Tavisadoeldia.Text = Trim(registro.avisadoeldia)
 Form1.Tavisadopor.Text = Trim(registro.avisadopor)
 statusColor = StatusCatalog.ColorForStatus(Form1.lbllista.Caption)
 If statusColor <> -1 Then Form1.lbllista.ForeColor = statusColor
+End Sub
+
+Function MostrarFicha(ficha As Long)
+
+Call PrepararContenedorFicha()
+
+If Not touchedreally Then Exit Function
+Call LimpiarFormularioFicha()
+Call RecordManager.ReadFicha(ficha, registro)
+Call PrepararPantallaFichaExistente()
+Call CargarRegistroEnFormulario()
 
 Exit Function
 

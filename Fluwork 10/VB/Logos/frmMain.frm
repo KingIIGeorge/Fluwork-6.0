@@ -2286,6 +2286,49 @@ mnuexportar.Enabled = True
 Form1.utilizardatos.Enabled = False
 End Sub
 
+Private Sub PrepararPantallaEdicionFicha()
+frame2.Visible = False
+cmdnuevo.Visible = False
+cmdnuevo.Enabled = False
+mnubusqueda.Enabled = False
+mnuexportar.Enabled = False
+Form1.utilizardatos.Enabled = False
+Frame1.Visible = True
+tconfirmacion.Enabled = True
+tdireccion.Enabled = True
+temail.Enabled = True
+Tllamareldia.Enabled = True
+Tcontroladopor.Enabled = True
+Tavisadoeldia.Enabled = True
+Tavisadopor.Enabled = True
+tficha.Enabled = True
+tfullname.Enabled = True
+tprecio.Enabled = True
+tpresupuesto.Enabled = True
+tproblema.Enabled = True
+tadjuntos.Enabled = True
+tsolucion.Enabled = True
+ttelefono.Enabled = True
+tfechaingreso.Enabled = True
+tfechaegreso.Enabled = True
+tnserie.Enabled = True
+tmodelo.Enabled = True
+ttecnico.Enabled = True
+tatendidopor.Enabled = True
+Command12.Enabled = False
+Command12.Visible = False
+cmdgrabar.Visible = True
+cmdgrabar.Enabled = True
+cmdcancel.Enabled = True
+cmdcancel.Visible = True
+cmdimprimir.Visible = True
+cmdimprimir.Enabled = True
+cmdprintpublic.Enabled = True
+cmdprintpublic.Visible = True
+Command11.Enabled = True
+Command11.Visible = True
+End Sub
+
 Private Sub LimpiarCamposComunesFicha()
 tficha.Text = ""
 tfullname.Text = ""
@@ -2630,51 +2673,8 @@ Private Sub cmdnuevo_Click()
 
 showres = False
 tmpficha = 0
-frame2.Visible = False
-cmdnuevo.Visible = False
-cmdnuevo.Enabled = False
 Combo1.ListIndex = 0
-mnubusqueda.Enabled = False
-mnuexportar.Enabled = False
-Form1.utilizardatos.Enabled = False
-
-Frame1.Visible = True
-
-tconfirmacion.Enabled = True
-tdireccion.Enabled = True
-temail.Enabled = True
-Tllamareldia.Enabled = True
-Tcontroladopor.Enabled = True
-Tavisadoeldia.Enabled = True
-Tavisadopor.Enabled = True
-tficha.Enabled = True
-tfullname.Enabled = True
-tprecio.Enabled = True
-tpresupuesto.Enabled = True
-tproblema.Enabled = True
-tadjuntos.Enabled = True
-tsolucion.Enabled = True
-ttelefono.Enabled = True
-
-tfechaingreso.Enabled = True
-tfechaegreso.Enabled = True
-
-tnserie.Enabled = True
-tmodelo.Enabled = True
-ttecnico.Enabled = True
-tatendidopor.Enabled = True
-Command12.Enabled = False
-Command12.Visible = False
-cmdgrabar.Visible = True
-cmdgrabar.Enabled = True
-cmdcancel.Enabled = True
-cmdcancel.Visible = True
-cmdimprimir.Visible = True
-cmdimprimir.Enabled = True
-cmdprintpublic.Enabled = True
-cmdprintpublic.Visible = True
-Command11.Enabled = True
-Command11.Visible = True
+Call PrepararPantallaEdicionFicha()
 
 Call LimpiarCamposComunesFicha()
 tadjuntos.Text = ""

@@ -12,12 +12,10 @@ Global nombrecompleto As String
 Global conpre As String * 1
 Global showres As Boolean
 Global onlyone As Boolean
-Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Long, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Long) As Long
 Global estados(15) As Testados
 Global registro As Tregistro
 Global regindex As Tindexregistro
 Global persona As tpersona
-Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
 
 Function enter_a_br(que As String) As String
 enter_a_br = TextFormat.EnterToBr(que)

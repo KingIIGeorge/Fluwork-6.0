@@ -9,6 +9,7 @@ Module=RecordManager; RecordManager.bas
 Module=RecordFormView; RecordFormView.bas
 Module=TextFormat; TextFormat.bas
 Module=PathUtils; PathUtils.bas
+Module=WinApi; WinApi.bas
 Module=StatusCatalog; StatusCatalog.bas
 Form=statsel.frm
 Form=about.frm

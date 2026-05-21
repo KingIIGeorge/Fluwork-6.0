@@ -1,11 +1,13 @@
 Form1 = 96, 0, 902, 977, , 6, 10, 865, 502, C
 def = 72, 43, 664, 512, C
+GlobalTypes = 0, 0, 0, 0, C
 AppConfig = 0, 0, 0, 0, C
 AppState = 0, 0, 0, 0, C
 RecordManager = 0, 0, 0, 0, C
 RecordFormView = 0, 0, 0, 0, C
 TextFormat = 0, 0, 0, 0, C
 PathUtils = 0, 0, 0, 0, C
+WinApi = 0, 0, 0, 0, C
 StatusCatalog = 0, 0, 0, 0, C
 statsel = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 Form2 = 22, 22, 595, 470, C, 176, 176, 778, 624, C

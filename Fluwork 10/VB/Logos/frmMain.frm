@@ -3,10 +3,10 @@ Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.5#0"; "comctl32.Ocx"
 Begin VB.Form Form1 
    BackColor       =   &H00808080&
    Caption         =   "FluWork v10 D"
-   ClientHeight    =   8310
+   ClientHeight    =   10000
    ClientLeft      =   60
-   ClientTop       =   -540
-   ClientWidth     =   11880
+   ClientTop       =   450
+   ClientWidth     =   18000
    BeginProperty Font 
       Name            =   "System"
       Size            =   9.75
@@ -18,9 +18,10 @@ Begin VB.Form Form1
    EndProperty
    Icon            =   "frmMain.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8310
-   ScaleWidth      =   11880
-   WindowState     =   2  'Maximized
+   ScaleHeight     =   10000
+   ScaleWidth      =   18000
+   StartUpPosition =   2  'CenterScreen
+   WindowState     =   0  'Normal
    Begin VB.CommandButton Command12 
       BackColor       =   &H80000010&
       Caption         =   "CONTI&NUAR BUSQ."
@@ -4468,32 +4469,14 @@ End Sub
 
 Private Sub Form_Resize()
 
-If Me.WindowState = 1 Then
+If Me.WindowState = vbMinimized Then
 Me.Caption = "Ficha: " & tmpficha
+Exit Sub
 End If
 
-If tmpficha = 0 Then
+If tmpficha = 0 Or Me.WindowState = vbMaximized Then
 Me.Caption = "FluWork v10"
 End If
-
-If Me.WindowState = 2 Then
-Me.Caption = "FluWork v10"
-End If
-
-If Me.WindowState = 0 Then Me.WindowState = vbMaximized
-If Me.WindowState = 1 Or Me.WindowState = 2 Then Exit Sub
-
-Frame1.Width = Form1.Width - 150
-Frame1.Height = Form1.Height - Frame1.Top - 500
-cmdgrabar.Left = Form1.Width - cmdgrabar.Width - 250
-cmdcancel.Left = Form1.Width - cmdgrabar.Width - cmdcancel.Width - 350
-tfechaingreso.Left = Form1.Width - tfechaingreso.Width - 350
-tfechaegreso.Left = Form1.Width - tfechaegreso.Width - 350
-tprecio.Left = Form1.Width - tprecio.Width - 350
-lbllista.Left = Form1.Width - lbllista.Width - 350
-tproblema.Width = Form1.Width - 500
-tsolucion.Width = Form1.Width - 500
-tadjuntos.Width = Form1.Width - 500
 
 End Sub
 

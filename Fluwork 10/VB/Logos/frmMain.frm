@@ -2682,13 +2682,6 @@ tfechaingreso.Text = Trim(str(Date))
 tfullname.SetFocus
 lbllista.Caption = "POR VER"
 lbllista.ForeColor = QBColor(11)
-tconfirmacion.Text = ""
-tdireccion.Text = ""
-temail.Text = ""
-Tllamareldia.Text = ""
-Tcontroladopor.Text = ""
-Tavisadoeldia.Text = ""
-Tavisadopor.Text = ""
 Frame1.Width = 11660
 Frame1.Height = 6990
 

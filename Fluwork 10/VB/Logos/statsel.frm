@@ -430,10 +430,10 @@ Private Sub Command1_Click()
 Dim i As Byte
 Dim statusColor As Long
 
-For i = 0 To StatusCatalog.STATUS_COUNT - 1
+For i = 0 To STATUS_COUNT - 1
 If Option1(i).Value = True Then
-StatusCatalog.ApplyStatusSelection i + 1
-statusColor = StatusCatalog.ColorForStatus(registro.estado)
+ApplyStatusSelection i + 1
+statusColor = ColorForStatus(registro.estado)
 If statusColor <> -1 Then Form1.lbllista.ForeColor = statusColor
 End If
 Next i

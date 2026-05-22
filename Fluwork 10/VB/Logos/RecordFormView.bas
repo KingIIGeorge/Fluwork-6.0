@@ -113,7 +113,7 @@ Form1.Tllamareldia.Text = Trim(registro.llamareldia)
 Form1.Tcontroladopor.Text = Trim(registro.controladopor)
 Form1.Tavisadoeldia.Text = Trim(registro.avisadoeldia)
 Form1.Tavisadopor.Text = Trim(registro.avisadopor)
-statusColor = StatusCatalog.ColorForStatus(Form1.lbllista.Caption)
+statusColor = ColorForStatus(Form1.lbllista.Caption)
 If statusColor <> -1 Then Form1.lbllista.ForeColor = statusColor
 End Sub
 

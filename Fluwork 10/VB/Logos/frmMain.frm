@@ -3333,6 +3333,186 @@ showres = True
 End If
 End Sub
 
+Private Function TryBuscarClienteSqlite(ByVal cliente As String) As Boolean
+On Error GoTo ErrHandler
+
+Dim responseText As String
+Dim lines() As String
+Dim fields() As String
+Dim i As Long
+Dim cantres As Long
+Dim ficha As Long
+
+If Not SearchHttpClient.BuscarClienteTexto(cliente, MAX_CANT_RESULTS, responseText) Then Exit Function
+
+lines = Split(Replace(responseText, vbCrLf, vbLf), vbLf)
+cantres = 0
+
+For i = 1 To UBound(lines)
+If Trim$(lines(i)) <> "" Then
+fields = Split(lines(i), "|")
+If UBound(fields) >= 5 Then
+If UCase$(Trim$(fields(5))) <> "ANULADA" Then
+If cantres < MAX_CANT_RESULTS Then
+    cantres = cantres + 1
+    ficha = Val(fields(0))
+    Call AppState.SetCurrentFicha(ficha)
+    Form3.Label1.Caption = cantres
+    Form3.MSFlexGrid1.AddItem fields(0)
+    Form3.MSFlexGrid1.Row = cantres
+    Form3.MSFlexGrid1.Col = 0
+    Form3.MSFlexGrid1.Text = fields(0)
+    Form3.MSFlexGrid1.Col = 1
+    Form3.MSFlexGrid1.Text = fields(4)
+    Form3.MSFlexGrid1.Col = 2
+    Form3.MSFlexGrid1.Text = fields(1)
+    Form3.MSFlexGrid1.Col = 3
+    Form3.MSFlexGrid1.Text = fields(2)
+    Form3.MSFlexGrid1.Col = 4
+    Form3.MSFlexGrid1.Text = fields(3)
+    Form3.MSFlexGrid1.Col = 5
+    Form3.MSFlexGrid1.Text = fields(5)
+Else
+    Exit For
+End If
+End If
+End If
+End If
+Next i
+
+AplicarColoresResultadosBusqueda cantres
+
+If cantres > 0 Then Text1.Text = ""
+
+If cantres > 1 Then
+    Form3.mnulista.Enabled = False
+    On Error Resume Next
+    Form3.MSFlexGrid1.RemoveItem cantres + 1
+    On Error GoTo ErrHandler
+    Form3.Show vbModal
+ElseIf cantres = 1 Then
+    Call AppState.SelectSingleFicha(tmpficha)
+    MostrarFicha (tmpficha)
+    Else
+    MsgBox "No hay resultados", vbExclamation, "Busqueda"
+    Form1.mnubusqueda.Enabled = True
+    Form1.mnuexportar.Enabled = True
+End If
+
+TryBuscarClienteSqlite = True
+Exit Function
+
+ErrHandler:
+TryBuscarClienteSqlite = False
+End Function
+
+Private Function TryBuscarEstadoSqlite(ByVal estado As String, ByVal resultLimit As Long) As Boolean
+On Error GoTo ErrHandler
+
+Dim responseText As String
+Dim lines() As String
+Dim fields() As String
+Dim i As Long
+Dim cantres As Long
+Dim ficha As Long
+
+If resultLimit <= 0 Then resultLimit = MAX_CANT_RESULTS
+If Not SearchHttpClient.BuscarEstadoTexto(estado, resultLimit, responseText) Then Exit Function
+
+lines = Split(Replace(responseText, vbCrLf, vbLf), vbLf)
+cantres = 0
+
+For i = 1 To UBound(lines)
+If Trim$(lines(i)) <> "" Then
+fields = Split(lines(i), "|")
+If UBound(fields) >= 5 Then
+If cantres < resultLimit Then
+    cantres = cantres + 1
+    ficha = Val(fields(0))
+    Call AppState.SetCurrentFicha(ficha)
+    Form3.Label1.Caption = cantres
+    Form3.MSFlexGrid1.AddItem fields(0)
+    Form3.MSFlexGrid1.Row = cantres
+    Form3.MSFlexGrid1.Col = 0
+    Form3.MSFlexGrid1.Text = fields(0)
+    Form3.MSFlexGrid1.Col = 1
+    Form3.MSFlexGrid1.Text = fields(4)
+    Form3.MSFlexGrid1.Col = 2
+    Form3.MSFlexGrid1.Text = fields(1)
+    Form3.MSFlexGrid1.Col = 3
+    Form3.MSFlexGrid1.Text = fields(2)
+    Form3.MSFlexGrid1.Col = 4
+    Form3.MSFlexGrid1.Text = fields(3)
+    Form3.MSFlexGrid1.Col = 5
+    Form3.MSFlexGrid1.Text = fields(5)
+Else
+    Exit For
+End If
+End If
+End If
+Next i
+
+AplicarColoresResultadosBusqueda cantres
+
+If cantres > 0 Then Text2.Text = ""
+If cantres > 1 Then
+    Form3.mnulista.Enabled = False
+    On Error Resume Next
+    Form3.MSFlexGrid1.RemoveItem cantres + 1
+    On Error GoTo ErrHandler
+    Form3.Show vbModal
+ElseIf cantres = 1 Then
+    Call AppState.SelectSingleFicha(tmpficha)
+    MostrarFicha (tmpficha)
+Else
+MsgBox "No hay resultados", vbExclamation, "Busqueda"
+Form1.mnubusqueda.Enabled = True
+Form1.mnuexportar.Enabled = True
+End If
+
+TryBuscarEstadoSqlite = True
+Exit Function
+
+ErrHandler:
+TryBuscarEstadoSqlite = False
+End Function
+
+Private Sub AplicarColoresResultadosBusqueda(ByVal cantres As Long)
+Dim b As Long
+
+For b = 1 To cantres
+Form3.MSFlexGrid1.Row = b
+Form3.MSFlexGrid1.Col = 5
+
+Select Case Trim$(Form3.MSFlexGrid1.Text)
+Case "POR VER", "PV EXT."
+Form3.MSFlexGrid1.CellBackColor = QBColor(11)
+Form3.MSFlexGrid1.CellForeColor = QBColor(0)
+Case "REPARANDO", "REP.EXT."
+Form3.MSFlexGrid1.CellBackColor = QBColor(12)
+Form3.MSFlexGrid1.CellForeColor = QBColor(15)
+Case "CHEQUEO", "DIAGNOSTIC"
+Form3.MSFlexGrid1.CellBackColor = QBColor(14)
+Form3.MSFlexGrid1.CellForeColor = QBColor(0)
+Case "ENTREGADA", "DEPOSITO"
+Form3.MSFlexGrid1.CellBackColor = QBColor(8)
+Form3.MSFlexGrid1.CellForeColor = QBColor(15)
+Case "STD/BY"
+Form3.MSFlexGrid1.CellBackColor = QBColor(13)
+Form3.MSFlexGrid1.CellForeColor = QBColor(0)
+Case "LISTA", "LISTA NR", "LISTA BRGS"
+Form3.MSFlexGrid1.CellBackColor = QBColor(10)
+Form3.MSFlexGrid1.CellForeColor = QBColor(0)
+Case "ENTREGAR"
+Form3.MSFlexGrid1.CellBackColor = QBColor(9)
+Form3.MSFlexGrid1.CellForeColor = QBColor(15)
+Case "PRESUP"
+Form3.MSFlexGrid1.CellBackColor = QBColor(15)
+Form3.MSFlexGrid1.CellForeColor = QBColor(0)
+End Select
+Next b
+End Sub
+
 Private Sub Command2_Click()
 
 Dim i As Long
@@ -3356,6 +3536,8 @@ Form1.utilizardatos.Enabled = False
 Form1.mnuexportar.Enabled = True
 Exit Sub
 End If
+
+If TryBuscarClienteSqlite(Text1.Text) Then Exit Sub
 
 cantres = 0
 Open Trim(dbpath + "\index.dat") For Random As #1 Len = Len(regindex)
@@ -3645,6 +3827,8 @@ mnuexportar.Enabled = False
 
 Unload Form3
 cantres = 0
+
+If TryBuscarEstadoSqlite(Command5.Tag, Val(Form1.tce.Text)) Then Exit Sub
 
 Open Trim(dbpath + "\index.dat") For Random As #1 Len = Len(regindex)
 cantdefichas = getlastfichanumber - BASE
@@ -4429,7 +4613,7 @@ cmdcancel.Visible = False
 cmdprintpublic.Visible = False
 Command11.Visible = False
 
-StatusCatalog.LoadDefaultStatuses
+LoadDefaultStatuses
 ' === APERTURA DESDE BUSCADOR WEB ===
     If Dir("C:\Fluwork\abrir_ficha.txt") <> "" Then
         tmrAbrirFicha.Interval = 500

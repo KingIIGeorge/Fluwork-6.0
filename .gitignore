@@ -1,0 +1,11 @@
+﻿backups/
+rollback_safety_*.patch
+
+FluworkServer/__pycache__/
+FluworkServer/data/
+FluworkServer/logs/
+FluworkServer/*.db
+FluworkServer/*.pyc
+FluworkServer/*.exe
+FluworkServer/*.xlsx
+FluworkServer/*.log

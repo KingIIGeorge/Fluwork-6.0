@@ -2157,6 +2157,29 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
+Private Const SQLITE_SEARCH_TECNICO_ESTADO As Integer = 1
+Private Const SQLITE_SEARCH_TECNICO_PRESUPUESTO As Integer = 2
+Private Const SQLITE_SEARCH_TECNICO As Integer = 3
+Private Const SQLITE_SEARCH_PRESUPUESTO As Integer = 4
+Private Const SQLITE_SEARCH_ESTADO As Integer = 5
+Private Const SQLITE_SEARCH_TELEFONO As Integer = 6
+Private Const SQLITE_SEARCH_MODELO As Integer = 7
+Private Const SQLITE_SEARCH_CLIENTE As Integer = 8
+Private Const SQLITE_SEARCH_PAGE_SIZE As Long = 200
+Private Const SQLITE_SIMPLE_SEARCH_LIMIT As Long = 10000
+
+Private mSqliteSearchMode As Integer
+Private mSqliteSearchCliente As String
+Private mSqliteSearchTecnico As String
+Private mSqliteSearchEstado As String
+Private mSqliteSearchConfirmacion As String
+Private mSqliteSearchTelefono As String
+Private mSqliteSearchModelo As String
+Private mSqliteSearchLimit As Long
+Private mSqliteSearchOffset As Long
+Private mSqliteSearchTotal As Long
+Private mSqliteSearchShown As Long
+
 Private Sub bficha_GotFocus()
 
 bficha.BackColor = QBColor(7)
@@ -3034,8 +3057,20 @@ Dim cantres As Long
 Dim cantdefichas As Long
 Dim rsindex As Tindexregistro
 Dim b As Integer
+Dim estadoBusqueda As String
 Call AppState.SetSingleResultMode(False)
 
+If Trim$(Combo2.Text) = "" Or Trim$(Combo2.Text) = "Seleccionar" Then
+MsgBox "Seleccione un tecnico para la busqueda.", vbExclamation, "Busqueda"
+Exit Sub
+End If
+
+estadoBusqueda = EstadoBusquedaSeleccionado()
+If Trim$(estadoBusqueda) = "" Then
+MsgBox "Seleccione un estado para la busqueda.", vbExclamation, "Busqueda"
+Exit Sub
+End If
+Command5.Tag = estadoBusqueda
 
 Combo1.ListIndex = 0
 Text2.BackColor = QBColor(15)
@@ -3044,6 +3079,8 @@ mnuexportar.Enabled = False
 
 Unload Form3
 cantres = 0
+
+If TryBuscarTecnicoEstadoSqlite(Combo2.Text, estadoBusqueda, Val(Form1.tce2.Text)) Then Exit Sub
 
 Open Trim(dbpath + "\index.dat") For Random As #1 Len = Len(regindex)
 cantdefichas = getlastfichanumber - BASE
@@ -3334,6 +3371,188 @@ End If
 End Sub
 
 Private Function TryBuscarClienteSqlite(ByVal cliente As String) As Boolean
+mSqliteSearchMode = SQLITE_SEARCH_CLIENTE
+mSqliteSearchCliente = cliente
+mSqliteSearchTecnico = ""
+mSqliteSearchEstado = ""
+mSqliteSearchConfirmacion = ""
+mSqliteSearchTelefono = ""
+mSqliteSearchModelo = ""
+mSqliteSearchLimit = SQLITE_SIMPLE_SEARCH_LIMIT
+mSqliteSearchOffset = 0
+mSqliteSearchTotal = 0
+mSqliteSearchShown = 0
+
+TryBuscarClienteSqlite = ShowInitialSqliteResults()
+End Function
+
+Private Function TryBuscarEstadoSqlite(ByVal estado As String, ByVal resultLimit As Long) As Boolean
+If resultLimit <= 0 Then resultLimit = MAX_CANT_RESULTS
+
+mSqliteSearchMode = SQLITE_SEARCH_ESTADO
+mSqliteSearchTecnico = ""
+mSqliteSearchEstado = estado
+mSqliteSearchConfirmacion = ""
+mSqliteSearchLimit = resultLimit
+mSqliteSearchOffset = 0
+mSqliteSearchTotal = 0
+mSqliteSearchShown = 0
+
+TryBuscarEstadoSqlite = ShowInitialSqliteResults()
+End Function
+
+Private Function TryBuscarTecnicoEstadoSqlite(ByVal tecnico As String, ByVal estado As String, ByVal resultLimit As Long) As Boolean
+If resultLimit <= 0 Then resultLimit = MAX_CANT_RESULTS
+
+mSqliteSearchMode = SQLITE_SEARCH_TECNICO_ESTADO
+mSqliteSearchTecnico = tecnico
+mSqliteSearchEstado = estado
+mSqliteSearchConfirmacion = ""
+mSqliteSearchLimit = resultLimit
+mSqliteSearchOffset = 0
+mSqliteSearchTotal = 0
+mSqliteSearchShown = 0
+
+TryBuscarTecnicoEstadoSqlite = ShowInitialSqliteResults()
+End Function
+
+Private Function TryBuscarTecnicoSqlite(ByVal tecnico As String, ByVal resultLimit As Long) As Boolean
+If resultLimit <= 0 Then resultLimit = MAX_CANT_RESULTS
+
+mSqliteSearchMode = SQLITE_SEARCH_TECNICO
+mSqliteSearchTecnico = tecnico
+mSqliteSearchEstado = ""
+mSqliteSearchConfirmacion = ""
+mSqliteSearchTelefono = ""
+mSqliteSearchModelo = ""
+mSqliteSearchLimit = resultLimit
+mSqliteSearchOffset = 0
+mSqliteSearchTotal = 0
+mSqliteSearchShown = 0
+
+TryBuscarTecnicoSqlite = ShowInitialSqliteResults()
+End Function
+
+Private Function TryBuscarTelefonoSqlite(ByVal telefono As String, ByVal resultLimit As Long) As Boolean
+If resultLimit <= 0 Then resultLimit = MAX_CANT_RESULTS
+
+mSqliteSearchMode = SQLITE_SEARCH_TELEFONO
+mSqliteSearchTecnico = ""
+mSqliteSearchEstado = ""
+mSqliteSearchConfirmacion = ""
+mSqliteSearchTelefono = telefono
+mSqliteSearchModelo = ""
+mSqliteSearchLimit = resultLimit
+mSqliteSearchOffset = 0
+mSqliteSearchTotal = 0
+mSqliteSearchShown = 0
+
+TryBuscarTelefonoSqlite = ShowInitialSqliteResults()
+End Function
+
+Private Function TryBuscarModeloSqlite(ByVal modelo As String, ByVal resultLimit As Long) As Boolean
+If resultLimit <= 0 Then resultLimit = MAX_CANT_RESULTS
+
+mSqliteSearchMode = SQLITE_SEARCH_MODELO
+mSqliteSearchTecnico = ""
+mSqliteSearchEstado = ""
+mSqliteSearchConfirmacion = ""
+mSqliteSearchTelefono = ""
+mSqliteSearchModelo = modelo
+mSqliteSearchLimit = resultLimit
+mSqliteSearchOffset = 0
+mSqliteSearchTotal = 0
+mSqliteSearchShown = 0
+
+TryBuscarModeloSqlite = ShowInitialSqliteResults()
+End Function
+
+Private Function TryBuscarTecnicoPresupuestoSqlite(ByVal tecnico As String, ByVal confirmacion As String, ByVal resultLimit As Long) As Boolean
+Dim apiConfirmacion As String
+
+Select Case Trim$(confirmacion)
+Case "C"
+    apiConfirmacion = "C"
+Case "N"
+    apiConfirmacion = "NC"
+Case ""
+    apiConfirmacion = "__EMPTY__"
+Case Else
+    Exit Function
+End Select
+
+If resultLimit <= 0 Then resultLimit = MAX_CANT_RESULTS
+
+mSqliteSearchMode = SQLITE_SEARCH_TECNICO_PRESUPUESTO
+mSqliteSearchTecnico = tecnico
+mSqliteSearchEstado = ""
+mSqliteSearchConfirmacion = apiConfirmacion
+mSqliteSearchLimit = resultLimit
+mSqliteSearchOffset = 0
+mSqliteSearchTotal = 0
+mSqliteSearchShown = 0
+
+TryBuscarTecnicoPresupuestoSqlite = ShowInitialSqliteResults()
+End Function
+
+Private Function TryBuscarPresupuestoSqlite(ByVal confirmacion As String, ByVal resultLimit As Long) As Boolean
+Dim apiConfirmacion As String
+
+Select Case Trim$(confirmacion)
+Case "C"
+    apiConfirmacion = "C"
+Case "N"
+    apiConfirmacion = "NC"
+Case ""
+    apiConfirmacion = "__EMPTY__"
+Case Else
+    Exit Function
+End Select
+
+If resultLimit <= 0 Then resultLimit = MAX_CANT_RESULTS
+
+mSqliteSearchMode = SQLITE_SEARCH_PRESUPUESTO
+mSqliteSearchTecnico = ""
+mSqliteSearchEstado = ""
+mSqliteSearchConfirmacion = apiConfirmacion
+mSqliteSearchLimit = resultLimit
+mSqliteSearchOffset = 0
+mSqliteSearchTotal = 0
+mSqliteSearchShown = 0
+
+TryBuscarPresupuestoSqlite = ShowInitialSqliteResults()
+End Function
+
+Private Function ShowInitialSqliteResults() As Boolean
+If Not LoadSqliteSearchPage(0) Then Exit Function
+
+If mSqliteSearchTotal <= 0 Then Exit Function
+
+If mSqliteSearchShown > 0 Then
+    If mSqliteSearchMode = SQLITE_SEARCH_CLIENTE Then
+        Text1.Text = ""
+    Else
+        Text2.Text = ""
+    End If
+End If
+
+If mSqliteSearchShown > 1 Then
+    Form3.mnuprint.Enabled = True
+    Form3.mnulista.Enabled = (mSqliteSearchMode = SQLITE_SEARCH_TECNICO_ESTADO)
+    Form3.Show vbModal
+ElseIf mSqliteSearchShown = 1 Then
+    Call AppState.SelectSingleFicha(tmpficha)
+    MostrarFicha (tmpficha)
+Else
+    MsgBox "No hay resultados", vbExclamation, "Busqueda"
+    Form1.mnubusqueda.Enabled = True
+    Form1.mnuexportar.Enabled = True
+End If
+
+ShowInitialSqliteResults = True
+End Function
+
+Private Function LoadSqliteSearchPage(ByVal pageOffset As Long) As Boolean
 On Error GoTo ErrHandler
 
 Dim responseText As String
@@ -3341,11 +3560,43 @@ Dim lines() As String
 Dim fields() As String
 Dim i As Long
 Dim cantres As Long
-Dim ficha As Long
+Dim pageLimit As Long
+Dim requestedLimit As Long
 
-If Not SearchHttpClient.BuscarClienteTexto(cliente, MAX_CANT_RESULTS, responseText) Then Exit Function
+requestedLimit = mSqliteSearchLimit
+If requestedLimit <= 0 Then requestedLimit = MAX_CANT_RESULTS
+If pageOffset < 0 Then pageOffset = 0
+
+pageLimit = SQLITE_SEARCH_PAGE_SIZE
+If pageOffset + pageLimit > requestedLimit Then pageLimit = requestedLimit - pageOffset
+If pageLimit <= 0 Then pageLimit = SQLITE_SEARCH_PAGE_SIZE
+
+Select Case mSqliteSearchMode
+Case SQLITE_SEARCH_CLIENTE
+    If Not SearchHttpClient.BuscarClientePaginadoTexto(mSqliteSearchCliente, pageLimit, pageOffset, responseText) Then Exit Function
+Case SQLITE_SEARCH_ESTADO
+    If Not SearchHttpClient.BuscarEstadoPaginadoTexto(mSqliteSearchEstado, pageLimit, pageOffset, responseText) Then Exit Function
+Case SQLITE_SEARCH_TECNICO
+    If Not SearchHttpClient.BuscarTecnicoTexto(mSqliteSearchTecnico, pageLimit, pageOffset, responseText) Then Exit Function
+Case SQLITE_SEARCH_TELEFONO
+    If Not SearchHttpClient.BuscarTelefonoTexto(mSqliteSearchTelefono, pageLimit, pageOffset, responseText) Then Exit Function
+Case SQLITE_SEARCH_MODELO
+    If Not SearchHttpClient.BuscarModeloTexto(mSqliteSearchModelo, pageLimit, pageOffset, responseText) Then Exit Function
+Case SQLITE_SEARCH_TECNICO_ESTADO
+    If Not SearchHttpClient.BuscarTecnicoEstadoTexto(mSqliteSearchTecnico, mSqliteSearchEstado, pageLimit, pageOffset, responseText) Then Exit Function
+Case SQLITE_SEARCH_TECNICO_PRESUPUESTO
+    If Not SearchHttpClient.BuscarTecnicoConfirmacionTexto(mSqliteSearchTecnico, mSqliteSearchConfirmacion, pageLimit, pageOffset, responseText) Then Exit Function
+Case SQLITE_SEARCH_PRESUPUESTO
+    If Not SearchHttpClient.BuscarConfirmacionTexto(mSqliteSearchConfirmacion, pageLimit, pageOffset, responseText) Then Exit Function
+Case Else
+    Exit Function
+End Select
 
 lines = Split(Replace(responseText, vbCrLf, vbLf), vbLf)
+mSqliteSearchTotal = ParseSqliteSearchTotal(lines)
+
+Form3.MSFlexGrid1.Redraw = False
+Form3.MSFlexGrid1.Rows = 2
 cantres = 0
 
 For i = 1 To UBound(lines)
@@ -3353,129 +3604,147 @@ If Trim$(lines(i)) <> "" Then
 fields = Split(lines(i), "|")
 If UBound(fields) >= 5 Then
 If UCase$(Trim$(fields(5))) <> "ANULADA" Then
-If cantres < MAX_CANT_RESULTS Then
     cantres = cantres + 1
-    ficha = Val(fields(0))
-    Call AppState.SetCurrentFicha(ficha)
-    Form3.Label1.Caption = cantres
-    Form3.MSFlexGrid1.AddItem fields(0)
-    Form3.MSFlexGrid1.Row = cantres
-    Form3.MSFlexGrid1.Col = 0
-    Form3.MSFlexGrid1.Text = fields(0)
-    Form3.MSFlexGrid1.Col = 1
-    Form3.MSFlexGrid1.Text = fields(4)
-    Form3.MSFlexGrid1.Col = 2
-    Form3.MSFlexGrid1.Text = fields(1)
-    Form3.MSFlexGrid1.Col = 3
-    Form3.MSFlexGrid1.Text = fields(2)
-    Form3.MSFlexGrid1.Col = 4
-    Form3.MSFlexGrid1.Text = fields(3)
-    Form3.MSFlexGrid1.Col = 5
-    Form3.MSFlexGrid1.Text = fields(5)
-Else
-    Exit For
-End If
+    AddSqliteSearchGridRow fields, cantres
 End If
 End If
 End If
 Next i
 
+mSqliteSearchOffset = pageOffset
+mSqliteSearchShown = cantres
+
 AplicarColoresResultadosBusqueda cantres
+UpdateSqliteSearchStatus pageOffset, cantres
+Form3.MSFlexGrid1.Redraw = True
 
-If cantres > 0 Then Text1.Text = ""
-
-If cantres > 1 Then
-    Form3.mnulista.Enabled = False
-    On Error Resume Next
-    Form3.MSFlexGrid1.RemoveItem cantres + 1
-    On Error GoTo ErrHandler
-    Form3.Show vbModal
-ElseIf cantres = 1 Then
-    Call AppState.SelectSingleFicha(tmpficha)
-    MostrarFicha (tmpficha)
-    Else
-    MsgBox "No hay resultados", vbExclamation, "Busqueda"
-    Form1.mnubusqueda.Enabled = True
-    Form1.mnuexportar.Enabled = True
-End If
-
-TryBuscarClienteSqlite = True
+LoadSqliteSearchPage = True
 Exit Function
 
 ErrHandler:
-TryBuscarClienteSqlite = False
+On Error Resume Next
+Form3.MSFlexGrid1.Redraw = True
+LoadSqliteSearchPage = False
 End Function
 
-Private Function TryBuscarEstadoSqlite(ByVal estado As String, ByVal resultLimit As Long) As Boolean
-On Error GoTo ErrHandler
+Private Function ParseSqliteSearchTotal(ByRef lines() As String) As Long
+Dim header() As String
 
-Dim responseText As String
-Dim lines() As String
-Dim fields() As String
-Dim i As Long
-Dim cantres As Long
+If UBound(lines) < 0 Then Exit Function
+header = Split(lines(0), "|")
+If UBound(header) >= 1 Then ParseSqliteSearchTotal = Val(header(1))
+End Function
+
+Private Sub AddSqliteSearchGridRow(ByRef fields() As String, ByVal rowNumber As Long)
 Dim ficha As Long
 
-If resultLimit <= 0 Then resultLimit = MAX_CANT_RESULTS
-If Not SearchHttpClient.BuscarEstadoTexto(estado, resultLimit, responseText) Then Exit Function
+If rowNumber > 1 Then Form3.MSFlexGrid1.AddItem fields(0)
 
-lines = Split(Replace(responseText, vbCrLf, vbLf), vbLf)
-cantres = 0
+ficha = Val(fields(0))
+Call AppState.SetCurrentFicha(ficha)
+Form3.MSFlexGrid1.Row = rowNumber
+Form3.MSFlexGrid1.Col = 0
+Form3.MSFlexGrid1.Text = fields(0)
+Form3.MSFlexGrid1.Col = 1
+Form3.MSFlexGrid1.Text = fields(4)
+Form3.MSFlexGrid1.Col = 2
+Form3.MSFlexGrid1.Text = fields(1)
+Form3.MSFlexGrid1.Col = 3
+Form3.MSFlexGrid1.Text = fields(2)
+Form3.MSFlexGrid1.Col = 4
+Form3.MSFlexGrid1.Text = fields(3)
+Form3.MSFlexGrid1.Col = 5
+Form3.MSFlexGrid1.Text = fields(5)
+End Sub
 
-For i = 1 To UBound(lines)
-If Trim$(lines(i)) <> "" Then
-fields = Split(lines(i), "|")
-If UBound(fields) >= 5 Then
-If cantres < resultLimit Then
-    cantres = cantres + 1
-    ficha = Val(fields(0))
-    Call AppState.SetCurrentFicha(ficha)
-    Form3.Label1.Caption = cantres
-    Form3.MSFlexGrid1.AddItem fields(0)
-    Form3.MSFlexGrid1.Row = cantres
-    Form3.MSFlexGrid1.Col = 0
-    Form3.MSFlexGrid1.Text = fields(0)
-    Form3.MSFlexGrid1.Col = 1
-    Form3.MSFlexGrid1.Text = fields(4)
-    Form3.MSFlexGrid1.Col = 2
-    Form3.MSFlexGrid1.Text = fields(1)
-    Form3.MSFlexGrid1.Col = 3
-    Form3.MSFlexGrid1.Text = fields(2)
-    Form3.MSFlexGrid1.Col = 4
-    Form3.MSFlexGrid1.Text = fields(3)
-    Form3.MSFlexGrid1.Col = 5
-    Form3.MSFlexGrid1.Text = fields(5)
+Private Sub UpdateSqliteSearchStatus(ByVal pageOffset As Long, ByVal pageCount As Long)
+Dim lastShown As Long
+Dim availableTotal As Long
+
+availableTotal = mSqliteSearchTotal
+If mSqliteSearchLimit > 0 And mSqliteSearchLimit < availableTotal Then availableTotal = mSqliteSearchLimit
+
+lastShown = pageOffset + pageCount
+If lastShown > availableTotal Then lastShown = availableTotal
+
+If pageCount > 0 Then
+    Form3.Label2.Caption = "Mostrando " & CStr(pageOffset + 1) & " a " & CStr(lastShown) & " de"
 Else
-    Exit For
+    Form3.Label2.Caption = "Cantidad de fichas encontradas"
 End If
-End If
-End If
+
+Form3.Label2.Width = 2655
+Form3.Label1.Left = 2880
+Form3.Label1.Width = 1095
+Form3.Label1.Caption = CStr(mSqliteSearchTotal)
+
+Form3.cmdPrimero.Visible = True
+Form3.cmdAnterior.Visible = True
+Form3.cmdSiguiente.Visible = True
+Form3.cmdUltimo.Visible = True
+Form3.cmdPrimero.Enabled = (pageOffset > 0)
+Form3.cmdAnterior.Enabled = (pageOffset > 0)
+Form3.cmdSiguiente.Enabled = (lastShown < availableTotal)
+Form3.cmdUltimo.Enabled = (lastShown < availableTotal)
+End Sub
+
+Public Sub ShowFirstSqliteSearchPage()
+If mSqliteSearchMode = 0 Then Exit Sub
+LoadSqliteSearchPage 0
+End Sub
+
+Public Sub ShowNextSqliteSearchPage()
+Dim nextOffset As Long
+
+If mSqliteSearchMode = 0 Then Exit Sub
+nextOffset = mSqliteSearchOffset + SQLITE_SEARCH_PAGE_SIZE
+If mSqliteSearchLimit > 0 And nextOffset >= mSqliteSearchLimit Then Exit Sub
+If mSqliteSearchTotal > 0 And nextOffset >= mSqliteSearchTotal Then Exit Sub
+LoadSqliteSearchPage nextOffset
+End Sub
+
+Public Sub ShowPreviousSqliteSearchPage()
+Dim previousOffset As Long
+
+If mSqliteSearchMode = 0 Then Exit Sub
+previousOffset = mSqliteSearchOffset - SQLITE_SEARCH_PAGE_SIZE
+If previousOffset < 0 Then previousOffset = 0
+LoadSqliteSearchPage previousOffset
+End Sub
+
+Public Sub ShowLastSqliteSearchPage()
+Dim availableTotal As Long
+Dim lastOffset As Long
+
+If mSqliteSearchMode = 0 Then Exit Sub
+
+availableTotal = mSqliteSearchTotal
+If mSqliteSearchLimit > 0 And mSqliteSearchLimit < availableTotal Then availableTotal = mSqliteSearchLimit
+If availableTotal <= 0 Then Exit Sub
+
+lastOffset = ((availableTotal - 1) \ SQLITE_SEARCH_PAGE_SIZE) * SQLITE_SEARCH_PAGE_SIZE
+LoadSqliteSearchPage lastOffset
+End Sub
+
+Private Function EstadoBusquedaSeleccionado() As String
+Dim i As Integer
+
+For i = 0 To 14
+    If Option1(i).Value Then
+        EstadoBusquedaSeleccionado = Option1(i).Caption
+        Exit Function
+    End If
 Next i
-
-AplicarColoresResultadosBusqueda cantres
-
-If cantres > 0 Then Text2.Text = ""
-If cantres > 1 Then
-    Form3.mnulista.Enabled = False
-    On Error Resume Next
-    Form3.MSFlexGrid1.RemoveItem cantres + 1
-    On Error GoTo ErrHandler
-    Form3.Show vbModal
-ElseIf cantres = 1 Then
-    Call AppState.SelectSingleFicha(tmpficha)
-    MostrarFicha (tmpficha)
-Else
-MsgBox "No hay resultados", vbExclamation, "Busqueda"
-Form1.mnubusqueda.Enabled = True
-Form1.mnuexportar.Enabled = True
-End If
-
-TryBuscarEstadoSqlite = True
-Exit Function
-
-ErrHandler:
-TryBuscarEstadoSqlite = False
 End Function
+
+Private Sub LimpiarEstadoBusquedaSeleccionado()
+Dim i As Integer
+
+For i = 0 To 14
+    Option1(i).Value = False
+Next i
+Command5.Tag = ""
+End Sub
 
 Private Sub AplicarColoresResultadosBusqueda(ByVal cantres As Long)
 Dim b As Long
@@ -3685,6 +3954,8 @@ End If
 
 cantres = 0
 
+If TryBuscarTelefonoSqlite(Text2.Text, SQLITE_SIMPLE_SEARCH_LIMIT) Then Exit Sub
+
 Open Trim(dbpath + "\index.dat") For Random As #1 Len = Len(regindex)
 cantdefichas = getlastfichanumber - BASE
 If (cantdefichas <= 0) Then
@@ -3817,7 +4088,15 @@ Dim cantres As Long
 Dim cantdefichas As Long
 Dim rsindex As Tindexregistro
 Dim b As Integer
+Dim estadoBusqueda As String
 Call AppState.SetSingleResultMode(False)
+
+estadoBusqueda = EstadoBusquedaSeleccionado()
+If Trim$(estadoBusqueda) = "" Then
+MsgBox "Seleccione un estado para la busqueda.", vbExclamation, "Busqueda"
+Exit Sub
+End If
+Command5.Tag = estadoBusqueda
 
 
 Combo1.ListIndex = 0
@@ -3828,7 +4107,7 @@ mnuexportar.Enabled = False
 Unload Form3
 cantres = 0
 
-If TryBuscarEstadoSqlite(Command5.Tag, Val(Form1.tce.Text)) Then Exit Sub
+If TryBuscarEstadoSqlite(estadoBusqueda, Val(Form1.tce.Text)) Then Exit Sub
 
 Open Trim(dbpath + "\index.dat") For Random As #1 Len = Len(regindex)
 cantdefichas = getlastfichanumber - BASE
@@ -3955,12 +4234,19 @@ Dim rsindex As Tindexregistro
 Dim b As Integer
 Call AppState.SetSingleResultMode(False)
 
+If Trim$(Combo2.Text) = "" Or Trim$(Combo2.Text) = "Seleccionar" Then
+MsgBox "Seleccione un tecnico para la busqueda.", vbExclamation, "Busqueda"
+Exit Sub
+End If
+
 Combo1.ListIndex = 0
 mnubusqueda.Enabled = False
 mnuexportar.Enabled = False
 
 Unload Form3
 cantres = 0
+
+If TryBuscarTecnicoSqlite(Combo2.Text, Val(Form1.tce1.Text)) Then Exit Sub
 
 Open Trim(dbpath + "\index.dat") For Random As #1 Len = Len(regindex)
 cantdefichas = getlastfichanumber - BASE
@@ -4092,6 +4378,19 @@ Dim rsindex As Tindexregistro
 Dim b As Integer
 Call AppState.SetSingleResultMode(False)
 
+If Trim$(Combo2.Text) = "" Or Trim$(Combo2.Text) = "Seleccionar" Then
+MsgBox "Seleccione un tecnico para la busqueda.", vbExclamation, "Busqueda"
+Exit Sub
+End If
+
+If Not (Option2(1).Value Or Option2(2).Value Or Option2(3).Value) Then
+MsgBox "Seleccione una opcion de presupuesto.", vbExclamation, "Busqueda"
+Exit Sub
+End If
+
+If Option2(1).Value Then AppState.SetConfirmationFilter "C"
+If Option2(2).Value Then AppState.SetConfirmationFilter "N"
+If Option2(3).Value Then AppState.SetConfirmationFilter " "
 
 Combo1.ListIndex = 0
 Text2.BackColor = QBColor(15)
@@ -4100,6 +4399,8 @@ mnuexportar.Enabled = False
 
 Unload Form3
 cantres = 0
+
+If TryBuscarTecnicoPresupuestoSqlite(Combo2.Text, conpre, Val(Form1.tce2.Text)) Then Exit Sub
 
 Open Trim(dbpath + "\index.dat") For Random As #1 Len = Len(regindex)
 cantdefichas = getlastfichanumber - BASE
@@ -4247,6 +4548,8 @@ Exit Sub
 End If
 
 cantres = 0
+If TryBuscarModeloSqlite(Text3.Text, SQLITE_SIMPLE_SEARCH_LIMIT) Then Exit Sub
+
 Open Trim(dbpath + "\index.dat") For Random As #1 Len = Len(regindex)
 cantdefichas = getlastfichanumber - BASE
 If (cantdefichas <= 0) Then
@@ -4375,6 +4678,15 @@ Dim rsindex As Tindexregistro
 Dim b As Integer
 Call AppState.SetSingleResultMode(False)
 
+If Not (Option2(1).Value Or Option2(2).Value Or Option2(3).Value) Then
+MsgBox "Seleccione una opcion de presupuesto.", vbExclamation, "Busqueda"
+Exit Sub
+End If
+
+If Option2(1).Value Then AppState.SetConfirmationFilter "C"
+If Option2(2).Value Then AppState.SetConfirmationFilter "N"
+If Option2(3).Value Then AppState.SetConfirmationFilter " "
+
 Combo1.ListIndex = 0
 mnubusqueda.Enabled = False
 mnuexportar.Enabled = False
@@ -4382,6 +4694,8 @@ mnuexportar.Enabled = False
 Unload Form3
 
 cantres = 0
+
+If TryBuscarPresupuestoSqlite(conpre, Val(Form1.Text4.Text)) Then Exit Sub
 
 Open Trim(dbpath + "\index.dat") For Random As #1 Len = Len(regindex)
 cantdefichas = getlastfichanumber - BASE
@@ -4707,6 +5021,7 @@ Dim i As Integer
 If Frame3.Visible = True Then
 Frame3.Visible = False
 mnubavanzada.Checked = True
+LimpiarEstadoBusquedaSeleccionado
 
 For i = 0 To 14
 Option1(i).Enabled = True

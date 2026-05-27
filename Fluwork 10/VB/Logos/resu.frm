@@ -48,6 +48,46 @@ Begin VB.Form Form3
          Strikethrough   =   0   'False
       EndProperty
    End
+   Begin VB.CommandButton cmdSiguiente
+      Caption         =   "Siguiente >"
+      Enabled         =   0   'False
+      Height          =   315
+      Left            =   7200
+      TabIndex        =   4
+      Top             =   7040
+      Visible         =   0   'False
+      Width           =   1095
+   End
+   Begin VB.CommandButton cmdAnterior
+      Caption         =   "< Anterior"
+      Enabled         =   0   'False
+      Height          =   315
+      Left            =   6000
+      TabIndex        =   3
+      Top             =   7040
+      Visible         =   0   'False
+      Width           =   1095
+   End
+   Begin VB.CommandButton cmdUltimo
+      Caption         =   "Ultimo"
+      Enabled         =   0   'False
+      Height          =   315
+      Left            =   8400
+      TabIndex        =   6
+      Top             =   7040
+      Visible         =   0   'False
+      Width           =   1095
+   End
+   Begin VB.CommandButton cmdPrimero
+      Caption         =   "Primero"
+      Enabled         =   0   'False
+      Height          =   315
+      Left            =   4800
+      TabIndex        =   5
+      Top             =   7040
+      Visible         =   0   'False
+      Width           =   1095
+   End
    Begin VB.Line Line1 
       BorderColor     =   &H00FFFFFF&
       X1              =   120
@@ -105,7 +145,27 @@ Option Explicit
 
 Private Sub Form_Load()
 mnuficha.Checked = True
+cmdAnterior.Visible = False
+cmdSiguiente.Visible = False
+cmdPrimero.Visible = False
+cmdUltimo.Visible = False
 AppState.SetFichaTouched False
+End Sub
+
+Private Sub cmdPrimero_Click()
+Form1.ShowFirstSqliteSearchPage
+End Sub
+
+Private Sub cmdAnterior_Click()
+Form1.ShowPreviousSqliteSearchPage
+End Sub
+
+Private Sub cmdSiguiente_Click()
+Form1.ShowNextSqliteSearchPage
+End Sub
+
+Private Sub cmdUltimo_Click()
+Form1.ShowLastSqliteSearchPage
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

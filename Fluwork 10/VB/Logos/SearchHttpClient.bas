@@ -8,11 +8,75 @@ Public Function BuscarClienteTexto(ByVal cliente As String, ByVal limit As Long,
     BuscarClienteTexto = HttpGetText(url, responseText)
 End Function
 
+Public Function BuscarClientePaginadoTexto(ByVal cliente As String, ByVal limit As Long, ByVal offset As Long, ByRef responseText As String) As Boolean
+    Dim url As String
+
+    url = SearchConfig.SearchApiBaseUrl() & "/api/buscar_vb6?cliente=" & UrlEncode(cliente) & "&limit=" & CStr(limit) & "&offset=" & CStr(offset)
+    BuscarClientePaginadoTexto = HttpGetText(url, responseText)
+End Function
+
 Public Function BuscarEstadoTexto(ByVal estado As String, ByVal limit As Long, ByRef responseText As String) As Boolean
     Dim url As String
 
     url = SearchConfig.SearchApiBaseUrl() & "/api/buscar_vb6?estado=" & UrlEncode(estado) & "&limit=" & CStr(limit)
     BuscarEstadoTexto = HttpGetText(url, responseText)
+End Function
+
+Public Function BuscarEstadoPaginadoTexto(ByVal estado As String, ByVal limit As Long, ByVal offset As Long, ByRef responseText As String) As Boolean
+    Dim url As String
+
+    url = SearchConfig.SearchApiBaseUrl() & "/api/buscar_vb6?estado=" & UrlEncode(estado) & "&limit=" & CStr(limit) & "&offset=" & CStr(offset)
+    BuscarEstadoPaginadoTexto = HttpGetText(url, responseText)
+End Function
+
+Public Function BuscarTecnicoTexto(ByVal tecnico As String, ByVal limit As Long, ByVal offset As Long, ByRef responseText As String) As Boolean
+    Dim url As String
+
+    url = SearchConfig.SearchApiBaseUrl() & "/api/buscar_vb6?tecnico=" & UrlEncode(tecnico) & "&limit=" & CStr(limit) & "&offset=" & CStr(offset)
+    BuscarTecnicoTexto = HttpGetText(url, responseText)
+End Function
+
+Public Function BuscarTelefonoTexto(ByVal telefono As String, ByVal limit As Long, ByVal offset As Long, ByRef responseText As String) As Boolean
+    Dim url As String
+
+    url = SearchConfig.SearchApiBaseUrl() & "/api/buscar_vb6?telefono=" & UrlEncode(telefono) & "&limit=" & CStr(limit) & "&offset=" & CStr(offset)
+    BuscarTelefonoTexto = HttpGetText(url, responseText)
+End Function
+
+Public Function BuscarModeloTexto(ByVal modelo As String, ByVal limit As Long, ByVal offset As Long, ByRef responseText As String) As Boolean
+    Dim url As String
+
+    url = SearchConfig.SearchApiBaseUrl() & "/api/buscar_vb6?modelo=" & UrlEncode(modelo) & "&limit=" & CStr(limit) & "&offset=" & CStr(offset)
+    BuscarModeloTexto = HttpGetText(url, responseText)
+End Function
+
+Public Function BuscarTecnicoEstadoTexto(ByVal tecnico As String, ByVal estado As String, ByVal limit As Long, ByVal offset As Long, ByRef responseText As String) As Boolean
+    Dim url As String
+
+    url = SearchConfig.SearchApiBaseUrl() & "/api/buscar_vb6?tecnico=" & UrlEncode(tecnico) & "&estado=" & UrlEncode(estado) & "&limit=" & CStr(limit) & "&offset=" & CStr(offset)
+    BuscarTecnicoEstadoTexto = HttpGetText(url, responseText)
+End Function
+
+Public Function BuscarTecnicoConfirmacionTexto(ByVal tecnico As String, ByVal confirmacion As String, ByVal limit As Long, ByVal offset As Long, ByRef responseText As String) As Boolean
+    Dim url As String
+
+    url = SearchConfig.SearchApiBaseUrl() & "/api/buscar_vb6?tecnico=" & UrlEncode(tecnico) & "&confirmacion=" & UrlEncode(confirmacion) & "&limit=" & CStr(limit) & "&offset=" & CStr(offset)
+    BuscarTecnicoConfirmacionTexto = HttpGetText(url, responseText)
+End Function
+
+Public Function BuscarConfirmacionTexto(ByVal confirmacion As String, ByVal limit As Long, ByVal offset As Long, ByRef responseText As String) As Boolean
+    Dim url As String
+
+    url = SearchConfig.SearchApiBaseUrl() & "/api/buscar_vb6?confirmacion=" & UrlEncode(confirmacion) & "&limit=" & CStr(limit) & "&offset=" & CStr(offset)
+    BuscarConfirmacionTexto = HttpGetText(url, responseText)
+End Function
+
+Public Function NotificarFichaActualizada(ByVal ficha As Long) As Boolean
+    Dim responseText As String
+    Dim url As String
+
+    url = SearchConfig.SearchApiBaseUrl() & "/api/reindex_ficha_vb6?ficha=" & CStr(ficha)
+    NotificarFichaActualizada = HttpGetText(url, responseText)
 End Function
 
 Private Function HttpGetText(ByVal url As String, ByRef responseText As String) As Boolean

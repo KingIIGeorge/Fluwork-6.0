@@ -70,4 +70,8 @@ Public Function WriteFichaAndIndex(ByRef item As Tregistro) As Boolean
     Close #fileNumber
 
     WriteFichaAndIndex = True
+
+    On Error Resume Next
+    Call SearchHttpClient.NotificarFichaActualizada(Val(item.ficha))
+    On Error GoTo 0
 End Function

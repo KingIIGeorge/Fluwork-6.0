@@ -3,7 +3,7 @@ from pathlib import Path
 
 server_root = Path(__file__).resolve().parent
 production_fichas_root = Path(r"\\magentaolivos\magenta")
-production_data_root = Path(r"\\magentaolivos\FluworkServer\data")
+production_data_root = server_root / "data"
 
 os.environ.setdefault("FLUWORK_SERVER_ROOT", str(server_root))
 os.environ.setdefault("FLUWORK_FICHAS_ROOT", str(production_fichas_root))

@@ -22,8 +22,8 @@ Register-ScheduledTask -TaskName "FluworkServer-Produccion-App" -Action $accion1
 Write-Host "OK Tarea creada: FluworkServer-Produccion-App" -ForegroundColor Green
 
 $accion2  = New-ScheduledTaskAction -Execute $pythonExe -Argument "index_production.py incremental 5000" -WorkingDirectory $fluworkDir
-$trigger2 = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday,Tuesday,Wednesday,Thursday,Friday -At "02:00AM"
-$config2  = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Hours 2) -StartWhenAvailable
+$trigger2 = New-ScheduledTaskTrigger -Once -At ((Get-Date).AddMinutes(1)) -RepetitionInterval (New-TimeSpan -Minutes 15) -RepetitionDuration (New-TimeSpan -Days 9999)
+$config2  = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 10) -StartWhenAvailable
 Register-ScheduledTask -TaskName "FluworkServer-Produccion-ReIndex" -Action $accion2 -Trigger $trigger2 -Settings $config2 -RunLevel Highest -User "SYSTEM" -Force
 Write-Host "OK Tarea creada: FluworkServer-Produccion-ReIndex" -ForegroundColor Green
 

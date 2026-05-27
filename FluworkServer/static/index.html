@@ -1,90 +1,298 @@
-﻿# build_text_index.py
-"""
-Script para construcción y actualización del índice textual
-Ejecutar desde Tarea Programada de Windows
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Consulta Fluwork</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="/static/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Poppins', sans-serif;
+      padding: 2rem;
+    }
+    .container-fluid { max-width: 1400px; }
+    h1 { color: #2c3e50; font-weight: 700; margin-bottom: 2rem; }
+    .card {
+      border: none;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
+    .card-header {
+      background-color: #34495e; color: white; font-weight: 600;
+      border-bottom: none;
+      border-top-left-radius: 0.75rem; border-top-right-radius: 0.75rem;
+      padding: 1rem 1.5rem;
+    }
+    .card-body { padding: 1.5rem 2rem 2rem 2rem; }
+    .form-label { font-weight: 500; color: #34495e; }
+    .form-control, .form-select {
+      border-radius: 0.5rem; border: 1px solid #ced4da;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: #3498db;
+      box-shadow: 0 0 0 0.25rem rgba(52,152,219,0.25);
+    }
+    #btnBuscar {
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      border: none; font-weight: 600; padding: 0.6rem 1.5rem;
+      border-radius: 0.5rem; transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(52,152,219,0.2);
+    }
+    #btnBuscar:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(52,152,219,0.3);
+    }
+    .table-responsive { margin-top: 1rem; }
+    .table thead th {
+      background-color: #ecf0f1; color: #34495e; font-weight: 600;
+      border-bottom: 2px solid #bdc3c7; border-top: none;
+    }
+    #tblBody tr:hover { background-color: #eaf6fd !important; cursor: pointer; }
+    #pagerTop, #pager { padding: 0; }
+    #totalTxt { color: #2c3e50; font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <h1 class="text-center">Consulta de Fichas Fluwork</h1>
 
-Uso:
-    python build_text_index.py full              # Indexado completo (todas las fichas)
-    python build_text_index.py full 1000         # Indexado completo (máx 1000 fichas)
-    python build_text_index.py incremental       # Actualización incremental (máx 500 fichas)
-    python build_text_index.py incremental 200   # Actualización incremental (máx 200 fichas)
+  <!-- filtros -->
+  <div class="card">
+    <div class="card-header">Filtros de B&uacute;squeda</div>
+    <div class="card-body">
+      <form id="formBuscar" class="row gy-3 gx-4 align-items-end">
 
-Configuración actual:
-    - Carpeta fichas : C:\magenta
-    - Base de datos  : C:\FluworkServer\data\fluwork_index.db
-    - Batch size     : 2000 fichas por lote
-    - Encoding       : cp1252 (Windows Latin-1)
+        <!-- AVISO BUSQUEDA AVANZADA -->
+        <div class="col-12">
+          <div class="alert alert-info mb-0">
+            <strong>&#128269; B&uacute;squeda avanzada:</strong>
+            Us&aacute; estos campos para buscar dentro del contenido de las fichas
+          </div>
+        </div>
 
-Notas:
-    - El indexado completo re-genera toda la base desde cero
-    - El incremental solo procesa fichas nuevas o modificadas
-    - Ambos modos muestran el tiempo total al finalizar
-    - Recomendado: ejecutar incremental cada noche via Tarea Programada
-"""
-import sys
-from pathlib import Path
-from text_search import TextIndexer
+        <!-- Buscar en Problema -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <label class="form-label" for="problema">
+            &#128203; Buscar en Problema
+            <small class="text-muted">(descripci&oacute;n inicial)</small>
+          </label>
+          <input type="text" class="form-control" id="problema"
+                 placeholder="Ej: no enciende, pantalla azul">
+        </div>
 
-# ===================== CONFIGURACIÓN =====================
-FICHAS_ROOT = Path(r"C:\magenta")
-TEXT_INDEX_DB = Path(r"C:\FluworkServer\data\fluwork_index.db")
+        <!-- Buscar en Trabajos -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <label class="form-label" for="trabajos">
+            &#128295; Buscar en Trabajos
+            <small class="text-muted">(trabajo realizado)</small>
+          </label>
+          <input type="text" class="form-control" id="trabajos"
+                 placeholder="Ej: cambio fuente, limpieza">
+        </div>
 
-# Crear carpeta si no existe
-TEXT_INDEX_DB.parent.mkdir(parents=True, exist_ok=True)
+        <!-- Numero de serie -->
+        <div class="col-xl-2 col-lg-4 col-md-6">
+          <label class="form-label" for="serie">
+            &#128290; N&uacute;mero de serie
+            <small class="text-muted">(completo o parcial)</small>
+          </label>
+          <input type="text" class="form-control" id="serie"
+                 placeholder="Ej: ABC123">
+        </div>
 
-def main():
-    # Parsear argumentos
-    mode = sys.argv[1] if len(sys.argv) > 1 else "incremental"
-    limit = int(sys.argv[2]) if len(sys.argv) > 2 else None
+        <!-- Email del cliente -->
+        <div class="col-xl-2 col-lg-4 col-md-6">
+          <label class="form-label" for="email">
+            &#9993; Email del cliente
+            <small class="text-muted">(parcial o completo)</small>
+          </label>
+          <input type="text" class="form-control" id="email"
+                 placeholder="Ej: gmail, hotmail, usuario@">
+        </div>
 
-    # Validar modo
-    if mode not in ["full", "incremental"]:
-        print("ERROR: Modo debe ser 'full' o 'incremental'")
-        print("Uso: python build_text_index.py [full|incremental] [limit]")
-        sys.exit(1)
+        <!-- Presupuesto confirmado -->
+        <div class="col-xl-2 col-lg-4 col-md-6">
+          <label class="form-label" for="confirmacion">
+            &#9989; Presupuesto
+          </label>
+          <select id="confirmacion" class="form-select">
+            <option value="">-- todas --</option>
+            <option value="C">Confirmada</option>
+            <option value="NC">No confirmada</option>
+          </select>
+        </div>
 
-    # Crear indexador
-    indexer = TextIndexer(TEXT_INDEX_DB, FICHAS_ROOT)
+        <!-- Separador -->
+        <div class="col-12">
+          <hr class="my-2">
+          <small class="text-muted">Filtros adicionales (opcionales):</small>
+        </div>
 
-    # Ejecutar según modo
-    if mode == "full":
-        print(f"━━━ INDEXADO COMPLETO ━━━")
-        print(f"Carpeta fichas: {FICHAS_ROOT}")
-        print(f"Base de datos: {TEXT_INDEX_DB}")
-        if limit:
-            print(f"Límite: {limit} fichas")
-        print()
+        <!-- Estado -->
+        <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12">
+          <label class="form-label" for="estado">Estado</label>
+          <select id="estado" class="form-select">
+            <option value="">-- todos --</option>
+            <option>POR VER</option>
+            <option>PV EXT.</option>
+            <option>PRESUP</option>
+            <option>REPARANDO</option>
+            <option>REP.EXT.</option>
+            <option>CHEQUEO</option>
+            <option>DIAGNOSTIC</option>
+            <option>STD/BY</option>
+            <option>LISTA</option>
+            <option>LISTA NR</option>
+            <option>LISTA BRGS</option>
+            <option>ENTREGADA</option>
+            <option>ENTREGAR</option>
+            <option>DEPOSITO</option>
+            <option>ANULADA</option>
+          </select>
+        </div>
 
-        import time as _time
-        t0 = _time.time()
-        count = indexer.build_full_index(batch_size=2000, max_files=limit)
-        segundos = int(_time.time() - t0)
-        minutos, segs = divmod(segundos, 60)
-        print(f"\n✓ Proceso completado: {count} fichas indexadas")
-        print(f"⏱ Tiempo total: {minutos}m {segs}s")
+        <!-- Cliente -->
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <label class="form-label" for="cliente">Cliente contiene</label>
+          <input type="text" class="form-control" id="cliente">
+        </div>
 
-    elif mode == "incremental":
-        print(f"━━━ ACTUALIZACIÓN INCREMENTAL ━━━")
-        print(f"Base de datos: {TEXT_INDEX_DB}")
-        if limit:
-            print(f"Límite: {limit} fichas")
-        print()
+        <!-- Telefono -->
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+          <label class="form-label" for="telefono">Tel&eacute;fono contiene</label>
+          <input type="text" class="form-control" id="telefono"
+                 inputmode="numeric" placeholder="Ej: 3515">
+        </div>
 
-        count = indexer.update_incremental(max_files=limit or 500)
+        <!-- Tecnico -->
+        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+          <label class="form-label" for="tecnico">T&eacute;cnico</label>
+          <input type="text" class="form-control" id="tecnico"
+                 list="tecnicos-list" placeholder="Elegir o escribir..."
+                 autocomplete="off">
+          <datalist id="tecnicos-list">
+            <option value="Angelo">
+            <option value="Pio">
+            <option value="Gonzalo">
+            <option value="Patricio">
+            <option value="Cristian">
+          </datalist>
+        </div>
 
-        if count == 0:
-            print("✓ Índice actualizado (sin cambios)")
-        else:
-            print(f"\n✓ Proceso completado: {count} fichas actualizadas")
+        <!-- Modelo -->
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+          <label class="form-label" for="modelo">Modelo contiene</label>
+          <input type="text" class="form-control" id="modelo">
+        </div>
 
-if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        print("\n⚠ Proceso interrumpido por el usuario")
-        sys.exit(1)
-    except Exception as e:
-        print(f"\n❌ ERROR: {e}")
-        import traceback
-        traceback.print_exc()
-        sys.exit(1)
+        <!-- Fecha desde -->
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+          <label class="form-label" for="f_desde">Fecha desde</label>
+          <input type="date" class="form-control" id="f_desde">
+        </div>
+
+        <!-- Fecha hasta -->
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+          <label class="form-label" for="f_hasta">Fecha hasta</label>
+          <input type="date" class="form-control" id="f_hasta">
+        </div>
+
+        <!-- Máximo de resultados -->
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+          <label class="form-label" for="maxResultados">Resultados</label>
+          <select id="maxResultados" class="form-select">
+            <option value="50">50</option>
+            <option value="100" selected>100</option>
+            <option value="200">200</option>
+            <option value="500">500</option>
+            <option value="0">Todas</option>
+          </select>
+        </div>
+
+        <!-- Boton Buscar -->
+        <div class="col-xl-2 col-lg-3 col-md-12 col-sm-12 d-grid">
+          <label class="form-label d-none d-xl-block">&nbsp;</label>
+          <button type="submit" id="btnBuscar" class="btn btn-primary">Buscar</button>
+        </div>
+
+      </form>
+
+      <!-- Aviso importante -->
+      <div class="alert alert-warning mt-3 mb-0">
+        <strong>&#128161; Importante:</strong>
+        <ul class="mb-0">
+          <li>Si us&aacute;s <strong>Texto</strong> o <strong>Serie</strong>,
+              la b&uacute;squeda es m&aacute;s r&aacute;pida (&iacute;ndice SQLite)</li>
+          <li>Sin filtros ni fecha, se muestran los <strong>&uacute;ltimos 60 d&iacute;as</strong></li>
+          <li>Resultados: eleg&iacute; cantidad o escrib&iacute; &quot;Todas&quot; para ver todo</li>
+          <li>Pod&eacute;s combinar todos los filtros que necesites</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- resultados -->
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+        <div id="totalTxt" class="fw-semibold">Inici&eacute; una b&uacute;squeda para ver los resultados.</div>
+        <div class="d-flex align-items-center gap-2" id="pagerTop" hidden>
+          <button type="button" id="btnFirstTop" class="btn btn-sm btn-outline-secondary">&laquo; Primero</button>
+          <button type="button" id="btnPrevTop"  class="btn btn-sm btn-outline-secondary">&lsaquo; Anterior</button>
+          <span id="pageInfoTop" class="mx-1 text-secondary"></span>
+          <button type="button" id="btnNextTop"  class="btn btn-sm btn-outline-secondary">Siguiente &rsaquo;</button>
+          <button type="button" id="btnLastTop"  class="btn btn-sm btn-outline-secondary">&Uacute;ltimo &raquo;</button>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-sm table-bordered table-hover align-middle">
+          <thead>
+            <tr>
+              <th>Ficha</th>
+              <th>Cliente</th>
+              <th>Tel&eacute;fono</th>
+              <th>Modelo</th>
+              <th>Fecha</th>
+              <th>Estado</th>
+              <th>T&eacute;cnico</th>
+            </tr>
+          </thead>
+          <tbody id="tblBody"></tbody>
+        </table>
+        <div id="loadingRow" class="d-none text-center p-5">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        <table>
+          <tr id="noResults" class="d-none">
+            <td colspan="7" class="text-center text-muted p-4">
+              No se encontraron resultados para los filtros seleccionados.
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center gap-2 mt-3" id="pager" hidden>
+        <button id="btnFirst" class="btn btn-sm btn-outline-secondary">&laquo; Primero</button>
+        <button id="btnPrev"  class="btn btn-sm btn-outline-secondary">&lsaquo; Anterior</button>
+        <span  id="pageInfo" class="mx-1 text-secondary"></span>
+        <button id="btnNext"  class="btn btn-sm btn-outline-secondary">Siguiente &rsaquo;</button>
+        <button id="btnLast"  class="btn btn-sm btn-outline-secondary">&Uacute;ltimo &raquo;</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="text-center text-muted small mt-3 mb-2" id="versionFooter"></div>
+<script src="/static/app.js?v=1.5.0"></script>
+</body>
+</html>

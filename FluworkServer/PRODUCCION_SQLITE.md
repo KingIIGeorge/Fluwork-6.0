@@ -35,11 +35,24 @@ Debe mostrar:
 La base SQLite real queda en:
 
 ```text
-\\magentaolivos\FluworkServer\data\fluwork_index.db
+C:\FluworkServer\data\fluwork_index.db
 ```
+
+Aunque la carpeta del servidor se vea desde otros equipos como
+`\\magentaolivos\FluworkServer`, SQLite debe abrirse por ruta local en el servidor.
+VB6 y la busqueda HTML no abren el `.db` directo: consultan Flask por HTTP.
 
 Para instalar tareas programadas en el servidor de produccion, copiar el contenido de
 `C:\Users\Jorge\Documents\Codex\FluworkServer` a `C:\FluworkServer` en el servidor y ejecutar como Administrador:
+
+Para arranque manual con consola visible tambien se puede ejecutar:
+
+```powershell
+C:\FluworkServer\iniciar_fluwork_produccion.bat
+```
+
+Ese batch levanta Flask usando la base SQLite existente. No ejecuta `full` ni incremental
+antes de iniciar, para que el buscador HTML vuelva rapido despues de reiniciar el servidor.
 
 ```powershell
 cd C:\FluworkServer
@@ -54,6 +67,11 @@ FluworkServer-Produccion-ReIndex
 ```
 
 No usan `app.py` directo. Usan `run_production_server.py` e `index_production.py` para evitar mezclar rutas de prueba y produccion.
+La tarea `FluworkServer-Produccion-ReIndex` corre `incremental 5000` cada 15 minutos.
+
+Importante: `index_production.py incremental` no crea una base nueva si no existe
+`C:\FluworkServer\data\fluwork_index.db`. Si falta la base, restaurar una copia existente
+o ejecutar `python index_production.py full` fuera de horario.
 
 Para probar desde una maquina cliente:
 

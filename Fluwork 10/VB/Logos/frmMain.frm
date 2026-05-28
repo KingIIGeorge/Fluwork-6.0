@@ -2133,6 +2133,9 @@ Begin VB.Form Form1
       Begin VB.Menu mnuconfig 
          Caption         =   "&Configuracion"
       End
+      Begin VB.Menu mnusqliteestado 
+         Caption         =   "Estado buscador SQLite"
+      End
       Begin VB.Menu mnuexportar 
          Caption         =   "&Exportar a .CSV"
       End
@@ -5066,6 +5069,33 @@ End Sub
 
 Private Sub mnuconfig_Click()
 Form5.Show vbModal
+End Sub
+
+Private Sub mnusqliteestado_Click()
+Dim responseText As String
+Dim message As String
+Dim style As VbMsgBoxStyle
+Dim configPath As String
+
+configPath = App.Path & "\fluwork_search_url.txt"
+message = "URL usada: " & SearchConfig.SearchApiBaseUrl() & vbCrLf & _
+          "Archivo URL: " & configPath & vbCrLf
+
+If Dir$(configPath) <> "" Then
+    message = message & "Archivo URL encontrado." & vbCrLf & vbCrLf
+Else
+    message = message & "Archivo URL no encontrado. Se usa 127.0.0.1." & vbCrLf & vbCrLf
+End If
+
+If SearchHttpClient.VerificarBuscador(responseText) Then
+    message = message & "Estado: OK, Flask responde /health."
+    style = vbInformation
+Else
+    message = message & "Estado: NO responde. Revise Flask, red o fluwork_search_url.txt."
+    style = vbExclamation
+End If
+
+MsgBox message, style, "Buscador SQLite"
 End Sub
 
 Private Sub mnuexportar_Click()

@@ -79,6 +79,13 @@ Public Function NotificarFichaActualizada(ByVal ficha As Long) As Boolean
     NotificarFichaActualizada = HttpGetText(url, responseText)
 End Function
 
+Public Function VerificarBuscador(ByRef responseText As String) As Boolean
+    Dim url As String
+
+    url = SearchConfig.SearchApiBaseUrl() & "/health"
+    VerificarBuscador = HttpGetText(url, responseText)
+End Function
+
 Private Function HttpGetText(ByVal url As String, ByRef responseText As String) As Boolean
     On Error GoTo ErrHandler
 

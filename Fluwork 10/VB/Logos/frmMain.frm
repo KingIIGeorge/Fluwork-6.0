@@ -2136,6 +2136,9 @@ Begin VB.Form Form1
       Begin VB.Menu mnusqliteestado 
          Caption         =   "Estado buscador SQLite"
       End
+      Begin VB.Menu mnuabrirbuscadorweb 
+         Caption         =   "Abrir buscador web"
+      End
       Begin VB.Menu mnuexportar 
          Caption         =   "&Exportar a .CSV"
       End
@@ -2182,6 +2185,7 @@ Private mSqliteSearchLimit As Long
 Private mSqliteSearchOffset As Long
 Private mSqliteSearchTotal As Long
 Private mSqliteSearchShown As Long
+Private WithEvents lblAbrirBuscadorWeb As VB.Label
 
 Private Sub bficha_GotFocus()
 
@@ -4825,6 +4829,7 @@ Private Sub Form_Load()
 Dim pepe As String
 
 On Error Resume Next
+CrearBotonBuscadorWeb
 
 BASE = 0
 
@@ -5096,6 +5101,48 @@ Else
 End If
 
 MsgBox message, style, "Buscador SQLite"
+End Sub
+
+Private Sub mnuabrirbuscadorweb_Click()
+AbrirBuscadorWeb
+End Sub
+
+Private Sub lblAbrirBuscadorWeb_Click()
+AbrirBuscadorWeb
+End Sub
+
+Private Sub CrearBotonBuscadorWeb()
+On Error Resume Next
+
+Set lblAbrirBuscadorWeb = Controls.Add("VB.Label", "lblAbrirBuscadorWeb", Frame2)
+If lblAbrirBuscadorWeb Is Nothing Then Exit Sub
+
+With lblAbrirBuscadorWeb
+    .Caption = "Buscador Web"
+    .Enabled = True
+    .Alignment = 2
+    .BackStyle = 1
+    .BackColor = QBColor(14)
+    .BorderStyle = 1
+    .ForeColor = QBColor(0)
+    .Font.Name = "Arial"
+    .Font.Size = 9.75
+    .Font.Weight = 700
+    .Move 7920, 2160, 1935, 375
+    .Visible = True
+End With
+End Sub
+
+Private Sub AbrirBuscadorWeb()
+Dim url As String
+Dim result As Long
+
+url = SearchConfig.SearchApiBaseUrl() & "/static/index.html"
+result = ShellExecute(Me.hwnd, "open", url, vbNullString, vbNullString, 1)
+
+If result <= 32 Then
+    MsgBox "No se pudo abrir el buscador web." & vbCrLf & url, vbExclamation, "Buscador web"
+End If
 End Sub
 
 Private Sub mnuexportar_Click()

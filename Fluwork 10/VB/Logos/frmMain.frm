@@ -4940,6 +4940,8 @@ LoadDefaultStatuses
     If Dir("C:\Fluwork\abrir_ficha.txt") <> "" Then
         tmrAbrirFicha.Interval = 500
         tmrAbrirFicha.Enabled = True
+    Else
+        MostrarBusquedaAvanzada
     End If
     End Sub
 
@@ -5025,8 +5027,15 @@ Form2.Show vbModal
 End Sub
 
 Private Sub mnubavanzada_Click()
-Dim i As Integer
 If Frame3.Visible = True Then
+    MostrarBusquedaAvanzada
+Else
+    OcultarBusquedaAvanzada
+End If
+End Sub
+
+Private Sub MostrarBusquedaAvanzada()
+Dim i As Integer
 Frame3.Visible = False
 mnubavanzada.Checked = True
 LimpiarEstadoBusquedaSeleccionado
@@ -5050,7 +5059,10 @@ tce.Enabled = True
 tce1.Enabled = True
 tce2.Enabled = True
 Text4.Enabled = True
-Else
+End Sub
+
+Private Sub OcultarBusquedaAvanzada()
+Dim i As Integer
 For i = 0 To 14
 Option1(i).Enabled = False
 Next i
@@ -5069,7 +5081,6 @@ tce2.Enabled = False
 Text4.Enabled = False
 mnubavanzada.Checked = False
 Frame3.Visible = True
-End If
 End Sub
 
 Private Sub mnuconfig_Click()

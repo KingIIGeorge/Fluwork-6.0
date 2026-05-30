@@ -29,3 +29,25 @@ Proximo paso:
 2. Probar lectura contra copias locales de fichas reales.
 3. Comparar campos con Fluwork VB6.
 4. Recien despues evaluar escritura controlada.
+
+## Validacion local
+
+Hay una utilidad de consola en:
+
+```text
+FluworkFichaCodec.Tools
+```
+
+Uso:
+
+```text
+dotnet run --project FluworkFichaCodec.Tools -- "<carpeta de fichas>" 20
+```
+
+Ejemplo con copia local:
+
+```text
+dotnet run --project FluworkFichaCodec.Tools -- "G:\Users\King George II\Documents\Fluwork 10\Fluwork 10\Ultimo corregido por Guille\Magenta en magentaolivos" 20
+```
+
+La utilidad no modifica archivos. Solo lista fichas, fecha de ingreso, estado, tecnico, cliente, telefono, modelo y cantidad de trabajos detectados.

@@ -12,3 +12,5 @@ FluworkServer/*.log
 
 FluworkFichaCodec/bin/
 FluworkFichaCodec/obj/
+FluworkFichaCodec.Tools/bin/
+FluworkFichaCodec.Tools/obj/

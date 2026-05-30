@@ -288,6 +288,28 @@ Impacto:
 - No modifica fichas.
 - Es parte del flujo de abrir Fluwork desde el buscador web.
 
+## Repositorios locales detectados
+
+El dia 30/05/2026 se detectaron carpetas `.git` locales en estas aplicaciones:
+
+```text
+C:\Users\Jorge\Downloads\Fluwork II\Cambio Masivo Estados\CambioMasivoEstados
+C:\Users\Jorge\Downloads\Fluwork II\CargaTrabajosFluwork\CargaTrabajosFluwork
+C:\Users\Jorge\Downloads\Fluwork II\Completar Fichas\CompletarFichas
+C:\Users\Jorge\Downloads\Fluwork II\Editor de fichas Fluwork
+C:\Users\Jorge\Downloads\Fluwork II\EditordelIndex.Dat\EditorIndex
+C:\Users\Jorge\Downloads\Fluwork II\Extraer los mails del fluwork\Extraer los mails del fluwork
+C:\Users\Jorge\Downloads\Fluwork II\FluworkII
+C:\Users\Jorge\Downloads\Fluwork II\FluworkOpener\FluworkOpener
+C:\Users\Jorge\Downloads\Fluwork II\Informacion Tecnicos
+C:\Users\Jorge\Downloads\Fluwork II\Mails Reparaciones
+C:\Users\Jorge\Downloads\Fluwork II\Mandar mail rep listas
+C:\Users\Jorge\Downloads\Fluwork II\Sustitucion de SKU de TN\Sustitucion de SKU de TN
+C:\Users\Jorge\Downloads\Fluwork II\Sustitucion de SKU de TN\Sustitucion de SKU de TN\Sustitucion-de-SKU-de-TN
+```
+
+En estas copias locales no aparece configurado `origin`, por lo que no se pudo confirmar desde esta carpeta la URL GitHub de cada aplicacion. Si las versiones publicadas en GitHub estan en otros clones o tienen remotos agregados con otro nombre, conviene mapear cada aplicacion con su repositorio antes de modificar codigo.
+
 ## Conclusiones
 
 - No conviene cambiar el contenido de `registro.solucion` a HTML/RTF directamente.

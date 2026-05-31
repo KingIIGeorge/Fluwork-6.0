@@ -5,7 +5,13 @@ if (args.Length == 0)
     Console.WriteLine("Uso:");
     Console.WriteLine("  dotnet run --project FluworkFichaCodec.Tools -- <carpeta-fichas> [cantidad]");
     Console.WriteLine("  dotnet run --project FluworkFichaCodec.Tools -- compare-index <carpeta-fichas> [cantidad]");
+    Console.WriteLine("  dotnet run --project FluworkFichaCodec.Tools -- roundtrip-trabajos <archivo-ficha>");
     return 2;
+}
+
+if (args[0].Equals("roundtrip-trabajos", StringComparison.OrdinalIgnoreCase))
+{
+    return RunRoundtripTrabajos(args);
 }
 
 bool compareIndex = args[0].Equals("compare-index", StringComparison.OrdinalIgnoreCase);
@@ -103,6 +109,70 @@ Console.WriteLine();
 Console.WriteLine("Resumen: OK=" + okCount + " Diferencias=" + differenceCount + " Errores=" + errorCount);
 
 return 0;
+
+static int RunRoundtripTrabajos(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("ERROR: Falta archivo de ficha.");
+        return 2;
+    }
+
+    string sourcePath = args[1];
+    if (!File.Exists(sourcePath))
+    {
+        Console.Error.WriteLine("ERROR: No existe el archivo: " + sourcePath);
+        return 1;
+    }
+
+    string tempPath = Path.Combine(Path.GetTempPath(), "fluwork_roundtrip_" + Path.GetFileName(sourcePath) + "_" + Guid.NewGuid().ToString("N"));
+    File.Copy(sourcePath, tempPath, false);
+
+    var reader = new FluworkFichaReader();
+    FichaFluwork before = reader.Read(tempPath);
+
+    var writer = new FluworkFichaWriter();
+    WriteTrabajosResult result = writer.WriteTrabajos(tempPath, before.Trabajos, createBackup: true);
+
+    FichaFluwork after = reader.Read(tempPath);
+    bool same = SameTrabajos(before.Trabajos, after.Trabajos);
+
+    Console.WriteLine("Archivo temporal: " + tempPath);
+    Console.WriteLine("Backup temporal: " + result.BackupPath);
+    Console.WriteLine("Trabajos antes: " + before.Trabajos.Count);
+    Console.WriteLine("Trabajos despues: " + after.Trabajos.Count);
+    Console.WriteLine("Resultado: " + (same ? "OK" : "DIFERENCIAS"));
+
+    return same ? 0 : 1;
+}
+
+static bool SameTrabajos(IReadOnlyList<TrabajoRealizado> before, IReadOnlyList<TrabajoRealizado> after)
+{
+    if (before.Count != after.Count)
+    {
+        return false;
+    }
+
+    for (int i = 0; i < before.Count; i++)
+    {
+        if (before[i].Indice != after[i].Indice)
+        {
+            return false;
+        }
+
+        if (!Normalize(before[i].Trabajo).Equals(Normalize(after[i].Trabajo), StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!Normalize(before[i].Importe).Equals(Normalize(after[i].Importe), StringComparison.Ordinal))
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
 
 static ComparisonResult CompareWithIndex(FichaFluwork ficha, IReadOnlyDictionary<string, IndexFluworkRecord> indexByFicha)
 {

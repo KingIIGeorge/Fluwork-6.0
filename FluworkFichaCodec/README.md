@@ -4,8 +4,9 @@ Libreria experimental para centralizar la lectura del formato binario de fichas 
 
 Estado actual:
 
-- Solo lectura.
-- No modifica fichas.
+- Lectura de fichas.
+- Escritura controlada del bloque `solucion` / trabajos realizados.
+- La escritura puede crear backup automatico del archivo antes de modificarlo.
 - No modifica `index.dat`.
 - No llama al servidor SQLite.
 
@@ -29,6 +30,23 @@ Proximo paso:
 2. Probar lectura contra copias locales de fichas reales.
 3. Comparar campos con Fluwork VB6.
 4. Recien despues evaluar escritura controlada.
+
+## Escritura de trabajos realizados
+
+La clase `FluworkFichaWriter` escribe solamente el bloque de trabajos realizados:
+
+```text
+offset 2153, largo 1024
+```
+
+No modifica otros campos de la ficha ni `index.dat`.
+
+Reglas:
+
+- Acepta hasta 10 pares `trabajo|importe`.
+- Reemplaza el caracter `|` dentro de cada texto para no romper el separador historico.
+- Si el bloque armado supera 1024 caracteres, lanza error en vez de truncar silenciosamente.
+- Puede crear backup automatico antes de escribir.
 
 ## Validacion local
 

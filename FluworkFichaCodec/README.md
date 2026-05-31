@@ -51,3 +51,11 @@ dotnet run --project FluworkFichaCodec.Tools -- "G:\Users\King George II\Documen
 ```
 
 La utilidad no modifica archivos. Solo lista fichas, fecha de ingreso, estado, tecnico, cliente, telefono, modelo y cantidad de trabajos detectados.
+
+Comparacion contra `index.dat`:
+
+```text
+dotnet run --project FluworkFichaCodec.Tools -- compare-index "<carpeta de fichas>" 20
+```
+
+Este modo compara los campos principales de cada ficha individual contra su registro equivalente en `index.dat`.
